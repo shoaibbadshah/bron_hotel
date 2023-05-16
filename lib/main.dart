@@ -1,5 +1,7 @@
-import 'package:bron_hotel/pages/home.dart';
+import 'package:bron_hotel/pages/home-page.dart';
 import 'package:flutter/material.dart';
+
+import 'home.dart';
 
 void main() {
   runApp(const MyApp());

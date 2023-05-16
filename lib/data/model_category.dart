@@ -5,6 +5,7 @@ import '../utils/icon.dart';
 import 'model_image.dart';
 
 
+
 enum CategoryType { category, location, feature }
 
 class CategoryModel {

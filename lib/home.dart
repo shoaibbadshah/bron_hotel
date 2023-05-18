@@ -1,8 +1,7 @@
 import 'package:bron_hotel/pages/favorites-page.dart';
 import 'package:bron_hotel/pages/home-page.dart';
-import 'package:bron_hotel/pages/menu/%D1%81ustomer-page.dart';
-import 'package:bron_hotel/pages/menu/vendor-page.dart';
-import 'package:bron_hotel/pages/profile-page.dart';
+import 'package:bron_hotel/pages/settings/admin-page.dart';
+import 'package:bron_hotel/pages/settings/vendor-page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -21,8 +20,8 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   ];
   List pages = [
     HomePage(),
-    VendorPage(),
-    CustomerPage()
+    FavoritesPage(),
+    AdminPage()
   ];
   final List<String> _labels = [
     'Home', 'maps', 'camera'

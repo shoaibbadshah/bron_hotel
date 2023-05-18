@@ -1,3 +1,4 @@
+import 'package:bron_hotel/pages/settings/wallet-page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -177,6 +178,11 @@ class _CustomerPageState extends State<CustomerPage> {
             ),
           ),
           ListTile(
+            onTap: (){
+              setState(() {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => WalletPage()));
+              });
+            },
             contentPadding: EdgeInsets.zero,
             title: Column(
               crossAxisAlignment: CrossAxisAlignment.start,

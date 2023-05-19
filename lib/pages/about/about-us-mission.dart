@@ -1,0 +1,626 @@
+import 'dart:ui';
+
+import 'package:bron_hotel/pages/about/work-with-as-page.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+
+import '../../utils/color.dart';
+
+class AboutUsMission extends StatefulWidget {
+  const AboutUsMission({Key? key}) : super(key: key);
+
+  @override
+  State<AboutUsMission> createState() => _AboutUsMissionState();
+}
+
+class _AboutUsMissionState extends State<AboutUsMission> {
+  ScrollController controllerListView = ScrollController();
+  bool showAbout = false;
+  bool showHotels = false;
+  bool showTours = false;
+  bool showFlights = false;
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: MediaQuery.of(context).size.width,
+      height: MediaQuery.of(context).size.height,
+      decoration: const BoxDecoration(
+          image: DecorationImage(
+              alignment: Alignment.topRight,
+              image: AssetImage(
+                "assets/images/background-image-home.png",
+              ),
+              fit: BoxFit.cover)),
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        appBar: AppBar(
+          elevation: 0,
+          toolbarHeight: 60,
+          backgroundColor: Color(0xFFF1F4FB),
+          automaticallyImplyLeading: false,
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Image.asset(
+                'assets/images/newlogo.png',
+                width: 128,
+                height: 39,
+              ),
+              Row(
+                children: [
+                  IconButton(
+                      onPressed: (){
+                        setState(() {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => WorkWithUsPage()));
+                        });
+                      },
+                      icon: Image.asset("assets/icons/reference.png")
+                  ),
+                  IconButton(
+                      onPressed: (){
+                        setState(() {
+                          //Navigator.push(context, MaterialPageRoute(builder: (context) => NotificationsPage()));
+                        });
+                      },
+                      icon: Icon(Icons.notifications_none, color: Color(0xFF1A2B47),)
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+        body: ListView(
+          controller: controllerListView,
+          padding: EdgeInsets.symmetric(vertical: 20),
+          children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                child: GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      showAbout = !showAbout;
+                    });
+                  },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      const Text(
+                        "Справка",
+                        style: TextStyle(
+                            color: Color(0xFF1A2B47),
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600),
+                      ),
+                      SizedBox(width: 10,),
+                      showAbout
+                          ? const Icon(Icons.keyboard_arrow_up, color: Color(0xFF1A2B47),)
+                          : const Icon(Icons.keyboard_arrow_down, color: Color(0xFF1A2B47),)
+                    ],
+                  ),
+                ),
+              ),
+              showAbout
+                  ? buildMission(context)
+                  : Container(),
+            SizedBox(height: 15,),
+            showHotels
+              ? buildHotels(context)
+              : Container(),
+            SizedBox(height: 15,),
+            showTours
+                ? buildTours(context)
+                : Container(),
+            SizedBox(height: 15,),
+            showFlights
+                ? buildFlights(context)
+                : Container(),
+            SizedBox(height: 15,),
+
+            // Hotels
+            GestureDetector(
+              onTap: (){
+                setState(() {
+                  showHotels = !showHotels;
+                });
+              },
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height / 4.5,
+                  padding: EdgeInsets.symmetric(vertical: 20),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(30)
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Column(
+                        children: [
+                          Image.asset("assets/images/stays.png", color:  showHotels ? Color(0xFF005BFE) : Color(0xFF1A2B47),),
+                          SizedBox(height: 5,),
+                          Text(
+                            "Hotels",
+                            style: TextStyle(
+                                decorationThickness: 2,
+                                color: showHotels ? Color(0xFF005BFE) : Color(0xFF1A2B47),
+                                fontSize: 20,
+                                fontWeight: FontWeight.w700),
+                          ),
+                          Container(
+                            height: 2,
+                            width: 70,
+                            color: showHotels ? Color(0xFF005BFE) : Color(0xFF1A2B47),
+                          )
+                        ],
+                      ),
+                      Text(
+                        "Nisl rhoncus mattis rhoncus urna neque viverra justo nec. Mauris pellentesque pulvinar pellentesque habitant morbi tristique. ",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            decorationThickness: 2,
+                            color: Color(0xFF1A2B47),
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 20,),
+
+            // Tours
+            GestureDetector(
+              onTap: (){
+                setState(() {
+                  showTours = !showTours;
+                });
+              },
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height / 4.5,
+                  padding: EdgeInsets.symmetric(vertical: 20),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(30)
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Column(
+                        children: [
+                          Image.asset('assets/images/tours.png', color: showTours ? Color(0xFF005BFE) : Color(0xFF1A2B47)),
+                          SizedBox(height: 5,),
+                          Text(
+                            "Tours",
+                            style: TextStyle(
+                                decorationThickness: 2,
+                                color: showTours ? Color(0xFF005BFE) : Color(0xFF1A2B47),
+                                fontSize: 20,
+                                fontWeight: FontWeight.w700),
+                          ),
+                          Container(
+                            height: 2,
+                            width: 70,
+                            color: showTours ? Color(0xFF005BFE) : Color(0xFF1A2B47),
+                          )
+                        ],
+                      ),
+                      Text(
+                        "Nisl rhoncus mattis rhoncus urna neque viverra justo nec. Mauris pellentesque pulvinar pellentesque habitant morbi tristique. ",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            decorationThickness: 2,
+                            color: Color(0xFF1A2B47),
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 20,),
+
+            //Flights
+            GestureDetector(
+              onTap: (){
+                setState(() {
+                  showFlights = !showFlights;
+                });
+              },
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height / 4.5,
+                  padding: EdgeInsets.symmetric(vertical: 20),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(30)
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Column(
+                        children: [
+                          Image.asset('assets/images/flights.png', color: showFlights ? Color(0xFF005BFE) : Color(0xFF1A2B47),),
+                          SizedBox(height: 5,),
+                          Text(
+                            "Flights",
+                            style: TextStyle(
+                                decorationThickness: 2,
+                                color: showFlights ? Color(0xFF005BFE) : Color(0xFF1A2B47),
+                                fontSize: 20,
+                                fontWeight: FontWeight.w700),
+                          ),
+                          Container(
+                            height: 2,
+                            width: 70,
+                            color: showFlights ? Color(0xFF005BFE) : Color(0xFF1A2B47),
+                          )
+                        ],
+                      ),
+                      Text(
+                        "Nisl rhoncus mattis rhoncus urna neque viverra justo nec. Mauris pellentesque pulvinar pellentesque habitant morbi tristique. ",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            decorationThickness: 2,
+                            color: Color(0xFF1A2B47),
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 20,),
+
+            buildFollow(context),
+            SizedBox(height: 20,)
+          ],
+        ),
+      ),
+    );
+  }
+
+  Padding buildHotels(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children:  [
+          Text(
+            "Hotels",
+            style: TextStyle(
+                color: Color(0xFF1A2B47),
+                fontSize: 20,
+                fontWeight: FontWeight.w700),
+          ),
+          SizedBox(height: 15,),
+          Container(
+            width: MediaQuery.of(context).size.width,
+            child: Row(
+              children: [
+                Expanded(
+                  child: Container(
+                    height: 162,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      image: DecorationImage(
+                        image: AssetImage("assets/images/about1.png"),
+                        fit: BoxFit.cover
+                      )
+                    ),
+                  ),
+                ),
+                SizedBox(width: 10,),
+                Expanded(
+                  flex: 2,
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 75,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            image: DecorationImage(
+                                image: AssetImage("assets/images/about2.png"),
+                              fit: BoxFit.cover
+                            )
+                        ),
+                      ),
+                      SizedBox(height: 10,),
+                      Container(
+                        height: 75,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            image: DecorationImage(
+                                image: AssetImage("assets/images/about3.png"),
+                                fit: BoxFit.cover
+                            )
+                        ),
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            ),
+          ),
+          SizedBox(height: 15,),
+          Text(
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Libero nunc consequat interdum varius sit. Nisl rhoncus mattis rhoncus urna neque viverra justo nec. Mauris pellentesque pulvinar pellentesque habitant morbi tristique. Amet tellus cras adipiscing enim eu turpis egestas. Vel elit scelerisque mauris pellentesque pulvinar pellentesque. Metus vulputate eu scelerisque felis imperdiet. Justo donec enim diam vulputate ut pharetra sit amet. Facilisis magna etiam tempor orci eu lobortis elementum. Ut pharetra sit amet aliquam. ",
+            style: TextStyle(
+                height: 2,
+                color: Color(0xFF5E6D77),
+                fontSize: 14,
+                fontWeight: FontWeight.w400),
+          ),
+          SizedBox(height: 15,),
+        ],
+      ),
+    );
+  }
+
+  Padding buildTours(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children:  [
+          Text(
+            "Tours",
+            style: TextStyle(
+                color: Color(0xFF1A2B47),
+                fontSize: 20,
+                fontWeight: FontWeight.w700),
+          ),
+          SizedBox(height: 15,),
+          Container(
+            width: MediaQuery.of(context).size.width,
+            child: Row(
+              children: [
+                Expanded(
+                  child: Container(
+                    height: 162,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        image: DecorationImage(
+                            image: AssetImage("assets/images/about1.png"),
+                            fit: BoxFit.cover
+                        )
+                    ),
+                  ),
+                ),
+                SizedBox(width: 10,),
+                Expanded(
+                  flex: 2,
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 75,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            image: DecorationImage(
+                                image: AssetImage("assets/images/about2.png"),
+                                fit: BoxFit.cover
+                            )
+                        ),
+                      ),
+                      SizedBox(height: 10,),
+                      Container(
+                        height: 75,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            image: DecorationImage(
+                                image: AssetImage("assets/images/about3.png"),
+                                fit: BoxFit.cover
+                            )
+                        ),
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            ),
+          ),
+          SizedBox(height: 15,),
+          Text(
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Libero nunc consequat interdum varius sit. Nisl rhoncus mattis rhoncus urna neque viverra justo nec. Mauris pellentesque pulvinar pellentesque habitant morbi tristique. Amet tellus cras adipiscing enim eu turpis egestas. Vel elit scelerisque mauris pellentesque pulvinar pellentesque. Metus vulputate eu scelerisque felis imperdiet. Justo donec enim diam vulputate ut pharetra sit amet. Facilisis magna etiam tempor orci eu lobortis elementum. Ut pharetra sit amet aliquam. ",
+            style: TextStyle(
+                height: 2,
+                color: Color(0xFF5E6D77),
+                fontSize: 14,
+                fontWeight: FontWeight.w400),
+          ),
+          SizedBox(height: 15,),
+        ],
+      ),
+    );
+  }
+
+  Padding buildFlights(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children:  [
+          Text(
+            "Flights",
+            style: TextStyle(
+                color: Color(0xFF1A2B47),
+                fontSize: 20,
+                fontWeight: FontWeight.w700),
+          ),
+          SizedBox(height: 15,),
+          Container(
+            width: MediaQuery.of(context).size.width,
+            child: Row(
+              children: [
+                Expanded(
+                  child: Container(
+                    height: 162,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        image: DecorationImage(
+                            image: AssetImage("assets/images/about1.png"),
+                            fit: BoxFit.cover
+                        )
+                    ),
+                  ),
+                ),
+                SizedBox(width: 10,),
+                Expanded(
+                  flex: 2,
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 75,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            image: DecorationImage(
+                                image: AssetImage("assets/images/about2.png"),
+                                fit: BoxFit.cover
+                            )
+                        ),
+                      ),
+                      SizedBox(height: 10,),
+                      Container(
+                        height: 75,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            image: DecorationImage(
+                                image: AssetImage("assets/images/about3.png"),
+                                fit: BoxFit.cover
+                            )
+                        ),
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            ),
+          ),
+          SizedBox(height: 15,),
+          Text(
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Libero nunc consequat interdum varius sit. Nisl rhoncus mattis rhoncus urna neque viverra justo nec. Mauris pellentesque pulvinar pellentesque habitant morbi tristique. Amet tellus cras adipiscing enim eu turpis egestas. Vel elit scelerisque mauris pellentesque pulvinar pellentesque. Metus vulputate eu scelerisque felis imperdiet. Justo donec enim diam vulputate ut pharetra sit amet. Facilisis magna etiam tempor orci eu lobortis elementum. Ut pharetra sit amet aliquam. ",
+            style: TextStyle(
+                height: 2,
+                color: Color(0xFF5E6D77),
+                fontSize: 14,
+                fontWeight: FontWeight.w400),
+          ),
+          SizedBox(height: 15,),
+        ],
+      ),
+    );
+  }
+
+  Padding buildMission(BuildContext context) {
+    return Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children:  [
+                  Text(
+                    "Our mission",
+                    style: TextStyle(
+                        color: Color(0xFF1A2B47),
+                        fontSize: 20,
+                        fontWeight: FontWeight.w700),
+                  ),
+                  SizedBox(height: 15,),
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: MediaQuery.of(context).size.height / 5,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      image: DecorationImage(
+                        image: AssetImage("assets/images/about-image.png"),
+                        fit: BoxFit.cover
+                      )
+                    ),
+                  ),
+                  SizedBox(height: 15,),
+                  Text(
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Libero nunc consequat interdum varius sit. Nisl rhoncus mattis rhoncus urna neque viverra justo nec. Mauris pellentesque pulvinar pellentesque habitant morbi tristique. Amet tellus cras adipiscing enim eu turpis egestas. Vel elit scelerisque mauris pellentesque pulvinar pellentesque. Metus vulputate eu scelerisque felis imperdiet. Justo donec enim diam vulputate ut pharetra sit amet. Facilisis magna etiam tempor orci eu lobortis elementum. Ut pharetra sit amet aliquam. ",
+                    style: TextStyle(
+                      height: 2,
+                        color: Color(0xFF5E6D77),
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400),
+                  ),
+                  SizedBox(height: 15,),
+                ],
+              ),
+            );
+  }
+
+  Container buildFollow(BuildContext context) {
+    return Container(
+      height: 300,
+      alignment: Alignment.center,
+      decoration: BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage("assets/images/bottomInst.png"),
+              fit: BoxFit.cover)),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          ClipRRect(
+            child: BackdropFilter(
+              filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    color: Colors.white.withOpacity(0.8)),
+                child: Column(
+                  children: [
+                    Image.asset("assets/images/instagramm.png"),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Text(
+                      "@bilatontravel",
+                      style: TextStyle(
+                          color: UtilColor.getColorFromHex("5E6D77"),
+                          fontSize: 12,
+                          fontWeight: FontWeight.w400),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Container(
+                      height: 33,
+                      width: MediaQuery.of(context).size.width / 3,
+                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      decoration: BoxDecoration(
+                          color: UtilColor.getColorFromHex("FA5636"),
+                          borderRadius: BorderRadius.circular(15)),
+                      child: Center(
+                        child: Text(
+                          "Follow",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w600),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+}

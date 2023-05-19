@@ -3,6 +3,7 @@ import 'dart:ui';
 
 import 'package:bron_hotel/pages/settings/notifications-page.dart';
 import 'package:bron_hotel/pages/auth/login-and-register-page.dart';
+import 'package:bron_hotel/pages/tours/tours-screen.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -148,7 +149,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
                   currentIndexTabBar == 1
-                      ? Container() :
+                      ? ToursScreen() :
                   currentIndexTabBar == 2
                       ? FlightScreen()
                 : buildMain(context),

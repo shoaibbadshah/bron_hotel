@@ -1,3 +1,4 @@
+import 'package:bron_hotel/pages/about/support-page.dart';
 import 'package:expandable/expandable.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -479,6 +480,11 @@ class _VendorPageState extends State<VendorPage> {
             ),
           ),
           ListTile(
+            onTap: (){
+              setState(() {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => SupportPage()));
+              });
+            },
             contentPadding: EdgeInsets.zero,
             title: Column(
               children: [

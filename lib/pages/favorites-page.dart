@@ -2,6 +2,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../home.dart';
+
 class FavoritesPage extends StatefulWidget {
   const FavoritesPage({Key? key}) : super(key: key);
 
@@ -23,7 +25,7 @@ class _FavoritesPageState extends State<FavoritesPage> {
         leading: IconButton(
           onPressed: (){
             setState(() {
-
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const Home()));
             });
           },
           icon: Icon(Icons.arrow_back_ios, color: Color(0xFF1A2B47),),

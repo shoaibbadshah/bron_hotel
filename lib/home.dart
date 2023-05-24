@@ -1,7 +1,7 @@
 import 'package:bron_hotel/pages/favorites-page.dart';
 import 'package:bron_hotel/pages/home-page.dart';
 import 'package:bron_hotel/pages/settings/admin-page.dart';
-import 'package:bron_hotel/pages/settings/vendor-page.dart';
+import 'package:bron_hotel/pages/settings/vendor-setting-page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

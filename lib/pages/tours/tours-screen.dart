@@ -1,3 +1,4 @@
+import 'package:bron_hotel/pages/tours/tours-page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -199,7 +200,7 @@ class _ToursScreenState extends State<ToursScreen> {
                       borderRadius: BorderRadius.circular(30))),
               onPressed: () {
                 setState(() {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => TicketsPage()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => ToursPage()));
                 });
               },
               child: const Text(
@@ -311,7 +312,7 @@ class _ToursScreenState extends State<ToursScreen> {
           Container(
             height: MediaQuery.of(context).size.height / 2.5,
             child: PageView.builder(
-                controller: PageController(viewportFraction: 0.7),
+                controller: PageController(viewportFraction: 0.7, initialPage: 2),
                 itemCount: 5,
                 itemBuilder: (context, position) {
                   return Container(
@@ -426,7 +427,7 @@ class _ToursScreenState extends State<ToursScreen> {
           Container(
             height: MediaQuery.of(context).size.height / 2.5,
             child: PageView.builder(
-                controller: PageController(viewportFraction: 0.7),
+                controller: PageController(viewportFraction: 0.7, initialPage: 2),
                 itemCount: 5,
                 itemBuilder: (context, position) {
                   return Container(
@@ -541,7 +542,7 @@ class _ToursScreenState extends State<ToursScreen> {
           Container(
             height: MediaQuery.of(context).size.height / 2.5,
             child: PageView.builder(
-                controller: PageController(viewportFraction: 0.7),
+                controller: PageController(viewportFraction: 0.7, initialPage: 2),
                 itemCount: 5,
                 itemBuilder: (context, position) {
                   return Container(
@@ -656,7 +657,7 @@ class _ToursScreenState extends State<ToursScreen> {
           Container(
             height: MediaQuery.of(context).size.height / 2.5,
             child: PageView.builder(
-                controller: PageController(viewportFraction: 0.9),
+                controller: PageController(viewportFraction: 0.9, initialPage: 2),
                 itemCount: 5,
                 itemBuilder: (context, position) {
                   return Container(

@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../utils/color.dart';
+import '../../widgets/follow-screen.dart';
 
 class HistoryOfBookingPage extends StatefulWidget {
   const HistoryOfBookingPage({Key? key}) : super(key: key);
@@ -327,7 +328,8 @@ class _HistoryOfBookingPageState extends State<HistoryOfBookingPage> {
               ],
             ),
             SizedBox(height: 20,),
-            buildFollow(context)
+            FollowScreen(),
+            SizedBox(height: 20,)
           ],
         ),
       ),

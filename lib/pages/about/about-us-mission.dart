@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 import '../../utils/color.dart';
+import '../../widgets/follow-screen.dart';
 
 class AboutUsMission extends StatefulWidget {
   const AboutUsMission({Key? key}) : super(key: key);
@@ -281,8 +282,7 @@ class _AboutUsMissionState extends State<AboutUsMission> {
               ),
             ),
             SizedBox(height: 20,),
-
-            buildFollow(context),
+            FollowScreen(),
             SizedBox(height: 20,)
           ],
         ),
@@ -559,68 +559,6 @@ class _AboutUsMissionState extends State<AboutUsMission> {
                 ],
               ),
             );
-  }
-
-  Container buildFollow(BuildContext context) {
-    return Container(
-      height: 300,
-      alignment: Alignment.center,
-      decoration: BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage("assets/images/bottomInst.png"),
-              fit: BoxFit.cover)),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          ClipRRect(
-            child: BackdropFilter(
-              filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-              child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                    color: Colors.white.withOpacity(0.8)),
-                child: Column(
-                  children: [
-                    Image.asset("assets/images/instagramm.png"),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Text(
-                      "@bilatontravel",
-                      style: TextStyle(
-                          color: UtilColor.getColorFromHex("5E6D77"),
-                          fontSize: 12,
-                          fontWeight: FontWeight.w400),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Container(
-                      height: 33,
-                      width: MediaQuery.of(context).size.width / 3,
-                      padding: EdgeInsets.symmetric(horizontal: 20),
-                      decoration: BoxDecoration(
-                          color: UtilColor.getColorFromHex("FA5636"),
-                          borderRadius: BorderRadius.circular(15)),
-                      child: Center(
-                        child: Text(
-                          "Follow",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 14,
-                              fontWeight: FontWeight.w600),
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
   }
 
 }

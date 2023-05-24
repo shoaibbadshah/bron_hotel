@@ -1,4 +1,5 @@
 import 'package:bron_hotel/pages/about/contact-us-page.dart';
+import 'package:bron_hotel/pages/blog/blog-start-page.dart';
 import 'package:bron_hotel/pages/settings/wallet-page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -33,13 +34,20 @@ class _CustomerPageState extends State<CustomerPage> {
             ),
             title: Text("Светлана Исаева", style: TextStyle(color: Color(0xFF1A2B47), fontSize: 16, fontWeight: FontWeight.w600),),
             subtitle: Text("SvetaIsaeva89@mail.ru", style: TextStyle(color: Color(0xFF005BFE), fontSize: 12, fontWeight: FontWeight.w400),),
-            trailing: Container(
-              padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
-              decoration: BoxDecoration(
-                color: Color(0xFf005BFE),
-                borderRadius: BorderRadius.circular(20)
+            trailing: GestureDetector(
+              onTap: (){
+                setState(() {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => BlogStartPage()));
+                });
+              },
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+                decoration: BoxDecoration(
+                  color: Color(0xFf005BFE),
+                  borderRadius: BorderRadius.circular(20)
+                ),
+                child: Text("Customer", style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w400),),
               ),
-              child: Text("Customer", style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w400),),
             ),
           ),
           SizedBox(height: 20,),

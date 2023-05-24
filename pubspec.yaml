@@ -43,6 +43,8 @@ dependencies:
   carousel_slider: ^4.2.1
   gradient_borders: ^1.0.0
   device_preview: ^1.1.0
+  dotted_border: ^2.0.0+3
+
 
 dev_dependencies:
   flutter_test:

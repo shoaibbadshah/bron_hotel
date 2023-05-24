@@ -1,18 +1,20 @@
 import 'package:bron_hotel/pages/about/support-page.dart';
+import 'package:bron_hotel/pages/blog/blog-page.dart';
+import 'package:bron_hotel/pages/vendor/vendor-start-page.dart';
 import 'package:expandable/expandable.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class VendorPage extends StatefulWidget {
-  const VendorPage({Key? key}) : super(key: key);
+class VendorSettingPage extends StatefulWidget {
+  const VendorSettingPage({Key? key}) : super(key: key);
 
   @override
-  State<VendorPage> createState() => _VendorPageState();
+  State<VendorSettingPage> createState() => _VendorSettingPageState();
 }
 
-class _VendorPageState extends State<VendorPage> {
+class _VendorSettingPageState extends State<VendorSettingPage> {
   bool isExpanded = false;
-
+  ExpandableController expandableController = ExpandableController();
   List<String> headerName = [
     "Управление отелем",
     "Управление туром",
@@ -21,7 +23,15 @@ class _VendorPageState extends State<VendorPage> {
     "Управление лодкой",
     "Управление событием",
   ];
+  @override
+  void initState() {
+    super.initState();
+    expandableController.addListener(() {
+      setState(() {
+      });
+    });
 
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,17 +70,24 @@ class _VendorPageState extends State<VendorPage> {
                   fontSize: 12,
                   fontWeight: FontWeight.w400),
             ),
-            trailing: Container(
-              padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
-              decoration: BoxDecoration(
-                  color: Color(0xFf005BFE),
-                  borderRadius: BorderRadius.circular(20)),
-              child: Text(
-                "Vendor",
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400),
+            trailing: GestureDetector(
+              onTap: (){
+                setState(() {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => VendorStartPage()));
+                });
+              },
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+                decoration: BoxDecoration(
+                    color: Color(0xFf005BFE),
+                    borderRadius: BorderRadius.circular(20)),
+                child: Text(
+                  "Vendor",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400),
+                ),
               ),
             ),
           ),
@@ -147,6 +164,11 @@ class _VendorPageState extends State<VendorPage> {
             ),
           ),
           ListTile(
+            onTap: (){
+              setState(() {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => BlogPage()));
+              });
+            },
             contentPadding: EdgeInsets.zero,
             title: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -257,43 +279,67 @@ class _VendorPageState extends State<VendorPage> {
                     Expanded(
                       child: ExpandableTheme(
                         data: ExpandableThemeData(
-                            iconColor: Colors.blue,
-                            iconPadding: EdgeInsets.symmetric(horizontal: 20)
+                            headerAlignment: ExpandablePanelHeaderAlignment.center,
+                            iconColor: Colors.white,
+                            iconPadding: EdgeInsets.only(right: 10),
+                            iconSize: 30,
+                            hasIcon: false
                         ),
                         child: ExpandablePanel(
-                          header: Text(
-                            "Управление",
-                            style: TextStyle(
-                                color: Color(0xFF1A2B47),
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500),
+                          controller: expandableController,
+                          header: Padding(
+                            padding: const EdgeInsets.only(right: 8.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                Expanded(
+                                  child: Text(
+                                    "Управление",
+                                    style: TextStyle(
+                                        color: Color(0xFF1A2B47),
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w500),
+                                  ),
+                                ),
+                                expandableController.expanded
+                                    ? Icon(Icons.arrow_drop_up, color: Color(0xFFD80027),)
+                                    : Icon(Icons.arrow_drop_down, color: Color(0xFF005BFE),)
+                              ],
+                            ),
                           ),
                           collapsed: Container(),
                           expanded: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
-                              for (var index in Iterable.generate(5))
-                                ListTile(
-                                  contentPadding: EdgeInsets.zero,
-                                  title: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
+                              Divider(
+                                color: Color(0xFFE2E2E2),
+                              ),
+                              for (var index in Iterable.generate(headerName.length))
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    SizedBox(height: 10,),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                      child: Text(
                                         "${headerName[index]}",
                                         style: TextStyle(
                                             color: Color(0xFF1A2B47),
                                             fontSize: 16,
                                             fontWeight: FontWeight.w500),
                                       ),
-                                      SizedBox(
-                                        height: 5,
-                                      ),
-                                      Divider(
-                                        color: Color(0xFFE2E2E2),
-                                      )
-                                    ],
-                                  ),
-                                ),
+                                    ),
+                                    SizedBox(
+                                      height: 5,
+                                    ),
+                                    index == headerName.length - 1
+                                        ? Container()
+                                        : Divider(
+                                      color: Color(0xFFE2E2E2),
+                                    )
+                                  ],
+                                )
                             ],
                           ),
                           builder: (_, collapsed, expanded) {

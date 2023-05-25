@@ -5,17 +5,18 @@ import 'package:bron_hotel/widgets/expandable-text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../utils/color.dart';
+
 import '../../widgets/follow-screen.dart';
 
-class BlogPage extends StatefulWidget {
-  const BlogPage({Key? key}) : super(key: key);
+class BilatonBlogPage extends StatefulWidget {
+  const BilatonBlogPage({Key? key}) : super(key: key);
 
   @override
-  State<BlogPage> createState() => _BlogPageState();
+  State<BilatonBlogPage> createState() => _BilatonBlogPageState();
 }
 
-class _BlogPageState extends State<BlogPage> {
+class _BilatonBlogPageState extends State<BilatonBlogPage> {
+  bool readMore = false;
   ScrollController controllerListView = ScrollController();
   @override
   Widget build(BuildContext context) {
@@ -82,13 +83,31 @@ class _BlogPageState extends State<BlogPage> {
                               child: Column(
                                 children: [
                                   Row(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
                                       Image.asset("assets/images/blog-images1.png"),
                                       SizedBox(width: 10,),
                                       Expanded(
-                                        child: ExpandableText(
-                                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis ",
-                                          trimLines: 5,
+                                        child: Column(
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            buildText("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis ",),
+                                            TextButton(
+                                                onPressed: (){
+                                                  setState(() {
+                                                    readMore = !readMore;
+                                                  });
+                                                },
+                                                child: Text(
+                                                  "Learn more",
+                                                  style: TextStyle(
+                                                    decoration: TextDecoration.underline,
+                                                      color: !readMore ?  Color(0xFF005BFE) : Color(0xFFFA5636),
+                                                      fontSize: 15,
+                                                      fontWeight: FontWeight.w500),
+                                                )
+                                            )
+                                          ],
                                         ),
                                       )
                                     ],
@@ -209,5 +228,17 @@ class _BlogPageState extends State<BlogPage> {
       ),
     );
   }
-
+  Text buildText(String text) {
+    final lines = readMore ? null : 5;
+    return Text(
+      text,
+      maxLines: lines,
+      style: TextStyle(
+        color: Color(0xFF1A2B47),
+        fontSize: 12,
+        fontWeight: FontWeight.w400,
+        overflow: readMore ? TextOverflow.visible: TextOverflow.ellipsis,
+      ),
+    );
+  }
 }

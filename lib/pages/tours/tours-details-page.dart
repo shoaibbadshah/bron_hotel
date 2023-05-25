@@ -21,217 +21,269 @@ class _ToursDetailsPageState extends State<ToursDetailsPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+    return Scaffold(
+      appBar: AppBar(
+        toolbarHeight: 100,
+        automaticallyImplyLeading: false,
+        leading: IconButton(
+          onPressed: (){
+            setState(() {
+              Navigator.pop(context);
+            });
+          },
+          icon: Icon(Icons.arrow_back_ios, color: Colors.white,),
+        ),
+        backgroundColor: Color(0xFF1A2B47),
+        centerTitle: true,
+        title: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              "Мальдивы",
+              style: TextStyle(
+                color: Color(0xFFF1F4FB),
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            SizedBox(height: 10,),
+            Text(
+              "23 - 30 июля , 1 чел.",
+              style: TextStyle(
+                color: Color(0xFFA0AFCC),
+                fontSize: 14,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          ],
+        ),
+        actions: [
+          IconButton(
+              onPressed: (){
+                setState(() {
+                  //Navigator.push(context, MaterialPageRoute(builder: (context) => TicketsFilterPage()));
+                });
+              },
+              icon: Image.asset("assets/icons/filters.png")
+          )
+        ],
+      ),
+      body: ListView(
+        padding: EdgeInsets.symmetric(vertical: 20),
         children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Expanded(
-                  child: Text(
-                    "Туры в Beach Spa Resort (Adults Only 18+)",
-                    style: TextStyle(
-                        color: Color(0xFF1A2B47).withOpacity(0.85),
-                        fontWeight: FontWeight.w500,
-                        fontSize: 16
-                    ),
-                  ),
-                ),
-                Expanded(
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
-                        "4,97",
-                        style: TextStyle(
-                            color: Color(0xFFFA5636),
-                            fontWeight: FontWeight.w700,
-                            fontSize: 14
+                      Expanded(
+                        child: Text(
+                          "Туры в Beach Spa Resort (Adults Only 18+)",
+                          style: TextStyle(
+                              color: Color(0xFF1A2B47).withOpacity(0.85),
+                              fontWeight: FontWeight.w500,
+                              fontSize: 16
+                          ),
                         ),
                       ),
-                      SizedBox(width: 3,),
-                      Icon(Icons.star, color: Color(0xFFFA5636), size: 18,)
+                      Expanded(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Text(
+                              "4,97",
+                              style: TextStyle(
+                                  color: Color(0xFFFA5636),
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 14
+                              ),
+                            ),
+                            SizedBox(width: 3,),
+                            Icon(Icons.star, color: Color(0xFFFA5636), size: 18,)
+                          ],
+                        ),
+                      )
                     ],
                   ),
-                )
-              ],
-            ),
-          ),
-          SizedBox(height: 10,),
-          Padding(
-            padding: const EdgeInsets.only(left: 20.0, right: 30),
-            child: Text(
-              "Сенсационный яркий и легкий дом отдыха с видом на кикладскую архитектуру и беспрепятственным видом на Эгейское море рядом с деревней Лутра.Дом вдали от дома на нетронутом острове Китнос.",
-              textAlign: TextAlign.justify,
-              style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.w500,
-                  fontSize: 12
-              ),
-            ),
-          ),
-          SizedBox(height: 15,),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
-            child: Text(
-              "Собственный пляж , Клубный отель,\nСПА Центр , Отель для взрослых",
-              style: TextStyle(
-                  color: Color(0xFF5F90F3),
-                  fontWeight: FontWeight.w500,
-                  fontSize: 14
-              ),
-            ),
-          ),
-          SizedBox(height: 20,),
-          Container(
-            height: 171,
-            width: double.infinity,
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage("assets/images/tours-image.png"),
-                    fit: BoxFit.cover
-                )
-            ),
-            child: Stack(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Container(
-                      height: 30,
-                      width: 30,
-                      padding: EdgeInsets.all(8),
-                      decoration: BoxDecoration(
-                          color: Color(0xFFFA5636),
-                          shape: BoxShape.circle
-                      ),
-                      child: Center(
-                        child: Text("7,4", style: TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.w500),),
-                      ),
-                    ),
-                    Container(
-                      height: 30,
-                      width: 30,
-                      padding: EdgeInsets.all(8),
-                      decoration: BoxDecoration(
-                          color: Color(0xFF005BFE),
-                          shape: BoxShape.circle
-                      ),
-                      child: Center(
-                        child: Text("%", style: TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.w500),),
-                      ),
-                    ),
-                  ],
                 ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Expanded(
-                          child: Text(
-                            " Beach Spa Resort",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.w500,
-                                fontSize: 18
+                SizedBox(height: 10,),
+                Padding(
+                  padding: const EdgeInsets.only(left: 20.0, right: 30),
+                  child: Text(
+                    "Сенсационный яркий и легкий дом отдыха с видом на кикладскую архитектуру и беспрепятственным видом на Эгейское море рядом с деревней Лутра.Дом вдали от дома на нетронутом острове Китнос.",
+                    textAlign: TextAlign.justify,
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 12
+                    ),
+                  ),
+                ),
+                SizedBox(height: 15,),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  child: Text(
+                    "Собственный пляж , Клубный отель,\nСПА Центр , Отель для взрослых",
+                    style: TextStyle(
+                        color: Color(0xFF5F90F3),
+                        fontWeight: FontWeight.w500,
+                        fontSize: 14
+                    ),
+                  ),
+                ),
+                SizedBox(height: 20,),
+                Container(
+                  height: 171,
+                  width: double.infinity,
+                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                  decoration: BoxDecoration(
+                      image: DecorationImage(
+                          image: AssetImage("assets/images/tours-image.png"),
+                          fit: BoxFit.cover
+                      )
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Container(
+                            height: 35,
+                            width: 35,
+                            decoration: BoxDecoration(
+                                color: Color(0xFFFA5636),
+                                shape: BoxShape.circle
+                            ),
+                            child: Center(
+                              child: Text("7,4", style: TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.w500),),
                             ),
                           ),
-                        ),
-                        Expanded(
-                          child: Row(
+                          Container(
+                            height: 35,
+                            width: 35,
+                            decoration: BoxDecoration(
+                                color: Color(0xFF005BFE),
+                                shape: BoxShape.circle
+                            ),
+                            child: Center(
+                              child: Text("%", style: TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.w500),),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
-                                "4,97",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 18
+                              Expanded(
+                                child: Text(
+                                  "Beach Spa Resort",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 18
+                                  ),
                                 ),
                               ),
-                              Icon(Icons.star, color: Colors.white,)
+                              Expanded(
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      "4,97",
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 18
+                                      ),
+                                    ),
+                                    Icon(Icons.star, color: Colors.white,)
+                                  ],
+                                ),
+                              ),
                             ],
                           ),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Icon(Icons.location_on, color: Color(0xFFACB5BE),),
-                        Text(
-                          "Мальдивы",
-                          style: TextStyle(
-                              color: Color(0xFFACB5BE),
-                              fontWeight: FontWeight.w400,
-                              fontSize: 12
-                          ),
-                        ),
-                      ],
-                    )
-                  ],
+                          Row(
+                            children: [
+                              Icon(Icons.location_on, color: Color(0xFFACB5BE),),
+                              Text(
+                                "Мальдивы",
+                                style: TextStyle(
+                                    color: Color(0xFFACB5BE),
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 12
+                                ),
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
+                SizedBox(height: 10,),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          Icon(Icons.favorite_outline, color: Color(0xFF5E6D77)),
+                          Text(
+                            "Save ",
+                            style: TextStyle(
+                                color: Color(0xFF5E6D77),
+                                fontWeight: FontWeight.w500,
+                                fontSize: 14
+                            ),
+                          )
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Image.asset("assets/icons/shares.png"),
+                          SizedBox(width: 5,),
+                          Text(
+                            "Share",
+                            style: TextStyle(
+                                color: Color(0xFF5E6D77),
+                                fontWeight: FontWeight.w500,
+                                fontSize: 14
+                            ),
+                          )
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Image.asset("assets/icons/pencil-edit.png",color: Color(0xFF5E6D77)),
+                          Text(
+                            " Review",
+                            style: TextStyle(
+                                color: Color(0xFF5E6D77),
+                                fontWeight: FontWeight.w500,
+                                fontSize: 14
+                            ),
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: 20,),
+                buildDescription(context),
               ],
             ),
-          ),
-          SizedBox(height: 10,),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  children: [
-                    Icon(Icons.favorite_outline, color: Color(0xFF5E6D77)),
-                    Text(
-                      "Save ",
-                      style: TextStyle(
-                          color: Color(0xFF5E6D77),
-                          fontWeight: FontWeight.w500,
-                          fontSize: 14
-                      ),
-                    )
-                  ],
-                ),
-                Row(
-                  children: [
-                    Image.asset("assets/icons/shares.png"),
-                    SizedBox(width: 5,),
-                    Text(
-                      "Share",
-                      style: TextStyle(
-                          color: Color(0xFF5E6D77),
-                          fontWeight: FontWeight.w500,
-                          fontSize: 14
-                      ),
-                    )
-                  ],
-                ),
-                Row(
-                  children: [
-                    Image.asset("assets/icons/pencil-edit.png",color: Color(0xFF5E6D77)),
-                    Text(
-                      " Review",
-                      style: TextStyle(
-                          color: Color(0xFF5E6D77),
-                          fontWeight: FontWeight.w500,
-                          fontSize: 14
-                      ),
-                    )
-                  ],
-                ),
-              ],
-            ),
-          ),
-          SizedBox(height: 20,),
-          buildDescription(context),
         ],
-      );
+      ),
+    );
   }
 
   Column buildDescription(BuildContext context) {

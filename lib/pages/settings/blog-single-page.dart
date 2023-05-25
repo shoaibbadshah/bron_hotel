@@ -229,68 +229,74 @@ class _BlogSinglePageState extends State<BlogSinglePage> {
             child: Column(
               children: [
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          height: 40,
-                          width: 40,
-                          decoration: BoxDecoration(
-                              color: Color(0xFF3E68AD),
-                              shape: BoxShape.circle
-                          ),
-                          child: Center(
-                            child: Text("K", style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.w400),),
-                          ),
-                        ),
-                        SizedBox(width: 10,),
-                        Text("Kostya X", style: TextStyle(color: Color(0xFF1A2B47), fontSize: 14, fontWeight: FontWeight.w600),),
-                      ],
-                    ),
-                    Text("3 years ago", style: TextStyle(color: Color(0xFFC4C4C4), fontSize: 10, fontWeight: FontWeight.w400),)
-                  ],
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 50),
-                  child: Column(
-                    children: [
-                      Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. ",
-                        style: TextStyle(
-                          height: 1.78,
-                            color: Color(0xFF1A2B47),
-                            fontSize: 12, fontWeight: FontWeight.w400),
+                    Container(
+                      height: 40,
+                      width: 40,
+                      decoration: BoxDecoration(
+                          color: Color(0xFF3E68AD),
+                          shape: BoxShape.circle
                       ),
-                      SizedBox(height: 10,),
-                      Row(
+                      child: Center(
+                        child: Text("K", style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.w400),),
+                      ),
+                    ),
+                    SizedBox(width: 10,),
+                    Expanded(
+                      child: Column(
                         children: [
-                          Image.asset("assets/icons/likes.png"),
-                          SizedBox(width: 10,),
-                          Text(
-                            "Likes 12",
-                            style: TextStyle(
-                                color: Color(0xFF5E6D77),
-                                fontSize: 14,
-                                fontWeight: FontWeight.w400
-                            ),
+                          SizedBox(height: 5,),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text("Kostya X", style: TextStyle(color: Color(0xFF1A2B47), fontSize: 14, fontWeight: FontWeight.w600),),
+                              Text("3 years ago", style: TextStyle(color: Color(0xFFC4C4C4), fontSize: 10, fontWeight: FontWeight.w400),)
+                            ],
                           ),
-                          SizedBox(width: 40,),
+                          SizedBox(height: 5,),
+                          Column(
+                            children: [
+                              Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. ",
+                                style: TextStyle(
+                                    height: 1.78,
+                                    color: Color(0xFF1A2B47),
+                                    fontSize: 12, fontWeight: FontWeight.w400),
+                              ),
+                              SizedBox(height: 10,),
+                              Row(
+                                children: [
+                                  Image.asset("assets/icons/likes.png"),
+                                  SizedBox(width: 10,),
+                                  Text(
+                                    "Likes 12",
+                                    style: TextStyle(
+                                        color: Color(0xFF5E6D77),
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w400
+                                    ),
+                                  ),
+                                  SizedBox(width: 40,),
 
-                          Text(
-                            "Reply",
-                            style: TextStyle(
-                                color: Color(0xFF5E6D77),
-                                fontSize: 14,
-                                fontWeight: FontWeight.w400
-                            ),
-                          ),
+                                  Text(
+                                    "Reply",
+                                    style: TextStyle(
+                                        color: Color(0xFF5E6D77),
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w400
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          )
+
                         ],
                       ),
-                    ],
-                  ),
-                )
+                    ),
+                    
+                  ],
+                ),
               ],
             ),
           ),

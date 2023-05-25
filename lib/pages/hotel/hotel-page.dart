@@ -601,23 +601,22 @@ class _HotelPageState extends State<HotelPage> {
       itemBuilder: (context, index) {
         return Row(
           children: [
-            Stack(
-              alignment: Alignment.center,
-              children: [
-                Container(
-                  width: 165,
-                  decoration: const BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage('assets/images/newParis.png'),
-                      fit: BoxFit.cover,
-                    ),
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(30),
-                    ),
-                  ),
+            Container(
+              width: MediaQuery.of(context).size.width / 2.3,
+              padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/images/newParis.png'),
+                  fit: BoxFit.cover,
                 ),
-                Center(
-                  child: Text(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(30),
+                ),
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text(
                     'Paris',
                     style: TextStyle(
                         color: Colors.white,
@@ -625,11 +624,8 @@ class _HotelPageState extends State<HotelPage> {
                         fontWeight: FontWeight.w400,
                         fontFamily: "Rancho"),
                   ),
-                ),
-                Positioned(
-                  bottom: 20,
-                  left: 20,
-                  child: ClipRRect(
+                  SizedBox(height: 40,),
+                  ClipRRect(
                     borderRadius: BorderRadius.circular(30),
                     child: BackdropFilter(
                       filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
@@ -641,44 +637,50 @@ class _HotelPageState extends State<HotelPage> {
                             borderRadius: BorderRadius.circular(30)),
                         child: Row(
                           children: [
-                            Text(
-                              " 7 spaces ",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 8,
-                                  fontWeight: FontWeight.w400),
+                            Expanded(
+                              child: Text(
+                                " 7 spaces ",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 8,
+                                    fontWeight: FontWeight.w400),
+                              ),
                             ),
                             Icon(
                               Icons.circle,
                               size: 3,
                               color: Colors.white,
                             ),
-                            Text(
-                              " 7 Hotels ",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 8,
-                                  fontWeight: FontWeight.w400),
+                            Expanded(
+                              child: Text(
+                                " 7 Hotels ",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 8,
+                                    fontWeight: FontWeight.w400),
+                              ),
                             ),
                             Icon(
                               Icons.circle,
                               size: 3,
                               color: Colors.white,
                             ),
-                            Text(
-                              " 7 Tourss ",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 8,
-                                  fontWeight: FontWeight.w400),
+                            Expanded(
+                              child: Text(
+                                " 7 Tourss ",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 8,
+                                    fontWeight: FontWeight.w400),
+                              ),
                             ),
                           ],
                         ),
                       ),
                     ),
-                  ),
-                )
-              ],
+                  )
+                ],
+              ),
             ),
             SizedBox(width: 10)
           ],

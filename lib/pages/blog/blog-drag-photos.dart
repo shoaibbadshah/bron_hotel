@@ -13,7 +13,7 @@ class _BlogDragPhotosState extends State<BlogDragPhotos> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
+      body: ListView(
         children: [
           Container(
             width: MediaQuery.of(context).size.width,
@@ -139,7 +139,8 @@ class _BlogDragPhotosState extends State<BlogDragPhotos> {
                 ),
               ),
             ),
-          )
+          ),
+          SizedBox(height: 200,),
         ],
       ),
     );

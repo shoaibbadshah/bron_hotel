@@ -248,7 +248,7 @@ class _BlogDragUploadState extends State<BlogDragUpload> {
               ),
             ),
           ),
-          SizedBox(height: 20,),
+          SizedBox(height: 200,),
         ],
       ),
     );

@@ -447,8 +447,10 @@ class _AdditionalServicesPageState extends State<AdditionalServicesPage> {
                 ),
                 SizedBox(height: 10,),
                 Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Expanded(
+                      flex:2,
                       child: Text(
                         "Вам будет начислен кэшбек",
                         style: TextStyle(

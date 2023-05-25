@@ -1,7 +1,7 @@
 import 'package:bron_hotel/pages/about/about-us-mission.dart';
 import 'package:bron_hotel/pages/about/support-page.dart';
 import 'package:bron_hotel/pages/settings/%D1%81ustomer-page.dart';
-import 'package:bron_hotel/pages/settings/blog-page.dart';
+import 'package:bron_hotel/pages/settings/bilaton-blog-page.dart';
 import 'package:bron_hotel/pages/settings/currency-page.dart';
 import 'package:bron_hotel/pages/settings/history-of-booking-page.dart';
 import 'package:bron_hotel/pages/settings/profile-page.dart';
@@ -156,7 +156,7 @@ class _AdminPageState extends State<AdminPage> {
           ListTile(
             onTap: (){
               setState(() {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogPage()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const BilatonBlogPage()));
               });
             },
             contentPadding: EdgeInsets.zero,

@@ -2,7 +2,6 @@ import 'dart:ui';
 
 
 import 'package:bron_hotel/pages/hotel/hotel-page.dart';
-import 'package:bron_hotel/pages/settings/notifications-page.dart';
 import 'package:bron_hotel/pages/auth/login-and-register-page.dart';
 import 'package:bron_hotel/pages/tours/tours-screen.dart';
 import 'package:dots_indicator/dots_indicator.dart';
@@ -12,6 +11,7 @@ import 'package:flutter/material.dart';
 import '../utils/color.dart';
 import '../widgets/follow-screen.dart';
 import 'flights/flight-screen.dart';
+import 'notifications-page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -51,6 +51,7 @@ class _HomePageState extends State<HomePage> {
           elevation: 0,
           toolbarHeight: 60,
           backgroundColor: Color(0xFFF1F4FB),
+          automaticallyImplyLeading: false,
           title: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [

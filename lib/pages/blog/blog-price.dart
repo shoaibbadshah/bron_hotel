@@ -228,7 +228,8 @@ class _BlogPriceState extends State<BlogPrice> {
                 )
               ],
             ),
-          )
+          ),
+          SizedBox(height: 200,),
         ],
       ),
     );

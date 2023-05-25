@@ -58,7 +58,7 @@ class _ToursDetails1PageState extends State<ToursDetails1Page> {
         Divider(),
         const SizedBox(height: 15,),
         SizedBox(
-          height: 155,
+          height: 160,
           child: Stack(
             alignment: Alignment.bottomCenter,
             children: [
@@ -78,7 +78,7 @@ class _ToursDetails1PageState extends State<ToursDetails1Page> {
                                 });
                               },
                               child: Container(
-                                width: 100,
+                                width: MediaQuery.of(context).size.width / 4.1,
                                 height: 112,
                                 padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                                 decoration: BoxDecoration(
@@ -87,35 +87,38 @@ class _ToursDetails1PageState extends State<ToursDetails1Page> {
                                         fit: BoxFit.fill
                                     ) : null
                                 ),
-                                child: Column(
-                                  children: [
-                                    Text(
-                                      "18 авг, чт",
-                                      style: TextStyle(
-                                          color: selectIndex == index ? Colors.white : Color(0xFF5E6D77),
-                                          fontWeight: FontWeight.w600,
-                                          fontSize: 14
+                                child: Center(
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        "18 авг, чт",
+                                        style: TextStyle(
+                                            color: selectIndex == index ? Colors.white : Color(0xFF5E6D77),
+                                            fontWeight: FontWeight.w600,
+                                            fontSize: 14
+                                        ),
                                       ),
-                                    ),
-                                    SizedBox(height: 10),
-                                    Text(
-                                      "от 2 100\$",
-                                      style: TextStyle(
-                                          color: selectIndex == index ? Colors.white : Color(0xFF5E6D77),
-                                          fontWeight: FontWeight.w400,
-                                          fontSize: 12
+                                      SizedBox(height: 10),
+                                      Text(
+                                        "от 2 100\$",
+                                        style: TextStyle(
+                                            color: selectIndex == index ? Colors.white : Color(0xFF5E6D77),
+                                            fontWeight: FontWeight.w400,
+                                            fontSize: 12
+                                        ),
                                       ),
-                                    ),
-                                    SizedBox(height: 10),
-                                    Text(
-                                      "от 230\$/ночь",
-                                      style: TextStyle(
-                                          color: selectIndex == index ? Colors.white : Color(0xFF5E6D77),
-                                          fontWeight: FontWeight.w400,
-                                          fontSize: 12
+                                      SizedBox(height: 10),
+                                      Text(
+                                        "от 230\$/ночь",
+                                        style: TextStyle(
+                                            color: selectIndex == index ? Colors.white : Color(0xFF5E6D77),
+                                            fontWeight: FontWeight.w400,
+                                            fontSize: 12
+                                        ),
                                       ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
@@ -160,15 +163,15 @@ class _ToursDetails1PageState extends State<ToursDetails1Page> {
                   fit: BoxFit.cover
               )
           ),
-          child: Stack(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Container(
-                    height: 30,
-                    width: 30,
-                    padding: EdgeInsets.all(8),
+                    height: 35,
+                    width: 35,
                     decoration: BoxDecoration(
                         color: Color(0xFFFA5636),
                         shape: BoxShape.circle
@@ -178,9 +181,8 @@ class _ToursDetails1PageState extends State<ToursDetails1Page> {
                     ),
                   ),
                   Container(
-                    height: 30,
-                    width: 30,
-                    padding: EdgeInsets.all(8),
+                    height: 35,
+                    width: 35,
                     decoration: BoxDecoration(
                         color: Color(0xFF005BFE),
                         shape: BoxShape.circle
@@ -200,7 +202,7 @@ class _ToursDetails1PageState extends State<ToursDetails1Page> {
                     children: [
                       Expanded(
                         child: Text(
-                          " Beach Spa Resort",
+                          "Beach Spa Resort",
                           style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.w500,

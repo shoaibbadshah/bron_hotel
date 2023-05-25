@@ -75,7 +75,7 @@ class _BookingPageState extends State<BookingPage> {
                   children: [
                     Expanded(
                       child: Text(
-                        " Beach Spa Resort",
+                        "Beach Spa Resort",
                         style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.w500,

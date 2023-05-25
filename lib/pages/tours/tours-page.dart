@@ -168,97 +168,105 @@ class _ToursPageState extends State<ToursPage> {
                       ),
                     ),
                   ),
-                  Container(
-                    height: 171,
-                    width: double.infinity,
-                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage("assets/images/tours-image.png"),
-                        fit: BoxFit.cover
-                      )
-                    ),
-                    child: Stack(
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Container(
-                              height: 30,
-                              width: 30,
-                              padding: EdgeInsets.all(8),
-                              decoration: BoxDecoration(
-                                color: Color(0xFFFA5636),
-                                shape: BoxShape.circle
+                  GestureDetector(
+                    onTap: (){
+                      setState(() {
+                        setState(() {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => ToursDetailsPage()));
+                        });
+                      });
+                    },
+                    child: Container(
+                      height: 171,
+                      width: double.infinity,
+                      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage("assets/images/tours-image.png"),
+                          fit: BoxFit.cover
+                        )
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              Container(
+                                height: 35,
+                                width: 35,
+                                decoration: BoxDecoration(
+                                  color: Color(0xFFFA5636),
+                                  shape: BoxShape.circle
+                                ),
+                                child: Center(
+                                  child: Text("7,4", style: TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.w500),),
+                                ),
                               ),
-                              child: Center(
-                                child: Text("7,4", style: TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.w500),),
+                              Container(
+                                height: 35,
+                                width: 35,
+                                decoration: BoxDecoration(
+                                  color: Color(0xFF005BFE),
+                                  shape: BoxShape.circle
+                                ),
+                                child: Center(
+                                  child: Text("%", style: TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.w500),),
+                                ),
                               ),
-                            ),
-                            Container(
-                              height: 30,
-                              width: 30,
-                              padding: EdgeInsets.all(8),
-                              decoration: BoxDecoration(
-                                color: Color(0xFF005BFE),
-                                shape: BoxShape.circle
-                              ),
-                              child: Center(
-                                child: Text("%", style: TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.w500),),
-                              ),
-                            ),
-                          ],
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Expanded(
-                                  child: Text(
-                                    " Beach Spa Resort",
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.w500,
-                                        fontSize: 18
+                            ],
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Expanded(
+                                    child: Text(
+                                      "Beach Spa Resort",
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 18
+                                      ),
                                     ),
                                   ),
-                                ),
-                                Expanded(
-                                  child: Row(
-                                    children: [
-                                      Text(
-                                        "4,97",
-                                        style: TextStyle(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.w500,
-                                            fontSize: 18
+                                  Expanded(
+                                    child: Row(
+                                      children: [
+                                        Text(
+                                          "4,97",
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.w500,
+                                              fontSize: 18
+                                          ),
                                         ),
-                                      ),
-                                      Icon(Icons.star, color: Colors.white,)
-                                    ],
+                                        Icon(Icons.star, color: Colors.white,)
+                                      ],
+                                    ),
                                   ),
-                                ),
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                Icon(Icons.location_on, color: Color(0xFFACB5BE),),
-                                Text(
-                                  "Мальдивы",
-                                  style: TextStyle(
-                                      color: Color(0xFFACB5BE),
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 12
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Icon(Icons.location_on, color: Color(0xFFACB5BE),),
+                                  Text(
+                                    "Мальдивы",
+                                    style: TextStyle(
+                                        color: Color(0xFFACB5BE),
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 12
+                                    ),
                                   ),
-                                ),
-                              ],
-                            )
-                          ],
-                        ),
-                      ],
+                                ],
+                              )
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   SizedBox(height: 10,),
@@ -442,7 +450,6 @@ class _ToursPageState extends State<ToursPage> {
                             ),
                             ElevatedButton(
                                 style: ElevatedButton.styleFrom(
-                                    fixedSize: Size(MediaQuery.of(context).size.width / 4, 36),
                                     backgroundColor: const Color(0xFF005BFE),
                                     shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(15))),

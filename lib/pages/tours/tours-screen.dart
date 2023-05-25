@@ -310,13 +310,12 @@ class _ToursScreenState extends State<ToursScreen> {
           ),
           SizedBox(height: 10,),
           Container(
-            height: MediaQuery.of(context).size.height / 2.5,
+            height: MediaQuery.of(context).size.height / 2.4,
             child: PageView.builder(
                 controller: PageController(viewportFraction: 0.7, initialPage: 2),
                 itemCount: 5,
                 itemBuilder: (context, position) {
                   return Container(
-                    width: MediaQuery.of(context).size.width / 2.5,
                     margin: EdgeInsets.symmetric(horizontal: 10),
                     decoration: BoxDecoration(
                       color: Colors.white,
@@ -397,7 +396,8 @@ class _ToursScreenState extends State<ToursScreen> {
 
                             ],
                           ),
-                        )
+                        ),
+                        SizedBox(height: 10,)
                       ],
                     ),
                   );
@@ -425,13 +425,12 @@ class _ToursScreenState extends State<ToursScreen> {
           ),
           SizedBox(height: 10,),
           Container(
-            height: MediaQuery.of(context).size.height / 2.5,
+            height: MediaQuery.of(context).size.height / 2.4,
             child: PageView.builder(
                 controller: PageController(viewportFraction: 0.7, initialPage: 2),
                 itemCount: 5,
                 itemBuilder: (context, position) {
                   return Container(
-                    width: MediaQuery.of(context).size.width / 2.5,
                     margin: EdgeInsets.symmetric(horizontal: 10),
                     decoration: BoxDecoration(
                       color: Colors.white,
@@ -540,13 +539,12 @@ class _ToursScreenState extends State<ToursScreen> {
           ),
           SizedBox(height: 10,),
           Container(
-            height: MediaQuery.of(context).size.height / 2.5,
+            height: MediaQuery.of(context).size.height / 2.4,
             child: PageView.builder(
                 controller: PageController(viewportFraction: 0.7, initialPage: 2),
                 itemCount: 5,
                 itemBuilder: (context, position) {
                   return Container(
-                    width: MediaQuery.of(context).size.width / 2.5,
                     margin: EdgeInsets.symmetric(horizontal: 10),
                     decoration: BoxDecoration(
                       color: Colors.white,
@@ -655,13 +653,12 @@ class _ToursScreenState extends State<ToursScreen> {
           ),
           SizedBox(height: 10,),
           Container(
-            height: MediaQuery.of(context).size.height / 2.5,
+            height: MediaQuery.of(context).size.height / 2.4,
             child: PageView.builder(
                 controller: PageController(viewportFraction: 0.9, initialPage: 2),
                 itemCount: 5,
                 itemBuilder: (context, position) {
                   return Container(
-                    width: MediaQuery.of(context).size.width / 2.5,
                     margin: EdgeInsets.symmetric(horizontal: 10),
                     decoration: BoxDecoration(
                       color: Colors.white,

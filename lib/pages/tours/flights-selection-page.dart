@@ -174,15 +174,15 @@ class _FlightSelectionPageState extends State<FlightSelectionPage> {
                     fit: BoxFit.cover
                 )
             ),
-            child: Stack(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Container(
-                      height: 30,
-                      width: 30,
-                      padding: EdgeInsets.all(8),
+                      height: 35,
+                      width: 35,
                       decoration: BoxDecoration(
                           color: Color(0xFFFA5636),
                           shape: BoxShape.circle
@@ -192,9 +192,8 @@ class _FlightSelectionPageState extends State<FlightSelectionPage> {
                       ),
                     ),
                     Container(
-                      height: 30,
-                      width: 30,
-                      padding: EdgeInsets.all(8),
+                      height: 35,
+                      width: 35,
                       decoration: BoxDecoration(
                           color: Color(0xFF005BFE),
                           shape: BoxShape.circle
@@ -214,7 +213,7 @@ class _FlightSelectionPageState extends State<FlightSelectionPage> {
                       children: [
                         Expanded(
                           child: Text(
-                            " Beach Spa Resort",
+                            "Beach Spa Resort",
                             style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.w500,

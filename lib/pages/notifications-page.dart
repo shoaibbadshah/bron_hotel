@@ -11,6 +11,7 @@ class NotificationsPage extends StatefulWidget {
 }
 
 class _NotificationsPageState extends State<NotificationsPage> {
+  bool readMore = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,21 +34,22 @@ class _NotificationsPageState extends State<NotificationsPage> {
         padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
         children: [
           Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Column(
                 children: [
+                  SizedBox(height: 15,),
                   Container(
                     height: 40,
                     width: 40,
                     decoration: BoxDecoration(
-                      color: Color(0xFFD9D9D9),
-                      shape: BoxShape.circle
+                        color: Color(0xFFD9D9D9),
+                        shape: BoxShape.circle
                     ),
                   ),
-                  SizedBox(height: 35,)
                 ],
               ),
+              SizedBox(height: 35,),
               Expanded(
                 child: Column(
                   children: [
@@ -65,10 +67,11 @@ class _NotificationsPageState extends State<NotificationsPage> {
           ),
           Divider(),
           Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Column(
                 children: [
+                  SizedBox(height: 15,),
                   Container(
                     height: 40,
                     width: 40,
@@ -77,9 +80,9 @@ class _NotificationsPageState extends State<NotificationsPage> {
                         shape: BoxShape.circle
                     ),
                   ),
-                  SizedBox(height: 35,)
                 ],
               ),
+              SizedBox(height: 35,),
               Expanded(
                 child: Column(
                   children: [
@@ -98,6 +101,39 @@ class _NotificationsPageState extends State<NotificationsPage> {
           Divider()
         ],
       ),
+    );
+  }
+
+  Widget buildTextReadMore(String text, bool read) {
+    final lines = read ? null : 3;
+    return Column(
+      children: [
+        Text(
+          text,
+          maxLines: lines,
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 14,
+            fontWeight: FontWeight.w400,
+            overflow: read ? TextOverflow.visible: TextOverflow.ellipsis,
+          ),
+        ),
+        TextButton(
+            onPressed: (){
+              setState(() {
+                read = !read;
+              });
+            },
+            child: Text(
+              "${read? 'Learn more...' : 'Learn less...'}",
+              style: TextStyle(
+                color: Color(0xFF005BFE),
+                fontSize: 14,
+                fontWeight: FontWeight.w400,
+              ),
+            )
+        )
+      ],
     );
   }
 }

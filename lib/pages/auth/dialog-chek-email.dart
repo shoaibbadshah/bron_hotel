@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'login-and-register-page.dart';
@@ -17,7 +16,7 @@ class _DialogCheckEmailState extends State<DialogCheckEmail> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration(seconds: 3), () {
+    Future.delayed(const Duration(seconds: 3), () {
       refreshStream.add(true);
       Navigator.of(context).pop(true);
     });
@@ -29,14 +28,14 @@ class _DialogCheckEmailState extends State<DialogCheckEmail> {
         borderRadius: BorderRadius.circular(15),
       ),
       contentPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-      content: Container(
+      content: SizedBox(
         height: 278,
         width: MediaQuery.of(context).size.width,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset("assets/icons/check-icon.png"),
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
             const Text("Проверьте почту", textAlign: TextAlign.center, style: TextStyle(color: Color(0xFF1A2B47), fontSize: 24, fontWeight: FontWeight.w700),)
           ],
         ),

@@ -1,5 +1,4 @@
 import 'package:bron_hotel/pages/auth/forgot-your-password-page.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class DialogCheckNewPass extends StatefulWidget {
@@ -20,15 +19,15 @@ class _DialogCheckNewPassState extends State<DialogCheckNewPass> {
       contentPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
       content: Container(
         height: 278,
-        padding: EdgeInsets.symmetric(horizontal: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         width: MediaQuery.of(context).size.width,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset("assets/icons/person-icon.png"),
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
             const Text("Александр, ваш пароль удачно изменен", textAlign: TextAlign.center, style: TextStyle(color: Color(0xFF1A2B47), fontSize: 14, fontWeight: FontWeight.w500),),
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
             ElevatedButton(
                 style: ElevatedButton.styleFrom(
                     fixedSize: Size(MediaQuery.of(context).size.width, 40),

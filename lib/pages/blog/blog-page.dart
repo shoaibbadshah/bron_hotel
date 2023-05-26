@@ -1,5 +1,4 @@
 import 'package:bron_hotel/widgets/follow-screen.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'blog-page-mobile.dart';
@@ -17,7 +16,7 @@ class _BlogPageState extends State<BlogPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFF1F4FB),
+      backgroundColor: const Color(0xFFF1F4FB),
       appBar: AppBar(
         elevation: 0,
         toolbarHeight: 60,
@@ -31,12 +30,8 @@ class _BlogPageState extends State<BlogPage> {
               width: 128,
               height: 39,
             ),
-            IconButton(
-                onPressed: (){
-                  setState(() {
-
-                  });
-                },
+            const IconButton(
+                onPressed: null,
                 icon: Icon(Icons.notifications_none, color: Color(0xFF1A2B47),)
             ),
           ],
@@ -44,14 +39,14 @@ class _BlogPageState extends State<BlogPage> {
       ),
       body: ListView(
         controller: controllerListView,
-        padding: EdgeInsets.symmetric(vertical: 20),
+        padding: const EdgeInsets.symmetric(vertical: 20),
         children: [
           Padding(
             padding: const EdgeInsets.only(left: 20.0),
             child: Container(
               width: MediaQuery.of(context).size.width,
               height: 175,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 borderRadius: BorderRadius.only(topLeft: Radius.circular(20), bottomLeft: Radius.circular(20)),
                 image: DecorationImage(
                   image: AssetImage("assets/images/blog-imges22.png"),
@@ -60,12 +55,12 @@ class _BlogPageState extends State<BlogPage> {
               ),
             ),
           ),
-          SizedBox(height: 20,),
+          const SizedBox(height: 20,),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Row(
               children: [
-                Expanded(
+                const Expanded(
                   child: Text(
                     "Open your\ndoor to hosting",
                     style: TextStyle(
@@ -77,16 +72,16 @@ class _BlogPageState extends State<BlogPage> {
                 GestureDetector(
                   onTap: (){
                     setState(() {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => BlogPageMobile()));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogPageMobile()));
                     });
                   },
                   child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
+                    padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 10),
                     decoration: BoxDecoration(
-                      color: Color(0xFF1A2B47),
+                      color: const Color(0xFF1A2B47),
                       borderRadius: BorderRadius.circular(10)
                     ),
-                    child: Center(
+                    child: const Center(
                       child: Text(
                         "Try hosting",
                         style: TextStyle(
@@ -100,8 +95,8 @@ class _BlogPageState extends State<BlogPage> {
               ],
             ),
           ),
-          SizedBox(height: 30,),
-          Center(
+          const SizedBox(height: 30,),
+          const Center(
             child: Text(
               "Find out what you could\nearn as a Host",
               textAlign: TextAlign.center,
@@ -111,37 +106,37 @@ class _BlogPageState extends State<BlogPage> {
                   fontSize: 18),
             ),
           ),
-          SizedBox(height: 25,),
+          const SizedBox(height: 25,),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Container(
               width: MediaQuery.of(context).size.width,
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               decoration: BoxDecoration(
-                  color: Color(0xFFE9E9E9),
+                  color: const Color(0xFFE9E9E9),
                   borderRadius: BorderRadius.circular(10)
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     "Hosts in your area earn an average of*",
                     style: TextStyle(
                         color: Color(0xFF1A2B47),
                         fontWeight: FontWeight.w300,
                         fontSize: 12),
                   ),
-                  SizedBox(height: 10,),
+                  const SizedBox(height: 10,),
                   Row(
-                    children: [
-                      Text(
+                    children: const <Widget> [
+                       Text(
                         "\$968",
                         style: TextStyle(
                             color: Color(0xFFC00202),
                             fontWeight: FontWeight.w500,
                             fontSize: 40),
                       ),
-                      Text(
+                       Text(
                         " / month",
                         style: TextStyle(
                             color: Color(0xFFC00202),
@@ -154,37 +149,37 @@ class _BlogPageState extends State<BlogPage> {
               ),
             ),
           ),
-          SizedBox(height: 15,),
+          const SizedBox(height: 15,),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Container(
               width: MediaQuery.of(context).size.width,
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               decoration: BoxDecoration(
-                  color: Color(0xFFE9E9E9),
+                  color: const Color(0xFFE9E9E9),
                   borderRadius: BorderRadius.circular(10)
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     "They earn",
                     style: TextStyle(
                         color: Color(0xFF1A2B47),
                         fontWeight: FontWeight.w300,
                         fontSize: 12),
                   ),
-                  SizedBox(height: 10,),
+                  const SizedBox(height: 10,),
                   Row(
-                    children: [
-                      Text(
-                        "\44",
+                    children: const <Widget> [
+                       Text(
+                        "44",
                         style: TextStyle(
                             color: Color(0xFF1A2B47),
                             fontWeight: FontWeight.w500,
                             fontSize: 40),
                       ),
-                      Text(
+                       Text(
                         " / night",
                         style: TextStyle(
                             color: Color(0xFF1A2B47),
@@ -197,37 +192,37 @@ class _BlogPageState extends State<BlogPage> {
               ),
             ),
           ),
-          SizedBox(height: 15,),
+          const SizedBox(height: 15,),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Container(
               width: MediaQuery.of(context).size.width,
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               decoration: BoxDecoration(
-                  color: Color(0xFFE9E9E9),
+                  color: const Color(0xFFE9E9E9),
                   borderRadius: BorderRadius.circular(10)
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     "They earn",
                     style: TextStyle(
                         color: Color(0xFF1A2B47),
                         fontWeight: FontWeight.w300,
                         fontSize: 12),
                   ),
-                  SizedBox(height: 10,),
+                  const SizedBox(height: 10,),
                   Row(
-                    children: [
-                      Text(
-                        "\22",
+                    children: const <Widget> [
+                       Text(
+                        "22",
                         style: TextStyle(
                             color: Color(0xFFC00202),
                             fontWeight: FontWeight.w500,
                             fontSize: 40),
                       ),
-                      Text(
+                       Text(
                         " / month",
                         style: TextStyle(
                             color: Color(0xFFC00202),
@@ -240,11 +235,11 @@ class _BlogPageState extends State<BlogPage> {
               ),
             ),
           ),
-          SizedBox(height: 20,),
+          const SizedBox(height: 20,),
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            color: Color(0xFF1A2B47),
-            child: Center(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            color: const Color(0xFF1A2B47),
+            child: const Center(
               child: Text(
                 "Tell us about your place",
                 style: TextStyle(
@@ -256,9 +251,9 @@ class _BlogPageState extends State<BlogPage> {
           ),
           Image.asset("assets/images/maps-image.png", fit: BoxFit.cover,),
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            color: Color(0xFF1A2B47),
-            child: Center(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            color: const Color(0xFF1A2B47),
+            child: const Center(
               child: Text(
                 "You can host\nanything, anywhere",
                 textAlign: TextAlign.center,
@@ -269,8 +264,8 @@ class _BlogPageState extends State<BlogPage> {
               ),
             ),
           ),
-          SizedBox(height: 15,),
-          Container(
+          const SizedBox(height: 15,),
+          SizedBox(
             height: MediaQuery.of(context).size.height / 4.4,
             child: PageView.builder(
                 controller: pageController,
@@ -280,7 +275,7 @@ class _BlogPageState extends State<BlogPage> {
                     height: 182,
                     width: 182,
                     decoration: BoxDecoration(
-                        image: DecorationImage(
+                        image: const DecorationImage(
                             image: AssetImage("assets/images/blog-pagev.png"),
                             fit: BoxFit.cover
                         ),
@@ -290,9 +285,9 @@ class _BlogPageState extends State<BlogPage> {
                 }),
 
           ),
-          SizedBox(height: 20,),
-          Padding(
-            padding: const EdgeInsets.only(left: 20, right: 20),
+          const SizedBox(height: 20,),
+          const Padding(
+            padding: EdgeInsets.only(left: 20, right: 20),
             child: Text(
               "Bilaton has allowed me to create\nmy own job doing what I love —\ntaking care of guests in our home.",
               style: TextStyle(
@@ -301,7 +296,7 @@ class _BlogPageState extends State<BlogPage> {
                   fontSize: 16),
             ),
           ),
-          SizedBox(height: 20,),
+          const SizedBox(height: 20,),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Row(
@@ -311,11 +306,11 @@ class _BlogPageState extends State<BlogPage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Image.asset("assets/icons/clair.png"),
-                    SizedBox(height: 10,),
+                    const SizedBox(height: 10,),
                     Text(
                       "Host in Chiang Mai",
                       style: TextStyle(
-                          color: Color(0xFF1A2B47).withOpacity(0.5),
+                          color: const Color(0xFF1A2B47).withOpacity(0.5),
                           fontWeight: FontWeight.w500,
                           fontSize: 14),
                     )
@@ -334,26 +329,26 @@ class _BlogPageState extends State<BlogPage> {
                           });
                         },
                         child: Container(
-                          padding: EdgeInsets.all(8),
-                          decoration: BoxDecoration(
+                          padding: const EdgeInsets.all(8),
+                          decoration: const BoxDecoration(
                             shape: BoxShape.circle,
                             color: Color(0xFFD9D9D9)
                           ),
                           child: Center(
-                            child: Icon(Icons.arrow_back_ios_rounded, color: Color(0xFF1A2B47).withOpacity(0.5),),
+                            child: Icon(Icons.arrow_back_ios_rounded, color: const Color(0xFF1A2B47).withOpacity(0.5),),
                           ),
                         ),
                       ),
                     ),
-                    SizedBox(width: 40,),
+                    const SizedBox(width: 40,),
                     Container(
-                      padding: EdgeInsets.all(8),
-                      decoration: BoxDecoration(
+                      padding: const EdgeInsets.all(8),
+                      decoration: const BoxDecoration(
                         shape: BoxShape.circle,
                         color: Color(0xFFD9D9D9)
                       ),
                       child: Center(
-                        child: Icon(Icons.arrow_forward_ios_rounded, color: Color(0xFF1A2B47).withOpacity(0.5),),
+                        child: Icon(Icons.arrow_forward_ios_rounded, color: const Color(0xFF1A2B47).withOpacity(0.5),),
                       ),
                     ),
                   ],
@@ -361,11 +356,11 @@ class _BlogPageState extends State<BlogPage> {
               ],
             ),
           ),
-          SizedBox(height: 40,),
+          const SizedBox(height: 40,),
           Container(
             width: MediaQuery.of(context).size.width,
             height: 245,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage("assets/images/blog-img33.png"),
                 fit: BoxFit.cover
@@ -374,7 +369,7 @@ class _BlogPageState extends State<BlogPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Text(
+                const Text(
                   "Questions about hosting?\nAsk a Superhost.",
                   textAlign: TextAlign.center,
                   style: TextStyle(
@@ -384,12 +379,12 @@ class _BlogPageState extends State<BlogPage> {
                 ),
                 Container(
                   width: MediaQuery.of(context).size.width / 3,
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(10)
                   ),
-                  child: Center(
+                  child: const Center(
                     child: Text(
                       "Learn more",
                       style: TextStyle(
@@ -402,12 +397,12 @@ class _BlogPageState extends State<BlogPage> {
               ],
             ),
           ),
-          SizedBox(height: 20,),
+          const SizedBox(height: 20,),
           Container(
             width: MediaQuery.of(context).size.width,
             height: 313,
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            decoration: BoxDecoration(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            decoration: const BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage("assets/images/blog-img44.png"),
                     fit: BoxFit.cover
@@ -420,7 +415,7 @@ class _BlogPageState extends State<BlogPage> {
                 Row(
                   children: [
                     Image.asset("assets/icons/billcover.png"),
-                    Text(
+                    const Text(
                       " BilCover",
                       textAlign: TextAlign.center,
                       style: TextStyle(
@@ -430,7 +425,7 @@ class _BlogPageState extends State<BlogPage> {
                     ),
                   ],
                 ),
-                Text(
+                const Text(
                   "For Hosts",
                   textAlign: TextAlign.center,
                   style: TextStyle(
@@ -438,7 +433,7 @@ class _BlogPageState extends State<BlogPage> {
                       fontWeight: FontWeight.w300,
                       fontSize: 30),
                 ),
-                Text(
+                const Text(
                   "Top-to-bottom protection.\nAlways included, always free.\nOnly on Bilaton.",
                   style: TextStyle(
                       color: Color(0xFF1A2B47),
@@ -447,13 +442,13 @@ class _BlogPageState extends State<BlogPage> {
                 ),
                 Container(
                   width: MediaQuery.of(context).size.width / 3.3,
-                  padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+                  padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
                   decoration: BoxDecoration(
                       color: Colors.white,
-                      border: Border.all(color: Color(0xFF1A2B47) ),
+                      border: Border.all(color: const Color(0xFF1A2B47) ),
                       borderRadius: BorderRadius.circular(10)
                   ),
-                  child: Center(
+                  child: const Center(
                     child: Text(
                       "Learn more",
                       style: TextStyle(
@@ -466,11 +461,11 @@ class _BlogPageState extends State<BlogPage> {
               ],
             ),
           ),
-          SizedBox(height: 20,),
+          const SizedBox(height: 20,),
           Container(
             width: MediaQuery.of(context).size.width,
             height: 223,
-            color: Color(0xFFE9E9E9),
+            color: const Color(0xFFE9E9E9),
             child: Row(
               children: [
                 Image.asset("assets/images/blor-try.png"),
@@ -478,7 +473,7 @@ class _BlogPageState extends State<BlogPage> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Text(
+                      const Text(
                         "Try hosting on\nBilaton",
                         textAlign: TextAlign.center,
                         style: TextStyle(
@@ -486,7 +481,7 @@ class _BlogPageState extends State<BlogPage> {
                             fontWeight: FontWeight.w700,
                             fontSize: 20),
                       ),
-                      Text(
+                      const Text(
                         "Join us. We’ll help you every\nstep of the way.",
                         textAlign: TextAlign.center,
                         style: TextStyle(
@@ -496,12 +491,12 @@ class _BlogPageState extends State<BlogPage> {
                       ),
                       Container(
                         width: MediaQuery.of(context).size.width / 3.3,
-                        padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+                        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
                         decoration: BoxDecoration(
-                            color: Color(0xFF1A2B47),
+                            color: const Color(0xFF1A2B47),
                             borderRadius: BorderRadius.circular(10)
                         ),
-                        child: Center(
+                        child: const Center(
                           child: Text(
                             "Let’s go!",
                             style: TextStyle(
@@ -517,9 +512,9 @@ class _BlogPageState extends State<BlogPage> {
               ],
             ),
           ),
-          SizedBox(height: 20,),
-          FollowScreen(),
-          SizedBox(height: 20,)
+          const SizedBox(height: 20,),
+          const FollowScreen(),
+          const SizedBox(height: 20,)
         ],
       ),
     );

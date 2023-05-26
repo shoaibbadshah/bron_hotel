@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class WorkWithAsDetailsPage extends StatefulWidget {
@@ -14,8 +13,10 @@ class _WorkWithAsDetailsPageState extends State<WorkWithAsDetailsPage> {
   TextEditingController controllerYouEmail = TextEditingController();
   TextEditingController controllerPhone = TextEditingController();
   TextEditingController controllerAboutTou= TextEditingController();
+
   bool showAbout = false;
   bool readMore = false;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -33,7 +34,7 @@ class _WorkWithAsDetailsPageState extends State<WorkWithAsDetailsPage> {
         appBar: AppBar(
           elevation: 0,
           toolbarHeight: 60,
-          backgroundColor: Color(0xFFF1F4FB),
+          backgroundColor: const Color(0xFFF1F4FB),
           automaticallyImplyLeading: false,
           title: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -46,12 +47,8 @@ class _WorkWithAsDetailsPageState extends State<WorkWithAsDetailsPage> {
               Row(
                 children: [
                   Image.asset("assets/icons/reference.png"),
-                  IconButton(
-                      onPressed: (){
-                        setState(() {
-                          //Navigator.push(context, MaterialPageRoute(builder: (context) => NotificationsPage()));
-                        });
-                      },
+                  const IconButton(
+                      onPressed: null,
                       icon: Icon(Icons.notifications_none, color: Color(0xFF1A2B47),)
                   ),
                 ],
@@ -61,7 +58,7 @@ class _WorkWithAsDetailsPageState extends State<WorkWithAsDetailsPage> {
         ),
         body: ListView(
           controller: controllerListView,
-          padding: EdgeInsets.symmetric(vertical: 20),
+          padding: const EdgeInsets.symmetric(vertical: 20),
           children: [
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -81,7 +78,7 @@ class _WorkWithAsDetailsPageState extends State<WorkWithAsDetailsPage> {
                           fontSize: 18,
                           fontWeight: FontWeight.w600),
                     ),
-                    SizedBox(width: 10,),
+                    const SizedBox(width: 10,),
                     showAbout
                         ? const Icon(Icons.keyboard_arrow_up, color: Color(0xFF1A2B47),)
                         : const Icon(Icons.keyboard_arrow_down, color: Color(0xFF1A2B47),)
@@ -89,8 +86,8 @@ class _WorkWithAsDetailsPageState extends State<WorkWithAsDetailsPage> {
                 ),
               ),
             ),
-            SizedBox(height: 20,),
-            Center(
+            const SizedBox(height: 20,),
+            const Center(
               child: Text(
                 "We are hiring\nGraphik designer",
                 textAlign: TextAlign.center,
@@ -100,13 +97,13 @@ class _WorkWithAsDetailsPageState extends State<WorkWithAsDetailsPage> {
                     fontWeight: FontWeight.w700),
               ),
             ),
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children:  [
-                  Text(
+                  const Text(
                     "Ac lorem vitae euismod.",
                     textAlign: TextAlign.center,
                     style: TextStyle(
@@ -114,13 +111,13 @@ class _WorkWithAsDetailsPageState extends State<WorkWithAsDetailsPage> {
                         fontSize: 20,
                         fontWeight: FontWeight.w700),
                   ),
-                  SizedBox(height: 20,),
+                  const SizedBox(height: 20,),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text("•"),
-                      SizedBox(width: 5,),
-                      Expanded(
+                    children: const <Widget>[
+                       Text("•"),
+                       SizedBox(width: 5,),
+                       Expanded(
                         child: Text(
                           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus sit a feugiat ornare nunc tellus pretium.",
                           style: TextStyle(
@@ -131,13 +128,13 @@ class _WorkWithAsDetailsPageState extends State<WorkWithAsDetailsPage> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 15,),
+                  const SizedBox(height: 15,),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text("•"),
-                      SizedBox(width: 5,),
-                      Expanded(
+                    children: const <Widget>[
+                       Text("•"),
+                       SizedBox(width: 5,),
+                       Expanded(
                         child: Text(
                           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus sit a feugiat ornare nunc tellus pretium.",
                           style: TextStyle(
@@ -148,13 +145,13 @@ class _WorkWithAsDetailsPageState extends State<WorkWithAsDetailsPage> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 15,),
+                  const SizedBox(height: 15,),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text("•"),
-                      SizedBox(width: 5,),
-                      Expanded(
+                    children: const <Widget> [
+                       Text("•"),
+                       SizedBox(width: 5,),
+                       Expanded(
                         child: Text(
                           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus sit a feugiat ornare nunc tellus pretium.",
                           style: TextStyle(
@@ -168,16 +165,16 @@ class _WorkWithAsDetailsPageState extends State<WorkWithAsDetailsPage> {
                 ],
               ),
             ),
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
             Container(
               width: MediaQuery.of(context).size.width,
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              color: Color(0xFFf1f4fb),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              color: const Color(0xFFf1f4fb),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: 10,),
-                  Text(
+                  const SizedBox(height: 10,),
+                  const Text(
                     "Fill out the form to send your CV",
                     textAlign: TextAlign.center,
                     style: TextStyle(
@@ -185,20 +182,20 @@ class _WorkWithAsDetailsPageState extends State<WorkWithAsDetailsPage> {
                         fontSize: 20,
                         fontWeight: FontWeight.w700),
                   ),
-                  SizedBox(height: 15,),
+                  const SizedBox(height: 15,),
                   Column(
                     children: [
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                          const Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 10.0),
                             child: Text("Your name", style: TextStyle(color: Color(0xFF5E6D77), fontSize: 14, fontWeight: FontWeight.w400),),
                           ),
-                          SizedBox(height: 5,),
+                          const SizedBox(height: 5,),
                           TextField(
                             controller: controllerYouName,
-                            decoration: InputDecoration(
+                            decoration: const InputDecoration(
                               contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                               hintText: 'Name',
                               hintStyle: TextStyle(
@@ -219,18 +216,18 @@ class _WorkWithAsDetailsPageState extends State<WorkWithAsDetailsPage> {
                           ),
                         ],
                       ),
-                      SizedBox(height: 15,),
+                      const SizedBox(height: 15,),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                          const Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 10.0),
                             child: Text("Your email", style: TextStyle(color: Color(0xFF5E6D77), fontSize: 14, fontWeight: FontWeight.w400),),
                           ),
-                          SizedBox(height: 5,),
+                          const SizedBox(height: 5,),
                           TextField(
                             controller: controllerYouEmail,
-                            decoration: InputDecoration(
+                            decoration: const InputDecoration(
                               contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                               hintText: 'Email',
                               hintStyle: TextStyle(
@@ -251,18 +248,18 @@ class _WorkWithAsDetailsPageState extends State<WorkWithAsDetailsPage> {
                           ),
                         ],
                       ),
-                      SizedBox(height: 15,),
+                      const SizedBox(height: 15,),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                          const Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 10.0),
                             child: Text("Phone number", style: TextStyle(color: Color(0xFF5E6D77), fontSize: 14, fontWeight: FontWeight.w400),),
                           ),
-                          SizedBox(height: 5,),
+                          const SizedBox(height: 5,),
                           TextField(
                             controller: controllerPhone,
-                            decoration: InputDecoration(
+                            decoration: const InputDecoration(
                               contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                               hintText: 'Phone number',
                               hintStyle: TextStyle(
@@ -283,30 +280,30 @@ class _WorkWithAsDetailsPageState extends State<WorkWithAsDetailsPage> {
                           ),
                         ],
                       ),
-                      SizedBox(height: 15,),
+                      const SizedBox(height: 15,),
                       Column(
                         children: [
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Padding(
-                                padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                              const Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 10.0),
                                 child: Text("About you", style: TextStyle(color: Color(0xFF5E6D77), fontSize: 14, fontWeight: FontWeight.w400),),
                               ),
                               Row(
                                 children: [
                                   Image.asset("assets/icons/uploadCV.png"),
-                                  SizedBox(width: 10,),
-                                  Text("Upload CV", style: TextStyle(color: Color(0xFF005BFE), fontSize: 16, fontWeight: FontWeight.w400),)
+                                  const SizedBox(width: 10,),
+                                  const Text("Upload CV", style: TextStyle(color: Color(0xFF005BFE), fontSize: 16, fontWeight: FontWeight.w400),)
                                 ],
                               )
                             ],
                           ),
-                          SizedBox(height: 5,),
+                          const SizedBox(height: 5,),
                           TextField(
                             controller: controllerAboutTou,
                             maxLines: 15,
-                            decoration: InputDecoration(
+                            decoration: const InputDecoration(
                               contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                               hintText: 'About you',
                               hintStyle: TextStyle(
@@ -330,7 +327,7 @@ class _WorkWithAsDetailsPageState extends State<WorkWithAsDetailsPage> {
 
                     ],
                   ),
-                  SizedBox(height: 15,),
+                  const SizedBox(height: 15,),
                   Column(
                     children: [
                       Center(
@@ -355,7 +352,7 @@ class _WorkWithAsDetailsPageState extends State<WorkWithAsDetailsPage> {
                 ],
               ),
             ),
-            SizedBox(height: 15,),
+            const SizedBox(height: 15,),
           ],
         ),
       ),

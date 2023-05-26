@@ -12,6 +12,7 @@ class TicketsPage extends StatefulWidget {
 
 class _TicketsPageState extends State<TicketsPage> {
   bool _switchValue = false;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -35,14 +36,14 @@ class _TicketsPageState extends State<TicketsPage> {
                 Navigator.pop(context);
               });
             },
-            icon: Icon(Icons.arrow_back_ios, color: Colors.white,),
+            icon: const Icon(Icons.arrow_back_ios, color: Colors.white,),
           ),
-          backgroundColor: Color(0xFF1A2B47),
+          backgroundColor: const Color(0xFF1A2B47),
           centerTitle: true,
           title: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
+            children: const [
+               Text(
                   "Сочи - Москва",
                 style: TextStyle(
                   color: Color(0xFFF1F4FB),
@@ -50,8 +51,8 @@ class _TicketsPageState extends State<TicketsPage> {
                   fontWeight: FontWeight.w600,
                 ),
               ),
-              SizedBox(height: 10,),
-              Text(
+               SizedBox(height: 10,),
+               Text(
                   "23 - 28 июля , 1 пассажир",
                 style: TextStyle(
                   color: Color(0xFFA0AFCC),
@@ -65,7 +66,7 @@ class _TicketsPageState extends State<TicketsPage> {
             IconButton(
                 onPressed: (){
                   setState(() {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => TicketsFilterPage()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const TicketsFilterPage()));
                   });
                 },
                 icon: Image.asset("assets/icons/filters.png")
@@ -73,14 +74,14 @@ class _TicketsPageState extends State<TicketsPage> {
           ],
         ),
         body: ListView(
-          padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
                   height: 44,
-                  padding: EdgeInsets.symmetric(horizontal: 15),
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
                   decoration: BoxDecoration(
                     color: Colors.white.withOpacity(0.55),
                     borderRadius: BorderRadius.circular(15)
@@ -88,8 +89,8 @@ class _TicketsPageState extends State<TicketsPage> {
                   child: Row(
                     children: [
                       Image.asset("assets/icons/graphic.png"),
-                      SizedBox(width: 5,),
-                      Text(
+                      const SizedBox(width: 5,),
+                      const Text(
                           "График цен",
                           style: TextStyle(
                             color: Color(0xFF005BFE),
@@ -107,15 +108,15 @@ class _TicketsPageState extends State<TicketsPage> {
                       "Только прямые",
                       style: TextStyle(
                         fontSize: 12,
-                        color: Color(0xFF1A2B47).withOpacity(0.75),
+                        color: const Color(0xFF1A2B47).withOpacity(0.75),
                         fontWeight: FontWeight.w500,),
                     ),
-                    SizedBox(width: 10,),
+                    const SizedBox(width: 10,),
                     Transform.scale(
                       scale: 0.9,
                       child: CupertinoSwitch(
-                        activeColor: Color(0xFF005BFE),
-                        trackColor: Color(0xFF1A2B47).withOpacity(0.25),
+                        activeColor: const Color(0xFF005BFE),
+                        trackColor: const Color(0xFF1A2B47).withOpacity(0.25),
                         value: _switchValue,
                         onChanged: (value) {
                           setState(() {
@@ -128,18 +129,18 @@ class _TicketsPageState extends State<TicketsPage> {
                 ),
               ],
             ),
-            SizedBox(height: 25,),
+            const SizedBox(height: 25,),
             GestureDetector(
               onTap: (){
                 setState(() {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => TicketsAllPage()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const TicketsAllPage()));
                 });
               },
                 child: buildAdvertising()
             ),
-            SizedBox(height: 15,),
+            const SizedBox(height: 15,),
             buildCheapest(),
-            SizedBox(height: 15,),
+            const SizedBox(height: 15,),
             buildRecommended(),
           ],
         ),
@@ -150,17 +151,17 @@ class _TicketsPageState extends State<TicketsPage> {
   Container buildRecommended() {
     return Container(
             decoration: BoxDecoration(
-                color: Color(0xFF5F90F3),
+                color: const Color(0xFF5F90F3),
                 borderRadius: BorderRadius.circular(15)
             ),
             child: Column(
               children: [
-                SizedBox(height: 10,),
-                Text("Рекомендуемый", style: TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.w500),),
-                SizedBox(height: 10,),
+                const SizedBox(height: 10,),
+                const Text("Рекомендуемый", style: TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.w500),),
+                const SizedBox(height: 10,),
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-                  decoration: BoxDecoration(
+                  padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                  decoration: const BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.only(bottomLeft: Radius.circular(15), bottomRight: Radius.circular(15))
                   ),
@@ -169,19 +170,19 @@ class _TicketsPageState extends State<TicketsPage> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text("6799₽", style: TextStyle(color: Color(0xFF1A2B47).withOpacity(0.75), fontSize: 20, fontWeight: FontWeight.w600),),
+                          Text("6799₽", style: TextStyle(color: const Color(0xFF1A2B47).withOpacity(0.75), fontSize: 20, fontWeight: FontWeight.w600),),
                           Row(
                             children: [
                               Image.asset("assets/images/utair.png"),
-                              SizedBox(width: 5,),
+                              const SizedBox(width: 5,),
                               Image.asset("assets/images/airs.png"),
-                              SizedBox(width: 5,),
+                              const SizedBox(width: 5,),
                               Image.asset("assets/images/s7.png"),
                             ],
                           )
                         ],
                       ),
-                      SizedBox(height: 15,),
+                      const SizedBox(height: 15,),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -189,25 +190,25 @@ class _TicketsPageState extends State<TicketsPage> {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text("13:45 - 17:15", style: TextStyle(color: Color(0xFF1A2B47).withOpacity(0.75), fontSize: 14, fontWeight: FontWeight.w500),),
-                              SizedBox(height: 10,),
-                              Text("MOW  PET", style: TextStyle(color: Color(0xFFA0AFCC), fontSize: 12, fontWeight: FontWeight.w500),),
+                              Text("13:45 - 17:15", style: TextStyle(color: const Color(0xFF1A2B47).withOpacity(0.75), fontSize: 14, fontWeight: FontWeight.w500),),
+                              const SizedBox(height: 10,),
+                              const Text("MOW  PET", style: TextStyle(color: Color(0xFFA0AFCC), fontSize: 12, fontWeight: FontWeight.w500),),
                             ],
                           ),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text("Без пересадок", style: TextStyle(color: Color(0xFF005BFE), fontSize: 12, fontWeight: FontWeight.w500),),
-                              SizedBox(height: 5,),
-                              Text("1ч Вороньеж", style: TextStyle(color: Color(0xFF8B98A0), fontSize: 12, fontWeight: FontWeight.w500),),
-                              SizedBox(height: 5,),
-                              Text("2ч Волгоград", style: TextStyle(color: Color(0xFF8B98A0), fontSize: 12, fontWeight: FontWeight.w500),),
+                            children: const [
+                               Text("Без пересадок", style: TextStyle(color: Color(0xFF005BFE), fontSize: 12, fontWeight: FontWeight.w500),),
+                               SizedBox(height: 5,),
+                               Text("1ч Вороньеж", style: TextStyle(color: Color(0xFF8B98A0), fontSize: 12, fontWeight: FontWeight.w500),),
+                               SizedBox(height: 5,),
+                               Text("2ч Волгоград", style: TextStyle(color: Color(0xFF8B98A0), fontSize: 12, fontWeight: FontWeight.w500),),
                             ],
                           ),
-                          Text("3ч 30мВ пути ", style: TextStyle(color: Color(0xFF1A2B47).withOpacity(0.75), fontSize: 12, fontWeight: FontWeight.w500),),
+                          Text("3ч 30мВ пути ", style: TextStyle(color: const Color(0xFF1A2B47).withOpacity(0.75), fontSize: 12, fontWeight: FontWeight.w500),),
                         ],
                       ),
-                      SizedBox(height: 20,),
+                      const SizedBox(height: 20,),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -215,13 +216,13 @@ class _TicketsPageState extends State<TicketsPage> {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text("13:45 - 17:15", style: TextStyle(color: Color(0xFF1A2B47).withOpacity(0.75), fontSize: 14, fontWeight: FontWeight.w500),),
-                              SizedBox(height: 10,),
-                              Text("MOW  PET", style: TextStyle(color: Color(0xFFA0AFCC), fontSize: 12, fontWeight: FontWeight.w500),),
+                              Text("13:45 - 17:15", style: TextStyle(color: const Color(0xFF1A2B47).withOpacity(0.75), fontSize: 14, fontWeight: FontWeight.w500),),
+                              const SizedBox(height: 10,),
+                              const Text("MOW  PET", style: TextStyle(color: Color(0xFFA0AFCC), fontSize: 12, fontWeight: FontWeight.w500),),
                             ],
                           ),
-                          Text("Без пересадок", style: TextStyle(color: Color(0xFF005BFE), fontSize: 12, fontWeight: FontWeight.w500),),
-                          Text("3ч 30мВ пути ", style: TextStyle(color: Color(0xFF1A2B47).withOpacity(0.75), fontSize: 12, fontWeight: FontWeight.w500),),
+                          const Text("Без пересадок", style: TextStyle(color: Color(0xFF005BFE), fontSize: 12, fontWeight: FontWeight.w500),),
+                          Text("3ч 30мВ пути ", style: TextStyle(color: const Color(0xFF1A2B47).withOpacity(0.75), fontSize: 12, fontWeight: FontWeight.w500),),
                         ],
                       ),
                     ],
@@ -235,17 +236,17 @@ class _TicketsPageState extends State<TicketsPage> {
   Container buildCheapest() {
     return Container(
             decoration: BoxDecoration(
-                color: Color(0xFF0052B4),
+                color: const Color(0xFF0052B4),
                 borderRadius: BorderRadius.circular(15)
             ),
             child: Column(
               children: [
-                SizedBox(height: 10,),
-                Text("Самый дешёвый", style: TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.w500),),
-                SizedBox(height: 10,),
+                const SizedBox(height: 10,),
+                const Text("Самый дешёвый", style: TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.w500),),
+                const SizedBox(height: 10,),
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-                  decoration: BoxDecoration(
+                  padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                  decoration: const BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.only(bottomLeft: Radius.circular(15), bottomRight: Radius.circular(15))
                   ),
@@ -254,12 +255,12 @@ class _TicketsPageState extends State<TicketsPage> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text("6799₽", style: TextStyle(color: Color(0xFF1A2B47).withOpacity(0.75), fontSize: 20, fontWeight: FontWeight.w600),),
-                          Text("Без пересадок", style: TextStyle(color: Color(0xFF005BFE), fontSize: 12, fontWeight: FontWeight.w500),),
+                          Text("6799₽", style: TextStyle(color: const Color(0xFF1A2B47).withOpacity(0.75), fontSize: 20, fontWeight: FontWeight.w600),),
+                          const Text("Без пересадок", style: TextStyle(color: Color(0xFF005BFE), fontSize: 12, fontWeight: FontWeight.w500),),
                           Image.asset("assets/images/s7.png")
                         ],
                       ),
-                      SizedBox(height: 15,),
+                      const SizedBox(height: 15,),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -267,13 +268,13 @@ class _TicketsPageState extends State<TicketsPage> {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text("13:45 - 17:15", style: TextStyle(color: Color(0xFF1A2B47).withOpacity(0.75), fontSize: 14, fontWeight: FontWeight.w500),),
-                              SizedBox(height: 10,),
-                              Text("MOW  PET", style: TextStyle(color: Color(0xFFA0AFCC), fontSize: 12, fontWeight: FontWeight.w500),),
+                              Text("13:45 - 17:15", style: TextStyle(color: const Color(0xFF1A2B47).withOpacity(0.75), fontSize: 14, fontWeight: FontWeight.w500),),
+                              const SizedBox(height: 10,),
+                              const Text("MOW  PET", style: TextStyle(color: Color(0xFFA0AFCC), fontSize: 12, fontWeight: FontWeight.w500),),
                             ],
                           ),
-                          SizedBox(height: 15,),
-                          Text("3ч 30мВ пути ", style: TextStyle(color: Color(0xFF1A2B47).withOpacity(0.75), fontSize: 12, fontWeight: FontWeight.w500),),
+                          const SizedBox(height: 15,),
+                          Text("3ч 30мВ пути ", style: TextStyle(color: const Color(0xFF1A2B47).withOpacity(0.75), fontSize: 12, fontWeight: FontWeight.w500),),
                         ],
                       ),
                     ],
@@ -287,17 +288,17 @@ class _TicketsPageState extends State<TicketsPage> {
   Container buildAdvertising() {
     return Container(
             decoration: BoxDecoration(
-                color: Color(0xFF1A2B47),
+                color: const Color(0xFF1A2B47),
                 borderRadius: BorderRadius.circular(15)
             ),
             child: Column(
               children: [
-                SizedBox(height: 10,),
-                Text("Реклама", style: TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.w500),),
-                SizedBox(height: 10,),
+                const SizedBox(height: 10,),
+                const Text("Реклама", style: TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.w500),),
+                const SizedBox(height: 10,),
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-                  decoration: BoxDecoration(
+                  padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                  decoration: const BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.only(bottomLeft: Radius.circular(15), bottomRight: Radius.circular(15))
                   ),
@@ -306,12 +307,12 @@ class _TicketsPageState extends State<TicketsPage> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text("6799₽", style: TextStyle(color: Color(0xFF1A2B47).withOpacity(0.75), fontSize: 20, fontWeight: FontWeight.w600),),
-                          Text("Без пересадок", style: TextStyle(color: Color(0xFF005BFE), fontSize: 12, fontWeight: FontWeight.w500),),
+                          Text("6799₽", style: TextStyle(color: const Color(0xFF1A2B47).withOpacity(0.75), fontSize: 20, fontWeight: FontWeight.w600),),
+                          const Text("Без пересадок", style: TextStyle(color: Color(0xFF005BFE), fontSize: 12, fontWeight: FontWeight.w500),),
                           Image.asset("assets/images/s7.png")
                         ],
                       ),
-                      SizedBox(height: 15,),
+                      const SizedBox(height: 15,),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -319,13 +320,13 @@ class _TicketsPageState extends State<TicketsPage> {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text("13:45 - 17:15", style: TextStyle(color: Color(0xFF1A2B47).withOpacity(0.75), fontSize: 14, fontWeight: FontWeight.w500),),
-                              SizedBox(height: 10,),
-                              Text("MOW  PET", style: TextStyle(color: Color(0xFFA0AFCC), fontSize: 12, fontWeight: FontWeight.w500),),
+                              Text("13:45 - 17:15", style: TextStyle(color: const Color(0xFF1A2B47).withOpacity(0.75), fontSize: 14, fontWeight: FontWeight.w500),),
+                              const SizedBox(height: 10,),
+                              const Text("MOW  PET", style: TextStyle(color: Color(0xFFA0AFCC), fontSize: 12, fontWeight: FontWeight.w500),),
                             ],
                           ),
-                          SizedBox(height: 15,),
-                          Text("3ч 30мВ пути ", style: TextStyle(color: Color(0xFF1A2B47).withOpacity(0.75), fontSize: 12, fontWeight: FontWeight.w500),),
+                          const SizedBox(height: 15,),
+                          Text("3ч 30мВ пути ", style: TextStyle(color: const Color(0xFF1A2B47).withOpacity(0.75), fontSize: 12, fontWeight: FontWeight.w500),),
                         ],
                       ),
                     ],

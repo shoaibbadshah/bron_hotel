@@ -1,11 +1,8 @@
 import 'dart:ui';
 
-
 import 'package:bron_hotel/pages/hotel/hotel-page.dart';
 import 'package:bron_hotel/pages/auth/login-and-register-page.dart';
 import 'package:bron_hotel/pages/tours/tours-screen.dart';
-import 'package:dots_indicator/dots_indicator.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../utils/color.dart';
@@ -25,7 +22,6 @@ class _HomePageState extends State<HomePage> {
   int currentIndexTabBar = 0;
   String gender = "";
   bool activeRadio = false;
-  ScrollController _controller = ScrollController();
 
   List<TabBarMain> listTabBar = [
     TabBarMain("Hotel", "assets/images/stays.png"),
@@ -50,7 +46,7 @@ class _HomePageState extends State<HomePage> {
         appBar: AppBar(
           elevation: 0,
           toolbarHeight: 60,
-          backgroundColor: Color(0xFFF1F4FB),
+          backgroundColor: const Color(0xFFF1F4FB),
           automaticallyImplyLeading: false,
           title: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -65,10 +61,10 @@ class _HomePageState extends State<HomePage> {
                   IconButton(
                       onPressed: (){
                         setState(() {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => NotificationsPage()));
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => const NotificationsPage()));
                         });
                       },
-                      icon: Icon(Icons.notifications_none, color: Color(0xFF1A2B47),)
+                      icon: const Icon(Icons.notifications_none, color: Color(0xFF1A2B47),)
                   ),
                   ElevatedButton(
                       style: ElevatedButton.styleFrom(
@@ -80,7 +76,7 @@ class _HomePageState extends State<HomePage> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => LoginAndRegisterPage()));
+                                  builder: (context) => const LoginAndRegisterPage()));
                         });
                       },
                       child: const Text(
@@ -98,7 +94,7 @@ class _HomePageState extends State<HomePage> {
         body: ListView(
           children: [
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
                 children: [
                   Row(
@@ -122,8 +118,8 @@ class _HomePageState extends State<HomePage> {
                                       width: 23,
                                       height: 16,
                                       color: currentIndexTabBar == index
-                                          ? Color(0xFF1A2B47)
-                                          : Color(0xFF005BFE)),
+                                          ? const Color(0xFF1A2B47)
+                                          : const Color(0xFF005BFE)),
                                   const SizedBox(width: 5),
                                   Text(
                                     listTabBar[index].name,
@@ -131,13 +127,13 @@ class _HomePageState extends State<HomePage> {
                                         fontWeight: FontWeight.w600,
                                         fontSize: 18,
                                         color: currentIndexTabBar == index
-                                            ? Color(0xFF1A2B47)
-                                            : Color(0xFF005BFE)),
+                                            ? const Color(0xFF1A2B47)
+                                            : const Color(0xFF005BFE)),
                                   )
                                 ],
                               ),
                               currentIndexTabBar == index
-                                  ? Divider(
+                                  ? const Divider(
                                       thickness: 2,
                                       color: Color(0xFF1A2B47),
                                     )
@@ -152,11 +148,11 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
                   currentIndexTabBar == 1
-                      ? ToursScreen() :
+                      ? const ToursScreen() :
                   currentIndexTabBar == 2
-                      ? FlightScreen()
-                : HotelPage(),
-            FollowScreen()
+                      ? const FlightScreen()
+                : const HotelPage(),
+            const FollowScreen()
           ],
         ),
       ),
@@ -168,7 +164,7 @@ Container buildFollow(BuildContext context) {
   return Container(
     height: 300,
     alignment: Alignment.center,
-    decoration: BoxDecoration(
+    decoration: const BoxDecoration(
         image: DecorationImage(
             image: AssetImage("assets/images/bottomInst.png"),
             fit: BoxFit.cover)),
@@ -179,14 +175,14 @@ Container buildFollow(BuildContext context) {
           child: BackdropFilter(
             filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
             child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
                   color: Colors.white.withOpacity(0.8)),
               child: Column(
                 children: [
                   Image.asset("assets/images/instagramm.png"),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Text(
@@ -196,17 +192,17 @@ Container buildFollow(BuildContext context) {
                         fontSize: 12,
                         fontWeight: FontWeight.w400),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Container(
                     height: 33,
                     width: MediaQuery.of(context).size.width / 3,
-                    padding: EdgeInsets.symmetric(horizontal: 20),
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
                     decoration: BoxDecoration(
                         color: UtilColor.getColorFromHex("FA5636"),
                         borderRadius: BorderRadius.circular(15)),
-                    child: Center(
+                    child: const Center(
                       child: Text(
                         "Follow",
                         style: TextStyle(

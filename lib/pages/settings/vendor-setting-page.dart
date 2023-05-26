@@ -2,7 +2,6 @@ import 'package:bron_hotel/pages/about/support-page.dart';
 import 'package:bron_hotel/pages/blog/blog-page.dart';
 import 'package:bron_hotel/pages/vendor/vendor-start-page.dart';
 import 'package:expandable/expandable.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class VendorSettingPage extends StatefulWidget {
@@ -15,6 +14,7 @@ class VendorSettingPage extends StatefulWidget {
 class _VendorSettingPageState extends State<VendorSettingPage> {
   bool isExpanded = false;
   ExpandableController expandableController = ExpandableController();
+
   List<String> headerName = [
     "Управление отелем",
     "Управление туром",
@@ -36,9 +36,9 @@ class _VendorSettingPageState extends State<VendorSettingPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
-        padding: EdgeInsets.symmetric(vertical: 20),
+        padding: const EdgeInsets.symmetric(vertical: 20),
         children: [
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           ListTile(
@@ -46,9 +46,9 @@ class _VendorSettingPageState extends State<VendorSettingPage> {
               height: 50,
               width: 50,
               alignment: Alignment.center,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   color: Color(0xFF1A2B47), shape: BoxShape.circle),
-              child: Text(
+              child: const Text(
                 "C",
                 style: TextStyle(
                     color: Colors.white,
@@ -56,14 +56,14 @@ class _VendorSettingPageState extends State<VendorSettingPage> {
                     fontWeight: FontWeight.w600),
               ),
             ),
-            title: Text(
+            title: const Text(
               "Светлана Исаева",
               style: TextStyle(
                   color: Color(0xFF1A2B47),
                   fontSize: 16,
                   fontWeight: FontWeight.w600),
             ),
-            subtitle: Text(
+            subtitle: const Text(
               "SvetaIsaeva89@mail.ru",
               style: TextStyle(
                   color: Color(0xFF005BFE),
@@ -73,15 +73,15 @@ class _VendorSettingPageState extends State<VendorSettingPage> {
             trailing: GestureDetector(
               onTap: (){
                 setState(() {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => VendorStartPage()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const VendorStartPage()));
                 });
               },
               child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+                padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
                 decoration: BoxDecoration(
-                    color: Color(0xFf005BFE),
+                    color: const Color(0xFf005BFE),
                     borderRadius: BorderRadius.circular(20)),
-                child: Text(
+                child: const Text(
                   "Vendor",
                   style: TextStyle(
                       color: Colors.white,
@@ -91,7 +91,7 @@ class _VendorSettingPageState extends State<VendorSettingPage> {
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 30,
           ),
           ListTile(
@@ -104,16 +104,16 @@ class _VendorSettingPageState extends State<VendorSettingPage> {
                     Container(
                       width: 5,
                       height: 40,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           color: Color(0xFF005BFE),
                           borderRadius: BorderRadius.only(
                               topRight: Radius.circular(3),
                               bottomRight: Radius.circular(3))),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     ),
-                    Text(
+                    const Text(
                       "Панель приборов",
                       style: TextStyle(
                           color: Color(0xFF005BFE),
@@ -122,8 +122,8 @@ class _VendorSettingPageState extends State<VendorSettingPage> {
                     ),
                   ],
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
                   child: Divider(
                     color: Color(0xFFE2E2E2),
                   ),
@@ -139,10 +139,10 @@ class _VendorSettingPageState extends State<VendorSettingPage> {
                 Row(
                   children: [
                     Container(),
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     ),
-                    Text(
+                    const Text(
                       "История бронирования",
                       style: TextStyle(
                           color: Color(0xFF1A2B47),
@@ -151,11 +151,11 @@ class _VendorSettingPageState extends State<VendorSettingPage> {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 5,
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
                   child: Divider(
                     color: Color(0xFFE2E2E2),
                   ),
@@ -166,7 +166,7 @@ class _VendorSettingPageState extends State<VendorSettingPage> {
           ListTile(
             onTap: (){
               setState(() {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => BlogPage()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogPage()));
               });
             },
             contentPadding: EdgeInsets.zero,
@@ -176,10 +176,10 @@ class _VendorSettingPageState extends State<VendorSettingPage> {
                 Row(
                   children: [
                     Container(),
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     ),
-                    Text(
+                    const Text(
                       "Блог сообщества",
                       style: TextStyle(
                           color: Color(0xFF1A2B47),
@@ -188,11 +188,11 @@ class _VendorSettingPageState extends State<VendorSettingPage> {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 5,
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
                   child: Divider(
                     color: Color(0xFFE2E2E2),
                   ),
@@ -208,10 +208,10 @@ class _VendorSettingPageState extends State<VendorSettingPage> {
                 Row(
                   children: [
                     Container(),
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     ),
-                    Text(
+                    const Text(
                       "Избранные",
                       style: TextStyle(
                           color: Color(0xFF1A2B47),
@@ -220,11 +220,11 @@ class _VendorSettingPageState extends State<VendorSettingPage> {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 5,
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
                   child: Divider(
                     color: Color(0xFFE2E2E2),
                   ),
@@ -240,10 +240,10 @@ class _VendorSettingPageState extends State<VendorSettingPage> {
                 Row(
                   children: [
                     Container(),
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     ),
-                    Text(
+                    const Text(
                       "Мой бумажник",
                       style: TextStyle(
                           color: Color(0xFF1A2B47),
@@ -252,11 +252,11 @@ class _VendorSettingPageState extends State<VendorSettingPage> {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 5,
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
                   child: Divider(
                     color: Color(0xFFE2E2E2),
                   ),
@@ -273,12 +273,12 @@ class _VendorSettingPageState extends State<VendorSettingPage> {
                 Row(
                   children: [
                     Container(),
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     ),
                     Expanded(
                       child: ExpandableTheme(
-                        data: ExpandableThemeData(
+                        data: const ExpandableThemeData(
                             headerAlignment: ExpandablePanelHeaderAlignment.center,
                             iconColor: Colors.white,
                             iconPadding: EdgeInsets.only(right: 10),
@@ -293,7 +293,7 @@ class _VendorSettingPageState extends State<VendorSettingPage> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.end,
                               children: [
-                                Expanded(
+                                const Expanded(
                                   child: Text(
                                     "Управление",
                                     style: TextStyle(
@@ -303,8 +303,8 @@ class _VendorSettingPageState extends State<VendorSettingPage> {
                                   ),
                                 ),
                                 expandableController.expanded
-                                    ? Icon(Icons.arrow_drop_up, color: Color(0xFFD80027),)
-                                    : Icon(Icons.arrow_drop_down, color: Color(0xFF005BFE),)
+                                    ? const Icon(Icons.arrow_drop_up, color: Color(0xFFD80027),)
+                                    : const Icon(Icons.arrow_drop_down, color: Color(0xFF005BFE),)
                               ],
                             ),
                           ),
@@ -312,30 +312,30 @@ class _VendorSettingPageState extends State<VendorSettingPage> {
                           expanded: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
-                              Divider(
+                              const Divider(
                                 color: Color(0xFFE2E2E2),
                               ),
                               for (var index in Iterable.generate(headerName.length))
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    SizedBox(height: 10,),
+                                    const SizedBox(height: 10,),
                                     Padding(
                                       padding: const EdgeInsets.symmetric(horizontal: 8.0),
                                       child: Text(
-                                        "${headerName[index]}",
-                                        style: TextStyle(
+                                        headerName[index],
+                                        style: const TextStyle(
                                             color: Color(0xFF1A2B47),
                                             fontSize: 16,
                                             fontWeight: FontWeight.w500),
                                       ),
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       height: 5,
                                     ),
                                     index == headerName.length - 1
                                         ? Container()
-                                        : Divider(
+                                        : const Divider(
                                       color: Color(0xFFE2E2E2),
                                     )
                                   ],
@@ -355,8 +355,8 @@ class _VendorSettingPageState extends State<VendorSettingPage> {
                     ),
                   ],
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
                   child: Divider(
                     color: Color(0xFFE2E2E2),
                   ),
@@ -373,10 +373,10 @@ class _VendorSettingPageState extends State<VendorSettingPage> {
                 Row(
                   children: [
                     Container(),
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     ),
-                    Text(
+                    const Text(
                       "Отчет о бронировании",
                       style: TextStyle(
                           color: Color(0xFF1A2B47),
@@ -385,11 +385,11 @@ class _VendorSettingPageState extends State<VendorSettingPage> {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 5,
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
                   child: Divider(
                     color: Color(0xFFE2E2E2),
                   ),
@@ -405,10 +405,10 @@ class _VendorSettingPageState extends State<VendorSettingPage> {
                 Row(
                   children: [
                     Container(),
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     ),
-                    Text(
+                    const Text(
                       "Отчет о запросе",
                       style: TextStyle(
                           color: Color(0xFF1A2B47),
@@ -417,11 +417,11 @@ class _VendorSettingPageState extends State<VendorSettingPage> {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 5,
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
                   child: Divider(
                     color: Color(0xFFE2E2E2),
                   ),
@@ -437,10 +437,10 @@ class _VendorSettingPageState extends State<VendorSettingPage> {
                 Row(
                   children: [
                     Container(),
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     ),
-                    Text(
+                    const Text(
                       "Выплаты",
                       style: TextStyle(
                           color: Color(0xFF1A2B47),
@@ -449,11 +449,11 @@ class _VendorSettingPageState extends State<VendorSettingPage> {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 5,
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
                   child: Divider(
                     color: Color(0xFFE2E2E2),
                   ),
@@ -469,10 +469,10 @@ class _VendorSettingPageState extends State<VendorSettingPage> {
                 Row(
                   children: [
                     Container(),
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     ),
-                    Text(
+                    const Text(
                       "Проверки",
                       style: TextStyle(
                           color: Color(0xFF1A2B47),
@@ -481,11 +481,11 @@ class _VendorSettingPageState extends State<VendorSettingPage> {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 5,
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
                   child: Divider(
                     color: Color(0xFFE2E2E2),
                   ),
@@ -501,10 +501,10 @@ class _VendorSettingPageState extends State<VendorSettingPage> {
                 Row(
                   children: [
                     Container(),
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     ),
-                    Text(
+                    const Text(
                       "Сменить пароль",
                       style: TextStyle(
                           color: Color(0xFF1A2B47),
@@ -513,11 +513,11 @@ class _VendorSettingPageState extends State<VendorSettingPage> {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 5,
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
                   child: Divider(
                     color: Color(0xFFE2E2E2),
                   ),
@@ -528,7 +528,7 @@ class _VendorSettingPageState extends State<VendorSettingPage> {
           ListTile(
             onTap: (){
               setState(() {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => SupportPage()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const SupportPage()));
               });
             },
             contentPadding: EdgeInsets.zero,
@@ -537,14 +537,14 @@ class _VendorSettingPageState extends State<VendorSettingPage> {
                 Row(
                   children: [
                     Container(),
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     ),
                     Image.asset("assets/icons/reference.png"),
-                    SizedBox(
+                    const SizedBox(
                       width: 5,
                     ),
-                    Text(
+                    const Text(
                       "Справка",
                       style: TextStyle(
                           color: Color(0xFF1A2B47),
@@ -553,11 +553,11 @@ class _VendorSettingPageState extends State<VendorSettingPage> {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 5,
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
                   child: Divider(color: Color(0xFFE2E2E2)),
                 )
               ],
@@ -570,14 +570,14 @@ class _VendorSettingPageState extends State<VendorSettingPage> {
                 Row(
                   children: [
                     Container(),
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     ),
                     Image.asset("assets/icons/exit.png"),
-                    SizedBox(
+                    const SizedBox(
                       width: 15,
                     ),
-                    Text(
+                    const Text(
                       "Выйти",
                       style: TextStyle(
                           color: Color(0xFF1A2B47),

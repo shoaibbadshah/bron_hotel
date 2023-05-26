@@ -1,8 +1,6 @@
 import 'package:bron_hotel/pages/favorites-page.dart';
 import 'package:bron_hotel/pages/home-page.dart';
 import 'package:bron_hotel/pages/settings/admin-page.dart';
-import 'package:bron_hotel/pages/settings/vendor-setting-page.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -13,21 +11,24 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
-  List<String> _icons =  [
+  int _selectedIndex = 0;
+  late TabController _tabController;
+
+  final List<String> _icons =  [
     "assets/icons/search.png",
     "assets/icons/follow.png",
     "assets/icons/person.png",
   ];
   List pages = [
-    HomePage(),
-    FavoritesPage(),
-    AdminPage()
+    const HomePage(),
+    const FavoritesPage(),
+    const AdminPage()
   ];
+
   final List<String> _labels = [
     'Home', 'maps', 'camera'
   ];
-  int _selectedIndex = 0;
-  late TabController _tabController;
+
 
   @override
   void initState() {
@@ -38,7 +39,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFF1F4FB),
+      backgroundColor: const Color(0xFFF1F4FB),
       body: pages[_selectedIndex],
       bottomNavigationBar: Container(
         height: 100,
@@ -53,7 +54,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                   color: Colors.black.withOpacity(0.1),
                   spreadRadius: 0,
                   blurRadius: 10,
-                  offset: Offset(0, 0), // changes position of shadow
+                  offset: const Offset(0, 0),
                 ),
               ],
             ),
@@ -85,11 +86,11 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
 }
 Widget _tabItem(String icons, String label, {bool isSelected = false}) {
   return AnimatedContainer(
-      margin: EdgeInsets.all(8),
+      margin: const EdgeInsets.all(8),
       alignment: Alignment.center,
       duration: const Duration(milliseconds: 500),
       padding: const EdgeInsets.all(10),
-      child: Image.asset(icons, color: !isSelected ? Color(0xFF1A2B47).withOpacity(0.5) : Color(0xFF1A2B47))
+      child: Image.asset(icons, color: !isSelected ? const Color(0xFF1A2B47).withOpacity(0.5) : const Color(0xFF1A2B47))
   );
 }
 

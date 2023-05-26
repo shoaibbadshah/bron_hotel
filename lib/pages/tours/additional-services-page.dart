@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'go-payment-tours-page.dart';
@@ -15,6 +14,7 @@ class _AdditionalServicesPageState extends State<AdditionalServicesPage> {
   bool isChecked1 = false;
   String valueRadio ="";
   bool selectedRadio = false;
+
   Color getColor(Set<MaterialState> states) {
     const Set<MaterialState> interactiveStates = <MaterialState>{
       MaterialState.pressed,
@@ -27,6 +27,7 @@ class _AdditionalServicesPageState extends State<AdditionalServicesPage> {
     }
     return Colors.white;
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,13 +40,13 @@ class _AdditionalServicesPageState extends State<AdditionalServicesPage> {
               Navigator.pop(context);
             });
           },
-          icon: Icon(Icons.arrow_back_ios, color: Colors.white,),
+          icon: const Icon(Icons.arrow_back_ios, color: Colors.white,),
         ),
-        backgroundColor: Color(0xFF1A2B47),
+        backgroundColor: const Color(0xFF1A2B47),
         centerTitle: true,
         title: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
+          children: const [
             Text(
               "Дополнительные услуги",
               style: TextStyle(
@@ -67,11 +68,7 @@ class _AdditionalServicesPageState extends State<AdditionalServicesPage> {
         ),
         actions: [
           IconButton(
-              onPressed: (){
-                setState(() {
-                  //Navigator.push(context, MaterialPageRoute(builder: (context) => TicketsFilterPage()));
-                });
-              },
+              onPressed: null,
               icon: Image.asset("assets/icons/share-appbar.png")
           )
         ],
@@ -79,8 +76,8 @@ class _AdditionalServicesPageState extends State<AdditionalServicesPage> {
       body: ListView(
         children: [
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-            decoration: BoxDecoration(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+            decoration: const BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
@@ -96,7 +93,7 @@ class _AdditionalServicesPageState extends State<AdditionalServicesPage> {
             child: Column(
               children: [
                 Row(
-                  children: [
+                  children: const [
                     Expanded(
                       child: Text(
                         "1200\$",
@@ -120,10 +117,10 @@ class _AdditionalServicesPageState extends State<AdditionalServicesPage> {
                     ),
                   ],
                 ),
-                SizedBox(height: 10,),
+                const SizedBox(height: 10,),
                 Row(
                   children: [
-                    Expanded(
+                    const Expanded(
                       child: Text(
                         "Проверка цены у туроператоров через",
                         style: TextStyle(
@@ -134,7 +131,7 @@ class _AdditionalServicesPageState extends State<AdditionalServicesPage> {
                       ),
                     ),
                     Row(
-                      children: [
+                      children: const [
                         Text(
                           "12:23",
                           style: TextStyle(
@@ -157,17 +154,17 @@ class _AdditionalServicesPageState extends State<AdditionalServicesPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: 15,),
+                const SizedBox(height: 15,),
                 Text(
                   "Выберите дополнительные услуги и способ оплаты",
                   style: TextStyle(
-                      color: Color(0xFF1A2B47).withOpacity(0.85),
+                      color: const Color(0xFF1A2B47).withOpacity(0.85),
                       fontWeight: FontWeight.w600,
                       fontSize: 16
                   ),
                 ),
-                SizedBox(height: 10,),
-                Text(
+                const SizedBox(height: 10,),
+                const Text(
                   "Сделайте свой отдых более\nкомфортным",
                   style: TextStyle(
                       color: Color(0xFF5E6D77),
@@ -178,14 +175,14 @@ class _AdditionalServicesPageState extends State<AdditionalServicesPage> {
               ],
             ),
           ),
-          SizedBox(height: 20,),
+          const SizedBox(height: 20,),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
-                image: DecorationImage(
+                image: const DecorationImage(
                   image: AssetImage("assets/images/bg-services.png"),
                   fit: BoxFit.cover
                 )
@@ -193,7 +190,7 @@ class _AdditionalServicesPageState extends State<AdditionalServicesPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     "Дополнительные\nуслуги",
                     style: TextStyle(
                         color: Colors.white,
@@ -201,23 +198,23 @@ class _AdditionalServicesPageState extends State<AdditionalServicesPage> {
                         fontSize: 24
                     ),
                   ),
-                  SizedBox(height: 20,),
+                  const SizedBox(height: 20,),
                   Row(
                     children: [
                       Text(
                         "Приоритетное обслуживание",
                         style: TextStyle(
-                            color: Color(0xFF1A2B47).withOpacity(0.85),
+                            color: const Color(0xFF1A2B47).withOpacity(0.85),
                             fontWeight: FontWeight.w600,
                             fontSize: 14
                         ),
                       ),
-                      SizedBox(width: 10,),
+                      const SizedBox(width: 10,),
                       Image.asset("assets/icons/question.png", color: Colors.white,)
 
                     ],
                   ),
-                  SizedBox(height: 10,),
+                  const SizedBox(height: 10,),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
@@ -226,7 +223,7 @@ class _AdditionalServicesPageState extends State<AdditionalServicesPage> {
                         child: Text(
                           "Наш эксперт оперативно ответит вам в любом мессенджере",
                           style: TextStyle(
-                              color: Color(0xFF1A2B47).withOpacity(0.85),
+                              color: const Color(0xFF1A2B47).withOpacity(0.85),
                               fontWeight: FontWeight.w500,
                               fontSize: 12
                           ),
@@ -237,7 +234,7 @@ class _AdditionalServicesPageState extends State<AdditionalServicesPage> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            Text(
+                            const Text(
                               "+230\$",
                               style: TextStyle(
                                   color: Colors.white,
@@ -245,7 +242,7 @@ class _AdditionalServicesPageState extends State<AdditionalServicesPage> {
                                   fontSize: 14
                               ),
                             ),
-                            SizedBox(width: 10,),
+                            const SizedBox(width: 10,),
                             Container(
                               width: 17,
                               height: 17,
@@ -255,7 +252,7 @@ class _AdditionalServicesPageState extends State<AdditionalServicesPage> {
                                   BoxShadow(
                                     blurRadius: 4,
                                     spreadRadius: -1,
-                                    offset: Offset(-1, -1),
+                                    offset: const Offset(-1, -1),
                                     color: Colors.black.withOpacity(0.2),
                                       blurStyle: BlurStyle.normal
                                   )
@@ -268,7 +265,7 @@ class _AdditionalServicesPageState extends State<AdditionalServicesPage> {
                                   ),
                                 ),
                                 child: Checkbox(
-                                  checkColor: Color(0xFF1A2B47).withOpacity(0.85),
+                                  checkColor: const Color(0xFF1A2B47).withOpacity(0.85),
                                   fillColor: MaterialStateProperty.resolveWith(
                                       getColor
                                   ),
@@ -291,11 +288,11 @@ class _AdditionalServicesPageState extends State<AdditionalServicesPage> {
               ),
             ),
           ),
-          SizedBox(height: 20,),
+          const SizedBox(height: 20,),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(10),
@@ -303,8 +300,8 @@ class _AdditionalServicesPageState extends State<AdditionalServicesPage> {
                   BoxShadow(
                     spreadRadius: 4,
                     blurRadius: 26,
-                    offset: Offset(3,4),
-                    color: Color(0xFF5F90F3).withOpacity(0.13)
+                    offset: const Offset(3,4),
+                    color: const Color(0xFF5F90F3).withOpacity(0.13)
                   )
                 ]
               ),
@@ -321,12 +318,12 @@ class _AdditionalServicesPageState extends State<AdditionalServicesPage> {
                           Text(
                             "+400\$",
                             style: TextStyle(
-                                color: Color(0xFF1A2B47).withOpacity(0.85),
+                                color: const Color(0xFF1A2B47).withOpacity(0.85),
                                 fontWeight: FontWeight.w600,
                                 fontSize: 16
                             ),
                           ),
-                          SizedBox(width: 10,),
+                          const SizedBox(width: 10,),
                           Container(
                             width: 17,
                             height: 17,
@@ -336,7 +333,7 @@ class _AdditionalServicesPageState extends State<AdditionalServicesPage> {
                                   BoxShadow(
                                       blurRadius: 4,
                                       spreadRadius: 0,
-                                      offset: Offset(-3, -3),
+                                      offset: const Offset(-3, -3),
                                       color: Colors.black.withOpacity(0.1),
                                       blurStyle: BlurStyle.normal
                                   )
@@ -349,7 +346,7 @@ class _AdditionalServicesPageState extends State<AdditionalServicesPage> {
                                 ),
                               ),
                               child: Checkbox(
-                                checkColor: Color(0xFF1A2B47).withOpacity(0.85),
+                                checkColor: const Color(0xFF1A2B47).withOpacity(0.85),
                                 fillColor: MaterialStateProperty.resolveWith(
                                     getColor
                                 ),
@@ -366,17 +363,17 @@ class _AdditionalServicesPageState extends State<AdditionalServicesPage> {
                       )
                     ],
                   ),
-                  SizedBox(height: 15,),
+                  const SizedBox(height: 15,),
                   Text(
                     "Страховка от невыезда с\nмаксимальной компенсацией",
                     style: TextStyle(
-                        color: Color(0xFF1A2B47).withOpacity(0.85),
+                        color: const Color(0xFF1A2B47).withOpacity(0.85),
                         fontWeight: FontWeight.w400,
                         fontSize: 12
                     ),
                   ),
-                  SizedBox(height: 15,),
-                  Text(
+                  const SizedBox(height: 15,),
+                  const Text(
                     "Страховая компания компенсирует стоимость тура , если вы вынуждены вернуться , не сможете полететь из за Ковид 19 или другой болезни у вас или ваших родственников, чрезвычайного положения и других факторов",
                     style: TextStyle(
                         color: Color(0xFF5E6D77),
@@ -389,7 +386,7 @@ class _AdditionalServicesPageState extends State<AdditionalServicesPage> {
               ),
             ),
           ),
-          SizedBox(height: 10,),
+          const SizedBox(height: 10,),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: GestureDetector(
@@ -400,12 +397,12 @@ class _AdditionalServicesPageState extends State<AdditionalServicesPage> {
               },
               child: Container(
                 width: MediaQuery.of(context).size.width,
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 decoration: BoxDecoration(
-                    color: Color(0xFF5F90F3),
+                    color: const Color(0xFF5F90F3),
                     borderRadius: BorderRadius.circular(10)
                 ),
-                child: Center(
+                child: const Center(
                   child: Text(
                     "Добавить пожелания к заказу",
                     textAlign: TextAlign.center,
@@ -426,7 +423,7 @@ class _AdditionalServicesPageState extends State<AdditionalServicesPage> {
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   decoration: TextDecoration.underline,
-                    color: Color(0xFF1A2B47).withOpacity(0.85),
+                    color: const Color(0xFF1A2B47).withOpacity(0.85),
                     fontWeight: FontWeight.w500,
                     fontSize: 12
                 ),
@@ -440,12 +437,12 @@ class _AdditionalServicesPageState extends State<AdditionalServicesPage> {
                   "Выберите способ оплаты",
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                      color: Color(0xFF1A2B47).withOpacity(0.85),
+                      color: const Color(0xFF1A2B47).withOpacity(0.85),
                       fontWeight: FontWeight.w600,
                       fontSize: 18
                   ),
                 ),
-                SizedBox(height: 10,),
+                const SizedBox(height: 10,),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -455,13 +452,13 @@ class _AdditionalServicesPageState extends State<AdditionalServicesPage> {
                         "Вам будет начислен кэшбек",
                         style: TextStyle(
                           decoration: TextDecoration.underline,
-                            color: Color(0xFF1A2B47).withOpacity(0.85),
+                            color: const Color(0xFF1A2B47).withOpacity(0.85),
                             fontWeight: FontWeight.w500,
                             fontSize: 12
                         ),
                       ),
                     ),
-                    Expanded(
+                    const Expanded(
                       child: Text(
                         "+795",
                         style: TextStyle(
@@ -476,7 +473,7 @@ class _AdditionalServicesPageState extends State<AdditionalServicesPage> {
               ],
             ),
           ),
-          SizedBox(height: 15,),
+          const SizedBox(height: 15,),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Container(
@@ -488,8 +485,8 @@ class _AdditionalServicesPageState extends State<AdditionalServicesPage> {
                   BoxShadow(
                     blurRadius: 26,
                     spreadRadius: 4,
-                    offset: Offset(3,4),
-                    color: Color(0xFF5F90F3).withOpacity(0.13)
+                    offset: const Offset(3,4),
+                    color: const Color(0xFF5F90F3).withOpacity(0.13)
                   )
                 ]
               ),
@@ -497,8 +494,8 @@ class _AdditionalServicesPageState extends State<AdditionalServicesPage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    color: Color(0xFFF2F2F2).withOpacity(0.85),
-                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                    color: const Color(0xFFF2F2F2).withOpacity(0.85),
+                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -508,14 +505,14 @@ class _AdditionalServicesPageState extends State<AdditionalServicesPage> {
                             Text(
                               "Банковская карта",
                               style: TextStyle(
-                                  color: Color(0xFF1A2B47).withOpacity(0.85),
+                                  color: const Color(0xFF1A2B47).withOpacity(0.85),
                                   fontWeight: FontWeight.w700,
                                   fontSize: 14
                               ),
                             ),
-                            SizedBox(width: 10,),
+                            const SizedBox(width: 10,),
                             Image.asset("assets/images/visa.png"),
-                            SizedBox(width: 10,),
+                            const SizedBox(width: 10,),
                             Image.asset("assets/icons/master-card.png")
                           ],
                         ),
@@ -536,7 +533,7 @@ class _AdditionalServicesPageState extends State<AdditionalServicesPage> {
                                 BoxShadow(
                                   blurRadius: 10,
                                   spreadRadius: 0,
-                                  offset: Offset(5,8),
+                                  offset: const Offset(5,8),
                                   color: Colors.black.withOpacity(0.1)
                                 )
                               ]
@@ -544,7 +541,7 @@ class _AdditionalServicesPageState extends State<AdditionalServicesPage> {
                             child: Icon(
                               Icons.circle,
                               size: 11,
-                              color: selectedRadio ? Color(0xFF1A2B47).withOpacity(0.85) : Colors.white,
+                              color: selectedRadio ? const Color(0xFF1A2B47).withOpacity(0.85) : Colors.white,
                             ),
                           ),
                         )
@@ -555,7 +552,7 @@ class _AdditionalServicesPageState extends State<AdditionalServicesPage> {
                     padding: const EdgeInsets.symmetric(horizontal: 20.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
+                      children: const [
                         SizedBox(height: 20,),
                         Text(
                           "Оплата картой мгнавенно закрепит за\nвами места и цену по этому туру",
@@ -582,9 +579,9 @@ class _AdditionalServicesPageState extends State<AdditionalServicesPage> {
               ),
             ),
           ),
-          SizedBox(height: 20,),
+          const SizedBox(height: 20,),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 20),
             child: CheckboxTheme(
               data: CheckboxThemeData(
                 shape: RoundedRectangleBorder(
@@ -592,8 +589,8 @@ class _AdditionalServicesPageState extends State<AdditionalServicesPage> {
                 ),
               ),
               child: CheckboxListTile(
-                activeColor: Color(0xFF5E6D77),
-                title:  Text(
+                activeColor: const Color(0xFF5E6D77),
+                title:  const Text(
                     "Я согласен и принимаю условия договора оферты\nи пользовательского соглашения, ознакомлен\nс правилами изменения и отмены",
                   style: TextStyle(
                     decoration: TextDecoration.underline,
@@ -613,23 +610,23 @@ class _AdditionalServicesPageState extends State<AdditionalServicesPage> {
               ),
             ),
           ),
-          SizedBox(height: 20,),
+          const SizedBox(height: 20,),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: GestureDetector(
               onTap: (){
                 setState(() {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => GoPaymentToursPage()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const GoPaymentToursPage()));
                 });
               },
               child: Container(
                 width: MediaQuery.of(context).size.width,
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                 decoration: BoxDecoration(
-                    color: Color(0xFF005BFE),
+                    color: const Color(0xFF005BFE),
                     borderRadius: BorderRadius.circular(10)
                 ),
-                child: Center(
+                child: const Center(
                   child: Text(
                     "Перейти к оплате",
                     textAlign: TextAlign.center,
@@ -643,7 +640,7 @@ class _AdditionalServicesPageState extends State<AdditionalServicesPage> {
               ),
             ),
           ),
-          SizedBox(height: 30,),
+          const SizedBox(height: 30,),
         ],
       ),
     );

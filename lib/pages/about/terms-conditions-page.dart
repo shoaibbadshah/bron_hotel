@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class TermsConditionsPage extends StatefulWidget {
@@ -41,12 +40,8 @@ class _TermsConditionsPageState extends State<TermsConditionsPage> {
               Row(
                 children: [
                   Image.asset("assets/icons/reference.png"),
-                  IconButton(
-                      onPressed: (){
-                        setState(() {
-                          //Navigator.push(context, MaterialPageRoute(builder: (context) => NotificationsPage()));
-                        });
-                      },
+                  const IconButton(
+                      onPressed: null,
                       icon: Icon(Icons.notifications_none, color: Color(0xFF1A2B47),)
                   ),
                 ],
@@ -56,12 +51,12 @@ class _TermsConditionsPageState extends State<TermsConditionsPage> {
         ),
         body: ListView(
           controller: controllerListView,
-          padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+          padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
           children: [
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
+              children: const <Widget> [
+                 Text(
                   "Terms and conditions",
                   textAlign: TextAlign.center,
                   style: TextStyle(
@@ -69,8 +64,8 @@ class _TermsConditionsPageState extends State<TermsConditionsPage> {
                       fontSize: 20,
                       fontWeight: FontWeight.w700),
                 ),
-                SizedBox(height: 20,),
-                Text(
+                 SizedBox(height: 20,),
+                 Text(
                   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Libero nunc consequat interdum varius sit. Nisl rhoncus mattis rhoncus urna neque viverra justo nec. Mauris pellentesque pulvinar pellentesque habitant morbi tristique. Amet tellus cras adipiscing enim eu turpis egestas. Vel elit scelerisque mauris pellentesque pulvinar pellentesque. Metus vulputate eu scelerisque felis imperdiet. Justo donec enim diam vulputate ut pharetra sit amet. Facilisis magna etiam tempor orci eu lobortis elementum. Ut pharetra sit amet aliquam.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Libero nunc consequat interdum varius sit. Nisl rhoncus mattis rhoncus urna neque viverra justo nec. Mauris pellentesque pulvinar pellentesque habitant morbi tristique. Amet tellus cras adipiscing enim eu turpis egestas. Vel elit scelerisque ",
                   textAlign: TextAlign.left,
                   style: TextStyle(
@@ -79,7 +74,6 @@ class _TermsConditionsPageState extends State<TermsConditionsPage> {
                       fontSize: 16,
                       fontWeight: FontWeight.w300),
                 ),
-
               ],
             ),
           ],

@@ -1,7 +1,6 @@
 import 'dart:ui';
 
 import 'package:bron_hotel/pages/settings/your-booking-page.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../utils/color.dart';
@@ -39,14 +38,14 @@ class _HistoryOfBookingPageState extends State<HistoryOfBookingPage> {
                 Navigator.pop(context);
               });
             },
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back_ios,
               color: Colors.white,
             ),
           ),
-          backgroundColor: Color(0xFF1A2B47),
+          backgroundColor: const Color(0xFF1A2B47),
           centerTitle: true,
-          title: Text(
+          title: const Text(
             "История бронирования",
             style: TextStyle(
               color: Colors.white,
@@ -57,7 +56,7 @@ class _HistoryOfBookingPageState extends State<HistoryOfBookingPage> {
         ),
         body: ListView(
           controller: controllerListView,
-          padding: EdgeInsets.symmetric(vertical: 20),
+          padding: const EdgeInsets.symmetric(vertical: 20),
           children: [
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -70,7 +69,7 @@ class _HistoryOfBookingPageState extends State<HistoryOfBookingPage> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Text(
+                    const Text(
                       "У вас пока нет ни\nодной поездки",
                       textAlign: TextAlign.center,
                       style: TextStyle(
@@ -78,7 +77,7 @@ class _HistoryOfBookingPageState extends State<HistoryOfBookingPage> {
                           fontWeight: FontWeight.w600,
                           fontSize: 18),
                     ),
-                    Text(
+                    const Text(
                       "Пора сибирать вещи и поехать отдыхать",
                       textAlign: TextAlign.center,
                       style: TextStyle(
@@ -89,10 +88,10 @@ class _HistoryOfBookingPageState extends State<HistoryOfBookingPage> {
                     Container(
                       width: MediaQuery.of(context).size.width / 2.5,
                       height: 40,
-                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
-                        gradient: LinearGradient(
+                        gradient: const LinearGradient(
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
                           colors: [
@@ -106,7 +105,7 @@ class _HistoryOfBookingPageState extends State<HistoryOfBookingPage> {
                           tileMode: TileMode.clamp,
                         ),
                       ),
-                      child: Center(
+                      child: const Center(
                         child: Text(
                             "Начать поиск",
                           style: TextStyle(
@@ -120,7 +119,7 @@ class _HistoryOfBookingPageState extends State<HistoryOfBookingPage> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Column(
@@ -131,12 +130,12 @@ class _HistoryOfBookingPageState extends State<HistoryOfBookingPage> {
                   child: Text(
                     "Вы забронировали",
                     style: TextStyle(
-                        color: Color(0xFF1A2B47).withOpacity(0.85),
+                        color: const Color(0xFF1A2B47).withOpacity(0.85),
                         fontWeight: FontWeight.w600,
                         fontSize: 20),
                   ),
                 ),
-                SizedBox(height: 20,),
+                const SizedBox(height: 20,),
                 GestureDetector(
                   onTap: (){
                     setState(() {
@@ -148,15 +147,15 @@ class _HistoryOfBookingPageState extends State<HistoryOfBookingPage> {
                     child: Container(
                       height: 91,
                       width: MediaQuery.of(context).size.width,
-                      padding: EdgeInsets.symmetric(horizontal: 10),
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
-                        border: Border.all(color: Color(0xFF005BFE))
+                        border: Border.all(color: const Color(0xFF005BFE))
                       ),
                       child: Row(
                         children: [
                           Image.asset("assets/images/bron-image.png"),
-                          SizedBox(width: 10,),
+                          const SizedBox(width: 10,),
                           Expanded(
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -165,21 +164,21 @@ class _HistoryOfBookingPageState extends State<HistoryOfBookingPage> {
                                 Text(
                                   "Georgia , Tbilisi",
                                   style: TextStyle(
-                                      color: Color(0xFF1A2B47).withOpacity(0.85),
+                                      color: const Color(0xFF1A2B47).withOpacity(0.85),
                                       fontWeight: FontWeight.w600,
                                       fontSize: 16),
                                 ),
                                 Text(
                                   "Хозяин: организатор Эка",
                                   style: TextStyle(
-                                      color: Color(0xFF5E6D77).withOpacity(0.85),
+                                      color: const Color(0xFF5E6D77).withOpacity(0.85),
                                       fontWeight: FontWeight.w400,
                                       fontSize: 12),
                                 ),
                                 Text(
                                   "12.07.2022-27.07.2022 ",
                                   style: TextStyle(
-                                      color: Color(0xFF5E6D77).withOpacity(0.85),
+                                      color: const Color(0xFF5E6D77).withOpacity(0.85),
                                       fontWeight: FontWeight.w400,
                                       fontSize: 12),
                                 ),
@@ -193,7 +192,7 @@ class _HistoryOfBookingPageState extends State<HistoryOfBookingPage> {
                 ),
               ],
             ),
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -202,26 +201,26 @@ class _HistoryOfBookingPageState extends State<HistoryOfBookingPage> {
                   child: Text(
                     "Ваши поездки",
                     style: TextStyle(
-                        color: Color(0xFF1A2B47).withOpacity(0.85),
+                        color: const Color(0xFF1A2B47).withOpacity(0.85),
                         fontWeight: FontWeight.w600,
                         fontSize: 20),
                   ),
                 ),
-                SizedBox(height: 20,),
+                const SizedBox(height: 20,),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
                   child: Container(
                     height: 91,
                     width: MediaQuery.of(context).size.width,
-                    padding: EdgeInsets.symmetric(horizontal: 10),
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
-                        border: Border.all(color: Color(0xFF005BFE))
+                        border: Border.all(color: const Color(0xFF005BFE))
                     ),
                     child: Row(
                       children: [
                         Image.asset("assets/images/bron-image.png"),
-                        SizedBox(width: 10,),
+                        const SizedBox(width: 10,),
                         Expanded(
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -230,21 +229,21 @@ class _HistoryOfBookingPageState extends State<HistoryOfBookingPage> {
                               Text(
                                 "Georgia , Tbilisi",
                                 style: TextStyle(
-                                    color: Color(0xFF1A2B47).withOpacity(0.85),
+                                    color: const Color(0xFF1A2B47).withOpacity(0.85),
                                     fontWeight: FontWeight.w600,
                                     fontSize: 16),
                               ),
                               Text(
                                 "Хозяин: организатор Эка",
                                 style: TextStyle(
-                                    color: Color(0xFF5E6D77).withOpacity(0.85),
+                                    color: const Color(0xFF5E6D77).withOpacity(0.85),
                                     fontWeight: FontWeight.w400,
                                     fontSize: 12),
                               ),
                               Text(
                                 "12.07.2022-27.07.2022 ",
                                 style: TextStyle(
-                                    color: Color(0xFF5E6D77).withOpacity(0.85),
+                                    color: const Color(0xFF5E6D77).withOpacity(0.85),
                                     fontWeight: FontWeight.w400,
                                     fontSize: 12),
                               ),
@@ -257,7 +256,7 @@ class _HistoryOfBookingPageState extends State<HistoryOfBookingPage> {
                 ),
               ],
             ),
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -266,12 +265,12 @@ class _HistoryOfBookingPageState extends State<HistoryOfBookingPage> {
                   child: Text(
                     "Мы рекомендуем",
                     style: TextStyle(
-                        color: Color(0xFF1A2B47).withOpacity(0.85),
+                        color: const Color(0xFF1A2B47).withOpacity(0.85),
                         fontWeight: FontWeight.w600,
                         fontSize: 20),
                   ),
                 ),
-                SizedBox(height: 10,),
+                const SizedBox(height: 10,),
                 Column(
                   children: List.generate(5, (index) =>
                       Padding(
@@ -286,14 +285,14 @@ class _HistoryOfBookingPageState extends State<HistoryOfBookingPage> {
                             children: [
                               Container(
                                 height: 128,
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                     image: DecorationImage(
                                         image: AssetImage("assets/images/recomended-image.png",),
                                         fit: BoxFit.fill
                                     )
                                 ),
                               ),
-                              SizedBox(height: 10,),
+                              const SizedBox(height: 10,),
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -302,13 +301,13 @@ class _HistoryOfBookingPageState extends State<HistoryOfBookingPage> {
                                     child: Text(
                                       "France , Paris",
                                       style: TextStyle(
-                                          color: Color(0xFF1A2B47).withOpacity(0.85),
+                                          color: const Color(0xFF1A2B47).withOpacity(0.85),
                                           fontWeight: FontWeight.w600,
                                           fontSize: 14),
                                     ),
                                   ),
-                                  Padding(
-                                    padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10),
+                                  const Padding(
+                                    padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10),
                                     child: Text(
                                       "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
                                       style: TextStyle(
@@ -327,9 +326,9 @@ class _HistoryOfBookingPageState extends State<HistoryOfBookingPage> {
                 )
               ],
             ),
-            SizedBox(height: 20,),
-            FollowScreen(),
-            SizedBox(height: 20,)
+            const SizedBox(height: 20,),
+            const FollowScreen(),
+            const SizedBox(height: 20,)
           ],
         ),
       ),
@@ -339,7 +338,7 @@ class _HistoryOfBookingPageState extends State<HistoryOfBookingPage> {
     return Container(
       height: 300,
       alignment: Alignment.center,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           image: DecorationImage(
               image: AssetImage("assets/images/bottomInst.png"),
               fit: BoxFit.cover)),
@@ -350,14 +349,14 @@ class _HistoryOfBookingPageState extends State<HistoryOfBookingPage> {
             child: BackdropFilter(
               filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
               child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+                padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
                     color: Colors.white.withOpacity(0.8)),
                 child: Column(
                   children: [
                     Image.asset("assets/images/instagramm.png"),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     Text(
@@ -367,17 +366,17 @@ class _HistoryOfBookingPageState extends State<HistoryOfBookingPage> {
                           fontSize: 12,
                           fontWeight: FontWeight.w400),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     Container(
                       height: 33,
                       width: MediaQuery.of(context).size.width / 3,
-                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
                       decoration: BoxDecoration(
                           color: UtilColor.getColorFromHex("FA5636"),
                           borderRadius: BorderRadius.circular(15)),
-                      child: Center(
+                      child: const Center(
                         child: Text(
                           "Follow",
                           style: TextStyle(

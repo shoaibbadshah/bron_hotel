@@ -12,7 +12,7 @@ class FollowScreen extends StatelessWidget {
     return Container(
       height: 300,
       alignment: Alignment.center,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           image: DecorationImage(
               image: AssetImage("assets/images/bottomInst.png"),
               fit: BoxFit.cover)),
@@ -23,14 +23,14 @@ class FollowScreen extends StatelessWidget {
             child: BackdropFilter(
               filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
               child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+                padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
                     color: Colors.white.withOpacity(0.8)),
                 child: Column(
                   children: [
                     Image.asset("assets/images/instagramm.png"),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     Text(
@@ -40,17 +40,17 @@ class FollowScreen extends StatelessWidget {
                           fontSize: 12,
                           fontWeight: FontWeight.w400),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     Container(
                       height: 33,
                       width: MediaQuery.of(context).size.width / 3,
-                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
                       decoration: BoxDecoration(
                           color: UtilColor.getColorFromHex("FA5636"),
                           borderRadius: BorderRadius.circular(15)),
-                      child: Center(
+                      child: const Center(
                         child: Text(
                           "Follow",
                           style: TextStyle(

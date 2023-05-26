@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HousingOptions extends StatefulWidget {
@@ -15,7 +14,7 @@ class _HousingOptionsState extends State<HousingOptions> {
     return Container(
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           image: DecorationImage(
               alignment: Alignment.topRight,
               image: AssetImage("assets/images/maps-hotel.png"),
@@ -33,13 +32,13 @@ class _HousingOptionsState extends State<HousingOptions> {
                 Navigator.pop(context);
               });
             },
-            icon: Icon(Icons.arrow_back_ios, color: Colors.white,),
+            icon: const Icon(Icons.arrow_back_ios, color: Colors.white,),
           ),
-          backgroundColor: Color(0xFF1A2B47),
+          backgroundColor: const Color(0xFF1A2B47),
           centerTitle: true,
           title: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
+            children: const [
               Text(
                 "Тунис",
                 style: TextStyle(
@@ -61,11 +60,7 @@ class _HousingOptionsState extends State<HousingOptions> {
           ),
           actions: [
             IconButton(
-                onPressed: (){
-                  setState(() {
-
-                  });
-                },
+                onPressed: null,
                 icon: Image.asset("assets/icons/filters.png")
             )
           ],
@@ -79,8 +74,8 @@ class _HousingOptionsState extends State<HousingOptions> {
           },
           child: Container(
             height: 78,
-            padding: EdgeInsets.symmetric(vertical: 10),
-            decoration: BoxDecoration(
+            padding: const EdgeInsets.symmetric(vertical: 10),
+            decoration: const BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.only(topLeft: Radius.circular(40), topRight: Radius.circular(40))
             ),
@@ -90,11 +85,11 @@ class _HousingOptionsState extends State<HousingOptions> {
                   height: 4,
                   width: 66,
                   decoration: BoxDecoration(
-                    color: Color(0xFFD9D9D9),
+                    color: const Color(0xFFD9D9D9),
                     borderRadius: BorderRadius.circular(5)
                   ),
                 ),
-                SizedBox(height: 20,),
+                const SizedBox(height: 20,),
                 const Text(
                   "201 вариантов жилья",
                   style: TextStyle(
@@ -130,7 +125,7 @@ class _HousingOptionsState extends State<HousingOptions> {
                         height: MediaQuery.of(context).size.height,
                         child: ListView(
                           controller: controllerListViewSheet,
-                          padding: EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+                          padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 10),
                           scrollDirection: Axis.vertical,
                           children: [
                             Align(
@@ -143,16 +138,16 @@ class _HousingOptionsState extends State<HousingOptions> {
                                   height: 4,
                                   width: 66,
                                   decoration: BoxDecoration(
-                                      color: Color(0xFFD9D9D9),
+                                      color: const Color(0xFFD9D9D9),
                                       borderRadius: BorderRadius.circular(5)
                                   ),
                                 ),
                               ),
                             ),
                             Column(
-                              children: [
+                              children: const [
                                 SizedBox(height: 20,),
-                                const Text(
+                                Text(
                                   "201 вариантов жилья",
                                   style: TextStyle(
                                     color: Color(0xFF5E6D77),
@@ -171,7 +166,7 @@ class _HousingOptionsState extends State<HousingOptions> {
                                         height: MediaQuery.of(context).size.height / 4.1,
                                         width: MediaQuery.of(context).size.width,
                                         alignment: Alignment.topRight,
-                                        decoration: BoxDecoration(
+                                        decoration: const BoxDecoration(
                                             image: DecorationImage(
                                                 image: AssetImage("assets/images/favorites-image.png"),
                                                 fit: BoxFit.fill
@@ -193,31 +188,31 @@ class _HousingOptionsState extends State<HousingOptions> {
                                                     children: [
                                                       Row(
                                                         children: [
-                                                          Text("Hotel Stanford", style: TextStyle(color: Color(0xFF1A2B47), fontSize: 18, fontWeight: FontWeight.w500),),
-                                                          SizedBox(width: 5,),
+                                                          const Text("Hotel Stanford", style: TextStyle(color: Color(0xFF1A2B47), fontSize: 18, fontWeight: FontWeight.w500),),
+                                                          const SizedBox(width: 5,),
                                                           Row(
-                                                            children: [
+                                                            children: const [
                                                               Icon(Icons.location_on, color: Color(0xFF1A2B47),),
                                                               Text("Tunis", style: TextStyle(color: Color(0xFF5E6D77), fontSize: 12, fontWeight: FontWeight.w400),),
                                                             ],
                                                           )
                                                         ],
                                                       ),
-                                                      Text("340 Reviews", style: TextStyle(color: Color(0xFF6A7A84), fontSize: 14, fontWeight: FontWeight.w400),),
-                                                      SizedBox(height: 5,),
+                                                      const Text("340 Reviews", style: TextStyle(color: Color(0xFF6A7A84), fontSize: 14, fontWeight: FontWeight.w400),),
+                                                      const SizedBox(height: 5,),
                                                       Row(
                                                         children: [
                                                           RichText(
-                                                            text: TextSpan(
+                                                            text: const TextSpan(
                                                               text: '100 \$ /',
                                                               style: TextStyle(color: Color(0xFF5E6D77), fontSize: 16, fontWeight: FontWeight.w500),
-                                                              children: const <TextSpan>[
+                                                              children: <TextSpan>[
                                                                 TextSpan(text: ' ночь ', style: TextStyle(color: Color(0xFF5E6D77), fontSize: 12, fontWeight: FontWeight.w500)),
                                                               ],
                                                             ),
                                                           ),
-                                                          Icon(Icons.circle, size: 5, color: Color(0xFF5E6D77),),
-                                                          Text(" 6 гостей , 3 спален", style: TextStyle(color: Color(0xFF5E6D77), fontSize: 14, fontWeight: FontWeight.w500),),
+                                                          const Icon(Icons.circle, size: 5, color: Color(0xFF5E6D77),),
+                                                          const Text(" 6 гостей , 3 спален", style: TextStyle(color: Color(0xFF5E6D77), fontSize: 14, fontWeight: FontWeight.w500),),
                                                         ],
                                                       ),
                                                     ],
@@ -226,7 +221,7 @@ class _HousingOptionsState extends State<HousingOptions> {
                                                 Expanded(
                                                   child: Row(
                                                     mainAxisAlignment: MainAxisAlignment.end,
-                                                    children: [
+                                                    children: const [
                                                       Text("4.97", style: TextStyle(color: Color(0xFFFA5636), fontSize: 14, fontWeight: FontWeight.w700),),
                                                       Icon(Icons.star, color: Color(0xFFFA5636), size: 12,)
                                                     ],
@@ -237,10 +232,10 @@ class _HousingOptionsState extends State<HousingOptions> {
                                             Row(
                                               children: [
                                                 RichText(
-                                                  text: TextSpan(
+                                                  text: const TextSpan(
                                                     text: 'Всего ',
                                                     style: TextStyle(color: Color(0xFF5E6D77), fontSize: 16, fontWeight: FontWeight.w400),
-                                                    children: const <TextSpan>[
+                                                    children: <TextSpan>[
                                                       TextSpan(text: ' 1320\$', style: TextStyle(color: Color(0xFF1A2B47), fontSize: 20, fontWeight: FontWeight.w600)),
                                                     ],
                                                   ),

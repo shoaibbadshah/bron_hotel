@@ -1,5 +1,3 @@
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../home.dart';
@@ -21,19 +19,19 @@ class _FavoritesPageState extends State<FavoritesPage> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
-        title: Text("Избранные", style: TextStyle(color: Color(0xFF1A2B47), fontSize: 20, fontWeight: FontWeight.w600),),
+        title: const Text("Избранные", style: TextStyle(color: Color(0xFF1A2B47), fontSize: 20, fontWeight: FontWeight.w600),),
         leading: IconButton(
           onPressed: (){
             setState(() {
               Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const Home()));
             });
           },
-          icon: Icon(Icons.arrow_back_ios, color: Color(0xFF1A2B47),),
+          icon: const Icon(Icons.arrow_back_ios, color: Color(0xFF1A2B47),),
         ),
       ),
       body: ListView(
         controller: controllerListView,
-        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
         children: [
           Column(
             children: List.generate(5, (index) =>
@@ -43,15 +41,15 @@ class _FavoritesPageState extends State<FavoritesPage> {
                       height: MediaQuery.of(context).size.height / 4.1,
                       width: MediaQuery.of(context).size.width,
                       alignment: Alignment.topRight,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           image: DecorationImage(
                               image: AssetImage("assets/images/favorites-image.png"),
                               fit: BoxFit.fill
                           )
                       ),
 
-                      child: Padding(
-                        padding: const EdgeInsets.only(top: 15, right: 20),
+                      child: const Padding(
+                        padding: EdgeInsets.only(top: 15, right: 20),
                         child: Icon(Icons.favorite, color: Color(0xFFD80027),),
                       ),
                     ),
@@ -69,12 +67,12 @@ class _FavoritesPageState extends State<FavoritesPage> {
                                   children: [
                                     Row(
                                       children: [
-                                        Text("Hotel Stanford", style: TextStyle(color: Color(0xFF1A2B47), fontSize: 18, fontWeight: FontWeight.w500),),
-                                        SizedBox(width: 5,),
+                                        const Text("Hotel Stanford", style: TextStyle(color: Color(0xFF1A2B47), fontSize: 18, fontWeight: FontWeight.w500),),
+                                        const SizedBox(width: 5,),
                                         Row(
-                                          children: [
-                                            Icon(Icons.location_on, color: Color(0xFF1A2B47),),
-                                            Text("Tunis", style: TextStyle(color: Color(0xFF5E6D77), fontSize: 12, fontWeight: FontWeight.w400),),
+                                          children: const [
+                                             Icon(Icons.location_on, color: Color(0xFF1A2B47),),
+                                             Text("Tunis", style: TextStyle(color: Color(0xFF5E6D77), fontSize: 12, fontWeight: FontWeight.w400),),
                                           ],
                                         )
                                       ],
@@ -82,16 +80,16 @@ class _FavoritesPageState extends State<FavoritesPage> {
                                     Row(
                                       children: [
                                         RichText(
-                                          text: TextSpan(
+                                          text: const TextSpan(
                                             text: '100 \$ /',
                                             style: TextStyle(color: Color(0xFF5E6D77), fontSize: 16, fontWeight: FontWeight.w500),
-                                            children: const <TextSpan>[
+                                            children: <TextSpan>[
                                               TextSpan(text: ' ночь ', style: TextStyle(color: Color(0xFF5E6D77), fontSize: 12, fontWeight: FontWeight.w500)),
                                             ],
                                           ),
                                         ),
-                                        Icon(Icons.circle, size: 5, color: Color(0xFF5E6D77),),
-                                        Text(" 6 гостей , 3 спален", style: TextStyle(color: Color(0xFF5E6D77), fontSize: 14, fontWeight: FontWeight.w500),),
+                                        const Icon(Icons.circle, size: 5, color: Color(0xFF5E6D77),),
+                                        const Text(" 6 гостей , 3 спален", style: TextStyle(color: Color(0xFF5E6D77), fontSize: 14, fontWeight: FontWeight.w500),),
                                       ],
                                     ),
 
@@ -101,22 +99,22 @@ class _FavoritesPageState extends State<FavoritesPage> {
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.end,
                                 children: [
-                                  Text("340 Reviews", style: TextStyle(color: Color(0xFF6A7A84), fontSize: 14, fontWeight: FontWeight.w400),),
+                                  const Text("340 Reviews", style: TextStyle(color: Color(0xFF6A7A84), fontSize: 14, fontWeight: FontWeight.w400),),
                                   Row(
-                                    children: [
-                                      Text("4.97", style: TextStyle(color: Color(0xFFFA5636), fontSize: 14, fontWeight: FontWeight.w700),),
-                                      Icon(Icons.star, color: Color(0xFFFA5636), size: 12,)
+                                    children: const [
+                                       Text("4.97", style: TextStyle(color: Color(0xFFFA5636), fontSize: 14, fontWeight: FontWeight.w700),),
+                                       Icon(Icons.star, color: Color(0xFFFA5636), size: 12,)
                                     ],
                                   ),
                                 ],
                               )
                             ],
                           ),
-                          Divider(),
+                          const Divider(),
                         ],
                       ),
                     ),
-                    SizedBox(height: 10,)
+                    const SizedBox(height: 10,)
                   ],
                 )
             ),

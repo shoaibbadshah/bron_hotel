@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class PrivacyPolicyPage extends StatefulWidget {
@@ -41,12 +40,8 @@ class _PrivacyPolicyPageState extends State<PrivacyPolicyPage> {
               Row(
                 children: [
                   Image.asset("assets/icons/reference.png"),
-                  IconButton(
-                      onPressed: (){
-                        setState(() {
-                          //Navigator.push(context, MaterialPageRoute(builder: (context) => NotificationsPage()));
-                        });
-                      },
+                  const IconButton(
+                      onPressed: null,
                       icon: Icon(Icons.notifications_none, color: Color(0xFF1A2B47),)
                   ),
                 ],
@@ -56,12 +51,12 @@ class _PrivacyPolicyPageState extends State<PrivacyPolicyPage> {
         ),
         body: ListView(
           controller: controllerListView,
-          padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+          padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
           children: [
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
+              children: const <Widget> [
+                 Text(
                   "Privacy Policy",
                   textAlign: TextAlign.center,
                   style: TextStyle(
@@ -69,9 +64,9 @@ class _PrivacyPolicyPageState extends State<PrivacyPolicyPage> {
                       fontSize: 20,
                       fontWeight: FontWeight.w700),
                 ),
-                SizedBox(height: 20,),
-                Text(
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Libero nunc consequat interdum varius sit. Nisl rhoncus mattis rhoncus urna neque viverra justo nec. Mauris pellentesque pulvinar pellentesque habitant morbi tristique. Amet tellus cras adipiscing enim eu turpis egestas. Vel elit scelerisque mauris pellentesque pulvinar pellentesque. Metus vulputate eu scelerisque felis imperdiet. Justo donec enim diam vulputate ut pharetra sit amet. Facilisis magna etiam tempor orci eu lobortis elementum. Ut pharetra sit amet aliquam.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Libero nunc consequat interdum varius sit. Nisl rhoncus mattis rhoncus urna neque viverra justo nec. Mauris pellentesque pulvinar pellentesque habitant morbi tristique. Amet tellus cras adipiscing enim eu turpis egestas. Vel elit scelerisque ",
+                 SizedBox(height: 20,),
+                 Text(
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Libero nunc consequat interdum varius sit. Nisl rhoncus mattis rhoncus urna neque viverra justo nec. Mauris pellentesque pulvinar pellentesque habitant morbi tristique. Amet tellus cras adipiscing enim eu turpis egestas. Vel elit scelerisque mauris pellentesque pulvinar pellentesque. Metus vulputate eu scelerisque felis imperdiet. Justo donec enim diam vulputate ut pharetra sit amet. Facilisis magna etiam tempor orci eu lobortis elementum. Ut pharetra sit amet aliquam.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Libero nunc consequat interdum varius sit. Nisl rhoncus mattis rhoncus urna neque viverra justo nec. Mauris pellentesque pulvinar pellentesque habitant morbi tristique. Amet tellus cras adipiscing enim eu turpis egestas. Vel elit scelerisque Libero nunc consequat interdum varius sit. Nisl rhoncus mattis rhoncus urna neque viverra justo nec. Mauris pellentesque pulvinar pellentesque habitant morbi tristique. Amet tellus cras adipiscing enim eu turpis egestas. Vel elit scelerisque Libero nunc consequat interdum varius sit. Nisl rhoncus mattis rhoncus urna neque viverra justo nec. Mauris pellentesque pulvinar pellentesque habitant morbi tristique. Amet tellus cras adipiscing enim eu turpis egestas. Vel elit scelerisque ",
                   textAlign: TextAlign.left,
                   style: TextStyle(
                       height: 1.8,

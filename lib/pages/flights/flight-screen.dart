@@ -1,5 +1,4 @@
 import 'package:bron_hotel/pages/flights/tickets-page.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../data/popular-direcrion.dart';
@@ -19,8 +18,6 @@ class _FlightScreenState extends State<FlightScreen> {
   int numberOfItems = 0;
 
   RadioButtonValue? _character = RadioButtonValue.economy;
-//For demonstrate purpose I have added five static items
-
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +31,7 @@ class _FlightScreenState extends State<FlightScreen> {
             ? buildOnewayFlights(context)
             : buildDifficultFlights(context),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                   fixedSize: Size(MediaQuery.of(context).size.width, 50),
@@ -43,7 +40,7 @@ class _FlightScreenState extends State<FlightScreen> {
                       borderRadius: BorderRadius.circular(30))),
               onPressed: () {
                 setState(() {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => TicketsPage()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const TicketsPage()));
                 });
               },
               child: const Text(
@@ -54,28 +51,28 @@ class _FlightScreenState extends State<FlightScreen> {
                 ),
               )),
         ),
-        SizedBox(
+        const SizedBox(
           height: 30,
         ),
         buildViewCountryFlights(),
-        SizedBox(
+        const SizedBox(
           height: 40,
         ),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Text(
             "Популярные направления",
             style: TextStyle(
-                color: Color(0xFF1A2B47).withOpacity(0.85),
+                color: const Color(0xFF1A2B47).withOpacity(0.85),
                 fontSize: 20,
                 fontWeight: FontWeight.w600),
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 15,
         ),
         buildListPopularCountryFlights(),
-        SizedBox(
+        const SizedBox(
           height: 30,
         ),
         buildFAQ(),
@@ -99,10 +96,10 @@ class _FlightScreenState extends State<FlightScreen> {
                 borderRadius: BorderRadius.circular(15),
                 boxShadow: [
                   BoxShadow(
-                      color: Color(0xFF000000).withOpacity(0.1),
+                      color: const Color(0xFF000000).withOpacity(0.1),
                       blurRadius: 26,
                       spreadRadius: -1,
-                      offset: Offset(5, 8))
+                      offset: const Offset(5, 8))
                 ]),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -110,30 +107,29 @@ class _FlightScreenState extends State<FlightScreen> {
                 Image.asset(
                   e.image,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Text(
                   e.country,
                   style: TextStyle(
                       fontSize: 14,
-                      color: Color(0xFF1A2B47).withOpacity(0.85),
+                      color: const Color(0xFF1A2B47).withOpacity(0.85),
                       fontWeight: FontWeight.w500),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Text(
                   "Билеты от ${e.price.toString()}",
-                  style: TextStyle(
+                  style: const TextStyle(
                       fontSize: 12,
                       color: Color(0xFF5E6D77),
                       fontWeight: FontWeight.w500),
                 )
               ],
             ),
-          ))
-              .toList()),
+          )).toList()),
     );
   }
 
@@ -141,11 +137,11 @@ class _FlightScreenState extends State<FlightScreen> {
   Container buildViewCountryFlights() {
     return Container(
       color: Colors.white,
-      padding: EdgeInsets.symmetric(vertical: 30),
+      padding: const EdgeInsets.symmetric(vertical: 30),
       child: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20),
             child: Text(
               "Мы рекомендуем страны для отдыха, путешествий и работы.",
               textAlign: TextAlign.center,
@@ -156,10 +152,10 @@ class _FlightScreenState extends State<FlightScreen> {
                   fontWeight: FontWeight.w400),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
-          SizedBox(
+          const SizedBox(
             width: 260,
             child: Text(
               "Мы выбираем наилучшие страны и города,а вы выбираете нас для незабываемых моментов для вашей жизни.",
@@ -170,7 +166,7 @@ class _FlightScreenState extends State<FlightScreen> {
                   fontWeight: FontWeight.w400),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
           Row(
@@ -178,11 +174,11 @@ class _FlightScreenState extends State<FlightScreen> {
             children: [
               Container(
                 height: 36,
-                padding: EdgeInsets.symmetric(horizontal: 20),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 decoration: BoxDecoration(
-                    color: Color(0xFF1A2B47),
+                    color: const Color(0xFF1A2B47),
                     borderRadius: BorderRadius.circular(10)),
-                child: Center(
+                child: const Center(
                     child: Text(
                       "Показать 15 стран",
                       style: TextStyle(
@@ -208,11 +204,11 @@ class _FlightScreenState extends State<FlightScreen> {
       },
       child: Container(
           height: 28,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
               color: Color(0xFF005BFE),
               shape: BoxShape.circle
           ),
-          child: Center(child: Icon(Icons.add, color: Colors.white))
+          child: const Center(child: Icon(Icons.add, color: Colors.white))
       ),
     );
   }
@@ -226,11 +222,11 @@ class _FlightScreenState extends State<FlightScreen> {
         },
         child: Container(
           height: 28,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: Color(0xFFF5F5F5),
             shape: BoxShape.circle
           ),
-            child: Center(child: Icon(Icons.remove, color: Colors.black87))
+            child: const Center(child: Icon(Icons.remove, color: Colors.black87))
         ),
     );
   }
@@ -243,48 +239,48 @@ class _FlightScreenState extends State<FlightScreen> {
             Column(
               children: [
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 15),
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
                   child: TextField(
                     autocorrect: true,
                     decoration: InputDecoration(
                       hintText: 'Сочи',
                       hintStyle: TextStyle(
-                          color: Color(0xFF1A2B47).withOpacity(0.85),
+                          color: const Color(0xFF1A2B47).withOpacity(0.85),
                           fontSize: 14,
                           fontWeight: FontWeight.w500),
                       filled: true,
                       fillColor: Colors.white,
-                      enabledBorder: OutlineInputBorder(
+                      enabledBorder: const OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(30.0)),
                         borderSide: BorderSide(color: Colors.white),
                       ),
-                      focusedBorder: OutlineInputBorder(
+                      focusedBorder: const OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(30.0)),
                         borderSide: BorderSide(color: Colors.white),
                       ),
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 15),
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
                   child: TextField(
                     autocorrect: true,
                     decoration: InputDecoration(
                       hintText: 'Москва',
                       hintStyle: TextStyle(
-                          color: Color(0xFF1A2B47).withOpacity(0.85),
+                          color: const Color(0xFF1A2B47).withOpacity(0.85),
                           fontSize: 14,
                           fontWeight: FontWeight.w500),
                       filled: true,
                       fillColor: Colors.white,
-                      enabledBorder: OutlineInputBorder(
+                      enabledBorder: const OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(30.0)),
                         borderSide: BorderSide(color: Colors.white),
                       ),
-                      focusedBorder: OutlineInputBorder(
+                      focusedBorder: const OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(30.0)),
                         borderSide: BorderSide(color: Colors.white),
                       ),
@@ -298,7 +294,7 @@ class _FlightScreenState extends State<FlightScreen> {
                 right: 45,
                 child: Container(
                   height: 35,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Color(0xFF8B98A0),
                     shape: BoxShape.circle,
                   ),
@@ -306,11 +302,11 @@ class _FlightScreenState extends State<FlightScreen> {
                 )),
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Row(
             children: [
               Expanded(
@@ -319,39 +315,39 @@ class _FlightScreenState extends State<FlightScreen> {
                   decoration: InputDecoration(
                     hintText: ' 23.07.2022',
                     hintStyle: TextStyle(
-                        color: Color(0xFF1A2B47).withOpacity(0.85),
+                        color: const Color(0xFF1A2B47).withOpacity(0.85),
                         fontSize: 14,
                         fontWeight: FontWeight.w400),
                     filled: true,
                     fillColor: Colors.white,
-                    enabledBorder: OutlineInputBorder(
+                    enabledBorder: const OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(30.0)),
                       borderSide: BorderSide(color: Colors.white),
                     ),
-                    focusedBorder: OutlineInputBorder(
+                    focusedBorder: const OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(30.0)),
                       borderSide: BorderSide(color: Colors.white),
                     ),
                   ),
                 ),
               ),
-              SizedBox(width: 10),
+              const SizedBox(width: 10),
               Expanded(
                 child: TextField(
                   autocorrect: true,
                   decoration: InputDecoration(
                     hintText: 'Когда',
                     hintStyle: TextStyle(
-                        color: Color(0xFFACB5BE).withOpacity(0.85),
+                        color: const Color(0xFFACB5BE).withOpacity(0.85),
                         fontSize: 14,
                         fontWeight: FontWeight.w500),
                     filled: true,
                     fillColor: Colors.white,
-                    enabledBorder: OutlineInputBorder(
+                    enabledBorder: const OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(30.0)),
                       borderSide: BorderSide(color: Colors.white),
                     ),
-                    focusedBorder: OutlineInputBorder(
+                    focusedBorder: const OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(30.0)),
                       borderSide: BorderSide(color: Colors.white),
                     ),
@@ -361,47 +357,47 @@ class _FlightScreenState extends State<FlightScreen> {
             ],
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 15),
+          padding: const EdgeInsets.symmetric(horizontal: 15),
           child: TextField(
             autocorrect: true,
             decoration: InputDecoration(
               hintText: '1 пассажир, эконом',
               hintStyle: TextStyle(
-                  color: Color(0xFF1A2B47).withOpacity(0.85),
+                  color: const Color(0xFF1A2B47).withOpacity(0.85),
                   fontSize: 14,
                   fontWeight: FontWeight.w500),
               filled: true,
               fillColor: Colors.white,
-              enabledBorder: OutlineInputBorder(
+              enabledBorder: const OutlineInputBorder(
                 borderRadius: BorderRadius.all(Radius.circular(30.0)),
                 borderSide: BorderSide(color: Colors.white),
               ),
-              focusedBorder: OutlineInputBorder(
+              focusedBorder: const OutlineInputBorder(
                 borderRadius: BorderRadius.all(Radius.circular(30.0)),
                 borderSide: BorderSide(color: Colors.white),
               ),
             ),
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: CheckboxListTile(
             activeColor: Colors.white,
-            checkColor: Color(0xFF005BFE),
+            checkColor: const Color(0xFF005BFE),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(2.0),
             ),
             side: MaterialStateBorderSide.resolveWith(
-                  (states) => BorderSide(width: 1.0, color: Color(0xFF005BFE)),
+                  (states) => const BorderSide(width: 1.0, color: Color(0xFF005BFE)),
             ),
-            title: Text(
+            title: const Text(
               "Только рейсы без пересадок",
               style: TextStyle(
                   color: Color(0xFF1A2B47),
@@ -415,7 +411,7 @@ class _FlightScreenState extends State<FlightScreen> {
             ListTileControlAffinity.leading, //  <-- leading Checkbox
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 15,
         ),
       ],
@@ -426,7 +422,7 @@ class _FlightScreenState extends State<FlightScreen> {
     return Column(
       children: [
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Row(
             children: [
               Expanded(
@@ -435,16 +431,16 @@ class _FlightScreenState extends State<FlightScreen> {
                   decoration: InputDecoration(
                     hintText: ' Сочи',
                     hintStyle: TextStyle(
-                        color: Color(0xFF1A2B47).withOpacity(0.85),
+                        color: const Color(0xFF1A2B47).withOpacity(0.85),
                         fontSize: 14,
                         fontWeight: FontWeight.w400),
                     filled: true,
                     fillColor: Colors.white,
-                    enabledBorder: OutlineInputBorder(
+                    enabledBorder: const OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(30.0)),
                       borderSide: BorderSide(color: Colors.white),
                     ),
-                    focusedBorder: OutlineInputBorder(
+                    focusedBorder: const OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(30.0)),
                       borderSide: BorderSide(color: Colors.white),
                     ),
@@ -453,7 +449,7 @@ class _FlightScreenState extends State<FlightScreen> {
               ),
               Container(
                 height: 35,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Color(0xFF8B98A0),
                   shape: BoxShape.circle,
                 ),
@@ -465,16 +461,16 @@ class _FlightScreenState extends State<FlightScreen> {
                   decoration: InputDecoration(
                     hintText: ' Москва',
                     hintStyle: TextStyle(
-                        color: Color(0xFF1A2B47).withOpacity(0.85),
+                        color: const Color(0xFF1A2B47).withOpacity(0.85),
                         fontSize: 14,
                         fontWeight: FontWeight.w500),
                     filled: true,
                     fillColor: Colors.white,
-                    enabledBorder: OutlineInputBorder(
+                    enabledBorder: const OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(30.0)),
                       borderSide: BorderSide(color: Colors.white),
                     ),
-                    focusedBorder: OutlineInputBorder(
+                    focusedBorder: const OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(30.0)),
                       borderSide: BorderSide(color: Colors.white),
                     ),
@@ -484,17 +480,17 @@ class _FlightScreenState extends State<FlightScreen> {
             ],
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 15),
+          padding: const EdgeInsets.symmetric(horizontal: 15),
           child: TextField(
             autocorrect: true,
             decoration: InputDecoration(
               hintText: '23.07.2022',
               hintStyle: TextStyle(
-                  color: Color(0xFF1A2B47).withOpacity(0.85),
+                  color: const Color(0xFF1A2B47).withOpacity(0.85),
                   fontSize: 14,
                   fontWeight: FontWeight.w500),
               suffixIcon: Padding(
@@ -506,22 +502,22 @@ class _FlightScreenState extends State<FlightScreen> {
               ),
               filled: true,
               fillColor: Colors.white,
-              enabledBorder: OutlineInputBorder(
+              enabledBorder: const OutlineInputBorder(
                 borderRadius: BorderRadius.all(Radius.circular(30.0)),
                 borderSide: BorderSide(color: Colors.white),
               ),
-              focusedBorder: OutlineInputBorder(
+              focusedBorder: const OutlineInputBorder(
                 borderRadius: BorderRadius.all(Radius.circular(30.0)),
                 borderSide: BorderSide(color: Colors.white),
               ),
             ),
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Row(
             children: [
               Expanded(
@@ -530,16 +526,16 @@ class _FlightScreenState extends State<FlightScreen> {
                   decoration: InputDecoration(
                     hintText: ' Сочи',
                     hintStyle: TextStyle(
-                        color: Color(0xFF1A2B47).withOpacity(0.85),
+                        color: const Color(0xFF1A2B47).withOpacity(0.85),
                         fontSize: 14,
                         fontWeight: FontWeight.w400),
                     filled: true,
                     fillColor: Colors.white,
-                    enabledBorder: OutlineInputBorder(
+                    enabledBorder: const OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(30.0)),
                       borderSide: BorderSide(color: Colors.white),
                     ),
-                    focusedBorder: OutlineInputBorder(
+                    focusedBorder: const OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(30.0)),
                       borderSide: BorderSide(color: Colors.white),
                     ),
@@ -548,7 +544,7 @@ class _FlightScreenState extends State<FlightScreen> {
               ),
               Container(
                 height: 35,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Color(0xFF8B98A0),
                   shape: BoxShape.circle,
                 ),
@@ -560,16 +556,16 @@ class _FlightScreenState extends State<FlightScreen> {
                   decoration: InputDecoration(
                     hintText: ' Москва',
                     hintStyle: TextStyle(
-                        color: Color(0xFF1A2B47).withOpacity(0.85),
+                        color: const Color(0xFF1A2B47).withOpacity(0.85),
                         fontSize: 14,
                         fontWeight: FontWeight.w500),
                     filled: true,
                     fillColor: Colors.white,
-                    enabledBorder: OutlineInputBorder(
+                    enabledBorder: const OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(30.0)),
                       borderSide: BorderSide(color: Colors.white),
                     ),
-                    focusedBorder: OutlineInputBorder(
+                    focusedBorder: const OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(30.0)),
                       borderSide: BorderSide(color: Colors.white),
                     ),
@@ -579,17 +575,17 @@ class _FlightScreenState extends State<FlightScreen> {
             ],
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 15),
+          padding: const EdgeInsets.symmetric(horizontal: 15),
           child: TextField(
             autocorrect: true,
             decoration: InputDecoration(
               hintText: '23.07.2022',
               hintStyle: TextStyle(
-                  color: Color(0xFF1A2B47).withOpacity(0.85),
+                  color: const Color(0xFF1A2B47).withOpacity(0.85),
                   fontSize: 14,
                   fontWeight: FontWeight.w500),
               suffixIcon: Padding(
@@ -601,22 +597,22 @@ class _FlightScreenState extends State<FlightScreen> {
               ),
               filled: true,
               fillColor: Colors.white,
-              enabledBorder: OutlineInputBorder(
+              enabledBorder: const OutlineInputBorder(
                 borderRadius: BorderRadius.all(Radius.circular(30.0)),
                 borderSide: BorderSide(color: Colors.white),
               ),
-              focusedBorder: OutlineInputBorder(
+              focusedBorder: const OutlineInputBorder(
                 borderRadius: BorderRadius.all(Radius.circular(30.0)),
                 borderSide: BorderSide(color: Colors.white),
               ),
             ),
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 15,
         ),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 15),
+          padding: const EdgeInsets.symmetric(horizontal: 15),
           child: Row(
             children: [
               GestureDetector(
@@ -627,20 +623,20 @@ class _FlightScreenState extends State<FlightScreen> {
                 },
                 child: Container(
                   height: 45,
-                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
                   decoration: BoxDecoration(
-                      color: Color(0xFFFA5636),
+                      color: const Color(0xFFFA5636),
                       borderRadius: BorderRadius.circular(15)),
                   child: Row(
-                    children: [
-                      Icon(
+                    children: const <Widget> [
+                       Icon(
                         Icons.add,
                         color: Colors.white,
                       ),
-                      SizedBox(
+                       SizedBox(
                         width: 10,
                       ),
-                      Text(
+                       Text(
                         "Добавить перелет",
                         style: TextStyle(
                             color: Colors.white,
@@ -654,33 +650,33 @@ class _FlightScreenState extends State<FlightScreen> {
             ],
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 15,
         ),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 15),
+          padding: const EdgeInsets.symmetric(horizontal: 15),
           child: TextField(
             autocorrect: true,
             decoration: InputDecoration(
               hintText: '1 пассажир, эконом',
               hintStyle: TextStyle(
-                  color: Color(0xFF1A2B47).withOpacity(0.85),
+                  color: const Color(0xFF1A2B47).withOpacity(0.85),
                   fontSize: 14,
                   fontWeight: FontWeight.w500),
               filled: true,
               fillColor: Colors.white,
-              enabledBorder: OutlineInputBorder(
+              enabledBorder: const OutlineInputBorder(
                 borderRadius: BorderRadius.all(Radius.circular(30.0)),
                 borderSide: BorderSide(color: Colors.white),
               ),
-              focusedBorder: OutlineInputBorder(
+              focusedBorder: const OutlineInputBorder(
                 borderRadius: BorderRadius.all(Radius.circular(30.0)),
                 borderSide: BorderSide(color: Colors.white),
               ),
             ),
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
       ],
@@ -695,48 +691,48 @@ class _FlightScreenState extends State<FlightScreen> {
             Column(
               children: [
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 15),
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
                   child: TextField(
                     autocorrect: true,
                     decoration: InputDecoration(
                       hintText: 'Сочи',
                       hintStyle: TextStyle(
-                          color: Color(0xFF1A2B47).withOpacity(0.85),
+                          color: const Color(0xFF1A2B47).withOpacity(0.85),
                           fontSize: 14,
                           fontWeight: FontWeight.w500),
                       filled: true,
                       fillColor: Colors.white,
-                      enabledBorder: OutlineInputBorder(
+                      enabledBorder: const OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(30.0)),
                         borderSide: BorderSide(color: Colors.white),
                       ),
-                      focusedBorder: OutlineInputBorder(
+                      focusedBorder: const OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(30.0)),
                         borderSide: BorderSide(color: Colors.white),
                       ),
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 15),
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
                   child: TextField(
                     autocorrect: true,
                     decoration: InputDecoration(
                       hintText: 'Москва',
                       hintStyle: TextStyle(
-                          color: Color(0xFF1A2B47).withOpacity(0.85),
+                          color: const Color(0xFF1A2B47).withOpacity(0.85),
                           fontSize: 14,
                           fontWeight: FontWeight.w500),
                       filled: true,
                       fillColor: Colors.white,
-                      enabledBorder: OutlineInputBorder(
+                      enabledBorder: const OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(30.0)),
                         borderSide: BorderSide(color: Colors.white),
                       ),
-                      focusedBorder: OutlineInputBorder(
+                      focusedBorder: const OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(30.0)),
                         borderSide: BorderSide(color: Colors.white),
                       ),
@@ -750,7 +746,7 @@ class _FlightScreenState extends State<FlightScreen> {
                 right: 45,
                 child: Container(
                   height: 35,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Color(0xFF8B98A0),
                     shape: BoxShape.circle,
                   ),
@@ -758,11 +754,11 @@ class _FlightScreenState extends State<FlightScreen> {
                 )),
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Row(
             children: [
               Expanded(
@@ -771,39 +767,39 @@ class _FlightScreenState extends State<FlightScreen> {
                   decoration: InputDecoration(
                     hintText: ' 23.07.2022',
                     hintStyle: TextStyle(
-                        color: Color(0xFF1A2B47).withOpacity(0.85),
+                        color: const Color(0xFF1A2B47).withOpacity(0.85),
                         fontSize: 14,
                         fontWeight: FontWeight.w400),
                     filled: true,
                     fillColor: Colors.white,
-                    enabledBorder: OutlineInputBorder(
+                    enabledBorder: const OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(30.0)),
                       borderSide: BorderSide(color: Colors.white),
                     ),
-                    focusedBorder: OutlineInputBorder(
+                    focusedBorder: const OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(30.0)),
                       borderSide: BorderSide(color: Colors.white),
                     ),
                   ),
                 ),
               ),
-              SizedBox(width: 10),
+              const SizedBox(width: 10),
               Expanded(
                 child: TextField(
                   autocorrect: true,
                   decoration: InputDecoration(
                     hintText: ' 28.07.2022',
                     hintStyle: TextStyle(
-                        color: Color(0xFF1A2B47).withOpacity(0.85),
+                        color: const Color(0xFF1A2B47).withOpacity(0.85),
                         fontSize: 14,
                         fontWeight: FontWeight.w400),
                     filled: true,
                     fillColor: Colors.white,
-                    enabledBorder: OutlineInputBorder(
+                    enabledBorder: const OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(30.0)),
                       borderSide: BorderSide(color: Colors.white),
                     ),
-                    focusedBorder: OutlineInputBorder(
+                    focusedBorder: const OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(30.0)),
                       borderSide: BorderSide(color: Colors.white),
                     ),
@@ -813,47 +809,47 @@ class _FlightScreenState extends State<FlightScreen> {
             ],
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 15),
+          padding: const EdgeInsets.symmetric(horizontal: 15),
           child: TextField(
             autocorrect: true,
             decoration: InputDecoration(
               hintText: '1 пассажир, эконом',
               hintStyle: TextStyle(
-                  color: Color(0xFF1A2B47).withOpacity(0.85),
+                  color: const Color(0xFF1A2B47).withOpacity(0.85),
                   fontSize: 14,
                   fontWeight: FontWeight.w500),
               filled: true,
               fillColor: Colors.white,
-              enabledBorder: OutlineInputBorder(
+              enabledBorder: const OutlineInputBorder(
                 borderRadius: BorderRadius.all(Radius.circular(30.0)),
                 borderSide: BorderSide(color: Colors.white),
               ),
-              focusedBorder: OutlineInputBorder(
+              focusedBorder: const OutlineInputBorder(
                 borderRadius: BorderRadius.all(Radius.circular(30.0)),
                 borderSide: BorderSide(color: Colors.white),
               ),
             ),
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: CheckboxListTile(
             activeColor: Colors.white,
-            checkColor: Color(0xFF005BFE),
+            checkColor: const Color(0xFF005BFE),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(2.0),
             ),
             side: MaterialStateBorderSide.resolveWith(
-                  (states) => BorderSide(width: 1.0, color: Color(0xFF005BFE)),
+                  (states) => const BorderSide(width: 1.0, color: Color(0xFF005BFE)),
             ),
-            title: Text(
+            title: const Text(
               "Только рейсы без пересадок",
               style: TextStyle(
                   color: Color(0xFF1A2B47),
@@ -867,7 +863,7 @@ class _FlightScreenState extends State<FlightScreen> {
             ListTileControlAffinity.leading, //  <-- leading Checkbox
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 15,
         ),
       ],
@@ -886,18 +882,18 @@ class _FlightScreenState extends State<FlightScreen> {
                   'Туда-обратно',
                   style: TextStyle(
                       color: gender == "there"
-                          ? Color(0xFF005BFE)
-                          : Color(0xFF1A2B47),
+                          ? const Color(0xFF005BFE)
+                          : const Color(0xFF1A2B47),
                       fontWeight: FontWeight.w700,
                       fontSize: 14),
                 ),
                 horizontalTitleGap: 0,
                 contentPadding: EdgeInsets.zero,
                 leading: Radio(
-                  activeColor: Color(0xFF005BFE),
+                  activeColor: const Color(0xFF005BFE),
                   value: "there",
                   fillColor: MaterialStateColor.resolveWith(
-                          (states) => Color(0xFF005BFE)),
+                          (states) => const Color(0xFF005BFE)),
                   groupValue: gender,
                   onChanged: (value) {
                     setState(() {
@@ -914,17 +910,17 @@ class _FlightScreenState extends State<FlightScreen> {
                   'В одну сторону',
                   style: TextStyle(
                       color: gender == "oneway"
-                          ? Color(0xFF005BFE)
-                          : Color(0xFF1A2B47),
+                          ? const Color(0xFF005BFE)
+                          : const Color(0xFF1A2B47),
                       fontWeight: FontWeight.w700,
                       fontSize: 14),
                 ),
                 horizontalTitleGap: 0,
                 contentPadding: EdgeInsets.zero,
                 leading: Radio(
-                  activeColor: Color(0xFF005BFE),
+                  activeColor: const Color(0xFF005BFE),
                   fillColor: MaterialStateColor.resolveWith(
-                          (states) => Color(0xFF005BFE)),
+                          (states) => const Color(0xFF005BFE)),
                   value: "oneway",
                   groupValue: gender,
                   onChanged: (value) {
@@ -945,17 +941,17 @@ class _FlightScreenState extends State<FlightScreen> {
             'Сложный маршрут',
             style: TextStyle(
                 color: gender == "difficult"
-                    ? Color(0xFF005BFE)
-                    : Color(0xFF1A2B47),
+                    ? const Color(0xFF005BFE)
+                    : const Color(0xFF1A2B47),
                 fontWeight: FontWeight.w700,
                 fontSize: 14),
           ),
           horizontalTitleGap: 0,
           contentPadding: EdgeInsets.zero,
           leading: Radio(
-            activeColor: Color(0xFF005BFE),
+            activeColor: const Color(0xFF005BFE),
             fillColor:
-            MaterialStateColor.resolveWith((states) => Color(0xFF005BFE)),
+            MaterialStateColor.resolveWith((states) => const Color(0xFF005BFE)),
             value: "difficult",
             groupValue: gender,
             onChanged: (value) {
@@ -974,24 +970,24 @@ class _FlightScreenState extends State<FlightScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Text(
             "Часто задаваемые вопросы",
             style: TextStyle(
-                color: Color(0xFF1A2B47).withOpacity(0.85),
+                color: const Color(0xFF1A2B47).withOpacity(0.85),
                 fontSize: 20,
                 fontWeight: FontWeight.w600),
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+              const Text(
                 "Мне не пришёл билет. Что делать?",
                 style: TextStyle(
                     decoration: TextDecoration.underline,
@@ -999,10 +995,10 @@ class _FlightScreenState extends State<FlightScreen> {
                     fontSize: 12,
                     fontWeight: FontWeight.w600),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
-              Text(
+              const Text(
                 "Я хочу вернуть билет. Как мне это сделать?",
                 style: TextStyle(
                     decoration: TextDecoration.underline,
@@ -1010,10 +1006,10 @@ class _FlightScreenState extends State<FlightScreen> {
                     fontSize: 12,
                     fontWeight: FontWeight.w600),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
-              Text(
+              const Text(
                 "Допущена ошибка в данных при бронировании.Как исправить?",
                 style: TextStyle(
                     color: Color(0xFF005BFE),
@@ -1021,10 +1017,10 @@ class _FlightScreenState extends State<FlightScreen> {
                     fontSize: 12,
                     fontWeight: FontWeight.w600),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
-              Text(
+              const Text(
                 "Как добавить багаж?",
                 style: TextStyle(
                     decoration: TextDecoration.underline,
@@ -1032,18 +1028,18 @@ class _FlightScreenState extends State<FlightScreen> {
                     fontSize: 12,
                     fontWeight: FontWeight.w600),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               Row(
                 children: [
                   Container(
                     height: 38,
-                    padding: EdgeInsets.symmetric(horizontal: 20),
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
                     decoration: BoxDecoration(
-                        color: Color(0xFF1A2B47).withOpacity(0.85),
+                        color: const Color(0xFF1A2B47).withOpacity(0.85),
                         borderRadius: BorderRadius.circular(10)),
-                    child: Center(
+                    child: const Center(
                       child: Text(
                         "Смотреть все",
                         style: TextStyle(
@@ -1058,7 +1054,7 @@ class _FlightScreenState extends State<FlightScreen> {
             ],
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 30,
         ),
       ],
@@ -1084,23 +1080,23 @@ class _FlightScreenState extends State<FlightScreen> {
                       return SizedBox(
                         height: MediaQuery.of(context).size.height,
                         child: ListView(
-                          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                           children: [
                             Align(
                               alignment: Alignment.topCenter,
                               child: Container(
                                 height: 4,
                                 width: 66,
-                                decoration: BoxDecoration(color: Color(0xFFD9D9D9)),
+                                decoration: const BoxDecoration(color: Color(0xFFD9D9D9)),
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 30,
                             ),
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Center(
+                                const Center(
                                   child: Text(
                                     "Пассажиры",
                                     style: TextStyle(
@@ -1109,22 +1105,22 @@ class _FlightScreenState extends State<FlightScreen> {
                                         fontWeight: FontWeight.w600),
                                   ),
                                 ),
-                                SizedBox(height: 20,),
+                                const SizedBox(height: 20,),
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: [
                                     Column(
                                       crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
+                                      children: const [
+                                         Text(
                                           "Взрослые",
                                           style: TextStyle(
                                               color: Color(0xFF1A2B47),
                                               fontSize: 16,
                                               fontWeight: FontWeight.w500),
                                         ),
-                                        SizedBox(height: 5,),
-                                        Text(
+                                         SizedBox(height: 5,),
+                                         Text(
                                           "Старше 12 лет",
                                           style: TextStyle(
                                               color: Color(0xFFC4C4C4),
@@ -1136,37 +1132,37 @@ class _FlightScreenState extends State<FlightScreen> {
                                     Row(
                                       children: [
                                         _decrementButton(),
-                                        SizedBox(width: 10,),
+                                        const SizedBox(width: 10,),
                                         Text(
                                           "$numberOfItems",
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                               color: Colors.black,
                                               fontSize: 16,
                                               fontWeight: FontWeight.w500),
                                         ),
-                                        SizedBox(width: 10,),
+                                        const SizedBox(width: 10,),
                                         _incrementButton(),
 
                                       ],
                                     )
                                   ],
                                 ),
-                                SizedBox(height: 15,),
+                                const SizedBox(height: 15,),
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: [
                                     Column(
                                       crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
+                                      children: const  [
+                                         Text(
                                           "Дети",
                                           style: TextStyle(
                                               color: Color(0xFF1A2B47),
                                               fontSize: 16,
                                               fontWeight: FontWeight.w500),
                                         ),
-                                        SizedBox(height: 5,),
-                                        Text(
+                                         SizedBox(height: 5,),
+                                         Text(
                                           "Старше 12 лет",
                                           style: TextStyle(
                                               color: Color(0xFFC4C4C4),
@@ -1178,37 +1174,37 @@ class _FlightScreenState extends State<FlightScreen> {
                                     Row(
                                       children: [
                                         _decrementButton(),
-                                        SizedBox(width: 10,),
+                                        const SizedBox(width: 10,),
                                         Text(
                                           "$numberOfItems",
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                               color: Colors.black,
                                               fontSize: 16,
                                               fontWeight: FontWeight.w500),
                                         ),
-                                        SizedBox(width: 10,),
+                                        const SizedBox(width: 10,),
                                         _incrementButton(),
 
                                       ],
                                     )
                                   ],
                                 ),
-                                SizedBox(height: 15,),
+                                const SizedBox(height: 15,),
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: [
                                     Column(
                                       crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
+                                      children: const [
+                                         Text(
                                           "Младенцы",
                                           style: TextStyle(
                                               color: Color(0xFF1A2B47),
                                               fontSize: 16,
                                               fontWeight: FontWeight.w500),
                                         ),
-                                        SizedBox(height: 5,),
-                                        Text(
+                                         SizedBox(height: 5,),
+                                         Text(
                                           "До 2 лет без места",
                                           style: TextStyle(
                                               color: Color(0xFFC4C4C4),
@@ -1220,41 +1216,41 @@ class _FlightScreenState extends State<FlightScreen> {
                                     Row(
                                       children: [
                                         _decrementButton(),
-                                        SizedBox(width: 10,),
+                                        const SizedBox(width: 10,),
                                         Text(
                                           "$numberOfItems",
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                               color: Colors.black,
                                               fontSize: 16,
                                               fontWeight: FontWeight.w500),
                                         ),
-                                        SizedBox(width: 10,),
+                                        const SizedBox(width: 10,),
                                         _incrementButton(),
 
                                       ],
                                     )
                                   ],
                                 ),
-                                SizedBox(height: 15,),
-                                Divider(thickness: 2, color: Color(0xFFD9D9D9),)
+                                const SizedBox(height: 15,),
+                                const Divider(thickness: 2, color: Color(0xFFD9D9D9),)
                               ],
                             ),
-                            SizedBox(height: 10,),
+                            const SizedBox(height: 10,),
                             ListTile(
                               title: Text(
                                 'Эконом',
                                 style: TextStyle(
-                                    color:  Color(0xFF1A2B47).withOpacity(0.85),
+                                    color:  const Color(0xFF1A2B47).withOpacity(0.85),
                                     fontWeight: FontWeight.w500,
                                     fontSize: 16),
                               ),
                               horizontalTitleGap: 0,
                               contentPadding: EdgeInsets.zero,
                               leading: Radio(
-                                activeColor: Color(0xFF005BFE),
+                                activeColor: const Color(0xFF005BFE),
                                 value: RadioButtonValue.economy,
                                 fillColor: MaterialStateColor.resolveWith(
-                                        (states) => Color(0xFF005BFE)),
+                                        (states) => const Color(0xFF005BFE)),
                                 groupValue: _character,
                                 onChanged: (value) {
                                   setState(() {
@@ -1267,7 +1263,7 @@ class _FlightScreenState extends State<FlightScreen> {
                               title: Text(
                                 'Комфорт',
                                 style: TextStyle(
-                                    color:  Color(0xFF1A2B47).withOpacity(0.85),
+                                    color:  const Color(0xFF1A2B47).withOpacity(0.85),
                                     fontWeight: FontWeight.w500,
                                     fontSize: 16),
                               ),
@@ -1275,10 +1271,10 @@ class _FlightScreenState extends State<FlightScreen> {
                               contentPadding: EdgeInsets.zero,
                               minLeadingWidth: 10,
                               leading: Radio(
-                                activeColor: Color(0xFF005BFE),
+                                activeColor: const Color(0xFF005BFE),
                                 value: RadioButtonValue.comfort,
                                 fillColor: MaterialStateColor.resolveWith(
-                                        (states) => Color(0xFF005BFE)),
+                                        (states) => const Color(0xFF005BFE)),
                                 groupValue: _character,
                                 onChanged: (value) {
                                   setState(() {
@@ -1291,7 +1287,7 @@ class _FlightScreenState extends State<FlightScreen> {
                               title: Text(
                                 'Бизнес класс',
                                 style: TextStyle(
-                                    color:  Color(0xFF1A2B47).withOpacity(0.85),
+                                    color:  const Color(0xFF1A2B47).withOpacity(0.85),
                                     fontWeight: FontWeight.w500,
                                     fontSize: 16),
                               ),
@@ -1299,10 +1295,10 @@ class _FlightScreenState extends State<FlightScreen> {
                               contentPadding: EdgeInsets.zero,
                               minLeadingWidth: 10,
                               leading: Radio(
-                                activeColor: Color(0xFF005BFE),
+                                activeColor: const Color(0xFF005BFE),
                                 value: RadioButtonValue.businessClass,
                                 fillColor: MaterialStateColor.resolveWith(
-                                        (states) => Color(0xFF005BFE)),
+                                        (states) => const Color(0xFF005BFE)),
                                 groupValue: _character,
                                 onChanged: (value) {
                                   setState(() {
@@ -1311,7 +1307,7 @@ class _FlightScreenState extends State<FlightScreen> {
                                 },
                               ),
                             ),
-                            SizedBox(height: 20,),
+                            const SizedBox(height: 20,),
                           ],
                         ),
                       );

@@ -34,11 +34,11 @@ class _ConfirmAddressState extends State<ConfirmAddress> {
                 Navigator.pop(context);
               });
             },
-            icon: Icon(Icons.arrow_back_ios, color: Color(0xFF1A2B47),),
+            icon: const Icon(Icons.arrow_back_ios, color: Color(0xFF1A2B47),),
           ),
           backgroundColor: Colors.transparent,
           centerTitle: true,
-          title: Text(
+          title: const Text(
             "Confirm your address",
             style: TextStyle(
               color: Color(0xFF1A2B47),
@@ -48,14 +48,14 @@ class _ConfirmAddressState extends State<ConfirmAddress> {
           ),
         ),
         body: ListView(
-          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
           children: [
             Container(
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(15),
-                border: Border.all(color: Color(0xFF8C95A3))
+                border: Border.all(color: const Color(0xFF8C95A3))
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -64,52 +64,52 @@ class _ConfirmAddressState extends State<ConfirmAddress> {
                     padding: const EdgeInsets.only(left: 10.0, top: 10),
                     child: buildText("Street" , "3 Zakaria Kanakertsi Street"),
                   ),
-                  Divider(thickness: 1, color: Color(0xFF8C95A3),),
+                  const Divider(thickness: 1, color: Color(0xFF8C95A3),),
                   Padding(
                     padding: const EdgeInsets.only(left: 10.0, top: 10),
                     child: buildText("" , "Apt, suite, etc. (Optional)"),
                   ),
-                  Divider(thickness: 1, color: Color(0xFF8C95A3),),
+                  const Divider(thickness: 1, color: Color(0xFF8C95A3),),
                   Padding(
                     padding: const EdgeInsets.only(left: 10.0, top: 10),
                     child: buildText("City" , "Yerevan"),
                   ),
-                  Divider(thickness: 1, color: Color(0xFF8C95A3),),
+                  const Divider(thickness: 1, color: Color(0xFF8C95A3),),
                   Padding(
                     padding: const EdgeInsets.only(left: 10.0, top: 10),
                     child: buildText("State(Optional)" , "Yerevan"),
                   ),
-                  Divider(thickness: 1, color: Color(0xFF8C95A3),),
+                  const Divider(thickness: 1, color: Color(0xFF8C95A3),),
                   Padding(
                     padding: const EdgeInsets.only(left: 10.0, top: 10),
                     child: buildText("" , "Zip code (Optional)"),
                   ),
-                  Divider(thickness: 1, color: Color(0xFF8C95A3),),
+                  const Divider(thickness: 1, color: Color(0xFF8C95A3),),
                   Padding(
                     padding: const EdgeInsets.only(left: 10.0, top: 10),
                     child: buildText("Coutry / Region" , "Armenia - AM"),
                   ),
-                  SizedBox(height: 10,)
+                  const SizedBox(height: 10,)
 
                 ],
               ),
             ),
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                const Text(
                   "Show your specific location",
                   style: TextStyle(
                       color: Color(0xFF1A2B47),
                       fontSize: 14,
                       fontWeight: FontWeight.w600),
                 ),
-                SizedBox(height: 15,),
+                const SizedBox(height: 15,),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Expanded(
+                    const Expanded(
                       child: Text(
                         "Make it more clear to guests\nwhere your place is located.\nWe'll never share your address\nuntil a guest is booked",
                         style: TextStyle(
@@ -121,8 +121,8 @@ class _ConfirmAddressState extends State<ConfirmAddress> {
                     Transform.scale(
                       scale: 0.9,
                       child: CupertinoSwitch(
-                        activeColor: Color(0xFF005BFE),
-                        trackColor: Color(0xFF1A2B47).withOpacity(0.25),
+                        activeColor: const Color(0xFF005BFE),
+                        trackColor: const Color(0xFF1A2B47).withOpacity(0.25),
                         value: _switchValue,
                         onChanged: (value) {
                           setState(() {
@@ -135,14 +135,14 @@ class _ConfirmAddressState extends State<ConfirmAddress> {
                 )
               ],
             ),
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
             Container(
               width: MediaQuery.of(context).size.width,
               height: 220,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),
                 border: Border.all(color: Colors.white, width: 2),
-                image: DecorationImage(
+                image: const DecorationImage(
                   image: AssetImage("assets/images/maps-hotel.png"),
                   fit: BoxFit.cover
                 )
@@ -156,8 +156,8 @@ class _ConfirmAddressState extends State<ConfirmAddress> {
         ),
         bottomNavigationBar: Container(
         height: 80,
-        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-        decoration: BoxDecoration(
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        decoration: const BoxDecoration(
             color: Colors.white,
             border: Border.symmetric(horizontal: BorderSide(color: Color(0xFFD9D9D9)))
         ),
@@ -173,12 +173,12 @@ class _ConfirmAddressState extends State<ConfirmAddress> {
               child: Container(
                 width: MediaQuery.of(context).size.width / 3,
                 height: 33,
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 decoration: BoxDecoration(
-                  color: Color(0xFF1A2B47),
+                  color: const Color(0xFF1A2B47),
                   borderRadius: BorderRadius.circular(10),
                 ),
-                child: Center(
+                child: const Center(
                   child: Text(
                     "Looks good",
                     textAlign: TextAlign.center,
@@ -205,19 +205,19 @@ class _ConfirmAddressState extends State<ConfirmAddress> {
                     Text(
                       label,
                       style: TextStyle(
-                          color: Color(0xFF1A2B47).withOpacity(0.6),
+                          color: const Color(0xFF1A2B47).withOpacity(0.6),
                           fontSize: 8,
                           fontWeight: FontWeight.w300),
                     ),
-                    SizedBox(height: 5,),
+                    const SizedBox(height: 5,),
                     Text(
                       name,
-                      style: TextStyle(
+                      style: const TextStyle(
                           color: Color(0xFF1A2B47),
                           fontSize: 14,
                           fontWeight: FontWeight.w400),
                     ),
-                    SizedBox(height: 5,),
+                    const SizedBox(height: 5,),
                   ],
                 );
   }

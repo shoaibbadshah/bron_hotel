@@ -1,10 +1,8 @@
-import 'package:bron_hotel/pages/home-page.dart';
 import 'package:bron_hotel/pages/splash/loading-page.dart';
-import 'package:device_preview/device_preview.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
-import 'home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,9 +14,23 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'bron',
-      home: const LoadingPage()
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+    return const MaterialApp(
+      title: '',
+      home:  LoadingPage(),
+      localizationsDelegates: [
+        GlobalMaterialLocalizations.delegate,
+        // DefaultCupertinoLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+        DefaultWidgetsLocalizations.delegate,
+      ],
+      locale: Locale('ru_RU'),
+      supportedLocales: [
+        Locale('ru', 'RU'),
+      ],
     );
   }
 }

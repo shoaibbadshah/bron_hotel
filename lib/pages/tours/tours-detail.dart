@@ -1,6 +1,4 @@
-import 'package:bron_hotel/pages/tours/tours-details-page.dart';
 import 'package:bron_hotel/pages/tours/tours-details1-page.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ToursDetail extends StatefulWidget {
@@ -23,13 +21,13 @@ class _ToursDetailState extends State<ToursDetail> {
               Navigator.pop(context);
             });
           },
-          icon: Icon(Icons.arrow_back_ios, color: Colors.white,),
+          icon: const Icon(Icons.arrow_back_ios, color: Colors.white,),
         ),
-        backgroundColor: Color(0xFF1A2B47),
+        backgroundColor: const Color(0xFF1A2B47),
         centerTitle: true,
         title: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
+          children: const [
             Text(
               "Мальдивы",
               style: TextStyle(
@@ -61,8 +59,8 @@ class _ToursDetailState extends State<ToursDetail> {
         ],
       ),
       body: ListView(
-        padding: EdgeInsets.symmetric(vertical: 20),
-        children: [
+        padding: const EdgeInsets.symmetric(vertical: 20),
+        children: const [
           //ToursDetailsPage(),
           ToursDetails1Page(),
         ],

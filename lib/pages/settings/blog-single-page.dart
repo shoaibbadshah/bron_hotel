@@ -1,9 +1,5 @@
-import 'dart:ui';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../utils/color.dart';
 import '../../widgets/follow-screen.dart';
 
 class BlogSinglePage extends StatefulWidget {
@@ -19,7 +15,7 @@ class _BlogSinglePageState extends State<BlogSinglePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFF1F4FB),
+      backgroundColor: const Color(0xFFF1F4FB),
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
@@ -31,13 +27,13 @@ class _BlogSinglePageState extends State<BlogSinglePage> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Image.asset("assets/icons/blog-icon.png"),
-                IconButton(
-                    onPressed: (){},
+                const IconButton(
+                    onPressed: null,
                     icon: Icon(Icons.notifications_none, color: Color(0xFF1A2B47), size: 31,)
                 )
               ],
             ),
-            Divider()
+            const Divider()
           ],
         ),
       ),
@@ -51,7 +47,7 @@ class _BlogSinglePageState extends State<BlogSinglePage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    const Text(
                       "Lorem ipsum dolor sit amet",
                       style: TextStyle(
                           color: Color(0xFF1A2B47),
@@ -59,11 +55,11 @@ class _BlogSinglePageState extends State<BlogSinglePage> {
                           fontWeight: FontWeight.w500
                       ),
                     ),
-                    SizedBox(height: 5,),
+                    const SizedBox(height: 5,),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
+                      children: const [
+                         Text(
                           "22 May 2018",
                           style: TextStyle(
                               color: Color(0xFFC4C4C4),
@@ -71,7 +67,7 @@ class _BlogSinglePageState extends State<BlogSinglePage> {
                               fontWeight: FontWeight.w400
                           ),
                         ),
-                        Text(
+                         Text(
                           "1200 views",
                           style: TextStyle(
                               color: Color(0xFFC4C4C4),
@@ -81,13 +77,13 @@ class _BlogSinglePageState extends State<BlogSinglePage> {
                         ),
                       ],
                     ),
-                    SizedBox(height: 10,),
+                    const SizedBox(height: 10,),
                     Container(
                       width: MediaQuery.of(context).size.width,
                         height: MediaQuery.of(context).size.height / 4,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
-                          image: DecorationImage(
+                          image: const DecorationImage(
                             image: AssetImage("assets/images/blog-images2.png"),
                             fit: BoxFit.fill,
                           ),
@@ -95,17 +91,17 @@ class _BlogSinglePageState extends State<BlogSinglePage> {
                             BoxShadow(
                               blurRadius: 5,
                               spreadRadius: 1,
-                              offset: Offset(3 ,5),
-                              color: Color(0xFFede2de).withOpacity(0.8)
+                              offset: const Offset(3 ,5),
+                              color: const Color(0xFFede2de).withOpacity(0.8)
                             )
                           ]
                         ),
                     ),
-                    SizedBox(height: 15,),
+                    const SizedBox(height: 15,),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(
+                        const Text(
                           "Comments 22",
                           style: TextStyle(
                               color: Color(0xFF5E6D77),
@@ -116,8 +112,8 @@ class _BlogSinglePageState extends State<BlogSinglePage> {
                         Row(
                           children: [
                             Image.asset("assets/icons/likes.png"),
-                            SizedBox(width: 10,),
-                            Text(
+                            const SizedBox(width: 10,),
+                            const Text(
                               "Likes 500",
                               style: TextStyle(
                                   color: Color(0xFF5E6D77),
@@ -130,8 +126,8 @@ class _BlogSinglePageState extends State<BlogSinglePage> {
                         Row(
                           children: [
                             Image.asset("assets/icons/shares.png"),
-                            SizedBox(width: 10,),
-                            Text(
+                            const SizedBox(width: 10,),
+                            const Text(
                               "Share",
                               style: TextStyle(
                                   color: Color(0xFF1A2B47),
@@ -143,16 +139,16 @@ class _BlogSinglePageState extends State<BlogSinglePage> {
                         ),
                       ],
                     ),
-                    SizedBox(height: 15,),
+                    const SizedBox(height: 15,),
                   ],
                 ),
               ),
-              Divider()
+              const Divider()
             ],
           ),
-          SizedBox(height: 15,),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+          const SizedBox(height: 15,),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.0),
             child: Text(
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
               style: TextStyle(
@@ -163,9 +159,9 @@ class _BlogSinglePageState extends State<BlogSinglePage> {
               ),
             ),
           ),
-          SizedBox(height: 20,),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+          const SizedBox(height: 20,),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.0),
             child: Text(
               "Add comment",
               style: TextStyle(
@@ -175,7 +171,7 @@ class _BlogSinglePageState extends State<BlogSinglePage> {
               ),
             ),
           ),
-          SizedBox(height: 10,),
+          const SizedBox(height: 10,),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Row(
@@ -183,15 +179,15 @@ class _BlogSinglePageState extends State<BlogSinglePage> {
                 Container(
                   height: 40,
                   width: 40,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Color(0xFF1A2B47),
                     shape: BoxShape.circle
                   ),
-                  child: Center(
+                  child: const Center(
                     child: Text("S", style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.w400),),
                   ),
                 ),
-                SizedBox(width: 10,),
+                const SizedBox(width: 10,),
                 Expanded(
                   child: TextField(
                     controller: controllerComment,
@@ -221,9 +217,9 @@ class _BlogSinglePageState extends State<BlogSinglePage> {
               ],
             ),
           ),
-          SizedBox(height: 10,),
-          Divider(color: Color(0xFF1A2B47).withOpacity(0.2), thickness: 4,),
-          SizedBox(height: 20,),
+          const SizedBox(height: 10,),
+          Divider(color: const Color(0xFF1A2B47).withOpacity(0.2), thickness: 4,),
+          const SizedBox(height: 20,),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Column(
@@ -234,41 +230,41 @@ class _BlogSinglePageState extends State<BlogSinglePage> {
                     Container(
                       height: 40,
                       width: 40,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           color: Color(0xFF3E68AD),
                           shape: BoxShape.circle
                       ),
-                      child: Center(
+                      child: const Center(
                         child: Text("K", style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.w400),),
                       ),
                     ),
-                    SizedBox(width: 10,),
+                    const SizedBox(width: 10,),
                     Expanded(
                       child: Column(
                         children: [
-                          SizedBox(height: 5,),
+                          const SizedBox(height: 5,),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text("Kostya X", style: TextStyle(color: Color(0xFF1A2B47), fontSize: 14, fontWeight: FontWeight.w600),),
-                              Text("3 years ago", style: TextStyle(color: Color(0xFFC4C4C4), fontSize: 10, fontWeight: FontWeight.w400),)
+                            children: const [
+                               Text("Kostya X", style: TextStyle(color: Color(0xFF1A2B47), fontSize: 14, fontWeight: FontWeight.w600),),
+                               Text("3 years ago", style: TextStyle(color: Color(0xFFC4C4C4), fontSize: 10, fontWeight: FontWeight.w400),)
                             ],
                           ),
-                          SizedBox(height: 5,),
+                          const SizedBox(height: 5,),
                           Column(
                             children: [
-                              Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. ",
+                              const Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. ",
                                 style: TextStyle(
                                     height: 1.78,
                                     color: Color(0xFF1A2B47),
                                     fontSize: 12, fontWeight: FontWeight.w400),
                               ),
-                              SizedBox(height: 10,),
+                              const SizedBox(height: 10,),
                               Row(
                                 children: [
                                   Image.asset("assets/icons/likes.png"),
-                                  SizedBox(width: 10,),
-                                  Text(
+                                  const SizedBox(width: 10,),
+                                  const Text(
                                     "Likes 12",
                                     style: TextStyle(
                                         color: Color(0xFF5E6D77),
@@ -276,9 +272,9 @@ class _BlogSinglePageState extends State<BlogSinglePage> {
                                         fontWeight: FontWeight.w400
                                     ),
                                   ),
-                                  SizedBox(width: 40,),
+                                  const SizedBox(width: 40,),
 
-                                  Text(
+                                  const Text(
                                     "Reply",
                                     style: TextStyle(
                                         color: Color(0xFF5E6D77),
@@ -300,11 +296,11 @@ class _BlogSinglePageState extends State<BlogSinglePage> {
               ],
             ),
           ),
-          SizedBox(height: 10,),
-          Divider(color: Color(0xFFD9D9D9).withOpacity(0.5), thickness: 2,),
-          SizedBox(height: 20,),
-          FollowScreen(),
-          SizedBox(height: 20,),
+          const SizedBox(height: 10,),
+          Divider(color: const Color(0xFFD9D9D9).withOpacity(0.5), thickness: 2,),
+          const SizedBox(height: 20,),
+          const FollowScreen(),
+          const SizedBox(height: 20,),
         ],
       ),
     );

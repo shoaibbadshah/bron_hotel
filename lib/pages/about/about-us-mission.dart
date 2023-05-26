@@ -1,11 +1,5 @@
-import 'dart:ui';
-
 import 'package:bron_hotel/pages/about/work-with-as-page.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-
-import '../../utils/color.dart';
 import '../../widgets/follow-screen.dart';
 
 class AboutUsMission extends StatefulWidget {
@@ -38,7 +32,7 @@ class _AboutUsMissionState extends State<AboutUsMission> {
         appBar: AppBar(
           elevation: 0,
           toolbarHeight: 60,
-          backgroundColor: Color(0xFFF1F4FB),
+          backgroundColor: const Color(0xFFF1F4FB),
           automaticallyImplyLeading: false,
           title: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -53,17 +47,13 @@ class _AboutUsMissionState extends State<AboutUsMission> {
                   IconButton(
                       onPressed: (){
                         setState(() {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => WorkWithUsPage()));
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => const WorkWithUsPage()));
                         });
                       },
                       icon: Image.asset("assets/icons/reference.png")
                   ),
-                  IconButton(
-                      onPressed: (){
-                        setState(() {
-                          //Navigator.push(context, MaterialPageRoute(builder: (context) => NotificationsPage()));
-                        });
-                      },
+                  const IconButton(
+                      onPressed: null,
                       icon: Icon(Icons.notifications_none, color: Color(0xFF1A2B47),)
                   ),
                 ],
@@ -73,7 +63,7 @@ class _AboutUsMissionState extends State<AboutUsMission> {
         ),
         body: ListView(
           controller: controllerListView,
-          padding: EdgeInsets.symmetric(vertical: 20),
+          padding: const EdgeInsets.symmetric(vertical: 20),
           children: [
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -93,7 +83,7 @@ class _AboutUsMissionState extends State<AboutUsMission> {
                             fontSize: 18,
                             fontWeight: FontWeight.w600),
                       ),
-                      SizedBox(width: 10,),
+                      const SizedBox(width: 10,),
                       showAbout
                           ? const Icon(Icons.keyboard_arrow_up, color: Color(0xFF1A2B47),)
                           : const Icon(Icons.keyboard_arrow_down, color: Color(0xFF1A2B47),)
@@ -104,19 +94,19 @@ class _AboutUsMissionState extends State<AboutUsMission> {
               showAbout
                   ? buildMission(context)
                   : Container(),
-            SizedBox(height: 15,),
+            const SizedBox(height: 15,),
             showHotels
               ? buildHotels(context)
               : Container(),
-            SizedBox(height: 15,),
+            const SizedBox(height: 15,),
             showTours
                 ? buildTours(context)
                 : Container(),
-            SizedBox(height: 15,),
+            const SizedBox(height: 15,),
             showFlights
                 ? buildFlights(context)
                 : Container(),
-            SizedBox(height: 15,),
+            const SizedBox(height: 15,),
 
             // Hotels
             GestureDetector(
@@ -130,7 +120,7 @@ class _AboutUsMissionState extends State<AboutUsMission> {
                 child: Container(
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height / 4.5,
-                  padding: EdgeInsets.symmetric(vertical: 20),
+                  padding: const EdgeInsets.symmetric(vertical: 20),
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(30)
@@ -140,24 +130,24 @@ class _AboutUsMissionState extends State<AboutUsMission> {
                     children: [
                       Column(
                         children: [
-                          Image.asset("assets/images/stays.png", color:  showHotels ? Color(0xFF005BFE) : Color(0xFF1A2B47),),
-                          SizedBox(height: 5,),
+                          Image.asset("assets/images/stays.png", color:  showHotels ? const Color(0xFF005BFE) : const Color(0xFF1A2B47),),
+                          const SizedBox(height: 5,),
                           Text(
                             "Hotels",
                             style: TextStyle(
                                 decorationThickness: 2,
-                                color: showHotels ? Color(0xFF005BFE) : Color(0xFF1A2B47),
+                                color: showHotels ? const Color(0xFF005BFE) : const Color(0xFF1A2B47),
                                 fontSize: 20,
                                 fontWeight: FontWeight.w700),
                           ),
                           Container(
                             height: 2,
                             width: 70,
-                            color: showHotels ? Color(0xFF005BFE) : Color(0xFF1A2B47),
+                            color: showHotels ? const Color(0xFF005BFE) : const Color(0xFF1A2B47),
                           )
                         ],
                       ),
-                      Text(
+                      const Text(
                         "Nisl rhoncus mattis rhoncus urna neque viverra justo nec. Mauris pellentesque pulvinar pellentesque habitant morbi tristique. ",
                         textAlign: TextAlign.center,
                         style: TextStyle(
@@ -171,7 +161,7 @@ class _AboutUsMissionState extends State<AboutUsMission> {
                 ),
               ),
             ),
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
 
             // Tours
             GestureDetector(
@@ -185,7 +175,7 @@ class _AboutUsMissionState extends State<AboutUsMission> {
                 child: Container(
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height / 4.5,
-                  padding: EdgeInsets.symmetric(vertical: 20),
+                  padding: const EdgeInsets.symmetric(vertical: 20),
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(30)
@@ -195,24 +185,24 @@ class _AboutUsMissionState extends State<AboutUsMission> {
                     children: [
                       Column(
                         children: [
-                          Image.asset('assets/images/tours.png', color: showTours ? Color(0xFF005BFE) : Color(0xFF1A2B47)),
-                          SizedBox(height: 5,),
+                          Image.asset('assets/images/tours.png', color: showTours ? const Color(0xFF005BFE) : const Color(0xFF1A2B47)),
+                          const SizedBox(height: 5,),
                           Text(
                             "Tours",
                             style: TextStyle(
                                 decorationThickness: 2,
-                                color: showTours ? Color(0xFF005BFE) : Color(0xFF1A2B47),
+                                color: showTours ? const Color(0xFF005BFE) : const Color(0xFF1A2B47),
                                 fontSize: 20,
                                 fontWeight: FontWeight.w700),
                           ),
                           Container(
                             height: 2,
                             width: 70,
-                            color: showTours ? Color(0xFF005BFE) : Color(0xFF1A2B47),
+                            color: showTours ? const Color(0xFF005BFE) : const Color(0xFF1A2B47),
                           )
                         ],
                       ),
-                      Text(
+                      const Text(
                         "Nisl rhoncus mattis rhoncus urna neque viverra justo nec. Mauris pellentesque pulvinar pellentesque habitant morbi tristique. ",
                         textAlign: TextAlign.center,
                         style: TextStyle(
@@ -226,7 +216,7 @@ class _AboutUsMissionState extends State<AboutUsMission> {
                 ),
               ),
             ),
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
 
             //Flights
             GestureDetector(
@@ -240,7 +230,7 @@ class _AboutUsMissionState extends State<AboutUsMission> {
                 child: Container(
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height / 4.5,
-                  padding: EdgeInsets.symmetric(vertical: 20),
+                  padding: const EdgeInsets.symmetric(vertical: 20),
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(30)
@@ -250,24 +240,24 @@ class _AboutUsMissionState extends State<AboutUsMission> {
                     children: [
                       Column(
                         children: [
-                          Image.asset('assets/images/flights.png', color: showFlights ? Color(0xFF005BFE) : Color(0xFF1A2B47),),
-                          SizedBox(height: 5,),
+                          Image.asset('assets/images/flights.png', color: showFlights ? const Color(0xFF005BFE) : const Color(0xFF1A2B47),),
+                          const SizedBox(height: 5,),
                           Text(
                             "Flights",
                             style: TextStyle(
                                 decorationThickness: 2,
-                                color: showFlights ? Color(0xFF005BFE) : Color(0xFF1A2B47),
+                                color: showFlights ? const Color(0xFF005BFE) : const Color(0xFF1A2B47),
                                 fontSize: 20,
                                 fontWeight: FontWeight.w700),
                           ),
                           Container(
                             height: 2,
                             width: 70,
-                            color: showFlights ? Color(0xFF005BFE) : Color(0xFF1A2B47),
+                            color: showFlights ? const Color(0xFF005BFE) : const Color(0xFF1A2B47),
                           )
                         ],
                       ),
-                      Text(
+                      const Text(
                         "Nisl rhoncus mattis rhoncus urna neque viverra justo nec. Mauris pellentesque pulvinar pellentesque habitant morbi tristique. ",
                         textAlign: TextAlign.center,
                         style: TextStyle(
@@ -281,9 +271,9 @@ class _AboutUsMissionState extends State<AboutUsMission> {
                 ),
               ),
             ),
-            SizedBox(height: 20,),
-            FollowScreen(),
-            SizedBox(height: 20,)
+            const SizedBox(height: 20,),
+            const FollowScreen(),
+            const SizedBox(height: 20,)
           ],
         ),
       ),
@@ -296,15 +286,15 @@ class _AboutUsMissionState extends State<AboutUsMission> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children:  [
-          Text(
+          const Text(
             "Hotels",
             style: TextStyle(
                 color: Color(0xFF1A2B47),
                 fontSize: 20,
                 fontWeight: FontWeight.w700),
           ),
-          SizedBox(height: 15,),
-          Container(
+          const SizedBox(height: 15,),
+          SizedBox(
             width: MediaQuery.of(context).size.width,
             child: Row(
               children: [
@@ -313,14 +303,14 @@ class _AboutUsMissionState extends State<AboutUsMission> {
                     height: 162,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
-                      image: DecorationImage(
+                      image: const DecorationImage(
                         image: AssetImage("assets/images/about1.png"),
                         fit: BoxFit.cover
                       )
                     ),
                   ),
                 ),
-                SizedBox(width: 10,),
+                const SizedBox(width: 10,),
                 Expanded(
                   flex: 2,
                   child: Column(
@@ -329,18 +319,18 @@ class _AboutUsMissionState extends State<AboutUsMission> {
                         height: 75,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(15),
-                            image: DecorationImage(
+                            image: const DecorationImage(
                                 image: AssetImage("assets/images/about2.png"),
                               fit: BoxFit.cover
                             )
                         ),
                       ),
-                      SizedBox(height: 10,),
+                      const SizedBox(height: 10,),
                       Container(
                         height: 75,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(15),
-                            image: DecorationImage(
+                            image: const DecorationImage(
                                 image: AssetImage("assets/images/about3.png"),
                                 fit: BoxFit.cover
                             )
@@ -352,8 +342,8 @@ class _AboutUsMissionState extends State<AboutUsMission> {
               ],
             ),
           ),
-          SizedBox(height: 15,),
-          Text(
+          const SizedBox(height: 15,),
+          const Text(
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Libero nunc consequat interdum varius sit. Nisl rhoncus mattis rhoncus urna neque viverra justo nec. Mauris pellentesque pulvinar pellentesque habitant morbi tristique. Amet tellus cras adipiscing enim eu turpis egestas. Vel elit scelerisque mauris pellentesque pulvinar pellentesque. Metus vulputate eu scelerisque felis imperdiet. Justo donec enim diam vulputate ut pharetra sit amet. Facilisis magna etiam tempor orci eu lobortis elementum. Ut pharetra sit amet aliquam. ",
             style: TextStyle(
                 height: 2,
@@ -361,7 +351,7 @@ class _AboutUsMissionState extends State<AboutUsMission> {
                 fontSize: 14,
                 fontWeight: FontWeight.w400),
           ),
-          SizedBox(height: 15,),
+          const SizedBox(height: 15,),
         ],
       ),
     );
@@ -373,15 +363,15 @@ class _AboutUsMissionState extends State<AboutUsMission> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children:  [
-          Text(
+          const Text(
             "Tours",
             style: TextStyle(
                 color: Color(0xFF1A2B47),
                 fontSize: 20,
                 fontWeight: FontWeight.w700),
           ),
-          SizedBox(height: 15,),
-          Container(
+          const SizedBox(height: 15,),
+          SizedBox(
             width: MediaQuery.of(context).size.width,
             child: Row(
               children: [
@@ -390,14 +380,14 @@ class _AboutUsMissionState extends State<AboutUsMission> {
                     height: 162,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
-                        image: DecorationImage(
+                        image: const DecorationImage(
                             image: AssetImage("assets/images/about1.png"),
                             fit: BoxFit.cover
                         )
                     ),
                   ),
                 ),
-                SizedBox(width: 10,),
+                const SizedBox(width: 10,),
                 Expanded(
                   flex: 2,
                   child: Column(
@@ -406,18 +396,18 @@ class _AboutUsMissionState extends State<AboutUsMission> {
                         height: 75,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(15),
-                            image: DecorationImage(
+                            image: const DecorationImage(
                                 image: AssetImage("assets/images/about2.png"),
                                 fit: BoxFit.cover
                             )
                         ),
                       ),
-                      SizedBox(height: 10,),
+                      const SizedBox(height: 10,),
                       Container(
                         height: 75,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(15),
-                            image: DecorationImage(
+                            image: const DecorationImage(
                                 image: AssetImage("assets/images/about3.png"),
                                 fit: BoxFit.cover
                             )
@@ -429,8 +419,8 @@ class _AboutUsMissionState extends State<AboutUsMission> {
               ],
             ),
           ),
-          SizedBox(height: 15,),
-          Text(
+          const SizedBox(height: 15,),
+          const Text(
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Libero nunc consequat interdum varius sit. Nisl rhoncus mattis rhoncus urna neque viverra justo nec. Mauris pellentesque pulvinar pellentesque habitant morbi tristique. Amet tellus cras adipiscing enim eu turpis egestas. Vel elit scelerisque mauris pellentesque pulvinar pellentesque. Metus vulputate eu scelerisque felis imperdiet. Justo donec enim diam vulputate ut pharetra sit amet. Facilisis magna etiam tempor orci eu lobortis elementum. Ut pharetra sit amet aliquam. ",
             style: TextStyle(
                 height: 2,
@@ -438,7 +428,7 @@ class _AboutUsMissionState extends State<AboutUsMission> {
                 fontSize: 14,
                 fontWeight: FontWeight.w400),
           ),
-          SizedBox(height: 15,),
+          const SizedBox(height: 15,),
         ],
       ),
     );
@@ -450,15 +440,15 @@ class _AboutUsMissionState extends State<AboutUsMission> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children:  [
-          Text(
+          const Text(
             "Flights",
             style: TextStyle(
                 color: Color(0xFF1A2B47),
                 fontSize: 20,
                 fontWeight: FontWeight.w700),
           ),
-          SizedBox(height: 15,),
-          Container(
+          const SizedBox(height: 15,),
+          SizedBox(
             width: MediaQuery.of(context).size.width,
             child: Row(
               children: [
@@ -467,14 +457,14 @@ class _AboutUsMissionState extends State<AboutUsMission> {
                     height: 162,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
-                        image: DecorationImage(
+                        image: const DecorationImage(
                             image: AssetImage("assets/images/about1.png"),
                             fit: BoxFit.cover
                         )
                     ),
                   ),
                 ),
-                SizedBox(width: 10,),
+                const SizedBox(width: 10,),
                 Expanded(
                   flex: 2,
                   child: Column(
@@ -483,18 +473,18 @@ class _AboutUsMissionState extends State<AboutUsMission> {
                         height: 75,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(15),
-                            image: DecorationImage(
+                            image: const DecorationImage(
                                 image: AssetImage("assets/images/about2.png"),
                                 fit: BoxFit.cover
                             )
                         ),
                       ),
-                      SizedBox(height: 10,),
+                      const SizedBox(height: 10,),
                       Container(
                         height: 75,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(15),
-                            image: DecorationImage(
+                            image: const DecorationImage(
                                 image: AssetImage("assets/images/about3.png"),
                                 fit: BoxFit.cover
                             )
@@ -506,8 +496,8 @@ class _AboutUsMissionState extends State<AboutUsMission> {
               ],
             ),
           ),
-          SizedBox(height: 15,),
-          Text(
+          const SizedBox(height: 15,),
+          const Text(
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Libero nunc consequat interdum varius sit. Nisl rhoncus mattis rhoncus urna neque viverra justo nec. Mauris pellentesque pulvinar pellentesque habitant morbi tristique. Amet tellus cras adipiscing enim eu turpis egestas. Vel elit scelerisque mauris pellentesque pulvinar pellentesque. Metus vulputate eu scelerisque felis imperdiet. Justo donec enim diam vulputate ut pharetra sit amet. Facilisis magna etiam tempor orci eu lobortis elementum. Ut pharetra sit amet aliquam. ",
             style: TextStyle(
                 height: 2,
@@ -515,7 +505,7 @@ class _AboutUsMissionState extends State<AboutUsMission> {
                 fontSize: 14,
                 fontWeight: FontWeight.w400),
           ),
-          SizedBox(height: 15,),
+          const SizedBox(height: 15,),
         ],
       ),
     );
@@ -527,27 +517,27 @@ class _AboutUsMissionState extends State<AboutUsMission> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children:  [
-                  Text(
+                  const Text(
                     "Our mission",
                     style: TextStyle(
                         color: Color(0xFF1A2B47),
                         fontSize: 20,
                         fontWeight: FontWeight.w700),
                   ),
-                  SizedBox(height: 15,),
+                  const SizedBox(height: 15,),
                   Container(
                     width: MediaQuery.of(context).size.width,
                     height: MediaQuery.of(context).size.height / 5,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
-                      image: DecorationImage(
+                      image: const DecorationImage(
                         image: AssetImage("assets/images/about-image.png"),
                         fit: BoxFit.cover
                       )
                     ),
                   ),
-                  SizedBox(height: 15,),
-                  Text(
+                  const SizedBox(height: 15,),
+                  const Text(
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Libero nunc consequat interdum varius sit. Nisl rhoncus mattis rhoncus urna neque viverra justo nec. Mauris pellentesque pulvinar pellentesque habitant morbi tristique. Amet tellus cras adipiscing enim eu turpis egestas. Vel elit scelerisque mauris pellentesque pulvinar pellentesque. Metus vulputate eu scelerisque felis imperdiet. Justo donec enim diam vulputate ut pharetra sit amet. Facilisis magna etiam tempor orci eu lobortis elementum. Ut pharetra sit amet aliquam. ",
                     style: TextStyle(
                       height: 2,
@@ -555,7 +545,7 @@ class _AboutUsMissionState extends State<AboutUsMission> {
                         fontSize: 14,
                         fontWeight: FontWeight.w400),
                   ),
-                  SizedBox(height: 15,),
+                  const SizedBox(height: 15,),
                 ],
               ),
             );

@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class VendorBoardYouPlace extends StatefulWidget {
@@ -17,13 +16,13 @@ class _VendorBoardYouPlaceState extends State<VendorBoardYouPlace> {
       children: [
         Container(
           width: MediaQuery.of(context).size.width,
-          color: Color(0xFF1A2B47),
+          color: const Color(0xFF1A2B47),
           child:  Column(
             children: [
-              SizedBox(height: 20,),
+              const SizedBox(height: 20,),
               Image.asset("assets/icons/pilot-vendor.png"),
-              SizedBox(height: 20,),
-              Text(
+              const SizedBox(height: 20,),
+              const Text(
                 "Which of these best\ndescribes your place?",
                 textAlign: TextAlign.center,
                 style: TextStyle(
@@ -32,11 +31,11 @@ class _VendorBoardYouPlaceState extends State<VendorBoardYouPlace> {
                   fontWeight: FontWeight.w700,
                 ),
               ),
-              SizedBox(height: 40,),
+              const SizedBox(height: 40,),
             ],
           ),
         ),
-        SizedBox(height: 15,),
+        const SizedBox(height: 15,),
         Column(
           children: List.generate(5, (index) =>
               Padding(
@@ -50,17 +49,17 @@ class _VendorBoardYouPlaceState extends State<VendorBoardYouPlace> {
                   child: Container(
                     height: 82,
                     width: MediaQuery.of(context).size.width,
-                    padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+                    padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
                     decoration: BoxDecoration(
-                        color: selectCard == index ? Color(0xFF1A2B47).withOpacity(0.1) : Colors.white,
+                        color: selectCard == index ? const Color(0xFF1A2B47).withOpacity(0.1) : Colors.white,
                         borderRadius: BorderRadius.circular(15),
-                        border: Border.all(color: Color(0xFF1A2B47))
+                        border: Border.all(color: const Color(0xFF1A2B47))
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(
+                        const Text(
                           "Apartment",
                           textAlign: TextAlign.center,
                           style: TextStyle(
@@ -69,12 +68,12 @@ class _VendorBoardYouPlaceState extends State<VendorBoardYouPlace> {
                             fontWeight: FontWeight.w500,
                           ),
                         ),
-                        SizedBox(height: 5,),
+                        const SizedBox(height: 5,),
                         Text(
                           "A home that may stand-alone or have shared walls.",
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                            color: Color(0xFF1A2B47).withOpacity(0.5),
+                            color: const Color(0xFF1A2B47).withOpacity(0.5),
                             fontSize: 11,
                             fontWeight: FontWeight.w300,
                           ),

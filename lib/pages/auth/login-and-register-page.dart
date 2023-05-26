@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:bron_hotel/pages/auth/dialog-check-newpass.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
@@ -60,16 +59,16 @@ class _LoginAndRegisterPageState extends State<LoginAndRegisterPage> {
         ),
       ),
       body: ListView(
-        padding: EdgeInsets.symmetric(vertical: 20),
+        padding: const EdgeInsets.symmetric(vertical: 20),
         children: [
           Column(
             children: [
               Container(
                 height: 38,
                 width: MediaQuery.of(context).size.width / 1.5,
-                padding: EdgeInsets.symmetric(horizontal: 20),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 decoration: BoxDecoration(
-                    color: Color(0xFFFA5636),
+                    color: const Color(0xFFFA5636),
                     borderRadius: BorderRadius.circular(30)),
                 child: Row(
                   children: [
@@ -78,7 +77,7 @@ class _LoginAndRegisterPageState extends State<LoginAndRegisterPage> {
                           onPressed: (){
                             _showModalAuth(context);
                           },
-                          child: Text(
+                          child: const Text(
                             "Войти",
                             textAlign: TextAlign.center,
                             style: TextStyle(
@@ -88,7 +87,7 @@ class _LoginAndRegisterPageState extends State<LoginAndRegisterPage> {
                           )
                       ),
                     ),
-                    VerticalDivider(
+                    const VerticalDivider(
                       thickness: 3,
                       color: Colors.white,
                     ),
@@ -100,7 +99,7 @@ class _LoginAndRegisterPageState extends State<LoginAndRegisterPage> {
                               _showModalRegister(context);
                             });
                           },
-                          child: Text(
+                          child: const Text(
                             "Регистрация",
                             textAlign: TextAlign.center,
                             style: TextStyle(
@@ -115,20 +114,20 @@ class _LoginAndRegisterPageState extends State<LoginAndRegisterPage> {
               )
             ],
           ),
-          SizedBox(height: 30,),
+          const SizedBox(height: 30,),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
                 height: 40,
-                padding: EdgeInsets.symmetric(horizontal: 20),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 decoration: BoxDecoration(
-                  color: Color(0xFF005BFE).withOpacity(0.1),
+                  color: const Color(0xFF005BFE).withOpacity(0.1),
                   borderRadius: BorderRadius.circular(30)
                 ),
                 child: Row(
-                  children: [
-                    Text(
+                  children: const <Widget>[
+                     Text(
                         "Стать партнером",
                         style: TextStyle(
                           color: Color(0xFF1A2B47),
@@ -136,14 +135,14 @@ class _LoginAndRegisterPageState extends State<LoginAndRegisterPage> {
                           fontWeight: FontWeight.w600
                         ),
                     ),
-                    SizedBox(width: 5,),
-                    Icon(Icons.arrow_forward, color: Color(0xFF005BFE),)
+                     SizedBox(width: 5,),
+                     Icon(Icons.arrow_forward, color: Color(0xFF005BFE),)
                   ],
                 ),
               )
             ],
           ),
-          SizedBox(height: 30,),
+          const SizedBox(height: 30,),
           ListTile(
             contentPadding: EdgeInsets.zero,
             title: Column(
@@ -154,18 +153,18 @@ class _LoginAndRegisterPageState extends State<LoginAndRegisterPage> {
                     Container(
                       width: 5,
                       height: 40,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           color: Color(0xFF005BFE),
                           borderRadius: BorderRadius.only(topRight: Radius.circular(3), bottomRight:Radius.circular(3) )
                       ),
                     ),
-                    SizedBox(width: 20,),
-                    Text("Блог сообщества", style: TextStyle(color: Color(0xFF005BFE), fontSize: 16, fontWeight: FontWeight.w600),),
+                    const SizedBox(width: 20,),
+                    const Text("Блог сообщества", style: TextStyle(color: Color(0xFF005BFE), fontSize: 16, fontWeight: FontWeight.w600),),
                   ],
                 ),
-                SizedBox(height: 5,),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                const SizedBox(height: 5,),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
                   child: Divider(thickness: 1,),
                 )
               ],
@@ -179,13 +178,13 @@ class _LoginAndRegisterPageState extends State<LoginAndRegisterPage> {
                 Row(
                   children: [
                     Container(),
-                    SizedBox(width: 20,),
-                    Text("Язык", style: TextStyle(color: Color(0xFF1A2B47), fontSize: 16, fontWeight: FontWeight.w600),),
+                    const SizedBox(width: 20,),
+                    const Text("Язык", style: TextStyle(color: Color(0xFF1A2B47), fontSize: 16, fontWeight: FontWeight.w600),),
                   ],
                 ),
-                SizedBox(height: 5,),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                const SizedBox(height: 5,),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
                   child: Divider(thickness: 1,),
                 )
               ],
@@ -199,13 +198,13 @@ class _LoginAndRegisterPageState extends State<LoginAndRegisterPage> {
                 Row(
                   children: [
                     Container(),
-                    SizedBox(width: 20,),
-                    Text("Валюта", style: TextStyle(color: Color(0xFF1A2B47), fontSize: 16, fontWeight: FontWeight.w600),),
+                    const SizedBox(width: 20,),
+                    const Text("Валюта", style: TextStyle(color: Color(0xFF1A2B47), fontSize: 16, fontWeight: FontWeight.w600),),
                   ],
                 ),
-                SizedBox(height: 5,),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                const SizedBox(height: 5,),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
                   child: Divider(thickness: 1,),
                 )
               ],
@@ -215,8 +214,8 @@ class _LoginAndRegisterPageState extends State<LoginAndRegisterPage> {
             title: Row(
               children: [
                 Image.asset("assets/icons/reference.png"),
-                SizedBox(width: 5,),
-                Text("Справка", style: TextStyle(color: Color(0xFF1A2B47), fontSize: 16, fontWeight: FontWeight.w600),),
+                const SizedBox(width: 5,),
+                const Text("Справка", style: TextStyle(color: Color(0xFF1A2B47), fontSize: 16, fontWeight: FontWeight.w600),),
               ],
             ),
           ),
@@ -245,7 +244,7 @@ class _LoginAndRegisterPageState extends State<LoginAndRegisterPage> {
                         height: MediaQuery.of(context).size.height,
                         child: ListView(
                           controller: controllerListViewSheetRegister,
-                          padding: EdgeInsets.symmetric(horizontal: 20),
+                          padding: const EdgeInsets.symmetric(horizontal: 20),
                           scrollDirection: Axis.vertical,
                           children: [
                             Align(
@@ -254,11 +253,11 @@ class _LoginAndRegisterPageState extends State<LoginAndRegisterPage> {
                                 onPressed: (){
                                   Navigator.of(context).pop();
                                 },
-                                icon: Icon(Icons.clear),
+                                icon: const Icon(Icons.clear),
                               )
                             ),
-                            Center(child: Text("Зарегистрироваться", style: TextStyle(color: Color(0xFF1A2B47), fontSize: 20, fontWeight: FontWeight.w700),)),
-                            SizedBox(height: 30,),
+                            const Center(child: Text("Зарегистрироваться", style: TextStyle(color: Color(0xFF1A2B47), fontSize: 20, fontWeight: FontWeight.w700),)),
+                            const SizedBox(height: 30,),
                             Form(
                                 child: Column(
                                   children: [
@@ -267,7 +266,7 @@ class _LoginAndRegisterPageState extends State<LoginAndRegisterPage> {
                                         Expanded(
                                           child: TextField(
                                             controller: controllerRegisterName,
-                                            decoration: InputDecoration(
+                                            decoration: const InputDecoration(
                                               contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                                               hintText: 'Имя',
                                               hintStyle: TextStyle(
@@ -287,11 +286,11 @@ class _LoginAndRegisterPageState extends State<LoginAndRegisterPage> {
                                             ),
                                           ),
                                         ),
-                                        SizedBox(width: 10,),
+                                        const SizedBox(width: 10,),
                                         Expanded(
                                           child: TextField(
                                             controller: controllerRegisterLastName,
-                                            decoration: InputDecoration(
+                                            decoration: const InputDecoration(
                                               contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                                               hintText: 'Фамилия',
                                               hintStyle: TextStyle(
@@ -313,10 +312,10 @@ class _LoginAndRegisterPageState extends State<LoginAndRegisterPage> {
                                         ),
                                       ],
                                     ),
-                                    SizedBox(height: 15,),
+                                    const SizedBox(height: 15,),
                                     TextField(
                                       controller: controllerRegisterPhone,
-                                      decoration: InputDecoration(
+                                      decoration: const InputDecoration(
                                         contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                                         hintText: 'Телефон',
                                         hintStyle: TextStyle(
@@ -339,10 +338,10 @@ class _LoginAndRegisterPageState extends State<LoginAndRegisterPage> {
                                         ),
                                       ),
                                     ),
-                                    SizedBox(height: 15,),
+                                    const SizedBox(height: 15,),
                                     TextField(
                                       controller: controllerRegisterEmail,
-                                      decoration: InputDecoration(
+                                      decoration: const InputDecoration(
                                         contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                                         hintText: 'Адрес электронной почты',
                                         hintStyle: TextStyle(
@@ -365,10 +364,10 @@ class _LoginAndRegisterPageState extends State<LoginAndRegisterPage> {
                                         ),
                                       ),
                                     ),
-                                    SizedBox(height: 15,),
+                                    const SizedBox(height: 15,),
                                     TextField(
                                       controller: controllerRegisterPass,
-                                      decoration: InputDecoration(
+                                      decoration: const InputDecoration(
                                         contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                                         hintText: 'Пароль',
                                         hintStyle: TextStyle(
@@ -391,10 +390,10 @@ class _LoginAndRegisterPageState extends State<LoginAndRegisterPage> {
                                         ),
                                       ),
                                     ),
-                                    SizedBox(height: 15,),
+                                    const SizedBox(height: 15,),
                                     TextField(
                                       controller: controllerRegisterPass1,
-                                      decoration: InputDecoration(
+                                      decoration: const InputDecoration(
                                         contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                                         hintText: 'Подтвердить пароль ',
                                         hintStyle: TextStyle(
@@ -417,7 +416,7 @@ class _LoginAndRegisterPageState extends State<LoginAndRegisterPage> {
                                         ),
                                       ),
                                     ),
-                                    SizedBox(height: 15,),
+                                    const SizedBox(height: 15,),
                                     CheckboxTheme(
                                       data:  CheckboxThemeData(
                                         shape: RoundedRectangleBorder(
@@ -425,11 +424,11 @@ class _LoginAndRegisterPageState extends State<LoginAndRegisterPage> {
                                         ),
                                       ),
                                       child: CheckboxListTile(
-                                        activeColor: Color(0xFF005BFE),
+                                        activeColor: const Color(0xFF005BFE),
                                         title: RichText(
                                           text: TextSpan(
                                             text: 'Я прочитал и принимаю',
-                                            style: TextStyle(color: Color(0xFF1A2B47).withOpacity(0.85), fontSize: 10, fontWeight: FontWeight.w600),
+                                            style: TextStyle(color: const Color(0xFF1A2B47).withOpacity(0.85), fontSize: 10, fontWeight: FontWeight.w600),
                                             children: const <TextSpan>[
                                               TextSpan(text: ' Условия и Политику\nконфиденциальности', style: TextStyle(color: Color(0xFF005BFE), fontSize: 10, fontWeight: FontWeight.w600)),
                                             ],
@@ -461,36 +460,36 @@ class _LoginAndRegisterPageState extends State<LoginAndRegisterPage> {
                                   ],
                                 )
                             ),
-                            SizedBox(height: 20,),
+                            const SizedBox(height: 20,),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 IconButton(
-                                    onPressed: (){}, 
+                                    onPressed: null,
                                     icon: Image.asset("assets/icons/wk.png")
                                 ),
-                                SizedBox(width: 10,),
+                                const SizedBox(width: 10,),
                                 IconButton(
-                                    onPressed: (){},
+                                    onPressed: null,
                                     icon: Image.asset("assets/icons/google-icon.png")
                                 ),
-                                SizedBox(width: 10,),
+                                const SizedBox(width: 10,),
                                 IconButton(
-                                    onPressed: (){},
+                                    onPressed: null,
                                     icon: Image.asset("assets/icons/facebook-icon.png")
                                 ),
                               ],
                             ),
-                            SizedBox(height: 15,),
+                            const SizedBox(height: 15,),
                             Center(
                               child: RichText(
                                 text: TextSpan(
                                   text: 'У вас уже есть аккаунт? ',
-                                  style: TextStyle(color: Color(0xFF1A2B47), fontSize: 12, fontWeight: FontWeight.w400),
+                                  style: const TextStyle(color: Color(0xFF1A2B47), fontSize: 12, fontWeight: FontWeight.w400),
                                   children:  <TextSpan>[
                                     TextSpan(
                                         text: ' Авторизоваться',
-                                        style: TextStyle(color: Color(0xFF005BFE), fontSize: 12, fontWeight: FontWeight.w400),
+                                        style: const TextStyle(color: Color(0xFF005BFE), fontSize: 12, fontWeight: FontWeight.w400),
                                         recognizer: TapGestureRecognizer()..onTap = () {
                                           Navigator.of(context).pop();
                                           _showModalAuth(context);
@@ -500,7 +499,7 @@ class _LoginAndRegisterPageState extends State<LoginAndRegisterPage> {
                                 ),
                               ),
                             ),
-                            SizedBox(height: 20,),
+                            const SizedBox(height: 20,),
                           ],
                         ),
                       );
@@ -529,7 +528,7 @@ class _LoginAndRegisterPageState extends State<LoginAndRegisterPage> {
                         height: MediaQuery.of(context).size.height,
                         child: ListView(
                           controller: controllerListViewSheetRegister,
-                          padding: EdgeInsets.symmetric(horizontal: 20),
+                          padding: const EdgeInsets.symmetric(horizontal: 20),
                           scrollDirection: Axis.vertical,
                           children: [
                             Align(
@@ -538,17 +537,17 @@ class _LoginAndRegisterPageState extends State<LoginAndRegisterPage> {
                                   onPressed: (){
                                     Navigator.of(context).pop();
                                   },
-                                  icon: Icon(Icons.clear),
+                                  icon: const Icon(Icons.clear),
                                 )
                             ),
-                            Center(child: Text("Авторизация", style: TextStyle(color: Color(0xFF1A2B47), fontSize: 20, fontWeight: FontWeight.w700),)),
-                            SizedBox(height: 30,),
+                            const Center(child: Text("Авторизация", style: TextStyle(color: Color(0xFF1A2B47), fontSize: 20, fontWeight: FontWeight.w700),)),
+                            const SizedBox(height: 30,),
                             Form(
                                 child: Column(
                                   children: [
                                     TextField(
                                       controller: controllerAuthEmail,
-                                      decoration: InputDecoration(
+                                      decoration: const InputDecoration(
                                         contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                                         hintText: 'Адрес электронной почты',
                                         hintStyle: TextStyle(
@@ -571,10 +570,10 @@ class _LoginAndRegisterPageState extends State<LoginAndRegisterPage> {
                                         ),
                                       ),
                                     ),
-                                    SizedBox(height: 15,),
+                                    const SizedBox(height: 15,),
                                     TextField(
                                       controller: controllerAuthPass,
-                                      decoration: InputDecoration(
+                                      decoration: const InputDecoration(
                                         contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                                         hintText: 'Пароль',
                                         hintStyle: TextStyle(
@@ -597,7 +596,7 @@ class _LoginAndRegisterPageState extends State<LoginAndRegisterPage> {
                                         ),
                                       ),
                                     ),
-                                    SizedBox(height: 15,),
+                                    const SizedBox(height: 15,),
                                     Row(
                                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                       children: [
@@ -609,8 +608,8 @@ class _LoginAndRegisterPageState extends State<LoginAndRegisterPage> {
                                               ),
                                             ),
                                             child: CheckboxListTile(
-                                              activeColor: Color(0xFF005BFE),
-                                              title: Text("Запомни меня" , style: TextStyle(color: Color(0xFF1A2B47), fontSize: 12, fontWeight: FontWeight.w600),),
+                                              activeColor: const Color(0xFF005BFE),
+                                              title: const Text("Запомни меня" , style: TextStyle(color: Color(0xFF1A2B47), fontSize: 12, fontWeight: FontWeight.w600),),
                                               value: true,
                                               contentPadding: EdgeInsets.zero,
                                               onChanged: (newValue) {},
@@ -624,7 +623,7 @@ class _LoginAndRegisterPageState extends State<LoginAndRegisterPage> {
                                                 Navigator.of(context).pop();
                                               _showModalForgotPassword(context);
                                             },
-                                            child: Text("Забыли пароль?" , style: TextStyle(color: Color(0xFF5E6D77), fontSize: 12, fontWeight: FontWeight.w500),),
+                                            child: const Text("Забыли пароль?" , style: TextStyle(color: Color(0xFF5E6D77), fontSize: 12, fontWeight: FontWeight.w500),),
                                         )
                                       ],
                                     ),
@@ -635,7 +634,7 @@ class _LoginAndRegisterPageState extends State<LoginAndRegisterPage> {
                                             backgroundColor: const Color(0xFF005BFE),
                                             shape: RoundedRectangleBorder(
                                                 borderRadius: BorderRadius.circular(100))),
-                                        onPressed: () {},
+                                        onPressed: null,
                                         child: const Text(
                                           "Войти",
                                           style: TextStyle(
@@ -647,42 +646,42 @@ class _LoginAndRegisterPageState extends State<LoginAndRegisterPage> {
                                   ],
                                 )
                             ),
-                            SizedBox(height: 20,),
+                            const SizedBox(height: 20,),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 IconButton(
-                                    onPressed: (){},
+                                    onPressed: null,
                                     icon: Image.asset("assets/icons/wk.png")
                                 ),
-                                SizedBox(width: 10,),
+                                const SizedBox(width: 10,),
                                 IconButton(
-                                    onPressed: (){},
+                                    onPressed: null,
                                     icon: Image.asset("assets/icons/google-icon.png")
                                 ),
-                                SizedBox(width: 10,),
+                                const SizedBox(width: 10,),
                                 IconButton(
-                                    onPressed: (){},
+                                    onPressed: null,
                                     icon: Image.asset("assets/icons/facebook-icon.png")
                                 ),
                               ],
                             ),
-                            SizedBox(height: 15,),
+                            const SizedBox(height: 15,),
                             Center(
                               child: Column(
                                 children: [
-                                  Text("Еще не регистрировались?", style: TextStyle(color: Color(0xFF1A2B47), fontSize: 12, fontWeight: FontWeight.w400),),
+                                  const Text("Еще не регистрировались?", style: TextStyle(color: Color(0xFF1A2B47), fontSize: 12, fontWeight: FontWeight.w400),),
                                   TextButton(
                                       onPressed: (){
                                         Navigator.of(context).pop();
                                         _showModalRegister(context);
                                       },
-                                      child: Text("Зарегистрироваться", textAlign: TextAlign.center, style: TextStyle(color: Color(0xFF005BFE), fontSize: 12, fontWeight: FontWeight.w400))
+                                      child: const Text("Зарегистрироваться", textAlign: TextAlign.center, style: TextStyle(color: Color(0xFF005BFE), fontSize: 12, fontWeight: FontWeight.w400))
                                   )
                                 ],
                               ),
                             ),
-                            SizedBox(height: 20,),
+                            const SizedBox(height: 20,),
                           ],
                         ),
                       );
@@ -711,7 +710,7 @@ class _LoginAndRegisterPageState extends State<LoginAndRegisterPage> {
                         height: MediaQuery.of(context).size.height,
                         child: ListView(
                           controller: controllerListViewSheetRegister,
-                          padding: EdgeInsets.symmetric(horizontal: 20),
+                          padding: const EdgeInsets.symmetric(horizontal: 20),
                           scrollDirection: Axis.vertical,
                           children: [
                             Align(
@@ -720,19 +719,19 @@ class _LoginAndRegisterPageState extends State<LoginAndRegisterPage> {
                                   onPressed: (){
                                     Navigator.of(context).pop();
                                   },
-                                  icon: Icon(Icons.clear),
+                                  icon: const Icon(Icons.clear),
                                 )
                             ),
-                            Center(child: Text("Забыли пароль?", style: TextStyle(color: Color(0xFF1A2B47), fontSize: 20, fontWeight: FontWeight.w700),)),
-                            SizedBox(height: 10,),
-                            Center(child: Text("Укажите свой адрес электронной почты", style: TextStyle(color: Color(0xFF5E6D77), fontSize: 12, fontWeight: FontWeight.w400),)),
-                            SizedBox(height: 30,),
+                            const Center(child: Text("Забыли пароль?", style: TextStyle(color: Color(0xFF1A2B47), fontSize: 20, fontWeight: FontWeight.w700),)),
+                            const SizedBox(height: 10,),
+                            const Center(child: Text("Укажите свой адрес электронной почты", style: TextStyle(color: Color(0xFF5E6D77), fontSize: 12, fontWeight: FontWeight.w400),)),
+                            const SizedBox(height: 30,),
                             Form(
                                 child: Column(
                                   children: [
                                     TextField(
                                       controller: controllerForgotPassEmail,
-                                      decoration: InputDecoration(
+                                      decoration: const InputDecoration(
                                         contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                                         hintText: 'Адрес электронной почты',
                                         hintStyle: TextStyle(
@@ -768,7 +767,7 @@ class _LoginAndRegisterPageState extends State<LoginAndRegisterPage> {
                                               barrierColor: Colors.grey.withOpacity(0.5),
                                               context: context,
                                               builder: (BuildContext context) {
-                                                return DialogCheckEmail();
+                                                return const DialogCheckEmail();
                                               });
                                         },
                                         child: const Text(
@@ -782,7 +781,7 @@ class _LoginAndRegisterPageState extends State<LoginAndRegisterPage> {
                                   ],
                                 )
                             ),
-                            SizedBox(height: 20,),
+                            const SizedBox(height: 20,),
                           ],
                         ),
                       );
@@ -811,7 +810,7 @@ class _LoginAndRegisterPageState extends State<LoginAndRegisterPage> {
                         height: MediaQuery.of(context).size.height,
                         child: ListView(
                           controller: controllerListViewSheetRegister,
-                          padding: EdgeInsets.symmetric(horizontal: 20),
+                          padding: const EdgeInsets.symmetric(horizontal: 20),
                           scrollDirection: Axis.vertical,
                           children: [
                             Align(
@@ -820,19 +819,19 @@ class _LoginAndRegisterPageState extends State<LoginAndRegisterPage> {
                                   onPressed: (){
                                     Navigator.of(context).pop();
                                   },
-                                  icon: Icon(Icons.clear),
+                                  icon: const Icon(Icons.clear),
                                 )
                             ),
-                            Center(child: Text("Новый пароль", style: TextStyle(color: Color(0xFF1A2B47), fontSize: 20, fontWeight: FontWeight.w700),)),
-                            SizedBox(height: 10,),
-                            Center(child: Text("Создайте пароль , минимум число букв и значков 6", style: TextStyle(color: Color(0xFF5E6D77), fontSize: 12, fontWeight: FontWeight.w400),)),
-                            SizedBox(height: 30,),
+                            const Center(child: Text("Новый пароль", style: TextStyle(color: Color(0xFF1A2B47), fontSize: 20, fontWeight: FontWeight.w700),)),
+                            const SizedBox(height: 10,),
+                            const Center(child: Text("Создайте пароль , минимум число букв и значков 6", style: TextStyle(color: Color(0xFF5E6D77), fontSize: 12, fontWeight: FontWeight.w400),)),
+                            const SizedBox(height: 30,),
                             Form(
                                 child: Column(
                                   children: [
                                     TextField(
                                       controller: controllerChangePassEmail,
-                                      decoration: InputDecoration(
+                                      decoration: const InputDecoration(
                                         contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                                         hintText: 'Адрес электронной почты',
                                         hintStyle: TextStyle(
@@ -858,7 +857,7 @@ class _LoginAndRegisterPageState extends State<LoginAndRegisterPage> {
                                     const SizedBox(height: 15),
                                     TextField(
                                       controller: controllerChangePassPass,
-                                      decoration: InputDecoration(
+                                      decoration: const InputDecoration(
                                         contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                                         hintText: 'Подтвердить пароль ',
                                         hintStyle: TextStyle(
@@ -894,7 +893,7 @@ class _LoginAndRegisterPageState extends State<LoginAndRegisterPage> {
                                               barrierColor: Colors.grey.withOpacity(0.5),
                                               context: context,
                                               builder: (BuildContext context) {
-                                                return DialogCheckNewPass();
+                                                return const DialogCheckNewPass();
                                               });
                                         },
                                         child: const Text(
@@ -908,7 +907,7 @@ class _LoginAndRegisterPageState extends State<LoginAndRegisterPage> {
                                   ],
                                 )
                             ),
-                            SizedBox(height: 20,),
+                            const SizedBox(height: 20,),
                           ],
                         ),
                       );

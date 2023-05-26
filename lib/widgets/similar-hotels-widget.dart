@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class SimilarHotelWidget extends StatefulWidget {
@@ -19,13 +18,13 @@ class _SimilarHotelWidgetState extends State<SimilarHotelWidget> {
       children: [
         Text(
           widget.title,
-          style: TextStyle(
+          style: const TextStyle(
               color: Color(0xFF1A2B47),
               fontWeight: FontWeight.w600,
               fontSize: 16
           ),
         ),
-        SizedBox(height: 15,),
+        const SizedBox(height: 15,),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: List.generate(widget.listNameRating.length, (index) =>
@@ -36,7 +35,7 @@ class _SimilarHotelWidgetState extends State<SimilarHotelWidget> {
                     onPressed: (){},
                     child: Text(
                       widget.listNameRating[index].name,
-                      style: TextStyle(
+                      style: const TextStyle(
                           decoration: TextDecoration.underline,
                           color: Color(0xFF005BFE),
                           fontWeight: FontWeight.w600,
@@ -49,14 +48,14 @@ class _SimilarHotelWidgetState extends State<SimilarHotelWidget> {
                     children: [
                       Text(
                         widget.listNameRating[index].rating,
-                        style: TextStyle(
+                        style: const TextStyle(
                             color: Color(0xFFFA5636),
                             fontWeight: FontWeight.w700,
                             fontSize: 14
                         ),
                       ),
-                      SizedBox(width: 3,),
-                      Icon(Icons.star, color: Color(0xFFFA5636), size: 18,)
+                      const SizedBox(width: 3,),
+                      const Icon(Icons.star, color: Color(0xFFFA5636), size: 18,)
                     ],
                   )
                 ],

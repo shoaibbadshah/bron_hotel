@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class DialogHotels extends StatefulWidget {
@@ -9,7 +8,7 @@ class DialogHotels extends StatefulWidget {
 }
 
 class _DialogHotelsState extends State<DialogHotels> {
-  static List images = [
+  final List images = [
     "assets/images/hotels-img3.png",
     "assets/images/hotels-img2.png",
     "assets/images/hotels-img1.png",
@@ -25,7 +24,7 @@ class _DialogHotelsState extends State<DialogHotels> {
         borderRadius: BorderRadius.circular(15),
       ),
       contentPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-      content: Container(
+      content: SizedBox(
         width: MediaQuery.of(context).size.width,
         height: 700,
         child: ListView(
@@ -36,20 +35,20 @@ class _DialogHotelsState extends State<DialogHotels> {
                   onPressed: (){
                     Navigator.of(context).pop();
                   },
-                  icon: Icon(Icons.clear),
+                  icon: const Icon(Icons.clear),
                 )
             ),
             Container(
               height: 162,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
-                  image: DecorationImage(
+                  image: const DecorationImage(
                       image: AssetImage("assets/images/hotels-img3.png"),
                       fit: BoxFit.cover
                   )
               ),
             ),
-            SizedBox(height: 5,),
+            const SizedBox(height: 5,),
             Row(
               children: [
                 Expanded(
@@ -57,20 +56,20 @@ class _DialogHotelsState extends State<DialogHotels> {
                     height: 100,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
-                        image: DecorationImage(
+                        image: const DecorationImage(
                             image: AssetImage("assets/images/hotels-img2.png"),
                             fit: BoxFit.cover
                         )
                     ),
                   ),
                 ),
-                SizedBox(width: 5,),
+                const SizedBox(width: 5,),
                 Expanded(
                   child: Container(
                     height: 100,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
-                        image: DecorationImage(
+                        image: const DecorationImage(
                             image: AssetImage("assets/images/hotels-img2.png"),
                             fit: BoxFit.cover
                         )
@@ -80,7 +79,7 @@ class _DialogHotelsState extends State<DialogHotels> {
 
               ],
             ),
-            SizedBox(height: 5,),
+            const SizedBox(height: 5,),
             Row(
               children: [
                 Expanded(
@@ -88,20 +87,20 @@ class _DialogHotelsState extends State<DialogHotels> {
                     height: 186,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
-                        image: DecorationImage(
+                        image: const DecorationImage(
                             image: AssetImage("assets/images/hotels-img1.png"),
                             fit: BoxFit.cover
                         )
                     ),
                   ),
                 ),
-                SizedBox(width: 5,),
+                const SizedBox(width: 5,),
                 Expanded(
                   child: Container(
                     height: 186,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
-                        image: DecorationImage(
+                        image: const DecorationImage(
                             image: AssetImage("assets/images/hotels-img1.png"),
                             fit: BoxFit.cover
                         )
@@ -111,18 +110,18 @@ class _DialogHotelsState extends State<DialogHotels> {
 
               ],
             ),
-            SizedBox(height: 5,),
+            const SizedBox(height: 5,),
             Container(
               height: 162,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
-                  image: DecorationImage(
+                  image: const DecorationImage(
                       image: AssetImage("assets/images/hotels-img3.png"),
                       fit: BoxFit.cover
                   )
               ),
             ),
-            SizedBox(height: 5,),
+            const SizedBox(height: 5,),
             Row(
               children: [
                 Expanded(
@@ -130,20 +129,20 @@ class _DialogHotelsState extends State<DialogHotels> {
                     height: 100,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
-                        image: DecorationImage(
+                        image: const DecorationImage(
                             image: AssetImage("assets/images/hotels-img2.png"),
                             fit: BoxFit.cover
                         )
                     ),
                   ),
                 ),
-                SizedBox(width: 5,),
+                const SizedBox(width: 5,),
                 Expanded(
                   child: Container(
                     height: 100,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
-                        image: DecorationImage(
+                        image: const DecorationImage(
                             image: AssetImage("assets/images/hotels-img2.png"),
                             fit: BoxFit.cover
                         )

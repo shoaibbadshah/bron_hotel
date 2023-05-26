@@ -1,4 +1,3 @@
-
 import 'package:bron_hotel/pages/vendor/vendor-board-bedrooms.dart';
 import 'package:bron_hotel/pages/vendor/vendor-board-location-spot.dart';
 import 'package:bron_hotel/pages/vendor/vendor-board-location.dart';
@@ -6,7 +5,6 @@ import 'package:bron_hotel/pages/vendor/vendor-board-offer.dart';
 import 'package:bron_hotel/pages/vendor/vendor-board-quests.dart';
 import 'package:bron_hotel/pages/vendor/vendor-board-you-host.dart';
 import 'package:bron_hotel/pages/vendor/vendor-board-you-plase.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class VendorBoard extends StatefulWidget {
@@ -24,13 +22,13 @@ class _VendorBoardState extends State<VendorBoard> {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         elevation: 0,
-        backgroundColor: Color(0xFF1A2B47),
+        backgroundColor: const Color(0xFF1A2B47),
         centerTitle: true,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(17.5)
@@ -44,8 +42,8 @@ class _VendorBoardState extends State<VendorBoard> {
                       Image.asset("assets/images/vendor-appbar.png")
                     ],
                   ),
-                  SizedBox(width: 5,),
-                  Text(
+                  const SizedBox(width: 5,),
+                  const Text(
                     "Ask a Superhost",
                     style: TextStyle(
                       color: Color(0xFF1A2B47),
@@ -56,7 +54,7 @@ class _VendorBoardState extends State<VendorBoard> {
                 ],
               ),
             ),
-            Text(
+            const Text(
               "Save and exit",
               style: TextStyle(
                 decoration: TextDecoration.underline,
@@ -71,21 +69,20 @@ class _VendorBoardState extends State<VendorBoard> {
       ),
       body: ListView(
         children: [
-          Container(
+          SizedBox(
             height: MediaQuery.of(context).size.height,
             child: PageView(
-              physics: NeverScrollableScrollPhysics(),
+              physics: const NeverScrollableScrollPhysics(),
                 scrollDirection: Axis.horizontal,
                 controller: pageController,
-                 children: [
-                   VendorBoardYouHost(),
-                   VendorBoardYouPlace(),
-                   VendorBoardQuests(),
-                   VendorBoardLocation(),
-                   VendorBoardLocationSpot(),
-                   VendorBoardBedrooms(),
-                   VendorBoardOffer(),
-
+                 children: const [
+                    VendorBoardYouHost(),
+                    VendorBoardYouPlace(),
+                    VendorBoardQuests(),
+                    VendorBoardLocation(),
+                    VendorBoardLocationSpot(),
+                    VendorBoardBedrooms(),
+                    VendorBoardOffer(),
                  ],
                 ),
           ),
@@ -93,8 +90,8 @@ class _VendorBoardState extends State<VendorBoard> {
       ),
       bottomNavigationBar: Container(
         height: 80,
-        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-        decoration: BoxDecoration(
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        decoration: const BoxDecoration(
             color: Colors.white,
             border: Border.symmetric(horizontal: BorderSide(color: Color(0xFFD9D9D9)))
         ),
@@ -104,11 +101,11 @@ class _VendorBoardState extends State<VendorBoard> {
             TextButton(
                 onPressed: (){
                   setState(() {
-                    pageController.previousPage(duration: Duration(microseconds: 500), curve: Curves.easeInOut );
+                    pageController.previousPage(duration: const Duration(microseconds: 500), curve: Curves.easeInOut );
 
                   });
                 },
-                child: Text(
+                child: const Text(
                   "Back",
                   textAlign: TextAlign.center,
                   style: TextStyle(
@@ -121,19 +118,19 @@ class _VendorBoardState extends State<VendorBoard> {
             GestureDetector(
               onTap: (){
                 setState(() {
-                  pageController.nextPage(duration: Duration(microseconds: 500), curve: Curves.easeInOut );
+                  pageController.nextPage(duration: const Duration(microseconds: 500), curve: Curves.easeInOut );
                 });
               },
               child: Container(
                 width: MediaQuery.of(context).size.width / 5,
                 height: 33,
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 decoration: BoxDecoration(
-                    color: Color(0xFF1A2B47),
+                    color: const Color(0xFF1A2B47),
                     borderRadius: BorderRadius.circular(10),
 
                 ),
-                child: Center(
+                child: const Center(
                   child: Text(
                     "Next",
                     textAlign: TextAlign.center,

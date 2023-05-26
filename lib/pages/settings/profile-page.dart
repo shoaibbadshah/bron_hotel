@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -15,6 +14,7 @@ class _ProfilePageState extends State<ProfilePage> {
   TextEditingController controllerLastName = TextEditingController();
   TextEditingController controllerDate = TextEditingController();
   TextEditingController controllerEmail = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,11 +27,11 @@ class _ProfilePageState extends State<ProfilePage> {
             Navigator.pop(context);
           });
         },
-        icon: Icon(Icons.arrow_back_ios, color: Colors.white,),
+        icon: const Icon(Icons.arrow_back_ios, color: Colors.white,),
       ),
-      backgroundColor: Color(0xFF1A2B47),
+      backgroundColor: const Color(0xFF1A2B47),
       centerTitle: true,
-      title: Text(
+      title: const Text(
         "Аккаунт",
         style: TextStyle(
           color: Colors.white,
@@ -42,13 +42,13 @@ class _ProfilePageState extends State<ProfilePage> {
     ),
       body: ListView(
         controller: controllerListView,
-        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
         children: [
           SizedBox(
             child: Row(
               children: [
                 Image.asset("assets/images/girl-avatar.png"),
-                SizedBox(width: 20,),
+                const SizedBox(width: 20,),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -56,10 +56,10 @@ class _ProfilePageState extends State<ProfilePage> {
                     children: [
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text("Светлана Исаева", style: TextStyle(color: Color(0xFF1A2B47), fontSize: 20, fontWeight: FontWeight.w600),),
-                          SizedBox(height: 8,),
-                          Text("SvetaIsaeva89@mail.ru", style: TextStyle(color: Color(0xFF1A2B47), fontSize: 12, fontWeight: FontWeight.w400),),
+                        children: const [
+                           Text("Светлана Исаева", style: TextStyle(color: Color(0xFF1A2B47), fontSize: 20, fontWeight: FontWeight.w600),),
+                           SizedBox(height: 8,),
+                           Text("SvetaIsaeva89@mail.ru", style: TextStyle(color: Color(0xFF1A2B47), fontSize: 12, fontWeight: FontWeight.w400),),
                         ],
                       ),
                       Row(
@@ -67,7 +67,7 @@ class _ProfilePageState extends State<ProfilePage> {
                           Image.asset("assets/icons/pencil-edit.png"),
                           TextButton(
                             onPressed: (){},
-                              child: Text(
+                              child: const Text(
                                 "Изменить фото",
                                 style: TextStyle(
                                     color: Color(0xFF1A2B47),
@@ -85,13 +85,13 @@ class _ProfilePageState extends State<ProfilePage> {
               ],
             ),
           ),
-          SizedBox(height: 30,),
+          const SizedBox(height: 30,),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text("Имя по документам", style: TextStyle(color: Color(0xFF1A2B47), fontSize: 16, fontWeight: FontWeight.w600),),
-              SizedBox(height: 10,),
-              Text(
+            children: const [
+               Text("Имя по документам", style: TextStyle(color: Color(0xFF1A2B47), fontSize: 16, fontWeight: FontWeight.w600),),
+               SizedBox(height: 10,),
+               Text(
                 "Имя, указанное в загранпаспорте, водительском\nудостоверении или другом выездном документе.",
                 style: TextStyle(
                     color: Color(0xFF5E6D77),
@@ -102,21 +102,21 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
             ],
           ),
-          SizedBox(height: 20,),
+          const SizedBox(height: 20,),
           Row(
             children: [
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 10.0),
                       child: Text("Имя", style: TextStyle(color: Color(0xFFACB5BE), fontSize: 10, fontWeight: FontWeight.w500),),
                     ),
-                    SizedBox(height: 5,),
+                    const SizedBox(height: 5,),
                     TextField(
                       controller: controllerName,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                         hintText: 'Светлана',
                         hintStyle: TextStyle(
@@ -138,19 +138,19 @@ class _ProfilePageState extends State<ProfilePage> {
                   ],
                 ),
               ),
-              SizedBox(width: 10,),
+              const SizedBox(width: 10,),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 10.0),
                       child: Text("Фамилия", style: TextStyle(color: Color(0xFFACB5BE), fontSize: 10, fontWeight: FontWeight.w500),),
                     ),
-                    SizedBox(height: 5,),
+                    const SizedBox(height: 5,),
                     TextField(
                       controller: controllerName,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                         hintText: 'Исаева',
                         hintStyle: TextStyle(
@@ -174,34 +174,34 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
             ],
           ),
-          SizedBox(height: 30,),
-          Text("Дата рождения", style: TextStyle(color: Color(0xFF1A2B47), fontSize: 16, fontWeight: FontWeight.w600),),
-          SizedBox(height: 20,),
+          const SizedBox(height: 30,),
+          const Text("Дата рождения", style: TextStyle(color: Color(0xFF1A2B47), fontSize: 16, fontWeight: FontWeight.w600),),
+          const SizedBox(height: 20,),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10.0),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 10.0),
                 child: Text("Фамилия", style: TextStyle(color: Color(0xFFACB5BE), fontSize: 10, fontWeight: FontWeight.w500),),
               ),
-              SizedBox(height: 5,),
+              const SizedBox(height: 5,),
               TextField(
                 controller: controllerDate,
                 decoration: InputDecoration(
-                  contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                  contentPadding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                   hintText: '01.08.2022',
-                  hintStyle: TextStyle(
+                  hintStyle: const TextStyle(
                       color: Color(0xFF1A2B47),
                       fontSize: 12,
                       fontWeight: FontWeight.w500),
                   suffixIcon: Image.asset("assets/icons/calendar.png"),
                   filled: true,
                   fillColor: Colors.white,
-                  enabledBorder: OutlineInputBorder(
+                  enabledBorder: const OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(10.0)),
                     borderSide: BorderSide(color: Color(0xFF5E6D77)),
                   ),
-                  focusedBorder: OutlineInputBorder(
+                  focusedBorder: const OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(10.0)),
                     borderSide: BorderSide(color: Color(0xFF5E6D77)),
                   ),
@@ -209,13 +209,13 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
             ],
           ),
-          SizedBox(height: 30,),
+          const SizedBox(height: 30,),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text("Дата рождения", style: TextStyle(color: Color(0xFF1A2B47), fontSize: 16, fontWeight: FontWeight.w600),),
-              SizedBox(height: 10,),
-              Text(
+            children: const [
+               Text("Дата рождения", style: TextStyle(color: Color(0xFF1A2B47), fontSize: 16, fontWeight: FontWeight.w600),),
+               SizedBox(height: 10,),
+               Text(
                 "Укажите адрес, к которому у вас есть\nпостоянный доступ.",
                 style: TextStyle(
                     color: Color(0xFF5E6D77),
@@ -226,18 +226,18 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
             ],
           ),
-          SizedBox(height: 30,),
+          const SizedBox(height: 30,),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10.0),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 10.0),
                 child: Text("Электронный адрес", style: TextStyle(color: Color(0xFFACB5BE), fontSize: 10, fontWeight: FontWeight.w500),),
               ),
-              SizedBox(height: 5,),
+              const SizedBox(height: 5,),
               TextField(
                 controller: controllerEmail,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                   hintText: 'svetaisaeva89@mail.ru',
                   hintStyle: TextStyle(
@@ -258,7 +258,7 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
             ],
           ),
-          SizedBox(height: 30,),
+          const SizedBox(height: 30,),
           Column(
             children: [
               Center(
@@ -280,7 +280,7 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
             ],
           ),
-          SizedBox(height: 30,),
+          const SizedBox(height: 30,),
         ],
       ),
     );

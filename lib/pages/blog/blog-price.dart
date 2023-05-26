@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class BlogPrice extends StatefulWidget {
@@ -21,9 +20,9 @@ class _BlogPriceState extends State<BlogPrice> {
       MaterialState.selected,
     };
     if (states.any(interactiveStates.contains)) {
-      return Color(0xFF1A2B47);
+      return const Color(0xFF1A2B47);
     }
-    return Color(0xFF1A2B47);
+    return const Color(0xFF1A2B47);
   }
   @override
   Widget build(BuildContext context) {
@@ -33,8 +32,8 @@ class _BlogPriceState extends State<BlogPrice> {
           Container(
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height / 2.25,
-            padding: EdgeInsets.symmetric(horizontal: 20,vertical: 20),
-            decoration: BoxDecoration(
+            padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 20),
+            decoration: const BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage("assets/images/blog-img1.png"),
                     fit: BoxFit.cover
@@ -45,7 +44,7 @@ class _BlogPriceState extends State<BlogPrice> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Text(
+                    const Text(
                       "Save and exit",
                       style: TextStyle(
                         decoration: TextDecoration.underline,
@@ -54,16 +53,16 @@ class _BlogPriceState extends State<BlogPrice> {
                         fontWeight: FontWeight.w400,
                       ),
                     ),
-                    SizedBox(width: 20,),
+                    const SizedBox(width: 20,),
                     Image.asset("assets/icons/question-vendor.png")
                   ],
                 ),
-                SizedBox(height: 50,),
+                const SizedBox(height: 50,),
                 Column(
                   children: [
                     Image.asset("assets/icons/pilot-vendor.png"),
-                    SizedBox(height: 20,),
-                    Text(
+                    const SizedBox(height: 20,),
+                    const Text(
                       "Now, for the fun\npart-set your price",
                       textAlign: TextAlign.center,
                       style: TextStyle(
@@ -74,22 +73,22 @@ class _BlogPriceState extends State<BlogPrice> {
                     ),
                   ],
                 ),
-                SizedBox(height: 80,),
+                const SizedBox(height: 80,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
-                      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(89),
                           border: Border.all(color: Colors.white)
                       ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(Icons.play_arrow, color: Colors.white,),
-                          SizedBox(width: 8,),
-                          Text(
+                        children: const <Widget>[
+                           Icon(Icons.play_arrow, color: Colors.white,),
+                           SizedBox(width: 8,),
+                           Text(
                             "Watch full video",
                             style: TextStyle(
                               color: Colors.white,
@@ -105,7 +104,7 @@ class _BlogPriceState extends State<BlogPrice> {
               ],
             ),
           ),
-          SizedBox(height: 30,),
+          const SizedBox(height: 30,),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Column(
@@ -119,23 +118,23 @@ class _BlogPriceState extends State<BlogPrice> {
                       child: Column(
                         children: [
                           Container(
-                            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
-                              border: Border.all(color: Color(0xFF1A2B47),width: 2),
+                              border: Border.all(color: const Color(0xFF1A2B47),width: 2),
                             ),
                             child: Center(
                               child: Text(
-                                "\$${numberOfItems}",
-                                style: TextStyle(
+                                "\$$numberOfItems",
+                                style: const TextStyle(
                                     color: Color(0xFF1A2B47),
                                     fontSize: 30,
                                     fontWeight: FontWeight.w400),
                               ),
                             ),
                           ),
-                          SizedBox(height: 5,),
-                          Text(
+                          const SizedBox(height: 5,),
+                          const Text(
                             "per night",
                             style: TextStyle(
                               color: Color(0xFF1A2B47),
@@ -150,10 +149,10 @@ class _BlogPriceState extends State<BlogPrice> {
 
                   ],
                 ),
-                SizedBox(height: 30,),
+                const SizedBox(height: 30,),
                 Row(
                   children: [
-                    Expanded(
+                    const Expanded(
                       child: Text(
                         "Places like yours usually range from\n\$19 to \$32.",
                         style: TextStyle(
@@ -163,15 +162,15 @@ class _BlogPriceState extends State<BlogPrice> {
                         ),
                       ),
                     ),
-                    Image.asset("assets/icons/question-vendor.png", color: Color(0xFF1A2B47),)
+                    Image.asset("assets/icons/question-vendor.png", color: const Color(0xFF1A2B47),)
                   ],
                 ),
-                SizedBox(height: 30,),
+                const SizedBox(height: 30,),
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    border: Border.all(color: Color(0xFF1A2B47), width: 0.5)
+                    border: Border.all(color: const Color(0xFF1A2B47), width: 0.5)
                   ),
                   child: Column(
                     children: [
@@ -183,7 +182,7 @@ class _BlogPriceState extends State<BlogPrice> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 buildText("Offer a 20% discount for your first 3 guests to help you get booked faster. Offer a 20% discount for your first 3 guests to help you get booked faster."),
-                                SizedBox(height: 15,),
+                                const SizedBox(height: 15,),
                                 TextButton(
                                   onPressed: (){
                                     setState(() {
@@ -229,7 +228,7 @@ class _BlogPriceState extends State<BlogPrice> {
               ],
             ),
           ),
-          SizedBox(height: 200,),
+          const SizedBox(height: 200,),
         ],
       ),
     );
@@ -241,7 +240,7 @@ class _BlogPriceState extends State<BlogPrice> {
       text,
       maxLines: lines,
       style: TextStyle(
-        color: Color(0xFF5E6D77),
+        color: const Color(0xFF5E6D77),
         fontSize: 15,
         fontWeight: FontWeight.w400,
         overflow: readMore ? TextOverflow.visible: TextOverflow.ellipsis,
@@ -261,9 +260,9 @@ class _BlogPriceState extends State<BlogPrice> {
           width: 48,
           decoration: BoxDecoration(
               shape: BoxShape.circle,
-              border: Border.all(color: Color(0xFF757575))
+              border: Border.all(color: const Color(0xFF757575))
           ),
-          child: Center(child: Icon(Icons.add, color: Color(0xFF757575)))
+          child: const Center(child: Icon(Icons.add, color: Color(0xFF757575)))
       ),
     );
   }
@@ -280,9 +279,9 @@ class _BlogPriceState extends State<BlogPrice> {
           width: 48,
           decoration: BoxDecoration(
               shape: BoxShape.circle,
-              border: Border.all(color: Color(0xFF757575))
+              border: Border.all(color: const Color(0xFF757575))
           ),
-          child: Center(child: Icon(Icons.remove, color: Color(0xFF757575)))
+          child: const Center(child: Icon(Icons.remove, color: Color(0xFF757575)))
       ),
     );
   }

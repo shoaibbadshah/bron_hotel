@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class BlogPageMobile extends StatefulWidget {
@@ -12,14 +11,15 @@ class _BlogPageMobileState extends State<BlogPageMobile> {
   @override
   Widget build(BuildContext context) {
     ScrollController controllerListView = ScrollController();
+
     return Scaffold(
       body: ListView(
         controller: controllerListView,
         children: [
           Image.asset("assets/images/blog-mobil.png", fit: BoxFit.cover,),
-          SizedBox(height: 20,),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+          const SizedBox(height: 20,),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.0),
             child: Text(
               "Vacharvum e ereq\nsenyakaonoc bnakaran\nqaxaqi",
               style: TextStyle(
@@ -28,17 +28,17 @@ class _BlogPageMobileState extends State<BlogPageMobile> {
                   fontSize: 25),
             ),
           ),
-          SizedBox(height: 20,),
+          const SizedBox(height: 20,),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Divider(color: Color(0xFF1A2B47).withOpacity(0.4)),
-                SizedBox(height: 10,),
+                Divider(color: const Color(0xFF1A2B47).withOpacity(0.4)),
+                const SizedBox(height: 10,),
                 Row(
                   children: [
-                    Expanded(
+                    const Expanded(
                       child: Text(
                         "Hut hosted by Albert",
                         style: TextStyle(
@@ -50,32 +50,32 @@ class _BlogPageMobileState extends State<BlogPageMobile> {
                     Image.asset("assets/images/avatar-mob.png")
                   ],
                 ),
-                SizedBox(height: 10,),
-                Divider(color: Color(0xFF1A2B47).withOpacity(0.4)),
-                SizedBox(height: 10,),
-                Text(
+                const SizedBox(height: 10,),
+                Divider(color: const Color(0xFF1A2B47).withOpacity(0.4)),
+                const SizedBox(height: 10,),
+                const Text(
                   "4 guests · 2 bedrooms · 1 bed ·\n2.5 baths",
                   style: TextStyle(
                       color: Color(0xFF5F6B7E),
                       fontWeight: FontWeight.w400,
                       fontSize: 15),
                 ),
-                SizedBox(height: 10,),
-                Divider(color: Color(0xFF1A2B47).withOpacity(0.4)),
-                SizedBox(height: 10,),
-                Text(
+                const SizedBox(height: 10,),
+                Divider(color: const Color(0xFF1A2B47).withOpacity(0.4)),
+                const SizedBox(height: 10,),
+                const Text(
                   "Have fun with the whole family\nat this stylish place.ascas",
                   style: TextStyle(
                       color: Color(0xFF5F6B7E),
                       fontWeight: FontWeight.w400,
                       fontSize: 15),
                 ),
-                SizedBox(height: 10,),
-                Divider(color: Color(0xFF1A2B47).withOpacity(0.4)),
+                const SizedBox(height: 10,),
+                Divider(color: const Color(0xFF1A2B47).withOpacity(0.4)),
               ],
             ),
           ),
-          SizedBox(height: 20,),
+          const SizedBox(height: 20,),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Column(
@@ -83,7 +83,7 @@ class _BlogPageMobileState extends State<BlogPageMobile> {
               children: [
                 Row(
                   children: [
-                    Expanded(
+                    const Expanded(
                       child: Text(
                         "Pool",
                         style: TextStyle(
@@ -95,12 +95,12 @@ class _BlogPageMobileState extends State<BlogPageMobile> {
                     Image.asset("assets/images/vendor-img3.png")
                   ],
                 ),
-                SizedBox(height: 10,),
-                Divider(color: Color(0xFF1A2B47).withOpacity(0.4)),
-                SizedBox(height: 10,),
+                const SizedBox(height: 10,),
+                Divider(color: const Color(0xFF1A2B47).withOpacity(0.4)),
+                const SizedBox(height: 10,),
                 Row(
                   children: [
-                    Expanded(
+                    const Expanded(
                       child: Text(
                         "Patio",
                         style: TextStyle(
@@ -112,12 +112,12 @@ class _BlogPageMobileState extends State<BlogPageMobile> {
                     Image.asset("assets/icons/patio.png")
                   ],
                 ),
-                SizedBox(height: 10,),
-                Divider(color: Color(0xFF1A2B47).withOpacity(0.4)),
-                SizedBox(height: 10,),
+                const SizedBox(height: 10,),
+                Divider(color: const Color(0xFF1A2B47).withOpacity(0.4)),
+                const SizedBox(height: 10,),
                 Row(
                   children: [
-                    Expanded(
+                    const Expanded(
                       child: Text(
                         "Hot tub",
                         style: TextStyle(
@@ -129,37 +129,36 @@ class _BlogPageMobileState extends State<BlogPageMobile> {
                     Image.asset("assets/icons/hottub.png")
                   ],
                 ),
-                SizedBox(height: 10,),
-                Divider(color: Color(0xFF1A2B47).withOpacity(0.4)),
+                const SizedBox(height: 10,),
+                Divider(color: const Color(0xFF1A2B47).withOpacity(0.4)),
               ],
             ),
           ),
-          SizedBox(height: 20,),
+          const SizedBox(height: 20,),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
+              children: const <Widget> [
+                 Text(
                   "Davit Malyan St, Yerevan, Armenia",
                   style: TextStyle(
                       color: Color(0xFF5F6B7E),
                       fontWeight: FontWeight.w400,
                       fontSize: 20),
                 ),
-                const SizedBox(height: 10,),
-                Text(
+                 SizedBox(height: 10,),
+                 Text(
                   "We’ll only share your address with guests who are booked as outlined in our privacy policy.",
                   style: TextStyle(
                       color: Color(0xFF5F6B7E),
                       fontWeight: FontWeight.w400,
                       fontSize: 13),
                 ),
-
               ],
             ),
           ),
-          SizedBox(height: 20,),
+          const SizedBox(height: 20,),
         ],
       ),
     );

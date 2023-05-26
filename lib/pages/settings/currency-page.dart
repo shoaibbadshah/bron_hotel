@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CurrencyPage extends StatefulWidget {
@@ -17,31 +16,31 @@ class _CurrencyPageState extends State<CurrencyPage> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
-        title: Text("Выберите валюту", style: TextStyle(color: Color(0xFF1A2B47), fontSize: 20, fontWeight: FontWeight.w600),),
+        title: const Text("Выберите валюту", style: TextStyle(color: Color(0xFF1A2B47), fontSize: 20, fontWeight: FontWeight.w600),),
         leading: IconButton(
           onPressed: (){
             setState(() {
               Navigator.pop(context);
             });
           },
-          icon: Icon(Icons.arrow_back_ios, color: Color(0xFF1A2B47),),
+          icon: const Icon(Icons.arrow_back_ios, color: Color(0xFF1A2B47),),
         ),
       ),
       body: ListView(
-        padding: EdgeInsets.symmetric(vertical: 20),
+        padding: const EdgeInsets.symmetric(vertical: 20),
         children: [
           ListTile(
-            tileColor: Color(0xFF1A2B47).withOpacity(0.1),
+            tileColor: const Color(0xFF1A2B47).withOpacity(0.1),
             leading: Image.asset("assets/icons/currencyflag.png"),
-            title: Text("AMD", style: TextStyle(color: Color(0xFF1A2B47).withOpacity(0.85), fontSize: 16, fontWeight: FontWeight.w500),),
+            title: Text("AMD", style: TextStyle(color: const Color(0xFF1A2B47).withOpacity(0.85), fontSize: 16, fontWeight: FontWeight.w500),),
           ),
           ListTile(
             leading: Image.asset("assets/icons/currencyflag.png"),
-            title: Text("AMD", style: TextStyle(color: Color(0xFF1A2B47).withOpacity(0.85), fontSize: 16, fontWeight: FontWeight.w500),),
+            title: Text("AMD", style: TextStyle(color: const Color(0xFF1A2B47).withOpacity(0.85), fontSize: 16, fontWeight: FontWeight.w500),),
           ),
           ListTile(
             leading: Image.asset("assets/icons/currencyflag.png"),
-            title: Text("AMD", style: TextStyle(color: Color(0xFF1A2B47).withOpacity(0.85), fontSize: 16, fontWeight: FontWeight.w500),),
+            title: Text("AMD", style: TextStyle(color: const Color(0xFF1A2B47).withOpacity(0.85), fontSize: 16, fontWeight: FontWeight.w500),),
           ),
         ],
       ),

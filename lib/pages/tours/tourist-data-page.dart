@@ -1,5 +1,4 @@
 import 'package:bron_hotel/pages/tours/additional-services-page.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 enum  RadioSexValue { men, women }
@@ -32,15 +31,16 @@ class _TouristDataPageState extends State<TouristDataPage> {
 
   String _selectedCountry = "Россия";
 
-  List<String> _countries = [
+  final List<String> _countries = [
     'Россия',
     'Германия',
     'Англия',
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFf1f4fb),
+      backgroundColor: const Color(0xFFf1f4fb),
       appBar: AppBar(
         toolbarHeight: 100,
         automaticallyImplyLeading: false,
@@ -50,13 +50,13 @@ class _TouristDataPageState extends State<TouristDataPage> {
               Navigator.pop(context);
             });
           },
-          icon: Icon(Icons.arrow_back_ios, color: Colors.white,),
+          icon: const Icon(Icons.arrow_back_ios, color: Colors.white,),
         ),
-        backgroundColor: Color(0xFF1A2B47),
+        backgroundColor: const Color(0xFF1A2B47),
         centerTitle: true,
         title: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
+          children: const [
             Text(
               "Данные туристов",
               style: TextStyle(
@@ -78,11 +78,7 @@ class _TouristDataPageState extends State<TouristDataPage> {
         ),
         actions: [
           IconButton(
-              onPressed: (){
-                setState(() {
-                  //Navigator.push(context, MaterialPageRoute(builder: (context) => TicketsFilterPage()));
-                });
-              },
+              onPressed: null,
               icon: Image.asset("assets/icons/share-appbar.png")
           )
         ],
@@ -90,8 +86,8 @@ class _TouristDataPageState extends State<TouristDataPage> {
       body: ListView(
         children: [
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-            decoration: BoxDecoration(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+            decoration: const BoxDecoration(
              gradient: LinearGradient(
                begin: Alignment.topCenter,
                end: Alignment.bottomCenter,
@@ -107,7 +103,7 @@ class _TouristDataPageState extends State<TouristDataPage> {
             child: Column(
               children: [
                 Row(
-                  children: [
+                  children: const [
                     Expanded(
                       child: Text(
                         "1200\$",
@@ -131,10 +127,10 @@ class _TouristDataPageState extends State<TouristDataPage> {
                     ),
                   ],
                 ),
-                SizedBox(height: 10,),
+                const SizedBox(height: 10,),
                 Row(
                   children: [
-                    Expanded(
+                    const Expanded(
                       child: Text(
                         "Проверка цены у туроператоров через",
                         style: TextStyle(
@@ -145,7 +141,7 @@ class _TouristDataPageState extends State<TouristDataPage> {
                       ),
                     ),
                     Row(
-                      children: [
+                      children: const [
                         Text(
                           "12:23",
                           style: TextStyle(
@@ -167,7 +163,7 @@ class _TouristDataPageState extends State<TouristDataPage> {
               ? buildFormAdult(context)
               : buildFormChild(context),
           saveForm  ? Container(
-            padding: EdgeInsets.symmetric(horizontal: 30),
+            padding: const EdgeInsets.symmetric(horizontal: 30),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
@@ -180,7 +176,7 @@ class _TouristDataPageState extends State<TouristDataPage> {
                         Container(
                           width: 2,
                           height: 50,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             color: Color(0xFF5F90F3),
                           ),
                         ),
@@ -190,7 +186,7 @@ class _TouristDataPageState extends State<TouristDataPage> {
                               width: 12,
                               height: 12,
                               decoration: BoxDecoration(
-                                color:Color(0xFF5F90F3).withOpacity(0.8),
+                                color:const Color(0xFF5F90F3).withOpacity(0.8),
                                 shape: BoxShape.circle,
                               ),
                             ),
@@ -199,7 +195,7 @@ class _TouristDataPageState extends State<TouristDataPage> {
                         Container(
                           width: 2,
                           height: 50,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             color: Color(0xFF5F90F3),
                           ),
                         ),
@@ -209,7 +205,7 @@ class _TouristDataPageState extends State<TouristDataPage> {
                               width: 12,
                               height: 12,
                               decoration: BoxDecoration(
-                                color: Color(0xFF5F90F3).withOpacity(0.8),
+                                color: const Color(0xFF5F90F3).withOpacity(0.8),
                                 shape: BoxShape.circle,
                               ),
                             ),
@@ -217,7 +213,7 @@ class _TouristDataPageState extends State<TouristDataPage> {
                         ),
                       ],
                     ),
-                    SizedBox(width: 15,),
+                    const SizedBox(width: 15,),
                     Expanded(
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
@@ -231,12 +227,12 @@ class _TouristDataPageState extends State<TouristDataPage> {
                                     Text(
                                       "Взрослый",
                                       style: TextStyle(
-                                          color: Color(0xFF1A2B47).withOpacity(0.85),
+                                          color: const Color(0xFF1A2B47).withOpacity(0.85),
                                           fontSize: 14,
                                           fontWeight: FontWeight.w600
                                       ),
                                     ),
-                                    Text(
+                                    const Text(
                                       "Не заполнено",
                                       style: TextStyle(
                                           color: Color(0xFF5E6D77),
@@ -249,7 +245,7 @@ class _TouristDataPageState extends State<TouristDataPage> {
                               ),
                             ],
                           ),
-                          SizedBox(height: 20,),
+                          const SizedBox(height: 20,),
                           Row(
                             children: [
                               Expanded(
@@ -259,12 +255,12 @@ class _TouristDataPageState extends State<TouristDataPage> {
                                     Text(
                                       "Ребенок",
                                       style: TextStyle(
-                                          color: Color(0xFF1A2B47).withOpacity(0.85),
+                                          color: const Color(0xFF1A2B47).withOpacity(0.85),
                                           fontSize: 14,
                                           fontWeight: FontWeight.w600
                                       ),
                                     ),
-                                    Text(
+                                    const Text(
                                       "Не заполнено",
                                       style: TextStyle(
                                           color: Color(0xFF5E6D77),
@@ -293,22 +289,22 @@ class _TouristDataPageState extends State<TouristDataPage> {
   Container buildFormChild(BuildContext context) {
     return Container(
           color: Colors.white,
-          padding: EdgeInsets.symmetric(horizontal: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 15,),
+              const SizedBox(height: 15,),
               Text(
                 "Заполните данные туристов",
                 style: TextStyle(
-                    color: Color(0xFF1A2B47).withOpacity(0.85),
+                    color: const Color(0xFF1A2B47).withOpacity(0.85),
                     fontWeight: FontWeight.w600,
                     fontSize: 16
                 ),
               ),
-              SizedBox(height: 15,),
+              const SizedBox(height: 15,),
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 30),
+                padding: const EdgeInsets.symmetric(horizontal: 30),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -324,7 +320,7 @@ class _TouristDataPageState extends State<TouristDataPage> {
                                   width: 12,
                                   height: 12,
                                   decoration: BoxDecoration(
-                                    color:Color(0xFF5F90F3).withOpacity(0.8),
+                                    color:const Color(0xFF5F90F3).withOpacity(0.8),
                                     shape: BoxShape.circle,
                                   ),
                                 ),
@@ -333,7 +329,7 @@ class _TouristDataPageState extends State<TouristDataPage> {
                             Container(
                               width: 2,
                               height: 50,
-                              decoration: BoxDecoration(
+                              decoration: const BoxDecoration(
                                 color: Color(0xFF5F90F3),
                               ),
                             ),
@@ -343,7 +339,7 @@ class _TouristDataPageState extends State<TouristDataPage> {
                                   width: 12,
                                   height: 12,
                                   decoration: BoxDecoration(
-                                    color: Color(0xFF5F90F3).withOpacity(0.8),
+                                    color: const Color(0xFF5F90F3).withOpacity(0.8),
                                     shape: BoxShape.circle,
                                   ),
                                 ),
@@ -352,13 +348,13 @@ class _TouristDataPageState extends State<TouristDataPage> {
                             Container(
                               width: 2,
                               height: 50,
-                              decoration: BoxDecoration(
+                              decoration: const BoxDecoration(
                                 color: Color(0xFF5F90F3),
                               ),
                             ),
                           ],
                         ),
-                        SizedBox(width: 15,),
+                        const SizedBox(width: 15,),
                         Expanded(
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
@@ -372,12 +368,12 @@ class _TouristDataPageState extends State<TouristDataPage> {
                                         Text(
                                           "Соморенко Анастасия Семеновна",
                                           style: TextStyle(
-                                              color: Color(0xFF1A2B47).withOpacity(0.85),
+                                              color: const Color(0xFF1A2B47).withOpacity(0.85),
                                               fontSize: 14,
                                               fontWeight: FontWeight.w600
                                           ),
                                         ),
-                                        Text(
+                                        const Text(
                                           "27 лет , 24.06.1995\n235678632",
                                           style: TextStyle(
                                               color: Color(0xFF5E6D77),
@@ -390,7 +386,7 @@ class _TouristDataPageState extends State<TouristDataPage> {
                                   ),
                                 ],
                               ),
-                              SizedBox(height: 20,),
+                              const SizedBox(height: 20,),
                               Row(
                                 children: [
                                   Expanded(
@@ -400,12 +396,12 @@ class _TouristDataPageState extends State<TouristDataPage> {
                                         Text(
                                           "Петров Алексей Антонович",
                                           style: TextStyle(
-                                              color: Color(0xFF1A2B47).withOpacity(0.85),
+                                              color: const Color(0xFF1A2B47).withOpacity(0.85),
                                               fontSize: 14,
                                               fontWeight: FontWeight.w600
                                           ),
                                         ),
-                                        Text(
+                                        const Text(
                                           "29 лет , 14.06.1992\n234876001",
                                           style: TextStyle(
                                               color: Color(0xFF5E6D77),
@@ -427,9 +423,9 @@ class _TouristDataPageState extends State<TouristDataPage> {
                 ),
               ),
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
                 decoration: BoxDecoration(
-                    color: Color(0xFF5F90F3).withOpacity(0.15),
+                    color: const Color(0xFF5F90F3).withOpacity(0.15),
                     borderRadius: BorderRadius.circular(10)
                 ),
                 child: Column(
@@ -438,38 +434,38 @@ class _TouristDataPageState extends State<TouristDataPage> {
                     Text(
                       "Ребенок , 1 год",
                       style: TextStyle(
-                          color: Color(0xFF1A2B47).withOpacity(0.85),
+                          color: const Color(0xFF1A2B47).withOpacity(0.85),
                           fontWeight: FontWeight.w500,
                           fontSize: 14
                       ),
                     ),
-                    SizedBox(height: 15,),
+                    const SizedBox(height: 15,),
                     Text(
                       "Св-во о рождении",
                       style: TextStyle(
-                          color: Color(0xFF1A2B47).withOpacity(0.85),
+                          color: const Color(0xFF1A2B47).withOpacity(0.85),
                           fontWeight: FontWeight.w600,
                           fontSize: 16
                       ),
                     ),
-                    SizedBox(height: 15,),
+                    const SizedBox(height: 15,),
                     Form(
                       child: Column(
                         children: [
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
+                              const Text(
                                 "Фамилия (паспорт РФ)",
                                 style: TextStyle(
                                     color: Color(0xFF5E6D77),
                                     fontSize: 11,
                                     fontWeight: FontWeight.w500),
                               ),
-                              SizedBox(height: 5,),
+                              const SizedBox(height: 5,),
                               TextField(
                                 controller: controllerChildFirstName,
-                                decoration: InputDecoration(
+                                decoration: const InputDecoration(
                                   contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                                   hintText: 'Петров',
                                   hintStyle: TextStyle(
@@ -494,17 +490,17 @@ class _TouristDataPageState extends State<TouristDataPage> {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
+                              const Text(
                                 "Имя (паспорт РФ)",
                                 style: TextStyle(
                                     color: Color(0xFF5E6D77),
                                     fontSize: 11,
                                     fontWeight: FontWeight.w500),
                               ),
-                              SizedBox(height: 5,),
+                              const SizedBox(height: 5,),
                               TextField(
                                 controller: controllerChildName,
-                                decoration: InputDecoration(
+                                decoration: const InputDecoration(
                                   contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                                   hintText: 'Иван',
                                   hintStyle: TextStyle(
@@ -529,17 +525,17 @@ class _TouristDataPageState extends State<TouristDataPage> {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
+                              const Text(
                                 "Отчество (паспорт РФ)",
                                 style: TextStyle(
                                     color: Color(0xFF5E6D77),
                                     fontSize: 11,
                                     fontWeight: FontWeight.w500),
                               ),
-                              SizedBox(height: 5,),
+                              const SizedBox(height: 5,),
                               TextField(
                                 controller: controllerChildLastName,
-                                decoration: InputDecoration(
+                                decoration: const InputDecoration(
                                   contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                                   hintText: 'Петрович',
                                   hintStyle: TextStyle(
@@ -565,20 +561,20 @@ class _TouristDataPageState extends State<TouristDataPage> {
                             children: [
                               Row(
                                 children: [
-                                  Text(
+                                  const Text(
                                     "Пол",
                                     style: TextStyle(
                                         color: Color(0xFF5E6D77),
                                         fontSize: 11,
                                         fontWeight: FontWeight.w500),
                                   ),
-                                  SizedBox(width: 20,),
+                                  const SizedBox(width: 20,),
                                   Row(
                                     children: [
                                       Radio(
-                                        activeColor: Color(0xFFACB5BE),
+                                        activeColor: const Color(0xFFACB5BE),
                                         fillColor: MaterialStateColor.resolveWith(
-                                                (states) => Color(0xFFACB5BE)),
+                                                (states) => const Color(0xFFACB5BE)),
                                         value: "men",
                                         groupValue: valueFormRadio,
                                         onChanged: (value) {
@@ -587,7 +583,7 @@ class _TouristDataPageState extends State<TouristDataPage> {
                                           });
                                         },
                                       ),
-                                      Text(
+                                      const Text(
                                         "Мужской",
                                         style: TextStyle(
                                             color: Color(0xFF5E6D77),
@@ -596,13 +592,13 @@ class _TouristDataPageState extends State<TouristDataPage> {
                                       ),
                                     ],
                                   ),
-                                  SizedBox(width: 20,),
+                                  const SizedBox(width: 20,),
                                   Row(
                                     children: [
                                       Radio(
-                                        activeColor: Color(0xFFACB5BE),
+                                        activeColor: const Color(0xFFACB5BE),
                                         fillColor: MaterialStateColor.resolveWith(
-                                                (states) => Color(0xFFACB5BE)),
+                                                (states) => const Color(0xFFACB5BE)),
                                         value: "women",
                                         groupValue: valueFormRadio,
                                         onChanged: (value) {
@@ -611,7 +607,7 @@ class _TouristDataPageState extends State<TouristDataPage> {
                                           });
                                         },
                                       ),
-                                      Text(
+                                      const Text(
                                         "Женский",
                                         style: TextStyle(
                                             color: Color(0xFF5E6D77),
@@ -628,31 +624,31 @@ class _TouristDataPageState extends State<TouristDataPage> {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
+                              const Text(
                                 "Дата рождения",
                                 style: TextStyle(
                                     color: Color(0xFF5E6D77),
                                     fontSize: 11,
                                     fontWeight: FontWeight.w500),
                               ),
-                              SizedBox(height: 5,),
+                              const SizedBox(height: 5,),
                               TextField(
                                 controller: controllerChildDateBirth,
                                 decoration: InputDecoration(
-                                  contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                                  contentPadding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                                   hintText: 'Выберите дату',
-                                  hintStyle: TextStyle(
+                                  hintStyle: const TextStyle(
                                       color: Color(0xFFACB5BE),
                                       fontSize: 14,
                                       fontWeight: FontWeight.w500),
-                                  suffixIcon: Image.asset("assets/icons/calendar.png", color: Color(0xFF1A2B47),),
+                                  suffixIcon: Image.asset("assets/icons/calendar.png", color: const Color(0xFF1A2B47),),
                                   filled: true,
                                   fillColor: Colors.white,
-                                  enabledBorder: OutlineInputBorder(
+                                  enabledBorder: const OutlineInputBorder(
                                     borderRadius: BorderRadius.all(Radius.circular(5.0)),
                                     borderSide: BorderSide(color: Colors.white),
                                   ),
-                                  focusedBorder: OutlineInputBorder(
+                                  focusedBorder: const OutlineInputBorder(
                                     borderRadius: BorderRadius.all(Radius.circular(5.0)),
                                     borderSide: BorderSide(color: Colors.white),
                                   ),
@@ -664,17 +660,17 @@ class _TouristDataPageState extends State<TouristDataPage> {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
+                              const Text(
                                 "Гражданство",
                                 style: TextStyle(
                                     color: Color(0xFF5E6D77),
                                     fontSize: 11,
                                     fontWeight: FontWeight.w500),
                               ),
-                              SizedBox(height: 5,),
+                              const SizedBox(height: 5,),
                               DropdownButtonFormField<String>(
-                                icon: Icon(Icons.keyboard_arrow_down),
-                                decoration: InputDecoration(
+                                icon: const Icon(Icons.keyboard_arrow_down),
+                                decoration: const InputDecoration(
                                   contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                                   hintStyle: TextStyle(
                                       color: Color(0xFFACB5BE),
@@ -699,14 +695,14 @@ class _TouristDataPageState extends State<TouristDataPage> {
                                 },
                                 items: _countries.map((country) {
                                   return DropdownMenuItem(
+                                    value: country,
                                     child: Text(
                                         country,
                                         style: TextStyle(
-                                            color: Color(0xFF1A2B47).withOpacity(0.85),
+                                            color: const Color(0xFF1A2B47).withOpacity(0.85),
                                             fontSize: 14,
                                             fontWeight: FontWeight.w500),
                                     ),
-                                    value: country,
                                   );
                                 }).toList(),
                               ),
@@ -716,18 +712,18 @@ class _TouristDataPageState extends State<TouristDataPage> {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
+                              const Text(
                                 "Номер паспорта РФ",
                                 style: TextStyle(
                                     color: Color(0xFF5E6D77),
                                     fontSize: 11,
                                     fontWeight: FontWeight.w500),
                               ),
-                              SizedBox(height: 5,),
+                              const SizedBox(height: 5,),
                               TextField(
                                 controller: controllerChildCitizenship,
                                 keyboardType: TextInputType.number,
-                                decoration: InputDecoration(
+                                decoration: const InputDecoration(
                                   contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                                   hintText: '0000 000000',
                                   hintStyle: TextStyle(
@@ -754,21 +750,21 @@ class _TouristDataPageState extends State<TouristDataPage> {
                   ],
                 ),
               ),
-              SizedBox(height: 15,),
+              const SizedBox(height: 15,),
               GestureDetector(
                 onTap: (){
                   setState(() {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => AdditionalServicesPage()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const AdditionalServicesPage()));
                   });
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width,
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                   decoration: BoxDecoration(
-                      color: Color(0xFF005BFE),
+                      color: const Color(0xFF005BFE),
                       borderRadius: BorderRadius.circular(10)
                   ),
-                  child: Center(
+                  child: const Center(
                     child: Text(
                       "Сохранить и перейти\nк оплате",
                       textAlign: TextAlign.center,
@@ -781,7 +777,7 @@ class _TouristDataPageState extends State<TouristDataPage> {
                   ),
                 ),
               ),
-              SizedBox(height: 15,),
+              const SizedBox(height: 15,),
             ],
           ),
         );
@@ -790,24 +786,24 @@ class _TouristDataPageState extends State<TouristDataPage> {
   Container buildFormAdult(BuildContext context) {
     return Container(
           color: Colors.white,
-          padding: EdgeInsets.symmetric(horizontal: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 15,),
+              const SizedBox(height: 15,),
               Text(
                 "Заполните данные туристов",
                 style: TextStyle(
-                    color: Color(0xFF1A2B47).withOpacity(0.85),
+                    color: const Color(0xFF1A2B47).withOpacity(0.85),
                     fontWeight: FontWeight.w600,
                     fontSize: 16
                 ),
               ),
-              SizedBox(height: 10,),
+              const SizedBox(height: 10,),
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
                 decoration: BoxDecoration(
-                  color: Color(0xFF5F90F3).withOpacity(0.15),
+                  color: const Color(0xFF5F90F3).withOpacity(0.15),
                   borderRadius: BorderRadius.circular(10)
                 ),
                 child: Column(
@@ -816,38 +812,38 @@ class _TouristDataPageState extends State<TouristDataPage> {
                     Text(
                       "Взрослый",
                       style: TextStyle(
-                          color: Color(0xFF1A2B47).withOpacity(0.85),
+                          color: const Color(0xFF1A2B47).withOpacity(0.85),
                           fontWeight: FontWeight.w500,
                           fontSize: 14
                       ),
                     ),
-                    SizedBox(height: 15,),
+                    const SizedBox(height: 15,),
                     Text(
                       "Паспорт РФ",
                       style: TextStyle(
-                          color: Color(0xFF1A2B47).withOpacity(0.85),
+                          color: const Color(0xFF1A2B47).withOpacity(0.85),
                           fontWeight: FontWeight.w600,
                           fontSize: 16
                       ),
                     ),
-                    SizedBox(height: 15,),
+                    const SizedBox(height: 15,),
                     Form(
                       child: Column(
                         children: [
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
+                              const Text(
                                 "Фамилия (паспорт РФ)",
                                 style: TextStyle(
                                     color: Color(0xFF5E6D77),
                                     fontSize: 11,
                                     fontWeight: FontWeight.w500),
                               ),
-                              SizedBox(height: 5,),
+                              const SizedBox(height: 5,),
                               TextField(
                                 controller: controllerFirstName,
-                                decoration: InputDecoration(
+                                decoration: const InputDecoration(
                                   contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                                   hintText: 'Петров',
                                   hintStyle: TextStyle(
@@ -872,17 +868,17 @@ class _TouristDataPageState extends State<TouristDataPage> {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
+                              const Text(
                                 "Имя (паспорт РФ)",
                                 style: TextStyle(
                                     color: Color(0xFF5E6D77),
                                     fontSize: 11,
                                     fontWeight: FontWeight.w500),
                               ),
-                              SizedBox(height: 5,),
+                              const SizedBox(height: 5,),
                               TextField(
                                 controller: controllerName,
-                                decoration: InputDecoration(
+                                decoration: const InputDecoration(
                                   contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                                   hintText: 'Иван',
                                   hintStyle: TextStyle(
@@ -907,17 +903,17 @@ class _TouristDataPageState extends State<TouristDataPage> {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
+                              const Text(
                                 "Отчество (паспорт РФ)",
                                 style: TextStyle(
                                     color: Color(0xFF5E6D77),
                                     fontSize: 11,
                                     fontWeight: FontWeight.w500),
                               ),
-                              SizedBox(height: 5,),
+                              const SizedBox(height: 5,),
                               TextField(
                                 controller: controllerLastName,
-                                decoration: InputDecoration(
+                                decoration: const InputDecoration(
                                   contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                                   hintText: 'Петрович',
                                   hintStyle: TextStyle(
@@ -943,20 +939,20 @@ class _TouristDataPageState extends State<TouristDataPage> {
                             children: [
                               Row(
                                 children: [
-                                  Text(
+                                  const Text(
                                     "Пол",
                                     style: TextStyle(
                                         color: Color(0xFF5E6D77),
                                         fontSize: 11,
                                         fontWeight: FontWeight.w500),
                                   ),
-                                  SizedBox(width: 20,),
+                                  const SizedBox(width: 20,),
                                   Row(
                                     children: [
                                       Radio(
-                                      activeColor: Color(0xFFACB5BE),
+                                      activeColor: const Color(0xFFACB5BE),
                                       fillColor: MaterialStateColor.resolveWith(
-                                              (states) => Color(0xFFACB5BE)),
+                                              (states) => const Color(0xFFACB5BE)),
                                         value: "men",
                                         groupValue: valueFormRadio,
                                         onChanged: (value) {
@@ -965,7 +961,7 @@ class _TouristDataPageState extends State<TouristDataPage> {
                                           });
                                         },
                                       ),
-                                      Text(
+                                      const Text(
                                         "Мужской",
                                         style: TextStyle(
                                             color: Color(0xFF5E6D77),
@@ -974,13 +970,13 @@ class _TouristDataPageState extends State<TouristDataPage> {
                                       ),
                                     ],
                                   ),
-                                  SizedBox(width: 20,),
+                                  const SizedBox(width: 20,),
                                   Row(
                                     children: [
                                       Radio(
-                                        activeColor: Color(0xFFACB5BE),
+                                        activeColor: const Color(0xFFACB5BE),
                                         fillColor: MaterialStateColor.resolveWith(
-                                                (states) => Color(0xFFACB5BE)),
+                                                (states) => const Color(0xFFACB5BE)),
                                         value: "women",
                                         groupValue: valueFormRadio,
                                         onChanged: (value) {
@@ -989,7 +985,7 @@ class _TouristDataPageState extends State<TouristDataPage> {
                                           });
                                         },
                                       ),
-                                      Text(
+                                      const Text(
                                         "Женский",
                                         style: TextStyle(
                                             color: Color(0xFF5E6D77),
@@ -1006,31 +1002,31 @@ class _TouristDataPageState extends State<TouristDataPage> {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
+                              const Text(
                                 "Дата рождения",
                                 style: TextStyle(
                                     color: Color(0xFF5E6D77),
                                     fontSize: 11,
                                     fontWeight: FontWeight.w500),
                               ),
-                              SizedBox(height: 5,),
+                              const SizedBox(height: 5,),
                               TextField(
                                 controller: controllerDateBirth,
                                 decoration: InputDecoration(
-                                  contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                                  contentPadding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                                   hintText: 'Выберите дату',
-                                  hintStyle: TextStyle(
+                                  hintStyle: const TextStyle(
                                       color: Color(0xFFACB5BE),
                                       fontSize: 14,
                                       fontWeight: FontWeight.w500),
-                                  suffixIcon: Image.asset("assets/icons/calendar.png", color: Color(0xFF1A2B47),),
+                                  suffixIcon: Image.asset("assets/icons/calendar.png", color: const Color(0xFF1A2B47),),
                                   filled: true,
                                   fillColor: Colors.white,
-                                  enabledBorder: OutlineInputBorder(
+                                  enabledBorder: const OutlineInputBorder(
                                     borderRadius: BorderRadius.all(Radius.circular(5.0)),
                                     borderSide: BorderSide(color: Colors.white),
                                   ),
-                                  focusedBorder: OutlineInputBorder(
+                                  focusedBorder: const OutlineInputBorder(
                                     borderRadius: BorderRadius.all(Radius.circular(5.0)),
                                     borderSide: BorderSide(color: Colors.white),
                                   ),
@@ -1042,17 +1038,17 @@ class _TouristDataPageState extends State<TouristDataPage> {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
+                              const Text(
                                 "Гражданство",
                                 style: TextStyle(
                                     color: Color(0xFF5E6D77),
                                     fontSize: 11,
                                     fontWeight: FontWeight.w500),
                               ),
-                              SizedBox(height: 5,),
+                              const SizedBox(height: 5,),
                               DropdownButtonFormField<String>(
-                                icon: Icon(Icons.keyboard_arrow_down),
-                                decoration: InputDecoration(
+                                icon: const Icon(Icons.keyboard_arrow_down),
+                                decoration: const InputDecoration(
                                   contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                                   hintStyle: TextStyle(
                                       color: Color(0xFFACB5BE),
@@ -1077,14 +1073,14 @@ class _TouristDataPageState extends State<TouristDataPage> {
                                 },
                                 items: _countries.map((country) {
                                   return DropdownMenuItem(
+                                    value: country,
                                     child: Text(
                                       country,
                                       style: TextStyle(
-                                          color: Color(0xFF1A2B47).withOpacity(0.85),
+                                          color: const Color(0xFF1A2B47).withOpacity(0.85),
                                           fontSize: 14,
                                           fontWeight: FontWeight.w500),
                                     ),
-                                    value: country,
                                   );
                                 }).toList(),
                               ),
@@ -1094,18 +1090,18 @@ class _TouristDataPageState extends State<TouristDataPage> {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
+                              const Text(
                                 "Номер паспорта РФ",
                                 style: TextStyle(
                                     color: Color(0xFF5E6D77),
                                     fontSize: 11,
                                     fontWeight: FontWeight.w500),
                               ),
-                              SizedBox(height: 5,),
+                              const SizedBox(height: 5,),
                               TextField(
                                 controller: controllerCitizenship,
                                 keyboardType: TextInputType.number,
-                                decoration: InputDecoration(
+                                decoration: const InputDecoration(
                                   contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                                   hintText: '0000 000000',
                                   hintStyle: TextStyle(
@@ -1132,7 +1128,7 @@ class _TouristDataPageState extends State<TouristDataPage> {
                   ],
                 ),
               ),
-              SizedBox(height: 15,),
+              const SizedBox(height: 15,),
               GestureDetector(
                 onTap: (){
                   setState(() {
@@ -1141,12 +1137,12 @@ class _TouristDataPageState extends State<TouristDataPage> {
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width,
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                   decoration: BoxDecoration(
-                    color: Color(0xFF005BFE),
+                    color: const Color(0xFF005BFE),
                     borderRadius: BorderRadius.circular(10)
                   ),
-                  child: Center(
+                  child: const Center(
                     child: Text(
                       "Сохранить и перейти к\nследующему туристу",
                       textAlign: TextAlign.center,
@@ -1159,7 +1155,7 @@ class _TouristDataPageState extends State<TouristDataPage> {
                   ),
                 ),
               ),
-              SizedBox(height: 15,),
+              const SizedBox(height: 15,),
             ],
           ),
         );

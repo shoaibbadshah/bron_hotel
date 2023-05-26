@@ -1,5 +1,4 @@
 import 'package:bron_hotel/pages/vendor/vendor-board.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class VendorStartPage extends StatefulWidget {
@@ -18,7 +17,7 @@ class _VendorStartPageState extends State<VendorStartPage> {
           Container(
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height / 2.2,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage("assets/images/vendor-img.png"),
                 fit: BoxFit.cover
@@ -26,7 +25,7 @@ class _VendorStartPageState extends State<VendorStartPage> {
             ),
           ),
           const SizedBox(height: 40,),
-          Text(
+          const Text(
               "Become a Host in\n10 easy steps",
               textAlign: TextAlign.center,
               style: TextStyle(
@@ -40,7 +39,7 @@ class _VendorStartPageState extends State<VendorStartPage> {
             "Join us. We'll help you every\nstep of the way.",
             textAlign: TextAlign.center,
             style: TextStyle(
-                color: Color(0xFF1A2B47).withOpacity(0.5),
+                color: const Color(0xFF1A2B47).withOpacity(0.5),
                 fontSize: 16,
                 fontWeight: FontWeight.w500
             ),
@@ -51,17 +50,17 @@ class _VendorStartPageState extends State<VendorStartPage> {
               GestureDetector(
                 onTap: (){
                   setState(() {
-                   Navigator.push(context, MaterialPageRoute(builder: (context) => VendorBoard()));
+                   Navigator.push(context, MaterialPageRoute(builder: (context) => const VendorBoard()));
                   });
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width / 2,
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                   decoration: BoxDecoration(
-                    color: Color(0xFF1A2B47),
+                    color: const Color(0xFF1A2B47),
                     borderRadius: BorderRadius.circular(15)
                   ),
-                  child: Center(
+                  child: const Center(
                     child: Text(
                       "Let’s go!",
                       textAlign: TextAlign.center,
@@ -80,7 +79,7 @@ class _VendorStartPageState extends State<VendorStartPage> {
       ),
       bottomNavigationBar: Container(
         height: 80,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Colors.white,
           border: Border.symmetric(horizontal: BorderSide(color: Color(0xFFD9D9D9)))
         ),
@@ -90,13 +89,13 @@ class _VendorStartPageState extends State<VendorStartPage> {
             Container(
               width: MediaQuery.of(context).size.width / 3,
               height: 35,
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(17.5),
-                border: Border.all(color: Color(0xFF1A2B47))
+                border: Border.all(color: const Color(0xFF1A2B47))
               ),
-              child: Center(
+              child: const Center(
                 child: Text(
                   "Exit",
                   textAlign: TextAlign.center,

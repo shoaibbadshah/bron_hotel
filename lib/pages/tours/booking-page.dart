@@ -1,5 +1,4 @@
 import 'package:bron_hotel/pages/tours/booking-form-page.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class BookingPage extends StatefulWidget {
@@ -27,13 +26,13 @@ class _BookingPageState extends State<BookingPage> {
               Navigator.pop(context);
             });
           },
-          icon: Icon(Icons.arrow_back_ios, color: Colors.white,),
+          icon: const Icon(Icons.arrow_back_ios, color: Colors.white,),
         ),
-        backgroundColor: Color(0xFF1A2B47),
+        backgroundColor: const Color(0xFF1A2B47),
         centerTitle: true,
         title: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
+          children: const [
             Text(
               "Бронирование",
               style: TextStyle(
@@ -59,8 +58,8 @@ class _BookingPageState extends State<BookingPage> {
           Container(
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height / 3.6,
-            padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-            decoration: BoxDecoration(
+            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+            decoration: const BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage("assets/images/images-tours 2.png"),
                     fit: BoxFit.fill
@@ -73,7 +72,7 @@ class _BookingPageState extends State<BookingPage> {
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Expanded(
+                    const Expanded(
                       child: Text(
                         "Beach Spa Resort",
                         style: TextStyle(
@@ -85,7 +84,7 @@ class _BookingPageState extends State<BookingPage> {
                     ),
                     Expanded(
                       child: Row(
-                        children: [
+                        children: const [
                           Text(
                             "4,97",
                             style: TextStyle(
@@ -101,7 +100,7 @@ class _BookingPageState extends State<BookingPage> {
                   ],
                 ),
                 Row(
-                  children: [
+                  children: const [
                     Icon(Icons.location_on, color: Color(0xFFACB5BE),),
                     Text(
                       "La Soukra, Tunis",
@@ -122,7 +121,7 @@ class _BookingPageState extends State<BookingPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                const Text(
                   "Комнаты",
                   style: TextStyle(
                       color: Color(0xFF1A2B47),
@@ -130,11 +129,11 @@ class _BookingPageState extends State<BookingPage> {
                       fontSize: 18
                   ),
                 ),
-                SizedBox(height: 15,),
+                const SizedBox(height: 15,),
                 Row(
                   children: [
                     Container(
-                      padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+                      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
                       decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(15),
@@ -142,7 +141,7 @@ class _BookingPageState extends State<BookingPage> {
                             BoxShadow(
                                 blurRadius: 10,
                                 spreadRadius: 3,
-                                offset: Offset(0,8),
+                                offset: const Offset(0,8),
                                 color: Colors.black.withOpacity(0.1)
                             )
                           ]
@@ -150,7 +149,7 @@ class _BookingPageState extends State<BookingPage> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
+                          const Text(
                             "Double Room",
                             style: TextStyle(
                                 color: Colors.black,
@@ -158,18 +157,18 @@ class _BookingPageState extends State<BookingPage> {
                                 fontSize: 16
                             ),
                           ),
-                          SizedBox(height: 20,),
+                          const SizedBox(height: 20,),
                           Row(
                             children: [
                               Image.asset("assets/icons/divan-tours.png"),
-                              SizedBox(width: 20,),
+                              const SizedBox(width: 20,),
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
                                     "1 большая ",
                                     style: TextStyle(
-                                        color: Color(0xFF1A2B47).withOpacity(0.85),
+                                        color: const Color(0xFF1A2B47).withOpacity(0.85),
                                         fontWeight: FontWeight.w500,
                                         fontSize: 14
                                     ),
@@ -177,7 +176,7 @@ class _BookingPageState extends State<BookingPage> {
                                   Text(
                                     "двуспальная кровать",
                                     style: TextStyle(
-                                        color: Color(0xFF1A2B47).withOpacity(0.85),
+                                        color: const Color(0xFF1A2B47).withOpacity(0.85),
                                         fontWeight: FontWeight.w500,
                                         fontSize: 14
                                     ),
@@ -186,19 +185,19 @@ class _BookingPageState extends State<BookingPage> {
                               )
                             ],
                           ),
-                          SizedBox(height: 10,),
+                          const SizedBox(height: 10,),
                           Row(
                             children: [
-                              SizedBox(width: 15,),
+                              const SizedBox(width: 15,),
                               Image.asset("assets/icons/divan2-tours.png"),
-                              SizedBox(width: 20,),
+                              const SizedBox(width: 20,),
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
                                     "Гостиная 1",
                                     style: TextStyle(
-                                        color: Color(0xFF1A2B47).withOpacity(0.85),
+                                        color: const Color(0xFF1A2B47).withOpacity(0.85),
                                         fontWeight: FontWeight.w600,
                                         fontSize: 14
                                     ),
@@ -206,7 +205,7 @@ class _BookingPageState extends State<BookingPage> {
                                   Text(
                                     "1 диван - кровать",
                                     style: TextStyle(
-                                        color: Color(0xFF1A2B47).withOpacity(0.85),
+                                        color: const Color(0xFF1A2B47).withOpacity(0.85),
                                         fontWeight: FontWeight.w500,
                                         fontSize: 14
                                     ),
@@ -242,9 +241,9 @@ class _BookingPageState extends State<BookingPage> {
                     Expanded(
                       child: Container(
                         height: MediaQuery.of(context).size.height / 22,
-                        padding: EdgeInsets.symmetric(horizontal: 10),
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
                         decoration: BoxDecoration(
-                            color: Color(0xFFF5F5F5),
+                            color: const Color(0xFFF5F5F5),
                             borderRadius: BorderRadius.circular(5)
                         ),
                         child: Row(
@@ -253,34 +252,34 @@ class _BookingPageState extends State<BookingPage> {
                             Text(
                               "23 июл",
                               style: TextStyle(
-                                  color: Color(0xFF1A2B47).withOpacity(0.85),
+                                  color: const Color(0xFF1A2B47).withOpacity(0.85),
                                   fontWeight: FontWeight.w500,
                                   fontSize: 12
                               ),
                             ),
-                            VerticalDivider(),
+                            const VerticalDivider(),
                             Text(
                               "30 июл ",
                               style: TextStyle(
-                                  color: Color(0xFF1A2B47).withOpacity(0.85),
+                                  color: const Color(0xFF1A2B47).withOpacity(0.85),
                                   fontWeight: FontWeight.w500,
                                   fontSize: 12
                               ),
                             ),
-                            VerticalDivider(),
+                            const VerticalDivider(),
                             Text(
                               "7 ночей",
                               style: TextStyle(
-                                  color: Color(0xFF1A2B47).withOpacity(0.85),
+                                  color: const Color(0xFF1A2B47).withOpacity(0.85),
                                   fontWeight: FontWeight.w500,
                                   fontSize: 12
                               ),
                             ),
-                            VerticalDivider(),
+                            const VerticalDivider(),
                             Text(
                               "1 человек",
                               style: TextStyle(
-                                  color: Color(0xFF1A2B47).withOpacity(0.85),
+                                  color: const Color(0xFF1A2B47).withOpacity(0.85),
                                   fontWeight: FontWeight.w500,
                                   fontSize: 12
                               ),
@@ -290,10 +289,10 @@ class _BookingPageState extends State<BookingPage> {
                       ),
                     ),
                     Container(
-                      padding: EdgeInsets.all(10),
+                      padding: const EdgeInsets.all(10),
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
-                        color: Color(0xFF005BFE),
+                        color: const Color(0xFF005BFE),
                         borderRadius: BorderRadius.circular(5),
                       ),
                       child: Center(
@@ -307,11 +306,11 @@ class _BookingPageState extends State<BookingPage> {
           ),
           const SizedBox(height: 25,),
           Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                const Text(
                   "Детализация цены",
                   style: TextStyle(
                       color: Color(0xFF1A2B47),
@@ -323,7 +322,7 @@ class _BookingPageState extends State<BookingPage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
+                    const Text(
                       "100 \$/ночь",
                       style: TextStyle(
                           color: Color(0xFF1A2B47),
@@ -335,7 +334,7 @@ class _BookingPageState extends State<BookingPage> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
-                          Text(
+                          const Text(
                             "Хозяин / Татьяна",
                             style: TextStyle(
                                 color: Colors.black,
@@ -343,15 +342,15 @@ class _BookingPageState extends State<BookingPage> {
                                 fontSize: 14
                             ),
                           ),
-                          SizedBox(width: 10,),
+                          const SizedBox(width: 10,),
                           Container(
                             width: 30,
                             height: 30,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               shape: BoxShape.circle,
                               color: Color(0xFF5E6D77)
                             ),
-                            child: Center(
+                            child: const Center(
                               child: Text(
                                 "T",
                                 style: TextStyle(
@@ -371,7 +370,7 @@ class _BookingPageState extends State<BookingPage> {
                 const SizedBox(height: 15,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
+                  children: const [
                     Expanded(
                       child: Text(
                         "200\$ x 6 ночей",
@@ -399,7 +398,7 @@ class _BookingPageState extends State<BookingPage> {
                   children: [
                     Expanded(
                       child: Row(
-                        children: [
+                        children: const [
                           Text(
                             "Сбор за услуги",
                             style: TextStyle(
@@ -409,7 +408,7 @@ class _BookingPageState extends State<BookingPage> {
                                 fontSize: 18
                             ),
                           ),
-                          const SizedBox(width: 8,),
+                          SizedBox(width: 8,),
                           Text(
                             "Bilaton",
                             style: TextStyle(
@@ -422,7 +421,7 @@ class _BookingPageState extends State<BookingPage> {
                         ],
                       ),
                     ),
-                    Text(
+                    const Text(
                       "100 \$",
                       style: TextStyle(
                           color: Color(0xFF1A2B47),
@@ -433,11 +432,11 @@ class _BookingPageState extends State<BookingPage> {
                   ],
                 ),
                 const SizedBox(height: 10,),
-                Divider(color: Color(0xFFD9D9D9),),
+                const Divider(color: Color(0xFFD9D9D9),),
                 const SizedBox(height: 10,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
+                  children: const [
                     Expanded(
                       child: Text(
                         "Всего (без учета налогов)",
@@ -464,11 +463,11 @@ class _BookingPageState extends State<BookingPage> {
           ),
           const SizedBox(height: 20,),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                const Text(
                   "Оплатить с помощью",
                   style: TextStyle(
                       color: Color(0xFF1A2B47),
@@ -489,16 +488,16 @@ class _BookingPageState extends State<BookingPage> {
                         child: Container(
                           width: MediaQuery.of(context).size.width / 2.5,
                           height: 65,
-                          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                           decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(10),
-                              border: selectCard == index ? Border.all(color: Color(0xFF005BFE)) : null,
+                              border: selectCard == index ? Border.all(color: const Color(0xFF005BFE)) : null,
                               boxShadow: [
                                 BoxShadow(
                                     blurRadius: 25,
                                     spreadRadius: 0,
-                                    offset: Offset(0,7),
+                                    offset: const Offset(0,7),
                                     color: Colors.black.withOpacity(0.1)
                                 ),
                               ]
@@ -525,7 +524,7 @@ class _BookingPageState extends State<BookingPage> {
                       Text(
                         "70\$",
                         style: TextStyle(
-                            color: Color(0xFF1A2B47).withOpacity(0.85),
+                            color: const Color(0xFF1A2B47).withOpacity(0.85),
                             fontWeight: FontWeight.w700,
                             fontSize: 16
                         ),
@@ -534,7 +533,7 @@ class _BookingPageState extends State<BookingPage> {
                         "23 июл - 30 июл",
                         style: TextStyle(
                             decoration: TextDecoration.underline,
-                            color: Color(0xFF1A2B47).withOpacity(0.85),
+                            color: const Color(0xFF1A2B47).withOpacity(0.85),
                             fontWeight: FontWeight.w400,
                             fontSize: 12
                         ),
@@ -545,16 +544,16 @@ class _BookingPageState extends State<BookingPage> {
                 GestureDetector(
                   onTap: (){
                     setState(() {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => BookingFormPage()));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const BookingFormPage()));
                     });
                   },
                   child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+                    padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
                     decoration: BoxDecoration(
-                        color: Color(0xFF005BFE),
+                        color: const Color(0xFF005BFE),
                         borderRadius: BorderRadius.circular(15)
                     ),
-                    child: Center(
+                    child: const Center(
                       child: Text(
                         "Забронировать",
                         textAlign: TextAlign.center,

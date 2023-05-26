@@ -1,6 +1,5 @@
 import 'package:bron_hotel/pages/tours/tours-detail.dart';
 import 'package:bron_hotel/pages/tours/tours-details-page.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../flights/tickets-filter-page.dart';
@@ -38,13 +37,13 @@ class _ToursPageState extends State<ToursPage> {
                 Navigator.pop(context);
               });
             },
-            icon: Icon(Icons.arrow_back_ios, color: Colors.white,),
+            icon: const Icon(Icons.arrow_back_ios, color: Colors.white,),
           ),
-          backgroundColor: Color(0xFF1A2B47),
+          backgroundColor: const Color(0xFF1A2B47),
           centerTitle: true,
           title: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
+            children: const [
               Text(
                 "Мальдивы",
                 style: TextStyle(
@@ -68,7 +67,7 @@ class _ToursPageState extends State<ToursPage> {
             IconButton(
                 onPressed: (){
                   setState(() {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => TicketsFilterPage()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const TicketsFilterPage()));
                   });
                 },
                 icon: Image.asset("assets/icons/filters.png")
@@ -76,9 +75,9 @@ class _ToursPageState extends State<ToursPage> {
           ],
         ),
         body: ListView(
-          padding: EdgeInsets.symmetric( vertical: 20),
+          padding: const EdgeInsets.symmetric( vertical: 20),
           children: [
-            Center(
+            const Center(
               child: Text(
                   "Цена на 1 человека от 200\$ , 7 ночей",
                 textAlign: TextAlign.center,
@@ -89,8 +88,8 @@ class _ToursPageState extends State<ToursPage> {
                 ),
               ),
             ),
-            SizedBox(height: 10,),
-            Center(
+            const SizedBox(height: 10,),
+            const Center(
               child: Text(
                 "Динамика цен на 1 человека",
                 textAlign: TextAlign.center,
@@ -101,13 +100,13 @@ class _ToursPageState extends State<ToursPage> {
                 ),
               ),
             ),
-            SizedBox(height: 15,),
+            const SizedBox(height: 15,),
             buildListDynamic(),
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Row(
-                children: [
+                children: const [
                   Text(
                     "Показывать по рекомендации",
                     textAlign: TextAlign.center,
@@ -143,8 +142,8 @@ class _ToursPageState extends State<ToursPage> {
                 children: [
                   Container(
                     width: double.infinity,
-                    padding: EdgeInsets.symmetric(vertical: 5),
-                    decoration: BoxDecoration(
+                    padding: const EdgeInsets.symmetric(vertical: 5),
+                    decoration: const BoxDecoration(
                       gradient: LinearGradient(
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
@@ -158,7 +157,7 @@ class _ToursPageState extends State<ToursPage> {
                         ],
                       ),
                     ),
-                    child: Text(
+                    child: const Text(
                       "Едем с Bilaton",
                       textAlign: TextAlign.center,
                       style: TextStyle(
@@ -172,15 +171,15 @@ class _ToursPageState extends State<ToursPage> {
                     onTap: (){
                       setState(() {
                         setState(() {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => ToursDetailsPage()));
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => const ToursDetailsPage()));
                         });
                       });
                     },
                     child: Container(
                       height: 171,
                       width: double.infinity,
-                      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                      decoration: BoxDecoration(
+                      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                      decoration: const BoxDecoration(
                         image: DecorationImage(
                           image: AssetImage("assets/images/tours-image.png"),
                           fit: BoxFit.cover
@@ -195,22 +194,22 @@ class _ToursPageState extends State<ToursPage> {
                               Container(
                                 height: 35,
                                 width: 35,
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                   color: Color(0xFFFA5636),
                                   shape: BoxShape.circle
                                 ),
-                                child: Center(
+                                child: const Center(
                                   child: Text("7,4", style: TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.w500),),
                                 ),
                               ),
                               Container(
                                 height: 35,
                                 width: 35,
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                   color: Color(0xFF005BFE),
                                   shape: BoxShape.circle
                                 ),
-                                child: Center(
+                                child: const Center(
                                   child: Text("%", style: TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.w500),),
                                 ),
                               ),
@@ -223,7 +222,7 @@ class _ToursPageState extends State<ToursPage> {
                               Row(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Expanded(
+                                  const Expanded(
                                     child: Text(
                                       "Beach Spa Resort",
                                       style: TextStyle(
@@ -235,7 +234,7 @@ class _ToursPageState extends State<ToursPage> {
                                   ),
                                   Expanded(
                                     child: Row(
-                                      children: [
+                                      children: const [
                                         Text(
                                           "4,97",
                                           style: TextStyle(
@@ -251,7 +250,7 @@ class _ToursPageState extends State<ToursPage> {
                                 ],
                               ),
                               Row(
-                                children: [
+                                children: const [
                                   Icon(Icons.location_on, color: Color(0xFFACB5BE),),
                                   Text(
                                     "Мальдивы",
@@ -269,7 +268,7 @@ class _ToursPageState extends State<ToursPage> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 10,),
+                  const SizedBox(height: 10,),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10),
                     child: Column(
@@ -286,7 +285,7 @@ class _ToursPageState extends State<ToursPage> {
                                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: [
                                       Image.asset("assets/icons/tours-plane.png"),
-                                      Text(
+                                      const Text(
                                         "45км",
                                         style: TextStyle(
                                             color: Color(0xFF5E6D77),
@@ -297,15 +296,15 @@ class _ToursPageState extends State<ToursPage> {
                                     ],
                                   ),
                                 ),
-                                SizedBox(width: 15,),
+                                const SizedBox(width: 15,),
                                 SizedBox(
                                   height: 45,
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: [
                                       Image.asset("assets/icons/tours-day.png"),
-                                      SizedBox(height: 4,),
-                                      Text(
+                                      const SizedBox(height: 4,),
+                                      const Text(
                                         "100м",
                                         style: TextStyle(
                                             color: Color(0xFF5E6D77),
@@ -316,15 +315,15 @@ class _ToursPageState extends State<ToursPage> {
                                     ],
                                   ),
                                 ),
-                                SizedBox(width: 15,),
+                                const SizedBox(width: 15,),
                                 SizedBox(
                                   height: 45,
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: [
                                       Image.asset("assets/icons/tours-wifi.png"),
-                                      SizedBox(height: 4,),
-                                      Text(
+                                      const SizedBox(height: 4,),
+                                      const Text(
                                         "Везде",
                                         style: TextStyle(
                                             color: Color(0xFF5E6D77),
@@ -335,15 +334,15 @@ class _ToursPageState extends State<ToursPage> {
                                     ],
                                   ),
                                 ),
-                                SizedBox(width: 15,),
+                                const SizedBox(width: 15,),
                                 SizedBox(
                                   height: 45,
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: [
                                       Image.asset("assets/icons/tours-tik.png"),
-                                      SizedBox(height: 4,),
-                                      Text(
+                                      const SizedBox(height: 4,),
+                                      const Text(
                                         "Галька",
                                         style: TextStyle(
                                             color: Color(0xFF5E6D77),
@@ -356,16 +355,16 @@ class _ToursPageState extends State<ToursPage> {
                                 ),
                               ],
                             ),
-                            Icon(Icons.favorite_outline,)
+                            const Icon(Icons.favorite_outline,)
                           ],
                         ),
-                        SizedBox(height: 15,),
+                        const SizedBox(height: 15,),
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
                             Image.asset("assets/icons/tours-day1.png"),
-                            SizedBox(width: 10,),
-                            Text(
+                            const SizedBox(width: 10,),
+                            const Text(
                               "Собственный пляж",
                               style: TextStyle(
                                   color: Color(0xFF5E6D77),
@@ -376,13 +375,13 @@ class _ToursPageState extends State<ToursPage> {
 
                           ],
                         ),
-                        SizedBox(height: 15,),
+                        const SizedBox(height: 15,),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Row(
                               children: [
-                                Text(
+                                const Text(
                                   "Моментальное потверждение",
                                   style: TextStyle(
                                       color: Color(0xFF34A853),
@@ -390,25 +389,25 @@ class _ToursPageState extends State<ToursPage> {
                                       fontSize: 14
                                   ),
                                 ),
-                                SizedBox(width: 10,),
+                                const SizedBox(width: 10,),
                                 Image.asset("assets/icons/question.png"),
 
                               ],
                             ),
                             Row(
                               children: [
-                                Icon(Icons.home, color: Color(0xFFD80027),),
-                                SizedBox(width: 8,),
+                                const Icon(Icons.home, color: Color(0xFFD80027),),
+                                const SizedBox(width: 8,),
                                 Image.asset("assets/icons/arrow-forward.png"),
-                                SizedBox(width: 8,),
+                                const SizedBox(width: 8,),
                                 Image.asset("assets/icons/tours-plane1.png"),
                               ],
                             )
                           ],
                         ),
-                        SizedBox(height: 15,),
+                        const SizedBox(height: 15,),
                         Row(
-                          children: [
+                          children: const [
                             Text(
                               "Всего",
                               style: TextStyle(
@@ -429,13 +428,13 @@ class _ToursPageState extends State<ToursPage> {
 
                           ],
                         ),
-                        SizedBox(height: 15,),
+                        const SizedBox(height: 15,),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Row(
                               children: [
-                                Text(
+                                const Text(
                                   "Включает доплаты 0\$",
                                   style: TextStyle(
                                       color: Color(0xFF5E6D77),
@@ -443,8 +442,8 @@ class _ToursPageState extends State<ToursPage> {
                                       fontSize: 14
                                   ),
                                 ),
-                                SizedBox(width: 10,),
-                                Image.asset("assets/icons/question.png", color: Color(0xFF5E6D77),),
+                                const SizedBox(width: 10,),
+                                Image.asset("assets/icons/question.png", color: const Color(0xFF5E6D77),),
 
                               ],
                             ),
@@ -455,7 +454,7 @@ class _ToursPageState extends State<ToursPage> {
                                         borderRadius: BorderRadius.circular(15))),
                                 onPressed: () {
                                   setState(() {
-                                    Navigator.push(context, MaterialPageRoute(builder: (context) => ToursDetail()));
+                                    Navigator.push(context, MaterialPageRoute(builder: (context) => const ToursDetail()));
                                   });
                                 },
                                 child: const Text(
@@ -480,7 +479,7 @@ class _ToursPageState extends State<ToursPage> {
   Container buildListDynamic() {
     return Container(
             color: Colors.white,
-            padding: EdgeInsets.symmetric(vertical: 10),
+            padding: const EdgeInsets.symmetric(vertical: 10),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -496,22 +495,22 @@ class _ToursPageState extends State<ToursPage> {
                               Text(
                                 "100\$",
                                 style: TextStyle(
-                                    color: Color(0xFF1A2B47).withOpacity(0.85),
+                                    color: const Color(0xFF1A2B47).withOpacity(0.85),
                                     fontWeight: FontWeight.w400,
                                     fontSize: 10
                                 ),
                               ),
-                              SizedBox(height: 5,),
+                              const SizedBox(height: 5,),
                               Container(
                                 height: 10,
                                 width: 55,
-                                color: Color(0xFFD9D9D9),
+                                color: const Color(0xFFD9D9D9),
                               ),
-                              SizedBox(height: 5,),
+                              const SizedBox(height: 5,),
                               Text(
                                 "${index + 1}",
                                 style: TextStyle(
-                                    color: Color(0xFF1A2B47).withOpacity(0.85),
+                                    color: const Color(0xFF1A2B47).withOpacity(0.85),
                                     fontWeight: FontWeight.w300,
                                     fontSize: 12
                                 ),
@@ -522,9 +521,9 @@ class _ToursPageState extends State<ToursPage> {
                     )
                   ),
                 ),
-                SizedBox(height: 15,),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                const SizedBox(height: 15,),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 10.0),
                   child: Text(
                     "Июль",
                     style: TextStyle(

@@ -1,10 +1,6 @@
-import 'dart:ui';
-
 import 'package:bron_hotel/pages/settings/card-add-page.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gradient_borders/box_borders/gradient_box_border.dart';
-import 'package:gradient_borders/input_borders/gradient_outline_input_border.dart';
 
 class WalletPage extends StatefulWidget {
   const WalletPage({Key? key}) : super(key: key);
@@ -20,7 +16,7 @@ class _WalletPageState extends State<WalletPage> {
     return Container(
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height,
-      decoration:  BoxDecoration(
+      decoration:  const BoxDecoration(
           image: DecorationImage(
               alignment: Alignment.topRight,
               image: AssetImage(
@@ -40,14 +36,14 @@ class _WalletPageState extends State<WalletPage> {
                 Navigator.pop(context);
               });
             },
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back_ios,
               color: Colors.white,
             ),
           ),
-          backgroundColor: Color(0xFF1A2B47),
+          backgroundColor: const Color(0xFF1A2B47),
           centerTitle: true,
-          title: Text(
+          title: const Text(
             "Кошелек",
             style: TextStyle(
               color: Colors.white,
@@ -58,19 +54,19 @@ class _WalletPageState extends State<WalletPage> {
         ),
         body: ListView(
           controller: controllerListView,
-          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
           children: [
             Column(
               children: [
                 Container(
                   width: MediaQuery.of(context).size.width / 1.3,
                   height: MediaQuery.of(context).size.height / 5,
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(15),
                     border: GradientBoxBorder(
-                      gradient: LinearGradient(colors: [Colors.white.withOpacity(0.1), Color(0xFF5F90F3).withOpacity(0.35),]),
+                      gradient: LinearGradient(colors: [Colors.white.withOpacity(0.1), const Color(0xFF5F90F3).withOpacity(0.35),]),
                       width: 1,
                     ),
                     boxShadow: [
@@ -78,7 +74,7 @@ class _WalletPageState extends State<WalletPage> {
                         blurRadius: 24,
                         spreadRadius: -1,
                         color: Colors.black.withOpacity(0.2),
-                        offset: Offset(0,4)
+                        offset: const Offset(0,4)
                       )
                     ],
 
@@ -98,7 +94,7 @@ class _WalletPageState extends State<WalletPage> {
                         child: Text(
                             "1256 7889 3344 6651",
                           style: TextStyle(
-                            color: Color(0xFF1A2B47).withOpacity(0.85),
+                            color: const Color(0xFF1A2B47).withOpacity(0.85),
                             fontWeight: FontWeight.w600,
                             fontSize: 16
                           ),
@@ -107,22 +103,22 @@ class _WalletPageState extends State<WalletPage> {
                     ],
                   ),
                 ),
-                SizedBox(height: 30,),
+                const SizedBox(height: 30,),
                 GestureDetector(
                   onTap: (){
                     setState(() {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => CardAddPage()));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const CardAddPage()));
                     });
                   },
                   child: Container(
                     width: MediaQuery.of(context).size.width / 1.3,
                     height: MediaQuery.of(context).size.height / 10,
-                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(15),
                       border: GradientBoxBorder(
-                        gradient: LinearGradient(colors: [Colors.white.withOpacity(0.1), Color(0xFF5F90F3).withOpacity(0.35),]),
+                        gradient: LinearGradient(colors: [Colors.white.withOpacity(0.1), const Color(0xFF5F90F3).withOpacity(0.35),]),
                         width: 1,
                       ),
                       boxShadow: [
@@ -130,7 +126,7 @@ class _WalletPageState extends State<WalletPage> {
                           blurRadius: 24,
                           spreadRadius: -1,
                           color: Colors.black.withOpacity(0.2),
-                          offset: Offset(0,4)
+                          offset: const Offset(0,4)
                         )
                       ],
 
@@ -139,8 +135,8 @@ class _WalletPageState extends State<WalletPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Image.asset("assets/icons/addcard.png"),
-                        SizedBox(width: 20,),
-                        Text(
+                        const SizedBox(width: 20,),
+                        const Text(
                           "Добавить карту",
                           style: TextStyle(
                               color: Color(0xFF005BFE),
@@ -154,13 +150,13 @@ class _WalletPageState extends State<WalletPage> {
                 ),
               ],
             ),
-            SizedBox(height: 20,),
-            Divider(color: Color(0xFFD9D9D9),),
-            SizedBox(height: 10,),
+            const SizedBox(height: 20,),
+            const Divider(color: Color(0xFFD9D9D9),),
+            const SizedBox(height: 10,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
+              children: const [
+                 Text(
                   "Бонусы",
                   style: TextStyle(
                       color: Color(0xFF1A2B47),
@@ -168,7 +164,7 @@ class _WalletPageState extends State<WalletPage> {
                       fontSize: 16
                   ),
                 ),
-                Text(
+                 Text(
                   "0 RUB",
                   style: TextStyle(
                       color: Color(0xFF1A2B47),
@@ -178,16 +174,16 @@ class _WalletPageState extends State<WalletPage> {
                 ),
               ],
             ),
-            SizedBox(height: 10,),
-            Divider(color: Color(0xFFD9D9D9),),
-            SizedBox(height: 15,),
+            const SizedBox(height: 10,),
+            const Divider(color: Color(0xFFD9D9D9),),
+            const SizedBox(height: 15,),
             Container(
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height / 7.2,
-              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),
-                border: Border.all(color: Color(0xFF005BFE))
+                border: Border.all(color: const Color(0xFF005BFE))
               ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -196,19 +192,19 @@ class _WalletPageState extends State<WalletPage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Image.asset("assets/icons/ipad.png"),
-                      SizedBox(width: 10,),
+                      const SizedBox(width: 10,),
                       Text(
                         "Нет доступных бонусов",
                         style: TextStyle(
-                            color: Color(0xFF1A2B47).withOpacity(0.85),
+                            color: const Color(0xFF1A2B47).withOpacity(0.85),
                             fontWeight: FontWeight.w600,
                             fontSize: 16
                         ),
                       ),
                     ],
                   ),
-                  SizedBox(height: 10,),
-                  Text(
+                  const SizedBox(height: 10,),
+                  const Text(
                     "Соберите бонусы и оплатите ваши поездки",
                     style: TextStyle(
                         color: Color(0xFF5E6D77),
@@ -220,24 +216,24 @@ class _WalletPageState extends State<WalletPage> {
                 ],
               ),
             ),
-            SizedBox(height: 15,),
+            const SizedBox(height: 15,),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   "Вопросы о Кошельке",
                   style: TextStyle(
-                      color: Color(0xFF1A2B47).withOpacity(0.85),
+                      color: const Color(0xFF1A2B47).withOpacity(0.85),
                       fontWeight: FontWeight.w600,
                       fontSize: 20
                   ),
                 ),
-                SizedBox(height: 15,),
+                const SizedBox(height: 15,),
                 Column(
                   children: List.generate(5, (index) =>
                       Container(
-                        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                        margin: EdgeInsets.only(bottom: 10),
+                        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                        margin: const EdgeInsets.only(bottom: 10),
                         decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(15),
@@ -245,8 +241,8 @@ class _WalletPageState extends State<WalletPage> {
                               BoxShadow(
                                   blurRadius: 10,
                                   spreadRadius: 0,
-                                  color: Color(0xFF1A2B47).withOpacity(0.1),
-                                  offset: Offset(0,2)
+                                  color: const Color(0xFF1A2B47).withOpacity(0.1),
+                                  offset: const Offset(0,2)
                               )
                             ]
                         ),
@@ -256,13 +252,13 @@ class _WalletPageState extends State<WalletPage> {
                               child: Text(
                                 "На что можно потратить бонусы?",
                                 style: TextStyle(
-                                    color: Color(0xFF1A2B47).withOpacity(0.85),
+                                    color: const Color(0xFF1A2B47).withOpacity(0.85),
                                     fontWeight: FontWeight.w400,
                                     fontSize: 14
                                 ),
                               ),
                             ),
-                            Icon(Icons.arrow_forward_ios, color: Color(0xFF005BFE),)
+                            const Icon(Icons.arrow_forward_ios, color: Color(0xFF005BFE),)
                           ],
                         ),
                       ),
@@ -270,7 +266,7 @@ class _WalletPageState extends State<WalletPage> {
                 )
               ],
             ),
-            SizedBox(height: 20,)
+            const SizedBox(height: 20,)
           ],
         ),
       ),

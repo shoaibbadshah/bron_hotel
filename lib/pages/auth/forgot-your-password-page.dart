@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ForgotYourPasswordPage extends StatelessWidget {
@@ -36,8 +35,8 @@ class ForgotYourPasswordPage extends StatelessWidget {
         body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Text("Forgot Your Password?", style: TextStyle(color: Colors.black, fontWeight: FontWeight.w800, fontSize: 22),),
-            Text("Not to worry, we got you!\nLet’s get you a new password", style: TextStyle(color: Colors.black, fontWeight: FontWeight.w500, fontSize: 16),),
+            const Text("Forgot Your Password?", style: TextStyle(color: Colors.black, fontWeight: FontWeight.w800, fontSize: 22),),
+            const Text("Not to worry, we got you!\nLet’s get you a new password", style: TextStyle(color: Colors.black, fontWeight: FontWeight.w500, fontSize: 16),),
             Center(
               child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
@@ -45,8 +44,7 @@ class ForgotYourPasswordPage extends StatelessWidget {
                       backgroundColor: const Color(0xFF1A2B47),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(40))),
-                  onPressed: () {
-                  },
+                  onPressed: null,
                   child: const Text(
                     "Go to change password",
                     style: TextStyle(

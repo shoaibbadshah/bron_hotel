@@ -36,11 +36,11 @@ class _TicketsFilterPageState extends State<TicketsFilterPage> {
               Navigator.pop(context);
             });
           },
-          icon: Icon(Icons.arrow_back_ios, color: Colors.white,),
+          icon: const Icon(Icons.arrow_back_ios, color: Colors.white,),
         ),
-        backgroundColor: Color(0xFF1A2B47),
+        backgroundColor: const Color(0xFF1A2B47),
         centerTitle: true,
-        title: Text(
+        title: const Text(
           "Фильтры",
           style: TextStyle(
             color: Colors.white,
@@ -52,13 +52,13 @@ class _TicketsFilterPageState extends State<TicketsFilterPage> {
           GestureDetector(
             onTap: (){
               setState(() {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => TicketsPage()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const TicketsPage()));
               });
             },
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10.0),
               child: Row(
-                children: [
+                children: const [
                   Text(
                     "Готово",
                     style: TextStyle(
@@ -74,68 +74,66 @@ class _TicketsFilterPageState extends State<TicketsFilterPage> {
         ],
       ),
       body: ListView(
-        padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
         children: [
           buildTransfers(),
-          SizedBox(height: 15,),
+          const SizedBox(height: 15,),
           buildDepartureAndArrival(),
-          SizedBox(height: 15,),
+          const SizedBox(height: 15,),
           buildBaggage(),
-          SizedBox(height: 15,),
+          const SizedBox(height: 15,),
           buildAirlines(),
-          SizedBox(height: 15,),
+          const SizedBox(height: 15,),
           buildAlliances(),
-          SizedBox(height: 15,),
+          const SizedBox(height: 15,),
           buildDateRout(),
-          SizedBox(height: 15,),
+          const SizedBox(height: 15,),
           buildAirlinesTransfer(),
-          SizedBox(height: 15,),
+          const SizedBox(height: 15,),
           buildAirlinesTransfer1(),
-          SizedBox(height: 15,),
+          const SizedBox(height: 15,),
           buildAgencies(),
-          SizedBox(height: 15,),
+          const SizedBox(height: 15,),
           buildAgencies1(),
-          SizedBox(height: 15,),
+          const SizedBox(height: 15,),
           Column(
             children: [
-              Container(
-                child: ExpandableTheme(
-                  data: ExpandableThemeData(
-                    iconColor: Color(0xFF1A2B47).withOpacity(0.85),
-                    iconPadding: EdgeInsets.symmetric(horizontal: 20),
+              ExpandableTheme(
+                data: ExpandableThemeData(
+                  iconColor: const Color(0xFF1A2B47).withOpacity(0.85),
+                  iconPadding: const EdgeInsets.symmetric(horizontal: 20),
+                ),
+                child: ExpandablePanel(
+                  header: Text(
+                    "Сортировка",
+                    style: TextStyle(
+                        color: const Color(0xFF1A2B47).withOpacity(0.85),
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600),
                   ),
-                  child: ExpandablePanel(
-                    header: Text(
-                      "Сортировка",
-                      style: TextStyle(
-                          color: Color(0xFF1A2B47).withOpacity(0.85),
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600),
-                    ),
-                    collapsed: Divider(color: Color(0xFF5E6D77),),
-                    expanded: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Divider(color: Color(0xFF5E6D77),),
-                        buildSortingValue("Сначала рекомендуемые", transfersRadioValue),
-                        buildSortingValue("Сначала дешевые", transfersRadioValue),
-                        buildSortingValue("Время вылета", transfersRadioValue),
-                        buildSortingValue("Время прибытия", transfersRadioValue),
-                        buildSortingValue("Длительность пересадок", transfersRadioValue),
-                        buildSortingValue("Длительность поездки", transfersRadioValue),
-                        buildSortingValue("Рейтинг", transfersRadioValue),
-                        buildSortingValue("Популярность", transfersRadioValue),
-                      ],
-                    ),
-                    builder: (_, collapsed, expanded) {
-                      return Expandable(
-                        collapsed: collapsed,
-                        expanded: expanded,
-                        theme: const ExpandableThemeData(
-                            crossFadePoint: 0),
-                      );
-                    },
+                  collapsed: const Divider(color: Color(0xFF5E6D77),),
+                  expanded: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      const Divider(color: Color(0xFF5E6D77),),
+                      buildSortingValue("Сначала рекомендуемые", transfersRadioValue),
+                      buildSortingValue("Сначала дешевые", transfersRadioValue),
+                      buildSortingValue("Время вылета", transfersRadioValue),
+                      buildSortingValue("Время прибытия", transfersRadioValue),
+                      buildSortingValue("Длительность пересадок", transfersRadioValue),
+                      buildSortingValue("Длительность поездки", transfersRadioValue),
+                      buildSortingValue("Рейтинг", transfersRadioValue),
+                      buildSortingValue("Популярность", transfersRadioValue),
+                    ],
                   ),
+                  builder: (_, collapsed, expanded) {
+                    return Expandable(
+                      collapsed: collapsed,
+                      expanded: expanded,
+                      theme: const ExpandableThemeData(
+                          crossFadePoint: 0),
+                    );
+                  },
                 ),
               ),
             ],
@@ -152,16 +150,16 @@ class _TicketsFilterPageState extends State<TicketsFilterPage> {
                           Text(
                             title,
                             style: TextStyle(
-                              color: Color(0xFF1A2B47).withOpacity(0.75),
+                              color: const Color(0xFF1A2B47).withOpacity(0.75),
                               fontSize: 13,
                               fontWeight: FontWeight.w500,
                             ),
                           ),
                           Radio(
-                            activeColor: Color(0xFF005BFE),
+                            activeColor: const Color(0xFF005BFE),
                             value: "1",
                             fillColor: MaterialStateColor.resolveWith(
-                                    (states) => Color(0xFF005BFE)),
+                                    (states) => const Color(0xFF005BFE)),
                             groupValue: groupValue,
                             onChanged: (value) {
                               setState(() {
@@ -176,91 +174,89 @@ class _TicketsFilterPageState extends State<TicketsFilterPage> {
   Column buildAgencies() {
     return Column(
           children: [
-            Container(
-              child: ExpandableTheme(
-                data: ExpandableThemeData(
-                  iconColor: Color(0xFF1A2B47).withOpacity(0.85),
-                  iconPadding: EdgeInsets.symmetric(horizontal: 20),
+            ExpandableTheme(
+              data: ExpandableThemeData(
+                iconColor: const Color(0xFF1A2B47).withOpacity(0.85),
+                iconPadding: const EdgeInsets.symmetric(horizontal: 20),
+              ),
+              child: ExpandablePanel(
+                header: Text(
+                  "Агентства",
+                  style: TextStyle(
+                      color: const Color(0xFF1A2B47).withOpacity(0.85),
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600),
                 ),
-                child: ExpandablePanel(
-                  header: Text(
-                    "Агентства",
-                    style: TextStyle(
-                        color: Color(0xFF1A2B47).withOpacity(0.85),
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600),
-                  ),
-                  collapsed: Divider(color: Color(0xFF5E6D77),),
-                  expanded: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Divider(color: Color(0xFF5E6D77),),
-                      SizedBox(height: 5,),
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 10),
-                        child: TextField(
-                          controller: textEditingControllerAgencies,
-                          decoration: InputDecoration(
-                            contentPadding: EdgeInsets.all(10),
-                            hintText: 'Название агентства',
-                            prefixIcon:Image.asset("assets/icons/search-svgrepo.png"),
-                            hintStyle: TextStyle(
-                                color: Color(0xFFC4C4C4),
-                                fontSize: 13,
-                                fontWeight: FontWeight.w500),
-                            filled: true,
-                            fillColor: Colors.white,
-                            enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(Radius.circular(15.0)),
-                              borderSide: BorderSide(color: Color(0xFF5E6D77)),
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(Radius.circular(15.0)),
-                              borderSide: BorderSide(color: Color(0xFF5E6D77)),
-                            ),
+                collapsed: const Divider(color: Color(0xFF5E6D77),),
+                expanded: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    const Divider(color: Color(0xFF5E6D77),),
+                    const SizedBox(height: 5,),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      child: TextField(
+                        controller: textEditingControllerAgencies,
+                        decoration: InputDecoration(
+                          contentPadding: const EdgeInsets.all(10),
+                          hintText: 'Название агентства',
+                          prefixIcon:Image.asset("assets/icons/search-svgrepo.png"),
+                          hintStyle: const TextStyle(
+                              color: Color(0xFFC4C4C4),
+                              fontSize: 13,
+                              fontWeight: FontWeight.w500),
+                          filled: true,
+                          fillColor: Colors.white,
+                          enabledBorder: const OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                            borderSide: BorderSide(color: Color(0xFF5E6D77)),
+                          ),
+                          focusedBorder: const OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                            borderSide: BorderSide(color: Color(0xFF5E6D77)),
                           ),
                         ),
                       ),
-                      SizedBox(height: 10,),
-                      CheckboxTheme(
-                        data: CheckboxThemeData(
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(5)
-                            )
-                        ),
-                        child: CheckboxListTile(
-                          activeColor: Colors.blue,
-                          title:  Text(
-                            "Выбрать все",
-                            style: TextStyle(
-                                color: Color(0xFF1A2B47).withOpacity(0.75),
-                                fontWeight: FontWeight.w500,
-                                fontSize: 13
-                            ),
-                          ),
-                          value: false,
-                          contentPadding: EdgeInsets.zero,
-                          onChanged: (newValue) {},
-                          controlAffinity:
-                          ListTileControlAffinity.leading, //  <-- leading Checkbox
-                        ),
+                    ),
+                    const SizedBox(height: 10,),
+                    CheckboxTheme(
+                      data: CheckboxThemeData(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(5)
+                          )
                       ),
-                      _buildCheckboxAlliances("Aviakassa", "4890₽",  true),
-                      _buildCheckboxAlliances("City.Travel", "4890₽",  true),
-                      _buildCheckboxAlliances("FlyOne", "4890₽",  true),
-                      _buildCheckboxAlliances("KupiBilet.ru", "4890₽",  true),
-                      _buildCheckboxAlliances("OZON", "4890₽",  true),
-                    ],
-                  ),
-                  builder: (_, collapsed, expanded) {
-                    return Expandable(
-                      collapsed: collapsed,
-                      expanded: expanded,
-                      theme: const ExpandableThemeData(
-                          crossFadePoint: 0),
-                    );
-                  },
+                      child: CheckboxListTile(
+                        activeColor: Colors.blue,
+                        title:  Text(
+                          "Выбрать все",
+                          style: TextStyle(
+                              color: const Color(0xFF1A2B47).withOpacity(0.75),
+                              fontWeight: FontWeight.w500,
+                              fontSize: 13
+                          ),
+                        ),
+                        value: false,
+                        contentPadding: EdgeInsets.zero,
+                        onChanged: (newValue) {},
+                        controlAffinity:
+                        ListTileControlAffinity.leading, //  <-- leading Checkbox
+                      ),
+                    ),
+                    _buildCheckboxAlliances("Aviakassa", "4890₽",  true),
+                    _buildCheckboxAlliances("City.Travel", "4890₽",  true),
+                    _buildCheckboxAlliances("FlyOne", "4890₽",  true),
+                    _buildCheckboxAlliances("KupiBilet.ru", "4890₽",  true),
+                    _buildCheckboxAlliances("OZON", "4890₽",  true),
+                  ],
                 ),
+                builder: (_, collapsed, expanded) {
+                  return Expandable(
+                    collapsed: collapsed,
+                    expanded: expanded,
+                    theme: const ExpandableThemeData(
+                        crossFadePoint: 0),
+                  );
+                },
               ),
             ),
           ],
@@ -270,64 +266,62 @@ class _TicketsFilterPageState extends State<TicketsFilterPage> {
   Column buildAgencies1() {
     return Column(
       children: [
-        Container(
-          child: ExpandableTheme(
-            data: ExpandableThemeData(
-              iconColor: Color(0xFF1A2B47).withOpacity(0.85),
-              iconPadding: EdgeInsets.symmetric(horizontal: 20),
+        ExpandableTheme(
+          data: ExpandableThemeData(
+            iconColor: const Color(0xFF1A2B47).withOpacity(0.85),
+            iconPadding: const EdgeInsets.symmetric(horizontal: 20),
+          ),
+          child: ExpandablePanel(
+            header: Text(
+              "Агентства",
+              style: TextStyle(
+                  color: const Color(0xFF1A2B47).withOpacity(0.85),
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600),
             ),
-            child: ExpandablePanel(
-              header: Text(
-                "Агентства",
-                style: TextStyle(
-                    color: Color(0xFF1A2B47).withOpacity(0.85),
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600),
-              ),
-              collapsed: Divider(color: Color(0xFF5E6D77),),
-              expanded: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Divider(color: Color(0xFF5E6D77),),
-                  CheckboxTheme(
-                    data: CheckboxThemeData(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(5)
-                        )
-                    ),
-                    child: CheckboxListTile(
-                      activeColor: Colors.blue,
-                      title:  Text(
-                        "Выбрать все",
-                        style: TextStyle(
-                            color: Color(0xFF1A2B47).withOpacity(0.75),
-                            fontWeight: FontWeight.w500,
-                            fontSize: 13
-                        ),
-                      ),
-                      value: false,
-                      contentPadding: EdgeInsets.zero,
-                      onChanged: (newValue) {},
-                      controlAffinity:
-                      ListTileControlAffinity.leading, //  <-- leading Checkbox
-                    ),
+            collapsed: const Divider(color: Color(0xFF5E6D77),),
+            expanded: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                const Divider(color: Color(0xFF5E6D77),),
+                CheckboxTheme(
+                  data: CheckboxThemeData(
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5)
+                      )
                   ),
-                  _buildCheckboxAlliances("Qiwi кошелек", "4890₽",  true),
-                  _buildCheckboxAlliances("Яндекс.Деньги", "4890₽",  true),
-                  _buildCheckboxAlliances("vКонтакт", "4890₽",  true),
-                  _buildCheckboxAlliances("Ревоплюс", "4890₽",  true),
-                  _buildCheckboxAlliances("По карте", "4890₽",  true),
-                ],
-              ),
-              builder: (_, collapsed, expanded) {
-                return Expandable(
-                  collapsed: collapsed,
-                  expanded: expanded,
-                  theme: const ExpandableThemeData(
-                      crossFadePoint: 0),
-                );
-              },
+                  child: CheckboxListTile(
+                    activeColor: Colors.blue,
+                    title:  Text(
+                      "Выбрать все",
+                      style: TextStyle(
+                          color: const Color(0xFF1A2B47).withOpacity(0.75),
+                          fontWeight: FontWeight.w500,
+                          fontSize: 13
+                      ),
+                    ),
+                    value: false,
+                    contentPadding: EdgeInsets.zero,
+                    onChanged: (newValue) {},
+                    controlAffinity:
+                    ListTileControlAffinity.leading, //  <-- leading Checkbox
+                  ),
+                ),
+                _buildCheckboxAlliances("Qiwi кошелек", "4890₽",  true),
+                _buildCheckboxAlliances("Яндекс.Деньги", "4890₽",  true),
+                _buildCheckboxAlliances("vКонтакт", "4890₽",  true),
+                _buildCheckboxAlliances("Ревоплюс", "4890₽",  true),
+                _buildCheckboxAlliances("По карте", "4890₽",  true),
+              ],
             ),
+            builder: (_, collapsed, expanded) {
+              return Expandable(
+                collapsed: collapsed,
+                expanded: expanded,
+                theme: const ExpandableThemeData(
+                    crossFadePoint: 0),
+              );
+            },
           ),
         ),
       ],
@@ -339,44 +333,44 @@ class _TicketsFilterPageState extends State<TicketsFilterPage> {
           children: [
             ExpandableTheme(
               data: ExpandableThemeData(
-                iconColor: Color(0xFF1A2B47).withOpacity(0.85),
-                iconPadding: EdgeInsets.symmetric(horizontal: 20),
+                iconColor: const Color(0xFF1A2B47).withOpacity(0.85),
+                iconPadding: const EdgeInsets.symmetric(horizontal: 20),
               ),
               child: ExpandablePanel(
                 header: Text(
                   "Аэропорты пересадок 1",
                   style: TextStyle(
-                      color: Color(0xFF1A2B47).withOpacity(0.85),
+                      color: const Color(0xFF1A2B47).withOpacity(0.85),
                       fontSize: 16,
                       fontWeight: FontWeight.w600),
                 ),
-                collapsed: Divider(color: Color(0xFF5E6D77),),
+                collapsed: const Divider(color: Color(0xFF5E6D77),),
                 expanded: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Divider(color: Color(0xFF5E6D77),),
-                    SizedBox(height: 5,),
+                    const Divider(color: Color(0xFF5E6D77),),
+                    const SizedBox(height: 5,),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
                           "Всего",
-                          style: TextStyle(color: Color(0xFF1A2B47).withOpacity(0.75), fontSize: 13, fontWeight: FontWeight.w500),
+                          style: TextStyle(color: const Color(0xFF1A2B47).withOpacity(0.75), fontSize: 13, fontWeight: FontWeight.w500),
                         ),
                         Text(
                           "До 135 000₽",
-                          style: TextStyle(color: Color(0xFF1A2B47).withOpacity(0.75), fontSize: 13, fontWeight: FontWeight.w500),
+                          style: TextStyle(color: const Color(0xFF1A2B47).withOpacity(0.75), fontSize: 13, fontWeight: FontWeight.w500),
                         ),
                       ],
                     ),
-                    SizedBox(height: 10,),
+                    const SizedBox(height: 10,),
                     SliderTheme(
-                      data: SliderThemeData(
+                      data: const SliderThemeData(
                         trackHeight: 1,
                       ),
                       child: Slider(
-                        activeColor: Color(0xFf005BFE),
-                        inactiveColor: Color(0xFFDFE2E6),
+                        activeColor: const Color(0xFf005BFE),
+                        inactiveColor: const Color(0xFFDFE2E6),
                         value: currentSliderValue,
                         max: 100,
                         divisions: 5,
@@ -408,114 +402,112 @@ class _TicketsFilterPageState extends State<TicketsFilterPage> {
   Column buildAirlinesTransfer() {
     return Column(
           children: [
-            Container(
-              child: ExpandableTheme(
-                data: ExpandableThemeData(
-                  iconColor: Color(0xFF1A2B47).withOpacity(0.85),
-                  iconPadding: EdgeInsets.symmetric(horizontal: 20),
+            ExpandableTheme(
+              data: ExpandableThemeData(
+                iconColor: const Color(0xFF1A2B47).withOpacity(0.85),
+                iconPadding: const EdgeInsets.symmetric(horizontal: 20),
+              ),
+              child: ExpandablePanel(
+                header: Text(
+                  "Аэропорты пересадок",
+                  style: TextStyle(
+                      color: const Color(0xFF1A2B47).withOpacity(0.85),
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600),
                 ),
-                child: ExpandablePanel(
-                  header: Text(
-                    "Аэропорты пересадок",
-                    style: TextStyle(
-                        color: Color(0xFF1A2B47).withOpacity(0.85),
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600),
-                  ),
-                  collapsed: Divider(color: Color(0xFF5E6D77),),
-                  expanded: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Divider(color: Color(0xFF5E6D77),),
-                      SizedBox(height: 5,),
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 10),
-                        child: TextField(
-                          controller: textEditingControllerAirlinesTransfer,
-                          decoration: InputDecoration(
-                            contentPadding: EdgeInsets.all(10),
-                            hintText: 'Аэропорт, город, страна, код',
-                            prefixIcon:Image.asset("assets/icons/search-svgrepo.png"),
-                            hintStyle: TextStyle(
-                                color: Color(0xFFC4C4C4),
-                                fontSize: 13,
-                                fontWeight: FontWeight.w500),
-                            filled: true,
-                            fillColor: Colors.white,
-                            enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(Radius.circular(15.0)),
-                              borderSide: BorderSide(color: Color(0xFF5E6D77)),
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(Radius.circular(15.0)),
-                              borderSide: BorderSide(color: Color(0xFF5E6D77)),
-                            ),
+                collapsed: const Divider(color: Color(0xFF5E6D77),),
+                expanded: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    const Divider(color: Color(0xFF5E6D77),),
+                    const SizedBox(height: 5,),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      child: TextField(
+                        controller: textEditingControllerAirlinesTransfer,
+                        decoration: InputDecoration(
+                          contentPadding: const EdgeInsets.all(10),
+                          hintText: 'Аэропорт, город, страна, код',
+                          prefixIcon:Image.asset("assets/icons/search-svgrepo.png"),
+                          hintStyle: const TextStyle(
+                              color: Color(0xFFC4C4C4),
+                              fontSize: 13,
+                              fontWeight: FontWeight.w500),
+                          filled: true,
+                          fillColor: Colors.white,
+                          enabledBorder: const OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                            borderSide: BorderSide(color: Color(0xFF5E6D77)),
+                          ),
+                          focusedBorder: const OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                            borderSide: BorderSide(color: Color(0xFF5E6D77)),
                           ),
                         ),
                       ),
-                      SizedBox(height: 10,),
-                      CheckboxTheme(
-                        data: CheckboxThemeData(
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(5)
-                            )
+                    ),
+                    const SizedBox(height: 10,),
+                    CheckboxTheme(
+                      data: CheckboxThemeData(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(5)
+                          )
+                      ),
+                      child: CheckboxListTile(
+                        activeColor: Colors.blue,
+                        title:  Text(
+                          "Выбрать все",
+                          style: TextStyle(
+                              color: const Color(0xFF1A2B47).withOpacity(0.75),
+                              fontWeight: FontWeight.w500,
+                              fontSize: 13
+                          ),
                         ),
-                        child: CheckboxListTile(
-                          activeColor: Colors.blue,
-                          title:  Text(
-                            "Выбрать все",
+                        value: false,
+                        contentPadding: EdgeInsets.zero,
+                        onChanged: (newValue) {},
+                        controlAffinity:
+                        ListTileControlAffinity.leading, //  <-- leading Checkbox
+                      ),
+                    ),
+                    _buildCheckboxAlliances("Амстердам, Схипхол,Нидерланды", "4890₽",  true),
+                    _buildCheckboxAlliances("Амстердам, Схипхол,Нидерланды", "4890₽",  true),
+                    _buildCheckboxAlliances("Амстердам, Схипхол,Нидерланды", "4890₽",  true),
+                    _buildCheckboxAlliances("Амстердам, Схипхол,Нидерланды", "4890₽",  true),
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          showSeeAllAirlines = !showSeeAllAirlines;
+                        });
+                      },
+                      child: Row(
+                        children: [
+                          const Text(
+                            "Показать всё",
                             style: TextStyle(
-                                color: Color(0xFF1A2B47).withOpacity(0.75),
-                                fontWeight: FontWeight.w500,
-                                fontSize: 13
-                            ),
+                                color: Color(0xFF005BFE),
+                                fontSize: 12,
+                                fontWeight: FontWeight.w600),
                           ),
-                          value: false,
-                          contentPadding: EdgeInsets.zero,
-                          onChanged: (newValue) {},
-                          controlAffinity:
-                          ListTileControlAffinity.leading, //  <-- leading Checkbox
-                        ),
+                          const SizedBox(width: 10,),
+                          showSeeAllAirlines
+                              ? const Icon(Icons.arrow_drop_up, color: Color(0xFF005BFE),)
+                              : const Icon(Icons.arrow_drop_down, color: Color(0xFF005BFE),)
+                        ],
                       ),
-                      _buildCheckboxAlliances("Амстердам, Схипхол,Нидерланды", "4890₽",  true),
-                      _buildCheckboxAlliances("Амстердам, Схипхол,Нидерланды", "4890₽",  true),
-                      _buildCheckboxAlliances("Амстердам, Схипхол,Нидерланды", "4890₽",  true),
-                      _buildCheckboxAlliances("Амстердам, Схипхол,Нидерланды", "4890₽",  true),
-                      GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            showSeeAllAirlines = !showSeeAllAirlines;
-                          });
-                        },
-                        child: Row(
-                          children: [
-                            const Text(
-                              "Показать всё",
-                              style: TextStyle(
-                                  color: Color(0xFF005BFE),
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w600),
-                            ),
-                            SizedBox(width: 10,),
-                            showSeeAllAirlines
-                                ? const Icon(Icons.arrow_drop_up, color: Color(0xFF005BFE),)
-                                : const Icon(Icons.arrow_drop_down, color: Color(0xFF005BFE),)
-                          ],
-                        ),
-                      ),
+                    ),
 
 
-                    ],
-                  ),
-                  builder: (_, collapsed, expanded) {
-                    return Expandable(
-                      collapsed: collapsed,
-                      expanded: expanded,
-                      theme: const ExpandableThemeData(
-                          crossFadePoint: 0),
-                    );
-                  },
+                  ],
                 ),
+                builder: (_, collapsed, expanded) {
+                  return Expandable(
+                    collapsed: collapsed,
+                    expanded: expanded,
+                    theme: const ExpandableThemeData(
+                        crossFadePoint: 0),
+                  );
+                },
               ),
             ),
           ],
@@ -525,70 +517,68 @@ class _TicketsFilterPageState extends State<TicketsFilterPage> {
   Column buildDateRout() {
     return Column(
           children: [
-            Container(
-              child: ExpandableTheme(
-                data: ExpandableThemeData(
-                  iconColor: Color(0xFF1A2B47).withOpacity(0.85),
-                  iconPadding: EdgeInsets.symmetric(horizontal: 20),
+            ExpandableTheme(
+              data: ExpandableThemeData(
+                iconColor: const Color(0xFF1A2B47).withOpacity(0.85),
+                iconPadding: const EdgeInsets.symmetric(horizontal: 20),
+              ),
+              child: ExpandablePanel(
+                header: Text(
+                  "Время в пути",
+                  style: TextStyle(
+                      color: const Color(0xFF1A2B47).withOpacity(0.85),
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600),
                 ),
-                child: ExpandablePanel(
-                  header: Text(
-                    "Время в пути",
-                    style: TextStyle(
-                        color: Color(0xFF1A2B47).withOpacity(0.85),
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600),
-                  ),
-                  collapsed: Divider(color: Color(0xFF5E6D77),),
-                  expanded: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Divider(color: Color(0xFF5E6D77),),
-                      SizedBox(height: 5,),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                              "Всего",
-                            style: TextStyle(color: Color(0xFF1A2B47).withOpacity(0.75), fontSize: 13, fontWeight: FontWeight.w500),
-                          ),
-                          Text(
-                            "До 48ч",
-                            style: TextStyle(color: Color(0xFF1A2B47).withOpacity(0.75), fontSize: 13, fontWeight: FontWeight.w500),
-                          ),
-                        ],
-                      ),
-                      SizedBox(height: 10,),
-                      SliderTheme(
-                        data: SliderThemeData(
-                            trackHeight: 1,
+                collapsed: const Divider(color: Color(0xFF5E6D77),),
+                expanded: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    const Divider(color: Color(0xFF5E6D77),),
+                    const SizedBox(height: 5,),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                            "Всего",
+                          style: TextStyle(color: const Color(0xFF1A2B47).withOpacity(0.75), fontSize: 13, fontWeight: FontWeight.w500),
                         ),
-                        child: Slider(
-                          activeColor: Color(0xFf005BFE),
-                          inactiveColor: Color(0xFFDFE2E6),
-                        value: currentSliderValue,
-                        max: 100,
-                        divisions: 5,
-                        label: currentSliderValue.round().toString(),
-                        onChanged: (double value) {
-                          setState(() {
-                          currentSliderValue = value;
-                          });},
+                        Text(
+                          "До 48ч",
+                          style: TextStyle(color: const Color(0xFF1A2B47).withOpacity(0.75), fontSize: 13, fontWeight: FontWeight.w500),
                         ),
+                      ],
+                    ),
+                    const SizedBox(height: 10,),
+                    SliderTheme(
+                      data: const SliderThemeData(
+                          trackHeight: 1,
                       ),
+                      child: Slider(
+                        activeColor: const Color(0xFf005BFE),
+                        inactiveColor: const Color(0xFFDFE2E6),
+                      value: currentSliderValue,
+                      max: 100,
+                      divisions: 5,
+                      label: currentSliderValue.round().toString(),
+                      onChanged: (double value) {
+                        setState(() {
+                        currentSliderValue = value;
+                        });},
+                      ),
+                    ),
 
 
-                    ],
-                  ),
-                  builder: (_, collapsed, expanded) {
-                    return Expandable(
-                      collapsed: collapsed,
-                      expanded: expanded,
-                      theme: const ExpandableThemeData(
-                          crossFadePoint: 0),
-                    );
-                  },
+                  ],
                 ),
+                builder: (_, collapsed, expanded) {
+                  return Expandable(
+                    collapsed: collapsed,
+                    expanded: expanded,
+                    theme: const ExpandableThemeData(
+                        crossFadePoint: 0),
+                  );
+                },
               ),
             ),
           ],
@@ -598,38 +588,36 @@ class _TicketsFilterPageState extends State<TicketsFilterPage> {
   Column buildAlliances() {
     return Column(
           children: [
-            Container(
-              child: ExpandableTheme(
-                data: ExpandableThemeData(
-                  iconColor: Color(0xFF1A2B47).withOpacity(0.85),
-                  iconPadding: EdgeInsets.symmetric(horizontal: 20),
+            ExpandableTheme(
+              data: ExpandableThemeData(
+                iconColor: const Color(0xFF1A2B47).withOpacity(0.85),
+                iconPadding: const EdgeInsets.symmetric(horizontal: 20),
+              ),
+              child: ExpandablePanel(
+                header: Text(
+                  "Альянсы",
+                  style: TextStyle(
+                      color: const Color(0xFF1A2B47).withOpacity(0.85),
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600),
                 ),
-                child: ExpandablePanel(
-                  header: Text(
-                    "Альянсы",
-                    style: TextStyle(
-                        color: Color(0xFF1A2B47).withOpacity(0.85),
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600),
-                  ),
-                  collapsed: Divider(color: Color(0xFF5E6D77),),
-                  expanded: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Divider(color: Color(0xFF5E6D77),),
-                      _buildCheckboxAlliances("S7 Airlines", "4890₽",  true),
-                      _buildCheckboxAlliances("Utair company", "4890₽",true),
-                    ],
-                  ),
-                  builder: (_, collapsed, expanded) {
-                    return Expandable(
-                      collapsed: collapsed,
-                      expanded: expanded,
-                      theme: const ExpandableThemeData(
-                          crossFadePoint: 0),
-                    );
-                  },
+                collapsed: const Divider(color: Color(0xFF5E6D77),),
+                expanded: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    const Divider(color: Color(0xFF5E6D77),),
+                    _buildCheckboxAlliances("S7 Airlines", "4890₽",  true),
+                    _buildCheckboxAlliances("Utair company", "4890₽",true),
+                  ],
                 ),
+                builder: (_, collapsed, expanded) {
+                  return Expandable(
+                    collapsed: collapsed,
+                    expanded: expanded,
+                    theme: const ExpandableThemeData(
+                        crossFadePoint: 0),
+                  );
+                },
               ),
             ),
           ],
@@ -639,113 +627,111 @@ class _TicketsFilterPageState extends State<TicketsFilterPage> {
   Column buildAirlines() {
     return Column(
           children: [
-            Container(
-              child: ExpandableTheme(
-                data: ExpandableThemeData(
-                  iconColor: Color(0xFF1A2B47).withOpacity(0.85),
-                  iconPadding: EdgeInsets.symmetric(horizontal: 20),
+            ExpandableTheme(
+              data: ExpandableThemeData(
+                iconColor: const Color(0xFF1A2B47).withOpacity(0.85),
+                iconPadding: const EdgeInsets.symmetric(horizontal: 20),
+              ),
+              child: ExpandablePanel(
+                header: Text(
+                  "Авиакомпании",
+                  style: TextStyle(
+                      color: const Color(0xFF1A2B47).withOpacity(0.85),
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600),
                 ),
-                child: ExpandablePanel(
-                  header: Text(
-                    "Авиакомпании",
-                    style: TextStyle(
-                        color: Color(0xFF1A2B47).withOpacity(0.85),
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600),
-                  ),
-                  collapsed: Divider(color: Color(0xFF5E6D77),),
-                  expanded: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Divider(color: Color(0xFF5E6D77),),
-                      _buildSwitch("Без лоукостеров", !switchNoAirportChange, 14),
-                      _buildSwitch("Только одна авиакомпанияв одном билете", !switchNoAirportChange, 14),
-                      SizedBox(height: 10,),
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 10),
-                        child: TextField(
-                          controller: textEditingControllerAirlines,
-                          decoration: InputDecoration(
-                            contentPadding: EdgeInsets.all(10),
-                            hintText: 'Авиакомпания, код ИАТА',
-                            prefixIcon:Image.asset("assets/icons/search-svgrepo.png"),
-                            hintStyle: TextStyle(
-                                color: Color(0xFFC4C4C4),
-                                fontSize: 13,
-                                fontWeight: FontWeight.w500),
-                            filled: true,
-                            fillColor: Colors.white,
-                            enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(Radius.circular(15.0)),
-                              borderSide: BorderSide(color: Color(0xFF5E6D77)),
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(Radius.circular(15.0)),
-                              borderSide: BorderSide(color: Color(0xFF5E6D77)),
-                            ),
+                collapsed: const Divider(color: Color(0xFF5E6D77),),
+                expanded: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    const Divider(color: Color(0xFF5E6D77),),
+                    _buildSwitch("Без лоукостеров", !switchNoAirportChange, 14),
+                    _buildSwitch("Только одна авиакомпанияв одном билете", !switchNoAirportChange, 14),
+                    const SizedBox(height: 10,),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      child: TextField(
+                        controller: textEditingControllerAirlines,
+                        decoration: InputDecoration(
+                          contentPadding: const EdgeInsets.all(10),
+                          hintText: 'Авиакомпания, код ИАТА',
+                          prefixIcon:Image.asset("assets/icons/search-svgrepo.png"),
+                          hintStyle: const TextStyle(
+                              color: Color(0xFFC4C4C4),
+                              fontSize: 13,
+                              fontWeight: FontWeight.w500),
+                          filled: true,
+                          fillColor: Colors.white,
+                          enabledBorder: const OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                            borderSide: BorderSide(color: Color(0xFF5E6D77)),
+                          ),
+                          focusedBorder: const OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                            borderSide: BorderSide(color: Color(0xFF5E6D77)),
                           ),
                         ),
                       ),
-                      SizedBox(height: 10,),
-                      CheckboxTheme(
-                        data: CheckboxThemeData(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(5)
-                          )
+                    ),
+                    const SizedBox(height: 10,),
+                    CheckboxTheme(
+                      data: CheckboxThemeData(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5)
+                        )
+                      ),
+                      child: CheckboxListTile(
+                        activeColor: Colors.blue,
+                        title:  Text(
+                          "Выбрать все",
+                          style: TextStyle(
+                              color: const Color(0xFF1A2B47).withOpacity(0.75),
+                              fontWeight: FontWeight.w500,
+                              fontSize: 13
+                          ),
                         ),
-                        child: CheckboxListTile(
-                          activeColor: Colors.blue,
-                          title:  Text(
-                            "Выбрать все",
+                        value: false,
+                        contentPadding: EdgeInsets.zero,
+                        onChanged: (newValue) {},
+                        controlAffinity:
+                        ListTileControlAffinity.leading, //  <-- leading Checkbox
+                      ),
+                    ),
+                    _buildCheckboxAirlines("S7 Airlines", "4890₽", "assets/images/s7.png", true),
+                    _buildCheckboxAirlines("Utair company", "4890₽", "assets/images/utair.png" ,true),
+                    _buildCheckboxAirlines("LOT company", "4890₽", "assets/images/airs.png",  true),
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          showSeeAllAirlines = !showSeeAllAirlines;
+                        });
+                      },
+                      child: Row(
+                        children: [
+                          const Text(
+                            "Показать всё",
                             style: TextStyle(
-                                color: Color(0xFF1A2B47).withOpacity(0.75),
-                                fontWeight: FontWeight.w500,
-                                fontSize: 13
-                            ),
+                                color: Color(0xFF005BFE),
+                                fontSize: 12,
+                                fontWeight: FontWeight.w600),
                           ),
-                          value: false,
-                          contentPadding: EdgeInsets.zero,
-                          onChanged: (newValue) {},
-                          controlAffinity:
-                          ListTileControlAffinity.leading, //  <-- leading Checkbox
-                        ),
+                          const SizedBox(width: 10,),
+                          showSeeAllAirlines
+                              ? const Icon(Icons.arrow_drop_up, color: Color(0xFF005BFE),)
+                              : const Icon(Icons.arrow_drop_down, color: Color(0xFF005BFE),)
+                        ],
                       ),
-                      _buildCheckboxAirlines("S7 Airlines", "4890₽", "assets/images/s7.png", true),
-                      _buildCheckboxAirlines("Utair company", "4890₽", "assets/images/utair.png" ,true),
-                      _buildCheckboxAirlines("LOT company", "4890₽", "assets/images/airs.png",  true),
-                      GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            showSeeAllAirlines = !showSeeAllAirlines;
-                          });
-                        },
-                        child: Row(
-                          children: [
-                            const Text(
-                              "Показать всё",
-                              style: TextStyle(
-                                  color: Color(0xFF005BFE),
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w600),
-                            ),
-                            SizedBox(width: 10,),
-                            showSeeAllAirlines
-                                ? const Icon(Icons.arrow_drop_up, color: Color(0xFF005BFE),)
-                                : const Icon(Icons.arrow_drop_down, color: Color(0xFF005BFE),)
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                  builder: (_, collapsed, expanded) {
-                    return Expandable(
-                      collapsed: collapsed,
-                      expanded: expanded,
-                      theme: const ExpandableThemeData(
-                          crossFadePoint: 0),
-                    );
-                  },
+                    ),
+                  ],
                 ),
+                builder: (_, collapsed, expanded) {
+                  return Expandable(
+                    collapsed: collapsed,
+                    expanded: expanded,
+                    theme: const ExpandableThemeData(
+                        crossFadePoint: 0),
+                  );
+                },
               ),
             ),
           ],
@@ -760,11 +746,11 @@ class _TicketsFilterPageState extends State<TicketsFilterPage> {
                             child: Row(
                               children: [
                                 Image.asset(icon),
-                                SizedBox(width: 8,),
+                                const SizedBox(width: 8,),
                                 Text(
                                   title,
                                   style: TextStyle(
-                                    color: Color(0xFF1A2B47).withOpacity(0.75),
+                                    color: const Color(0xFF1A2B47).withOpacity(0.75),
                                     fontSize: 13,
                                     fontWeight: FontWeight.w500,
                                   ),
@@ -779,7 +765,7 @@ class _TicketsFilterPageState extends State<TicketsFilterPage> {
                               children: [
                                 Text(
                                   price,
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     color: Color(0xFFACB5BE),
                                     fontSize: 13,
                                     fontWeight: FontWeight.w500,
@@ -794,7 +780,7 @@ class _TicketsFilterPageState extends State<TicketsFilterPage> {
                                     ),
                                     child: CheckboxListTile(
                                       activeColor: Colors.blue,
-                                      title:  Text(""),
+                                      title:  const Text(""),
                                       value: false,
                                       contentPadding: EdgeInsets.zero,
                                       onChanged: (newValue) {},
@@ -818,7 +804,7 @@ class _TicketsFilterPageState extends State<TicketsFilterPage> {
           child: Text(
             title,
             style: TextStyle(
-              color: Color(0xFF1A2B47).withOpacity(0.75),
+              color: const Color(0xFF1A2B47).withOpacity(0.75),
               fontSize: 13,
               fontWeight: FontWeight.w500,
             ),
@@ -831,7 +817,7 @@ class _TicketsFilterPageState extends State<TicketsFilterPage> {
             children: [
               Text(
                 price,
-                style: TextStyle(
+                style: const TextStyle(
                   color: Color(0xFFACB5BE),
                   fontSize: 13,
                   fontWeight: FontWeight.w500,
@@ -846,7 +832,7 @@ class _TicketsFilterPageState extends State<TicketsFilterPage> {
                   ),
                   child: CheckboxListTile(
                     activeColor: Colors.blue,
-                    title:  Text(""),
+                    title:  const Text(""),
                     value: false,
                     contentPadding: EdgeInsets.zero,
                     onChanged: (newValue) {},
@@ -864,82 +850,80 @@ class _TicketsFilterPageState extends State<TicketsFilterPage> {
   Column buildBaggage() {
     return Column(
           children: [
-            Container(
-              child: ExpandableTheme(
-                data: ExpandableThemeData(
-                  iconColor: Color(0xFF1A2B47).withOpacity(0.85),
-                  iconPadding: EdgeInsets.symmetric(horizontal: 20),
+            ExpandableTheme(
+              data: ExpandableThemeData(
+                iconColor: const Color(0xFF1A2B47).withOpacity(0.85),
+                iconPadding: const EdgeInsets.symmetric(horizontal: 20),
+              ),
+              child: ExpandablePanel(
+                header: Text(
+                  "Багаж",
+                  style: TextStyle(
+                      color: const Color(0xFF1A2B47).withOpacity(0.85),
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600),
                 ),
-                child: ExpandablePanel(
-                  header: Text(
-                    "Багаж",
-                    style: TextStyle(
-                        color: Color(0xFF1A2B47).withOpacity(0.85),
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600),
-                  ),
-                  collapsed: Divider(color: Color(0xFF5E6D77),),
-                  expanded: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Divider(color: Color(0xFF5E6D77),),
-                      Row(
-                        children: [
-                          Expanded(
-                            flex: 2,
-                            child: Text(
-                              "Багаж включен",
-                              style: TextStyle(
-                                color: Color(0xFF1A2B47).withOpacity(0.75),
-                                fontSize: 13,
-                                fontWeight: FontWeight.w500,
-                              ),
+                collapsed: const Divider(color: Color(0xFF5E6D77),),
+                expanded: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    const Divider(color: Color(0xFF5E6D77),),
+                    Row(
+                      children: [
+                        Expanded(
+                          flex: 2,
+                          child: Text(
+                            "Багаж включен",
+                            style: TextStyle(
+                              color: const Color(0xFF1A2B47).withOpacity(0.75),
+                              fontSize: 13,
+                              fontWeight: FontWeight.w500,
                             ),
                           ),
-                          Expanded(
-                            flex: 1,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  "4890₽",
-                                  style: TextStyle(
-                                    color: Color(0xFFACB5BE),
-                                    fontSize: 13,
-                                    fontWeight: FontWeight.w500,
-                                  ),
+                        ),
+                        Expanded(
+                          flex: 1,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              const Text(
+                                "4890₽",
+                                style: TextStyle(
+                                  color: Color(0xFFACB5BE),
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.w500,
                                 ),
-                                Radio(
-                                  activeColor: Color(0xFF005BFE),
-                                  value: "bagazh",
-                                  fillColor: MaterialStateColor.resolveWith(
-                                          (states) => Color(0xFF005BFE)),
-                                  groupValue: transfersRadioValue,
-                                  onChanged: (value) {
-                                    setState(() {
-                                      transfersRadioValue = value.toString();
-                                    });
-                                  },
-                                )
-                              ],
-                            ),
-                          )
-                        ],
-                      ),
-                      Divider(color: Color(0xFFD9D9D9),),
-                      _buildSwitch("Без смены аэропорта", !switchNoAirportChange, 14)
+                              ),
+                              Radio(
+                                activeColor: const Color(0xFF005BFE),
+                                value: "bagazh",
+                                fillColor: MaterialStateColor.resolveWith(
+                                        (states) => const Color(0xFF005BFE)),
+                                groupValue: transfersRadioValue,
+                                onChanged: (value) {
+                                  setState(() {
+                                    transfersRadioValue = value.toString();
+                                  });
+                                },
+                              )
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                    const Divider(color: Color(0xFFD9D9D9),),
+                    _buildSwitch("Без смены аэропорта", !switchNoAirportChange, 14)
 
-                    ],
-                  ),
-                  builder: (_, collapsed, expanded) {
-                    return Expandable(
-                      collapsed: collapsed,
-                      expanded: expanded,
-                      theme: const ExpandableThemeData(
-                          crossFadePoint: 0),
-                    );
-                  },
+                  ],
                 ),
+                builder: (_, collapsed, expanded) {
+                  return Expandable(
+                    collapsed: collapsed,
+                    expanded: expanded,
+                    theme: const ExpandableThemeData(
+                        crossFadePoint: 0),
+                  );
+                },
               ),
             ),
           ],
@@ -949,288 +933,286 @@ class _TicketsFilterPageState extends State<TicketsFilterPage> {
   Column buildDepartureAndArrival() {
     return Column(
           children: [
-            Container(
-              child: ExpandableTheme(
-                data: ExpandableThemeData(
-                    iconColor: Color(0xFF1A2B47).withOpacity(0.85),
-                    iconPadding: EdgeInsets.symmetric(horizontal: 20),
+            ExpandableTheme(
+              data: ExpandableThemeData(
+                  iconColor: const Color(0xFF1A2B47).withOpacity(0.85),
+                  iconPadding: const EdgeInsets.symmetric(horizontal: 20),
+              ),
+              child: ExpandablePanel(
+                header: Text(
+                  "Вылет и прибытие",
+                  style: TextStyle(
+                      color: const Color(0xFF1A2B47).withOpacity(0.85),
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600),
                 ),
-                child: ExpandablePanel(
-                  header: Text(
-                    "Вылет и прибытие",
-                    style: TextStyle(
-                        color: Color(0xFF1A2B47).withOpacity(0.85),
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600),
-                  ),
-                  collapsed: Divider(color: Color(0xFF5E6D77),),
-                  expanded: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Divider(color: Color(0xFF5E6D77),),
-                      SizedBox(height: 10,),
-                      Column(
-                        children: [
-                          Row(
-                            children: [
-                              Expanded(
-                                flex: 2,
-                                child: Text(
-                                  "Отправление",
-                                  style: TextStyle(
-                                    color: Color(0xFF1A2B47).withOpacity(0.75),
-                                    fontSize: 13,
-                                    fontWeight: FontWeight.w500,
-                                  ),
+                collapsed: const Divider(color: Color(0xFF5E6D77),),
+                expanded: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    const Divider(color: Color(0xFF5E6D77),),
+                    const SizedBox(height: 10,),
+                    Column(
+                      children: [
+                        Row(
+                          children: [
+                            Expanded(
+                              flex: 2,
+                              child: Text(
+                                "Отправление",
+                                style: TextStyle(
+                                  color: const Color(0xFF1A2B47).withOpacity(0.75),
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.w500,
                                 ),
                               ),
+                            ),
 
-                              Expanded(
-                                flex: 1,
-                                child: Text(
-                                  "00:00-00:00",
-                                  style: TextStyle(
-                                    color: Color(0xFFACB5BE),
-                                    fontSize: 13,
-                                    fontWeight: FontWeight.w600,
-                                  ),
+                            const Expanded(
+                              flex: 1,
+                              child: Text(
+                                "00:00-00:00",
+                                style: TextStyle(
+                                  color: Color(0xFFACB5BE),
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.w600,
                                 ),
                               ),
+                            ),
 
-                            ],
+                          ],
+                        ),
+                        SliderTheme(
+                          data: const SliderThemeData(
+                              trackHeight: 1
                           ),
-                          SliderTheme(
-                            data: SliderThemeData(
-                                trackHeight: 1
+                          child: RangeSlider(
+                            values: currentRangeValues,
+                            activeColor: const Color(0xFf005BFE),
+                            inactiveColor: const Color(0xFFDFE2E6),
+                            max: 100,
+                            divisions: 5,
+                            labels: RangeLabels(
+                              currentRangeValues.start.round().toString(),
+                              currentRangeValues.end.round().toString(),
                             ),
-                            child: RangeSlider(
-                              values: currentRangeValues,
-                              activeColor: Color(0xFf005BFE),
-                              inactiveColor: Color(0xFFDFE2E6),
-                              max: 100,
-                              divisions: 5,
-                              labels: RangeLabels(
-                                currentRangeValues.start.round().toString(),
-                                currentRangeValues.end.round().toString(),
-                              ),
-                              onChanged: (RangeValues values) {
-                                setState(() {
-                                  currentRangeValues = values;
-                                });
-                              },
-                            ),
+                            onChanged: (RangeValues values) {
+                              setState(() {
+                                currentRangeValues = values;
+                              });
+                            },
                           ),
-                        ],
-                      ),
-                      SizedBox(height: 10,),
-                      Column(
-                        children: [
-                          Row(
-                            children: [
-                              Expanded(
-                                flex: 2,
-                                child: Text(
-                                  "Прибытие",
-                                  style: TextStyle(
-                                    color: Color(0xFF1A2B47).withOpacity(0.75),
-                                    fontSize: 13,
-                                    fontWeight: FontWeight.w500,
-                                  ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 10,),
+                    Column(
+                      children: [
+                        Row(
+                          children: [
+                            Expanded(
+                              flex: 2,
+                              child: Text(
+                                "Прибытие",
+                                style: TextStyle(
+                                  color: const Color(0xFF1A2B47).withOpacity(0.75),
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.w500,
                                 ),
                               ),
+                            ),
 
-                              Expanded(
-                                flex: 1,
-                                child: Text(
-                                  "00:00-00:00",
-                                  style: TextStyle(
-                                    color: Color(0xFFACB5BE),
-                                    fontSize: 13,
-                                    fontWeight: FontWeight.w600,
-                                  ),
+                            const Expanded(
+                              flex: 1,
+                              child: Text(
+                                "00:00-00:00",
+                                style: TextStyle(
+                                  color: Color(0xFFACB5BE),
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.w600,
                                 ),
                               ),
+                            ),
 
-                            ],
+                          ],
+                        ),
+                        SliderTheme(
+                          data: const SliderThemeData(
+                              trackHeight: 1
                           ),
-                          SliderTheme(
-                            data: SliderThemeData(
-                                trackHeight: 1
+                          child: RangeSlider(
+                            values: currentRangeValues,
+                            activeColor: const Color(0xFf005BFE),
+                            inactiveColor: const Color(0xFFDFE2E6),
+                            max: 100,
+                            divisions: 5,
+                            labels: RangeLabels(
+                              currentRangeValues.start.round().toString(),
+                              currentRangeValues.end.round().toString(),
                             ),
-                            child: RangeSlider(
-                              values: currentRangeValues,
-                              activeColor: Color(0xFf005BFE),
-                              inactiveColor: Color(0xFFDFE2E6),
-                              max: 100,
-                              divisions: 5,
-                              labels: RangeLabels(
-                                currentRangeValues.start.round().toString(),
-                                currentRangeValues.end.round().toString(),
-                              ),
-                              onChanged: (RangeValues values) {
-                                setState(() {
-                                  currentRangeValues = values;
-                                });
-                              },
-                            ),
+                            onChanged: (RangeValues values) {
+                              setState(() {
+                                currentRangeValues = values;
+                              });
+                            },
                           ),
-                        ],
-                      ),
-                      SizedBox(height: 15,),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "Дата прибытия",
-                            style: TextStyle(
-                              color: Color(0xFF1A2B47).withOpacity(0.75),
-                              fontSize: 14,
-                              fontWeight: FontWeight.w600,
-                            ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 15,),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Дата прибытия",
+                          style: TextStyle(
+                            color: const Color(0xFF1A2B47).withOpacity(0.75),
+                            fontSize: 14,
+                            fontWeight: FontWeight.w600,
                           ),
-                          SizedBox(height: 10,),
-                          Row(
-                            children: [
-                              Expanded(
-                                flex: 2,
-                                child: Text(
-                                  "24 сентября , сб",
-                                  style: TextStyle(
-                                    color: Color(0xFF1A2B47).withOpacity(0.75),
-                                    fontSize: 13,
-                                    fontWeight: FontWeight.w500,
-                                  ),
+                        ),
+                        const SizedBox(height: 10,),
+                        Row(
+                          children: [
+                            Expanded(
+                              flex: 2,
+                              child: Text(
+                                "24 сентября , сб",
+                                style: TextStyle(
+                                  color: const Color(0xFF1A2B47).withOpacity(0.75),
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.w500,
                                 ),
                               ),
-                              Expanded(
-                                flex: 1,
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      "4890₽",
-                                      style: TextStyle(
-                                        color: Color(0xFFACB5BE),
-                                        fontSize: 13,
-                                        fontWeight: FontWeight.w500,
-                                      ),
+                            ),
+                            Expanded(
+                              flex: 1,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  const Text(
+                                    "4890₽",
+                                    style: TextStyle(
+                                      color: Color(0xFFACB5BE),
+                                      fontSize: 13,
+                                      fontWeight: FontWeight.w500,
                                     ),
-                                    Radio(
-                                      activeColor: Color(0xFF005BFE),
-                                      value: "data",
-                                      fillColor: MaterialStateColor.resolveWith(
-                                              (states) => Color(0xFF005BFE)),
-                                      groupValue: transfersRadioValue,
-                                      onChanged: (value) {
-                                        setState(() {
-                                          transfersRadioValue = value.toString();
-                                        });
-                                      },
-                                    )
-                                  ],
-                                ),
-                              )
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              Expanded(
-                                flex: 2,
-                                child: Text(
-                                  "24 сентября , сб",
-                                  style: TextStyle(
-                                    color: Color(0xFF1A2B47).withOpacity(0.75),
-                                    fontSize: 13,
-                                    fontWeight: FontWeight.w500,
                                   ),
+                                  Radio(
+                                    activeColor: const Color(0xFF005BFE),
+                                    value: "data",
+                                    fillColor: MaterialStateColor.resolveWith(
+                                            (states) => const Color(0xFF005BFE)),
+                                    groupValue: transfersRadioValue,
+                                    onChanged: (value) {
+                                      setState(() {
+                                        transfersRadioValue = value.toString();
+                                      });
+                                    },
+                                  )
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Expanded(
+                              flex: 2,
+                              child: Text(
+                                "24 сентября , сб",
+                                style: TextStyle(
+                                  color: const Color(0xFF1A2B47).withOpacity(0.75),
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.w500,
                                 ),
                               ),
-                              Expanded(
-                                flex: 1,
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      "3090₽",
-                                      style: TextStyle(
-                                        color: Color(0xFFACB5BE),
-                                        fontSize: 13,
-                                        fontWeight: FontWeight.w500,
-                                      ),
+                            ),
+                            Expanded(
+                              flex: 1,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  const Text(
+                                    "3090₽",
+                                    style: TextStyle(
+                                      color: Color(0xFFACB5BE),
+                                      fontSize: 13,
+                                      fontWeight: FontWeight.w500,
                                     ),
-                                    Radio(
-                                      activeColor: Color(0xFF005BFE),
-                                      value: "data1",
-                                      fillColor: MaterialStateColor.resolveWith(
-                                              (states) => Color(0xFF005BFE)),
-                                      groupValue: transfersRadioValue,
-                                      onChanged: (value) {
-                                        setState(() {
-                                          transfersRadioValue = value.toString();
-                                        });
-                                      },
-                                    )
-                                  ],
-                                ),
-                              )
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              Expanded(
-                                flex: 2,
-                                child: Text(
-                                  "25 сентября , вс",
-                                  style: TextStyle(
-                                    color: Color(0xFF1A2B47).withOpacity(0.75),
-                                    fontSize: 13,
-                                    fontWeight: FontWeight.w500,
                                   ),
+                                  Radio(
+                                    activeColor: const Color(0xFF005BFE),
+                                    value: "data1",
+                                    fillColor: MaterialStateColor.resolveWith(
+                                            (states) => const Color(0xFF005BFE)),
+                                    groupValue: transfersRadioValue,
+                                    onChanged: (value) {
+                                      setState(() {
+                                        transfersRadioValue = value.toString();
+                                      });
+                                    },
+                                  )
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Expanded(
+                              flex: 2,
+                              child: Text(
+                                "25 сентября , вс",
+                                style: TextStyle(
+                                  color: const Color(0xFF1A2B47).withOpacity(0.75),
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.w500,
                                 ),
                               ),
-                              Expanded(
-                                flex: 1,
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      "2290₽",
-                                      style: TextStyle(
-                                        color: Color(0xFFACB5BE),
-                                        fontSize: 13,
-                                        fontWeight: FontWeight.w500,
-                                      ),
+                            ),
+                            Expanded(
+                              flex: 1,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  const Text(
+                                    "2290₽",
+                                    style: TextStyle(
+                                      color: Color(0xFFACB5BE),
+                                      fontSize: 13,
+                                      fontWeight: FontWeight.w500,
                                     ),
-                                    Radio(
-                                      activeColor: Color(0xFFACB5BE),
-                                      value: "data2",
-                                      fillColor: MaterialStateColor.resolveWith(
-                                              (states) => Color(0xFF005BFE)),
-                                      groupValue: transfersRadioValue,
-                                      onChanged: (value) {
-                                        setState(() {
-                                          transfersRadioValue = value.toString();
-                                        });
-                                      },
-                                    )
-                                  ],
-                                ),
-                              )
-                            ],
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                  builder: (_, collapsed, expanded) {
-                    return Expandable(
-                      collapsed: collapsed,
-                      expanded: expanded,
-                      theme: const ExpandableThemeData(
-                          crossFadePoint: 0),
-                    );
-                  },
+                                  ),
+                                  Radio(
+                                    activeColor: const Color(0xFFACB5BE),
+                                    value: "data2",
+                                    fillColor: MaterialStateColor.resolveWith(
+                                            (states) => const Color(0xFF005BFE)),
+                                    groupValue: transfersRadioValue,
+                                    onChanged: (value) {
+                                      setState(() {
+                                        transfersRadioValue = value.toString();
+                                      });
+                                    },
+                                  )
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
+                builder: (_, collapsed, expanded) {
+                  return Expandable(
+                    collapsed: collapsed,
+                    expanded: expanded,
+                    theme: const ExpandableThemeData(
+                        crossFadePoint: 0),
+                  );
+                },
               ),
             ),
           ],
@@ -1247,12 +1229,12 @@ class _TicketsFilterPageState extends State<TicketsFilterPage> {
                 Text(
                   "Пересадки",
                   style: TextStyle(
-                    color: Color(0xFF1A2B47).withOpacity(0.85),
+                    color: const Color(0xFF1A2B47).withOpacity(0.85),
                     fontSize: 16,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
-                Divider(color: Color(0xFF5E6D77),),
+                const Divider(color: Color(0xFF5E6D77),),
                 Row(
                   children: [
                     Expanded(
@@ -1260,7 +1242,7 @@ class _TicketsFilterPageState extends State<TicketsFilterPage> {
                       child: Text(
                         "Без пересадок",
                         style: TextStyle(
-                          color: Color(0xFF1A2B47).withOpacity(0.75),
+                          color: const Color(0xFF1A2B47).withOpacity(0.75),
                           fontSize: 13,
                           fontWeight: FontWeight.w500,
                         ),
@@ -1271,7 +1253,7 @@ class _TicketsFilterPageState extends State<TicketsFilterPage> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
+                          const Text(
                             "4890₽",
                             style: TextStyle(
                               color: Color(0xFFACB5BE),
@@ -1280,10 +1262,10 @@ class _TicketsFilterPageState extends State<TicketsFilterPage> {
                             ),
                           ),
                           Radio(
-                            activeColor: Color(0xFF005BFE),
+                            activeColor: const Color(0xFF005BFE),
                             value: "transfers",
                             fillColor: MaterialStateColor.resolveWith(
-                                    (states) => Color(0xFF005BFE)),
+                                    (states) => const Color(0xFF005BFE)),
                             groupValue: transfersRadioValue,
                             onChanged: (value) {
                               setState(() {
@@ -1303,7 +1285,7 @@ class _TicketsFilterPageState extends State<TicketsFilterPage> {
                       child: Text(
                         "1 пересадка",
                         style: TextStyle(
-                          color: Color(0xFF1A2B47).withOpacity(0.75),
+                          color: const Color(0xFF1A2B47).withOpacity(0.75),
                           fontSize: 13,
                           fontWeight: FontWeight.w500,
                         ),
@@ -1314,7 +1296,7 @@ class _TicketsFilterPageState extends State<TicketsFilterPage> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
+                          const Text(
                             "3090₽",
                             style: TextStyle(
                               color: Color(0xFFACB5BE),
@@ -1323,10 +1305,10 @@ class _TicketsFilterPageState extends State<TicketsFilterPage> {
                             ),
                           ),
                           Radio(
-                            activeColor: Color(0xFF005BFE),
+                            activeColor: const Color(0xFF005BFE),
                             value: "transfers1",
                             fillColor: MaterialStateColor.resolveWith(
-                                    (states) => Color(0xFF005BFE)),
+                                    (states) => const Color(0xFF005BFE)),
                             groupValue: transfersRadioValue,
                             onChanged: (value) {
                               setState(() {
@@ -1346,7 +1328,7 @@ class _TicketsFilterPageState extends State<TicketsFilterPage> {
                       child: Text(
                         "2 пересадка",
                         style: TextStyle(
-                          color: Color(0xFF1A2B47).withOpacity(0.75),
+                          color: const Color(0xFF1A2B47).withOpacity(0.75),
                           fontSize: 13,
                           fontWeight: FontWeight.w500,
                         ),
@@ -1357,7 +1339,7 @@ class _TicketsFilterPageState extends State<TicketsFilterPage> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
+                          const Text(
                             "2290₽",
                             style: TextStyle(
                               color: Color(0xFFACB5BE),
@@ -1366,10 +1348,10 @@ class _TicketsFilterPageState extends State<TicketsFilterPage> {
                             ),
                           ),
                           Radio(
-                            activeColor: Color(0xFFACB5BE),
+                            activeColor: const Color(0xFFACB5BE),
                             value: "transfers2",
                             fillColor: MaterialStateColor.resolveWith(
-                                    (states) => Color(0xFF005BFE)),
+                                    (states) => const Color(0xFF005BFE)),
                             groupValue: transfersRadioValue,
                             onChanged: (value) {
                               setState(() {
@@ -1384,7 +1366,7 @@ class _TicketsFilterPageState extends State<TicketsFilterPage> {
                 ),
               ],
             ),
-            SizedBox(height: 10,),
+            const SizedBox(height: 10,),
             Row(
               children: [
                 Expanded(
@@ -1392,7 +1374,7 @@ class _TicketsFilterPageState extends State<TicketsFilterPage> {
                   child: Text(
                     "Длительность пересадки",
                     style: TextStyle(
-                      color: Color(0xFF1A2B47).withOpacity(0.75),
+                      color: const Color(0xFF1A2B47).withOpacity(0.75),
                       fontSize: 13,
                       fontWeight: FontWeight.w500,
                     ),
@@ -1401,7 +1383,7 @@ class _TicketsFilterPageState extends State<TicketsFilterPage> {
                 Expanded(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
+                    children: const [
                       Text(
                         "От 2ч до 42ч",
                         style: TextStyle(
@@ -1415,12 +1397,12 @@ class _TicketsFilterPageState extends State<TicketsFilterPage> {
                 )
               ],
             ),
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
             Column(
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
+                  children: const [
                     Text(
                       "4ч",
                       style: TextStyle(
@@ -1451,13 +1433,13 @@ class _TicketsFilterPageState extends State<TicketsFilterPage> {
                   ],
                 ),
                 SliderTheme(
-                  data: SliderThemeData(
+                  data: const SliderThemeData(
                     trackHeight: 1
                   ),
                   child: RangeSlider(
                     values: currentRangeValues,
-                    activeColor: Color(0xFf005BFE),
-                    inactiveColor: Color(0xFFDFE2E6),
+                    activeColor: const Color(0xFf005BFE),
+                    inactiveColor: const Color(0xFFDFE2E6),
                     max: 100,
                     divisions: 5,
                     labels: RangeLabels(
@@ -1473,7 +1455,7 @@ class _TicketsFilterPageState extends State<TicketsFilterPage> {
                 ),
               ],
             ),
-            SizedBox(height: 15,),
+            const SizedBox(height: 15,),
             _buildSwitch("Без смены аэропорта", !switchNoAirportChange, 16),
             _buildSwitch("Без ночных пересадок", switchNoAirportChange, 16),
           ],
@@ -1489,15 +1471,15 @@ class _TicketsFilterPageState extends State<TicketsFilterPage> {
                     title,
                     style: TextStyle(
                       fontSize: fontSize,
-                      color: Color(0xFF1A2B47).withOpacity(0.75),
+                      color: const Color(0xFF1A2B47).withOpacity(0.75),
                       fontWeight: FontWeight.w500,),
                   ),
                 ),
                 Transform.scale(
                   scale: 0.9,
                   child: CupertinoSwitch(
-                    activeColor: Color(0xFF005BFE),
-                    trackColor: Color(0xFF1A2B47).withOpacity(0.25),
+                    activeColor: const Color(0xFF005BFE),
+                    trackColor: const Color(0xFF1A2B47).withOpacity(0.25),
                     value: isActive,
                     onChanged: (value) {
                       setState(() {

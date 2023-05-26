@@ -1,5 +1,4 @@
 import 'package:bron_hotel/pages/tours/tourist-data-page.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class FlightSelectionPage extends StatefulWidget {
@@ -23,13 +22,13 @@ class _FlightSelectionPageState extends State<FlightSelectionPage> {
               Navigator.pop(context);
             });
           },
-          icon: Icon(Icons.arrow_back_ios, color: Colors.white,),
+          icon: const Icon(Icons.arrow_back_ios, color: Colors.white,),
         ),
-        backgroundColor: Color(0xFF1A2B47),
+        backgroundColor: const Color(0xFF1A2B47),
         centerTitle: true,
         title: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
+          children: const [
             Text(
               "Выбор перелета",
               style: TextStyle(
@@ -51,20 +50,16 @@ class _FlightSelectionPageState extends State<FlightSelectionPage> {
         ),
         actions: [
           IconButton(
-              onPressed: (){
-                setState(() {
-                  //Navigator.push(context, MaterialPageRoute(builder: (context) => TicketsFilterPage()));
-                });
-              },
+              onPressed: null,
               icon: Image.asset("assets/icons/share-appbar.png")
           )
         ],
       ),
       body: ListView(
-        padding: EdgeInsets.symmetric(vertical: 20),
+        padding: const EdgeInsets.symmetric(vertical: 20),
         children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.0),
             child: Text(
               "Выберите перелет и начните\nбронирование тура онлайн",
               style: TextStyle(
@@ -74,14 +69,14 @@ class _FlightSelectionPageState extends State<FlightSelectionPage> {
               ),
             ),
           ),
-          SizedBox(height: 10,),
-          Divider(),
+          const SizedBox(height: 10,),
+          const Divider(),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
+                const Text(
                   "Номер: 2962787619",
                   style: TextStyle(
                       color: Colors.black,
@@ -90,16 +85,16 @@ class _FlightSelectionPageState extends State<FlightSelectionPage> {
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                   decoration: BoxDecoration(
-                    color: Color(0xFF1A2B47).withOpacity(0.17),
+                    color: const Color(0xFF1A2B47).withOpacity(0.17),
                     borderRadius: BorderRadius.circular(13)
                   ),
                   child: Center(
                     child: Text(
                       "Без визы",
                       style: TextStyle(
-                          color: Color(0xFF1A2B47).withOpacity(0.85),
+                          color: const Color(0xFF1A2B47).withOpacity(0.85),
                           fontWeight: FontWeight.w400,
                           fontSize: 12
                       ),
@@ -109,18 +104,18 @@ class _FlightSelectionPageState extends State<FlightSelectionPage> {
               ],
             ),
           ),
-          SizedBox(height: 10,),
+          const SizedBox(height: 10,),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Column(
               children: [
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 12, vertical: 10 ),
+                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10 ),
                   decoration: BoxDecoration(
-                    color: Color(0xFFBBB472).withOpacity(0.17),
+                    color: const Color(0xFFBBB472).withOpacity(0.17),
                     borderRadius: BorderRadius.circular(10)
                   ),
-                  child: Text(
+                  child: const Text(
                     "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard ",
                     style: TextStyle(
                         color: Colors.black,
@@ -129,25 +124,25 @@ class _FlightSelectionPageState extends State<FlightSelectionPage> {
                     ),
                   )
                 ),
-                SizedBox(height: 5,),
+                const SizedBox(height: 5,),
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 12, vertical: 10 ),
+                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10 ),
                   decoration: BoxDecoration(
-                    color: Color(0xFFBBB472).withOpacity(0.17),
+                    color: const Color(0xFFBBB472).withOpacity(0.17),
                     borderRadius: BorderRadius.circular(10)
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       buildText("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard and typesetting industry. Lorem Ipsum has been the industry's standard "),
-                      SizedBox(height: 10,),
+                      const SizedBox(height: 10,),
                       GestureDetector(
                         onTap: (){
                           setState(() {
                             readMore = !readMore;
                           });
                         },
-                        child: Text(
+                        child: const Text(
                           "Показать больше",
                           style: TextStyle(
                               decoration: TextDecoration.underline,
@@ -163,12 +158,12 @@ class _FlightSelectionPageState extends State<FlightSelectionPage> {
               ],
             ),
           ),
-          SizedBox(height: 10,),
+          const SizedBox(height: 10,),
           Container(
             height: 171,
             width: double.infinity,
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            decoration: BoxDecoration(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            decoration: const BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage("assets/images/tours-image.png"),
                     fit: BoxFit.cover
@@ -183,22 +178,22 @@ class _FlightSelectionPageState extends State<FlightSelectionPage> {
                     Container(
                       height: 35,
                       width: 35,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           color: Color(0xFFFA5636),
                           shape: BoxShape.circle
                       ),
-                      child: Center(
+                      child: const Center(
                         child: Text("7,4", style: TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.w500),),
                       ),
                     ),
                     Container(
                       height: 35,
                       width: 35,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           color: Color(0xFF005BFE),
                           shape: BoxShape.circle
                       ),
-                      child: Center(
+                      child: const Center(
                         child: Text("%", style: TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.w500),),
                       ),
                     ),
@@ -211,7 +206,7 @@ class _FlightSelectionPageState extends State<FlightSelectionPage> {
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Expanded(
+                        const Expanded(
                           child: Text(
                             "Beach Spa Resort",
                             style: TextStyle(
@@ -223,7 +218,7 @@ class _FlightSelectionPageState extends State<FlightSelectionPage> {
                         ),
                         Expanded(
                           child: Row(
-                            children: [
+                            children: const [
                               Text(
                                 "4,97",
                                 style: TextStyle(
@@ -239,7 +234,7 @@ class _FlightSelectionPageState extends State<FlightSelectionPage> {
                       ],
                     ),
                     Row(
-                      children: [
+                      children: const [
                         Icon(Icons.location_on, color: Color(0xFFACB5BE),),
                         Text(
                           "Мальдивы",
@@ -256,13 +251,13 @@ class _FlightSelectionPageState extends State<FlightSelectionPage> {
               ],
             ),
           ),
-          SizedBox(height: 10,),
+          const SizedBox(height: 10,),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Column(
               children: [
                 Row(
-                  children: [
+                  children: const [
                     Icon(Icons.circle, color: Color(0xFF99BEFF), size: 7,),
                     SizedBox(width: 5,),
                     Expanded(
@@ -278,9 +273,9 @@ class _FlightSelectionPageState extends State<FlightSelectionPage> {
 
                   ],
                 ),
-                SizedBox(height: 10,),
+                const SizedBox(height: 10,),
                 Row(
-                  children: [
+                  children: const [
                     Icon(Icons.circle, color: Color(0xFF99BEFF), size: 7,),
                     SizedBox(width: 5,),
                     Expanded(
@@ -296,9 +291,9 @@ class _FlightSelectionPageState extends State<FlightSelectionPage> {
 
                   ],
                 ),
-                SizedBox(height: 10,),
+                const SizedBox(height: 10,),
                 Row(
-                  children: [
+                  children: const [
                     Icon(Icons.circle, color: Color(0xFF99BEFF), size: 7,),
                     SizedBox(width: 5,),
                     Expanded(
@@ -314,9 +309,9 @@ class _FlightSelectionPageState extends State<FlightSelectionPage> {
 
                   ],
                 ),
-                SizedBox(height: 10,),
+                const SizedBox(height: 10,),
                 Row(
-                  children: [
+                  children: const [
                     Icon(Icons.circle, color: Color(0xFF99BEFF), size: 7,),
                     SizedBox(width: 5,),
                     Expanded(
@@ -335,7 +330,7 @@ class _FlightSelectionPageState extends State<FlightSelectionPage> {
               ],
             ),
           ),
-          SizedBox(height: 20,),
+          const SizedBox(height: 20,),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Row(
@@ -343,9 +338,9 @@ class _FlightSelectionPageState extends State<FlightSelectionPage> {
                 Expanded(
                   child: Container(
                     height: MediaQuery.of(context).size.height / 22,
-                    padding: EdgeInsets.symmetric(horizontal: 10),
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
                     decoration: BoxDecoration(
-                      color: Color(0xFFF5F5F5),
+                      color: const Color(0xFFF5F5F5),
                       borderRadius: BorderRadius.circular(5)
                     ),
                     child: Row(
@@ -354,34 +349,34 @@ class _FlightSelectionPageState extends State<FlightSelectionPage> {
                         Text(
                           "23 июл",
                           style: TextStyle(
-                              color: Color(0xFF1A2B47).withOpacity(0.85),
+                              color: const Color(0xFF1A2B47).withOpacity(0.85),
                               fontWeight: FontWeight.w500,
                               fontSize: 12
                           ),
                         ),
-                        VerticalDivider(),
+                        const VerticalDivider(),
                         Text(
                           "30 июл ",
                           style: TextStyle(
-                              color: Color(0xFF1A2B47).withOpacity(0.85),
+                              color: const Color(0xFF1A2B47).withOpacity(0.85),
                               fontWeight: FontWeight.w500,
                               fontSize: 12
                           ),
                         ),
-                        VerticalDivider(),
+                        const VerticalDivider(),
                         Text(
                           "7 ночей",
                           style: TextStyle(
-                              color: Color(0xFF1A2B47).withOpacity(0.85),
+                              color: const Color(0xFF1A2B47).withOpacity(0.85),
                               fontWeight: FontWeight.w500,
                               fontSize: 12
                           ),
                         ),
-                        VerticalDivider(),
+                        const VerticalDivider(),
                         Text(
                           "1 человек",
                           style: TextStyle(
-                              color: Color(0xFF1A2B47).withOpacity(0.85),
+                              color: const Color(0xFF1A2B47).withOpacity(0.85),
                               fontWeight: FontWeight.w500,
                               fontSize: 12
                           ),
@@ -391,10 +386,10 @@ class _FlightSelectionPageState extends State<FlightSelectionPage> {
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(10),
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
-                    color: Color(0xFF005BFE),
+                    color: const Color(0xFF005BFE),
                     borderRadius: BorderRadius.circular(5),
                   ),
                   child: Center(
@@ -405,7 +400,7 @@ class _FlightSelectionPageState extends State<FlightSelectionPage> {
               ],
             ),
           ),
-          SizedBox(height: 20,),
+          const SizedBox(height: 20,),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Column(
@@ -414,14 +409,14 @@ class _FlightSelectionPageState extends State<FlightSelectionPage> {
                 Text(
                   "В стоимость тура входит",
                   style: TextStyle(
-                      color: Color(0xFF1A2B47).withOpacity(0.85),
+                      color: const Color(0xFF1A2B47).withOpacity(0.85),
                       fontWeight: FontWeight.w600,
                       fontSize: 16
                   ),
                 ),
-                SizedBox(height: 10,),
+                const SizedBox(height: 10,),
                 Row(
-                  children: [
+                  children: const [
                     Icon(Icons.circle, color: Color(0xFF1A2B47), size: 7,),
                     SizedBox(width: 5,),
                     Expanded(
@@ -437,9 +432,9 @@ class _FlightSelectionPageState extends State<FlightSelectionPage> {
 
                   ],
                 ),
-                SizedBox(height: 10,),
+                const SizedBox(height: 10,),
                 Row(
-                  children: [
+                  children: const [
                     Icon(Icons.circle, color: Color(0xFF1A2B47), size: 7,),
                     SizedBox(width: 5,),
                     Expanded(
@@ -455,9 +450,9 @@ class _FlightSelectionPageState extends State<FlightSelectionPage> {
 
                   ],
                 ),
-                SizedBox(height: 10,),
+                const SizedBox(height: 10,),
                 Row(
-                  children: [
+                  children: const [
                     Icon(Icons.circle, color: Color(0xFF1A2B47), size: 7,),
                     SizedBox(width: 5,),
                     Expanded(
@@ -473,9 +468,9 @@ class _FlightSelectionPageState extends State<FlightSelectionPage> {
 
                   ],
                 ),
-                SizedBox(height: 10,),
+                const SizedBox(height: 10,),
                 Row(
-                  children: [
+                  children: const [
                     Icon(Icons.circle, color: Color(0xFF1A2B47), size: 7,),
                     SizedBox(width: 5,),
                     Expanded(
@@ -491,16 +486,16 @@ class _FlightSelectionPageState extends State<FlightSelectionPage> {
 
                   ],
                 ),
-                SizedBox(height: 10,),
+                const SizedBox(height: 10,),
                 Row(
                   children: [
-                    Icon(Icons.circle, color: Color(0xFF1A2B47), size: 7,),
-                    SizedBox(width: 5,),
+                    const Icon(Icons.circle, color: Color(0xFF1A2B47), size: 7,),
+                    const SizedBox(width: 5,),
                     Expanded(
                       child: Text(
                         "Медстраховка отсуствует",
                         style: TextStyle(
-                            color: Color(0xFFD80027).withOpacity(0.6),
+                            color: const Color(0xFFD80027).withOpacity(0.6),
                             fontWeight: FontWeight.w500,
                             fontSize: 12
                         ),
@@ -512,7 +507,7 @@ class _FlightSelectionPageState extends State<FlightSelectionPage> {
               ],
             ),
           ),
-          SizedBox(height: 20,),
+          const SizedBox(height: 20,),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Column(
@@ -521,16 +516,16 @@ class _FlightSelectionPageState extends State<FlightSelectionPage> {
                 Text(
                   "Все рейсы с этим туром",
                   style: TextStyle(
-                      color: Color(0xFF1A2B47).withOpacity(0.85),
+                      color: const Color(0xFF1A2B47).withOpacity(0.85),
                       fontWeight: FontWeight.w600,
                       fontSize: 16
                   ),
                 ),
-                SizedBox(height: 15,),
+                const SizedBox(height: 15,),
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
                   decoration: BoxDecoration(
-                    color: Color(0xFFF5F5F5),
+                    color: const Color(0xFFF5F5F5),
                     borderRadius: BorderRadius.circular(15)
                   ),
                   child: Column(
@@ -544,18 +539,18 @@ class _FlightSelectionPageState extends State<FlightSelectionPage> {
                               Row(
                                 children: [
                                   Image.asset("assets/icons/shop-tours.png"),
-                                  SizedBox(width: 5,),
+                                  const SizedBox(width: 5,),
                                   Text(
                                     "7kg",
                                     style: TextStyle(
-                                        color: Color(0xFF1A2B47).withOpacity(0.85),
+                                        color: const Color(0xFF1A2B47).withOpacity(0.85),
                                         fontWeight: FontWeight.w500,
                                         fontSize: 12
                                     ),
                                   ),
                                 ],
                               ),
-                              Text(
+                              const Text(
                                 "Без пересадок",
                                 style: TextStyle(
                                     color: Color(0xFF005BFE),
@@ -567,14 +562,14 @@ class _FlightSelectionPageState extends State<FlightSelectionPage> {
 
                             ],
                           ),
-                          SizedBox(height: 10,),
+                          const SizedBox(height: 10,),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
                                 "13:45",
                                 style: TextStyle(
-                                    color: Color(0xFF1A2B47).withOpacity(0.75),
+                                    color: const Color(0xFF1A2B47).withOpacity(0.75),
                                     fontWeight: FontWeight.w600,
                                     fontSize: 16
                                 ),
@@ -582,7 +577,7 @@ class _FlightSelectionPageState extends State<FlightSelectionPage> {
                               Text(
                                 "3ч 30мВ пути ",
                                 style: TextStyle(
-                                    color: Color(0xFF1A2B47).withOpacity(0.75),
+                                    color: const Color(0xFF1A2B47).withOpacity(0.75),
                                     fontWeight: FontWeight.w400,
                                     fontSize: 14
                                 ),
@@ -590,7 +585,7 @@ class _FlightSelectionPageState extends State<FlightSelectionPage> {
                               Text(
                                 "17:45",
                                 style: TextStyle(
-                                    color: Color(0xFF1A2B47).withOpacity(0.75),
+                                    color: const Color(0xFF1A2B47).withOpacity(0.75),
                                     fontWeight: FontWeight.w600,
                                     fontSize: 16
                                 ),
@@ -599,7 +594,7 @@ class _FlightSelectionPageState extends State<FlightSelectionPage> {
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
+                            children: const [
                               Text(
                                 "MOW",
                                 style: TextStyle(
@@ -621,7 +616,7 @@ class _FlightSelectionPageState extends State<FlightSelectionPage> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text(
+                              const Text(
                                 "24 авг, ср",
                                 style: TextStyle(
                                     color: Color(0xFF5E6D77),
@@ -630,7 +625,7 @@ class _FlightSelectionPageState extends State<FlightSelectionPage> {
                                 ),
                               ),
                               Image.asset("assets/icons/pilot-two-tours.png"),
-                              Text(
+                              const Text(
                                 "25 авг, чт",
                                 style: TextStyle(
                                     color: Color(0xFF5E6D77),
@@ -643,9 +638,9 @@ class _FlightSelectionPageState extends State<FlightSelectionPage> {
                           ),
                         ],
                       ),
-                      SizedBox(height: 15,),
-                      Divider(),
-                      SizedBox(height: 15,),
+                      const SizedBox(height: 15,),
+                      const Divider(),
+                      const SizedBox(height: 15,),
                       Column(
                         children: [
                           Row(
@@ -654,18 +649,18 @@ class _FlightSelectionPageState extends State<FlightSelectionPage> {
                               Row(
                                 children: [
                                   Image.asset("assets/icons/shop-tours.png"),
-                                  SizedBox(width: 5,),
+                                  const SizedBox(width: 5,),
                                   Text(
                                     "7kg",
                                     style: TextStyle(
-                                        color: Color(0xFF1A2B47).withOpacity(0.85),
+                                        color: const Color(0xFF1A2B47).withOpacity(0.85),
                                         fontWeight: FontWeight.w500,
                                         fontSize: 12
                                     ),
                                   ),
                                 ],
                               ),
-                              Text(
+                              const Text(
                                 "Без пересадок",
                                 style: TextStyle(
                                     color: Color(0xFF005BFE),
@@ -677,14 +672,14 @@ class _FlightSelectionPageState extends State<FlightSelectionPage> {
 
                             ],
                           ),
-                          SizedBox(height: 10,),
+                          const SizedBox(height: 10,),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
                                 "13:45",
                                 style: TextStyle(
-                                    color: Color(0xFF1A2B47).withOpacity(0.75),
+                                    color: const Color(0xFF1A2B47).withOpacity(0.75),
                                     fontWeight: FontWeight.w600,
                                     fontSize: 16
                                 ),
@@ -692,7 +687,7 @@ class _FlightSelectionPageState extends State<FlightSelectionPage> {
                               Text(
                                 "3ч 30мВ пути ",
                                 style: TextStyle(
-                                    color: Color(0xFF1A2B47).withOpacity(0.75),
+                                    color: const Color(0xFF1A2B47).withOpacity(0.75),
                                     fontWeight: FontWeight.w400,
                                     fontSize: 14
                                 ),
@@ -700,7 +695,7 @@ class _FlightSelectionPageState extends State<FlightSelectionPage> {
                               Text(
                                 "17:45",
                                 style: TextStyle(
-                                    color: Color(0xFF1A2B47).withOpacity(0.75),
+                                    color: const Color(0xFF1A2B47).withOpacity(0.75),
                                     fontWeight: FontWeight.w600,
                                     fontSize: 16
                                 ),
@@ -709,7 +704,7 @@ class _FlightSelectionPageState extends State<FlightSelectionPage> {
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
+                            children: const [
                               Text(
                                 "MOW",
                                 style: TextStyle(
@@ -731,7 +726,7 @@ class _FlightSelectionPageState extends State<FlightSelectionPage> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text(
+                              const Text(
                                 "24 авг, ср",
                                 style: TextStyle(
                                     color: Color(0xFF5E6D77),
@@ -740,7 +735,7 @@ class _FlightSelectionPageState extends State<FlightSelectionPage> {
                                 ),
                               ),
                               Image.asset("assets/icons/pilot-two-tours.png"),
-                              Text(
+                              const Text(
                                 "25 авг, чт",
                                 style: TextStyle(
                                     color: Color(0xFF5E6D77),
@@ -751,11 +746,11 @@ class _FlightSelectionPageState extends State<FlightSelectionPage> {
 
                             ],
                           ),
-                          SizedBox(height: 10,),
+                          const SizedBox(height: 10,),
                         ],
                       ),
-                      SizedBox(height: 20,),
-                      Text(
+                      const SizedBox(height: 20,),
+                      const Text(
                         "1200\$",
                         style: TextStyle(
                             color: Color(0xFF1A2B47),
@@ -763,20 +758,20 @@ class _FlightSelectionPageState extends State<FlightSelectionPage> {
                             fontSize: 20
                         ),
                       ),
-                      SizedBox(height: 10,),
+                      const SizedBox(height: 10,),
                       GestureDetector(
                         onTap: (){
                           setState(() {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => TouristDataPage()));
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => const TouristDataPage()));
                           });
                         },
                         child: Container(
-                          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                           decoration: BoxDecoration(
-                            color: Color(0xFF005BFE),
+                            color: const Color(0xFF005BFE),
                             borderRadius: BorderRadius.circular(15)
                           ),
-                          child: Center(
+                          child: const Center(
                             child: Text(
                               "Начать бронирование\nс этими рейсами",
                               textAlign: TextAlign.center,
@@ -806,7 +801,7 @@ class _FlightSelectionPageState extends State<FlightSelectionPage> {
     return Text(
       text,
       maxLines: lines,
-      style: TextStyle(
+      style: const TextStyle(
           color: Colors.black,
           fontWeight: FontWeight.w400,
           fontSize: 12

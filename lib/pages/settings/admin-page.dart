@@ -1,4 +1,3 @@
-import 'package:bron_hotel/pages/about/about-us-mission.dart';
 import 'package:bron_hotel/pages/about/support-page.dart';
 import 'package:bron_hotel/pages/settings/%D1%81ustomer-page.dart';
 import 'package:bron_hotel/pages/settings/bilaton-blog-page.dart';
@@ -6,7 +5,6 @@ import 'package:bron_hotel/pages/settings/currency-page.dart';
 import 'package:bron_hotel/pages/settings/history-of-booking-page.dart';
 import 'package:bron_hotel/pages/settings/profile-page.dart';
 import 'package:bron_hotel/pages/settings/vendor-setting-page.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'language-page.dart';
@@ -23,9 +21,9 @@ class _AdminPageState extends State<AdminPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
-        padding: EdgeInsets.symmetric(vertical: 20),
+        padding: const EdgeInsets.symmetric(vertical: 20),
         children: [
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           ListTile(
@@ -33,9 +31,9 @@ class _AdminPageState extends State<AdminPage> {
               height: 50,
               width: 50,
               alignment: Alignment.center,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   color: Color(0xFF1A2B47), shape: BoxShape.circle),
-              child: Text(
+              child: const Text(
                 "C",
                 style: TextStyle(
                     color: Colors.white,
@@ -46,11 +44,11 @@ class _AdminPageState extends State<AdminPage> {
             title: Row(
               children: [
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+                  padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
                   decoration: BoxDecoration(
-                      color: Color(0xFf005BFE),
+                      color: const Color(0xFf005BFE),
                       borderRadius: BorderRadius.circular(20)),
-                  child: Text(
+                  child: const Text(
                     "System admin",
                     style: TextStyle(
                         color: Colors.white,
@@ -60,7 +58,7 @@ class _AdminPageState extends State<AdminPage> {
                 ),
               ],
             ),
-            subtitle: Text(
+            subtitle: const Text(
               "SvetaIsaeva89@mail.ru",
               style: TextStyle(
                   color: Color(0xFF005BFE),
@@ -68,7 +66,7 @@ class _AdminPageState extends State<AdminPage> {
                   fontWeight: FontWeight.w400),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 30,
           ),
           Row(
@@ -77,20 +75,20 @@ class _AdminPageState extends State<AdminPage> {
               GestureDetector(
                 onTap: (){
                   setState(() {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => VendorSettingPage()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const VendorSettingPage()));
                   });
                 },
                 child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                   decoration: BoxDecoration(
-                    color: Color(0xFF005BFE).withOpacity(0.03),
+                    color: const Color(0xFF005BFE).withOpacity(0.03),
                     borderRadius: BorderRadius.circular(30),
                     boxShadow: [
                       BoxShadow(
                         blurRadius: 2,
                         spreadRadius: 0,
-                        offset: Offset(0,1),
-                        color: Color(0xFF5F90F3).withOpacity(0.05)
+                        offset: const Offset(0,1),
+                        color: const Color(0xFF5F90F3).withOpacity(0.05)
                       )
                     ]
                   ),
@@ -99,24 +97,24 @@ class _AdminPageState extends State<AdminPage> {
                   ),
                 ),
               ),
-              SizedBox(width: 10,),
+              const SizedBox(width: 10,),
               GestureDetector(
                 onTap: (){
                   setState(() {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => CustomerPage()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const CustomerPage()));
                   });
                 },
                 child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                   decoration: BoxDecoration(
-                    color: Color(0xFF005BFE).withOpacity(0.03),
+                    color: const Color(0xFF005BFE).withOpacity(0.03),
                     borderRadius: BorderRadius.circular(30),
                     boxShadow: [
                       BoxShadow(
                         blurRadius: 2,
                         spreadRadius: 0,
-                        offset: Offset(0,1),
-                        color: Color(0xFF5F90F3).withOpacity(0.05)
+                        offset: const Offset(0,1),
+                        color: const Color(0xFF5F90F3).withOpacity(0.05)
                       )
                     ]
                   ),
@@ -125,24 +123,24 @@ class _AdminPageState extends State<AdminPage> {
                   ),
                 ),
               ),
-              SizedBox(width: 10,),
+              const SizedBox(width: 10,),
               GestureDetector(
                 onTap: (){
                   setState(() {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => ProfilePage()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const ProfilePage()));
                   });
                 },
                 child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                   decoration: BoxDecoration(
-                    color: Color(0xFF005BFE).withOpacity(0.03),
+                    color: const Color(0xFF005BFE).withOpacity(0.03),
                     borderRadius: BorderRadius.circular(30),
                     boxShadow: [
                       BoxShadow(
                         blurRadius: 2,
                         spreadRadius: 0,
-                        offset: Offset(0,1),
-                        color: Color(0xFF5F90F3).withOpacity(0.05)
+                        offset: const Offset(0,1),
+                        color: const Color(0xFF5F90F3).withOpacity(0.05)
                       )
                     ]
                   ),
@@ -168,16 +166,16 @@ class _AdminPageState extends State<AdminPage> {
                     Container(
                       width: 5,
                       height: 40,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           color: Color(0xFF005BFE),
                           borderRadius: BorderRadius.only(
                               topRight: Radius.circular(3),
                               bottomRight: Radius.circular(3))),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     ),
-                    Text(
+                    const Text(
                       "Блог сообщества",
                       style: TextStyle(
                           color: Color(0xFF005BFE),
@@ -186,8 +184,8 @@ class _AdminPageState extends State<AdminPage> {
                     ),
                   ],
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
                   child: Divider(
                     color: Color(0xFFE2E2E2),
                   ),
@@ -198,7 +196,7 @@ class _AdminPageState extends State<AdminPage> {
           ListTile(
             onTap: (){
               setState(() {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => HistoryOfBookingPage()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const HistoryOfBookingPage()));
               });
             },
             contentPadding: EdgeInsets.zero,
@@ -208,10 +206,10 @@ class _AdminPageState extends State<AdminPage> {
                 Row(
                   children: [
                     Container(),
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     ),
-                    Text(
+                    const Text(
                       "История бронирования",
                       style: TextStyle(
                           color: Color(0xFF1A2B47),
@@ -220,11 +218,11 @@ class _AdminPageState extends State<AdminPage> {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 5,
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
                   child: Divider(
                     color: Color(0xFFE2E2E2),
                   ),
@@ -240,10 +238,10 @@ class _AdminPageState extends State<AdminPage> {
                 Row(
                   children: [
                     Container(),
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     ),
-                    Text(
+                    const Text(
                       "Избранные",
                       style: TextStyle(
                           color: Color(0xFF1A2B47),
@@ -252,11 +250,11 @@ class _AdminPageState extends State<AdminPage> {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 5,
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
                   child: Divider(
                     color: Color(0xFFE2E2E2),
                   ),
@@ -267,7 +265,7 @@ class _AdminPageState extends State<AdminPage> {
           ListTile(
             onTap: (){
               setState(() {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => LanguagePage()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const LanguagePage()));
               });
             },
             contentPadding: EdgeInsets.zero,
@@ -277,10 +275,10 @@ class _AdminPageState extends State<AdminPage> {
                 Row(
                   children: [
                     Container(),
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     ),
-                    Text(
+                    const Text(
                       "Язык",
                       style: TextStyle(
                           color: Color(0xFF1A2B47),
@@ -289,11 +287,11 @@ class _AdminPageState extends State<AdminPage> {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 5,
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
                   child: Divider(
                     color: Color(0xFFE2E2E2),
                   ),
@@ -304,7 +302,7 @@ class _AdminPageState extends State<AdminPage> {
           ListTile(
             onTap: (){
               setState(() {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => CurrencyPage()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const CurrencyPage()));
               });
             },
             contentPadding: EdgeInsets.zero,
@@ -314,10 +312,10 @@ class _AdminPageState extends State<AdminPage> {
                 Row(
                   children: [
                     Container(),
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     ),
-                    Text(
+                    const Text(
                       "Валюта",
                       style: TextStyle(
                           color: Color(0xFF1A2B47),
@@ -326,11 +324,11 @@ class _AdminPageState extends State<AdminPage> {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 5,
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
                   child: Divider(
                     color: Color(0xFFE2E2E2),
                   ),
@@ -350,14 +348,14 @@ class _AdminPageState extends State<AdminPage> {
                 Row(
                   children: [
                     Container(),
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     ),
                     Image.asset("assets/icons/reference.png"),
-                    SizedBox(
+                    const SizedBox(
                       width: 5,
                     ),
-                    Text(
+                    const Text(
                       "Справка",
                       style: TextStyle(
                           color: Color(0xFF1A2B47),
@@ -366,11 +364,11 @@ class _AdminPageState extends State<AdminPage> {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 5,
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
                   child: Divider(color: Color(0xFFE2E2E2)),
                 )
               ],
@@ -383,14 +381,14 @@ class _AdminPageState extends State<AdminPage> {
                 Row(
                   children: [
                     Container(),
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     ),
                     Image.asset("assets/icons/exit.png"),
-                    SizedBox(
+                    const SizedBox(
                       width: 15,
                     ),
-                    Text(
+                    const Text(
                       "Выйти",
                       style: TextStyle(
                           color: Color(0xFF1A2B47),

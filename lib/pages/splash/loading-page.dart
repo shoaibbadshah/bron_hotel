@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../home.dart';
@@ -19,13 +18,13 @@ class _LoadingPageState extends State<LoadingPage> {
 
   void navigateToHome() async {
     await Future.delayed(const Duration(milliseconds: 500), () {});
-    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const Home()));
+    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) =>  Home()));
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF1A2B47),
+      backgroundColor: const Color(0xFF1A2B47),
       body: Center(
         child: Image.asset("assets/icons/loading-icons.png"),
       ),

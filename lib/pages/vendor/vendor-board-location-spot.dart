@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class VendorBoardLocationSpot extends StatefulWidget {
@@ -17,13 +16,13 @@ class _VendorBoardLocationSpotState extends State<VendorBoardLocationSpot> {
       children: [
         Container(
           width: MediaQuery.of(context).size.width,
-          color: Color(0xFF1A2B47),
+          color: const Color(0xFF1A2B47),
           child:  Column(
             children: [
-              SizedBox(height: 20,),
+              const SizedBox(height: 20,),
               Image.asset("assets/icons/pilot-vendor.png"),
-              SizedBox(height: 20,),
-              Text(
+              const SizedBox(height: 20,),
+              const Text(
                 "Is the pin in the\nright spot?",
                 textAlign: TextAlign.center,
                 style: TextStyle(
@@ -32,15 +31,15 @@ class _VendorBoardLocationSpotState extends State<VendorBoardLocationSpot> {
                   fontWeight: FontWeight.w700,
                 ),
               ),
-              SizedBox(height: 40,),
+              const SizedBox(height: 40,),
             ],
           ),
         ),
         Container(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
-          padding: EdgeInsets.symmetric(horizontal: 20),
-          decoration: BoxDecoration(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          decoration: const BoxDecoration(
               image: DecorationImage(
                   image: AssetImage("assets/images/maps-hotel.png"),
                   fit: BoxFit.cover
@@ -48,11 +47,11 @@ class _VendorBoardLocationSpotState extends State<VendorBoardLocationSpot> {
           ),
           child: Column(
             children: [
-              SizedBox(height: 20,),
+              const SizedBox(height: 20,),
               TextField(
                 controller: controllerLocation,
                 autocorrect: true,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: 'Inchvor verjnakan hasce',
                   hintStyle: TextStyle(
                       color: Color(0xFF1A2B47),

@@ -1,5 +1,4 @@
 import 'package:bron_hotel/pages/tours/payment-method-page.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class BookingFormPage extends StatefulWidget {
@@ -12,11 +11,6 @@ class BookingFormPage extends StatefulWidget {
 class _BookingFormPageState extends State<BookingFormPage> {
   @override
   Widget build(BuildContext context) {
-    int selectCard = 0;
-    List imagesCard = [
-      "assets/images/visa.png",
-      "assets/icons/master-card.png",
-    ];
 
     TextEditingController controllerName = TextEditingController();
     TextEditingController controllerLastName = TextEditingController();
@@ -40,14 +34,14 @@ class _BookingFormPageState extends State<BookingFormPage> {
               Navigator.pop(context);
             });
           },
-          icon: Icon(Icons.arrow_back_ios, color: Colors.white,),
+          icon: const Icon(Icons.arrow_back_ios, color: Colors.white,),
         ),
-        backgroundColor: Color(0xFF1A2B47),
+        backgroundColor: const Color(0xFF1A2B47),
         centerTitle: true,
         title: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(
+          children: const [
+             Text(
               "Бронирование",
               style: TextStyle(
                 color: Color(0xFFF1F4FB),
@@ -55,8 +49,8 @@ class _BookingFormPageState extends State<BookingFormPage> {
                 fontWeight: FontWeight.w600,
               ),
             ),
-            SizedBox(height: 10,),
-            Text(
+             SizedBox(height: 10,),
+             Text(
               "23 - 30 июля , 1 чел.",
               style: TextStyle(
                 color: Color(0xFFA0AFCC),
@@ -68,7 +62,7 @@ class _BookingFormPageState extends State<BookingFormPage> {
         ),
       ),
       body: ListView(
-        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 25),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 25),
         children: [
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -88,17 +82,17 @@ class _BookingFormPageState extends State<BookingFormPage> {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
+                        const Text(
                           "Имя ",
                           style: TextStyle(
                               color: Color(0xFFACB5BE),
                               fontSize: 12,
                               fontWeight: FontWeight.w500),
                         ),
-                        SizedBox(height: 5,),
+                        const SizedBox(height: 5,),
                         TextField(
                           controller: controllerName,
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                             hintText: 'Albert',
                             hintStyle: TextStyle(
@@ -127,17 +121,17 @@ class _BookingFormPageState extends State<BookingFormPage> {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
+                        const Text(
                           "Фамилия ",
                           style: TextStyle(
                               color: Color(0xFFACB5BE),
                               fontSize: 12,
                               fontWeight: FontWeight.w500),
                         ),
-                        SizedBox(height: 5,),
+                        const SizedBox(height: 5,),
                         TextField(
                           controller: controllerLastName,
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                             hintText: 'Salnazaryan',
                             hintStyle: TextStyle(
@@ -166,17 +160,17 @@ class _BookingFormPageState extends State<BookingFormPage> {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
+                        const Text(
                           "Номер телефона",
                           style: TextStyle(
                               color: Color(0xFFACB5BE),
                               fontSize: 12,
                               fontWeight: FontWeight.w500),
                         ),
-                        SizedBox(height: 5,),
+                        const SizedBox(height: 5,),
                         TextField(
                           controller: controllerPhone,
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                             hintText: '+37477106548',
                             hintStyle: TextStyle(
@@ -205,34 +199,34 @@ class _BookingFormPageState extends State<BookingFormPage> {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
+                        const Text(
                           "Эл. адрес ",
                           style: TextStyle(
                               color: Color(0xFFACB5BE),
                               fontSize: 12,
                               fontWeight: FontWeight.w500),
                         ),
-                        SizedBox(height: 5,),
+                        const SizedBox(height: 5,),
                         TextField(
                           controller: controllerEmail,
                           decoration: InputDecoration(
-                            contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                            contentPadding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                             hintText: 'example@gmail.com',
-                            hintStyle: TextStyle(
+                            hintStyle: const TextStyle(
                                 color: Color(0xFF5F6B7E),
                                 fontSize: 14,
                                 fontWeight: FontWeight.w400),
                             filled: true,
                             fillColor: Colors.white,
                             enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                              borderSide: BorderSide(color: Color(0xFF1A2B47).withOpacity(0.3), width: 0.5),
+                              borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+                              borderSide: BorderSide(color: const Color(0xFF1A2B47).withOpacity(0.3), width: 0.5),
                             ),
                             focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                              borderSide: BorderSide(color: Color(0xFF1A2B47).withOpacity(0.3), width: 0.5),
+                              borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+                              borderSide: BorderSide(color: const Color(0xFF1A2B47).withOpacity(0.3), width: 0.5),
                             ),
-                            errorBorder: OutlineInputBorder(
+                            errorBorder: const OutlineInputBorder(
                               borderRadius: BorderRadius.all(Radius.circular(10.0)),
                               borderSide: BorderSide(color: Color(0xFFD80027), width: 0.5),
                             ),
@@ -244,34 +238,34 @@ class _BookingFormPageState extends State<BookingFormPage> {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
+                        const Text(
                           "Страна ",
                           style: TextStyle(
                               color: Color(0xFFACB5BE),
                               fontSize: 12,
                               fontWeight: FontWeight.w500),
                         ),
-                        SizedBox(height: 5,),
+                        const SizedBox(height: 5,),
                         TextField(
                           controller: controllerCountry,
                           decoration: InputDecoration(
-                            contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                            contentPadding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                             hintText: 'Выбрать',
-                            hintStyle: TextStyle(
+                            hintStyle: const TextStyle(
                                 color: Color(0xFFACB5BE),
                                 fontSize: 14,
                                 fontWeight: FontWeight.w400),
                             filled: true,
                             fillColor: Colors.white,
                             enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                              borderSide: BorderSide(color: Color(0xFF1A2B47).withOpacity(0.3), width: 0.5),
+                              borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+                              borderSide: BorderSide(color: const Color(0xFF1A2B47).withOpacity(0.3), width: 0.5),
                             ),
                             focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                              borderSide: BorderSide(color: Color(0xFF1A2B47).withOpacity(0.3), width: 0.5),
+                              borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+                              borderSide: BorderSide(color: const Color(0xFF1A2B47).withOpacity(0.3), width: 0.5),
                             ),
-                            errorBorder: OutlineInputBorder(
+                            errorBorder: const OutlineInputBorder(
                               borderRadius: BorderRadius.all(Radius.circular(10.0)),
                               borderSide: BorderSide(color: Color(0xFFD80027), width: 0.5),
                             ),
@@ -283,34 +277,34 @@ class _BookingFormPageState extends State<BookingFormPage> {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
+                        const Text(
                           "Государство / Провинция / Регион",
                           style: TextStyle(
                               color: Color(0xFFACB5BE),
                               fontSize: 12,
                               fontWeight: FontWeight.w500),
                         ),
-                        SizedBox(height: 5,),
+                        const SizedBox(height: 5,),
                         TextField(
                           controller: controllerRegion,
                           decoration: InputDecoration(
-                            contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                            contentPadding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                             hintText: 'Выбрать',
-                            hintStyle: TextStyle(
+                            hintStyle: const TextStyle(
                                 color: Color(0xFFACB5BE),
                                 fontSize: 14,
                                 fontWeight: FontWeight.w400),
                             filled: true,
                             fillColor: Colors.white,
                             enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                              borderSide: BorderSide(color: Color(0xFF1A2B47).withOpacity(0.3), width: 0.5),
+                              borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+                              borderSide: BorderSide(color: const Color(0xFF1A2B47).withOpacity(0.3), width: 0.5),
                             ),
                             focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                              borderSide: BorderSide(color: Color(0xFF1A2B47).withOpacity(0.3), width: 0.5),
+                              borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+                              borderSide: BorderSide(color: const Color(0xFF1A2B47).withOpacity(0.3), width: 0.5),
                             ),
-                            errorBorder: OutlineInputBorder(
+                            errorBorder: const OutlineInputBorder(
                               borderRadius: BorderRadius.all(Radius.circular(10.0)),
                               borderSide: BorderSide(color: Color(0xFFD80027), width: 0.5),
                             ),
@@ -322,34 +316,34 @@ class _BookingFormPageState extends State<BookingFormPage> {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
+                        const Text(
                           "Город",
                           style: TextStyle(
                               color: Color(0xFFACB5BE),
                               fontSize: 12,
                               fontWeight: FontWeight.w500),
                         ),
-                        SizedBox(height: 5,),
+                        const SizedBox(height: 5,),
                         TextField(
                           controller: controllerCity,
                           decoration: InputDecoration(
-                            contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                            contentPadding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                             hintText: 'Ваш Город',
-                            hintStyle: TextStyle(
+                            hintStyle: const TextStyle(
                                 color: Color(0xFFACB5BE),
                                 fontSize: 14,
                                 fontWeight: FontWeight.w400),
                             filled: true,
                             fillColor: Colors.white,
                             enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                              borderSide: BorderSide(color: Color(0xFF1A2B47).withOpacity(0.3), width: 0.5),
+                              borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+                              borderSide: BorderSide(color: const Color(0xFF1A2B47).withOpacity(0.3), width: 0.5),
                             ),
                             focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                              borderSide: BorderSide(color: Color(0xFF1A2B47).withOpacity(0.3), width: 0.5),
+                              borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+                              borderSide: BorderSide(color: const Color(0xFF1A2B47).withOpacity(0.3), width: 0.5),
                             ),
-                            errorBorder: OutlineInputBorder(
+                            errorBorder: const OutlineInputBorder(
                               borderRadius: BorderRadius.all(Radius.circular(10.0)),
                               borderSide: BorderSide(color: Color(0xFFD80027), width: 0.5),
                             ),
@@ -361,34 +355,34 @@ class _BookingFormPageState extends State<BookingFormPage> {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
+                        const Text(
                           "Индекс / Почтовый индекс",
                           style: TextStyle(
                               color: Color(0xFFACB5BE),
                               fontSize: 12,
                               fontWeight: FontWeight.w500),
                         ),
-                        SizedBox(height: 5,),
+                        const SizedBox(height: 5,),
                         TextField(
                           controller: controllerIndex,
                           decoration: InputDecoration(
-                            contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                            contentPadding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                             hintText: 'Индекс / Почтовый индекс',
-                            hintStyle: TextStyle(
+                            hintStyle: const TextStyle(
                                 color: Color(0xFFACB5BE),
                                 fontSize: 14,
                                 fontWeight: FontWeight.w400),
                             filled: true,
                             fillColor: Colors.white,
                             enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                              borderSide: BorderSide(color: Color(0xFF1A2B47).withOpacity(0.3), width: 0.5),
+                              borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+                              borderSide: BorderSide(color: const Color(0xFF1A2B47).withOpacity(0.3), width: 0.5),
                             ),
                             focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                              borderSide: BorderSide(color: Color(0xFF1A2B47).withOpacity(0.3), width: 0.5),
+                              borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+                              borderSide: BorderSide(color: const Color(0xFF1A2B47).withOpacity(0.3), width: 0.5),
                             ),
-                            errorBorder: OutlineInputBorder(
+                            errorBorder: const OutlineInputBorder(
                               borderRadius: BorderRadius.all(Radius.circular(10.0)),
                               borderSide: BorderSide(color: Color(0xFFD80027), width: 0.5),
                             ),
@@ -400,34 +394,34 @@ class _BookingFormPageState extends State<BookingFormPage> {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
+                        const Text(
                           "Адресная строка 1",
                           style: TextStyle(
                               color: Color(0xFFACB5BE),
                               fontSize: 12,
                               fontWeight: FontWeight.w500),
                         ),
-                        SizedBox(height: 5,),
+                        const SizedBox(height: 5,),
                         TextField(
                           controller: controllerAddress1,
                           decoration: InputDecoration(
-                            contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                            contentPadding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                             hintText: 'Адресная строка 1',
-                            hintStyle: TextStyle(
+                            hintStyle: const TextStyle(
                                 color: Color(0xFFACB5BE),
                                 fontSize: 14,
                                 fontWeight: FontWeight.w400),
                             filled: true,
                             fillColor: Colors.white,
                             enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                              borderSide: BorderSide(color: Color(0xFF1A2B47).withOpacity(0.3), width: 0.5),
+                              borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+                              borderSide: BorderSide(color: const Color(0xFF1A2B47).withOpacity(0.3), width: 0.5),
                             ),
                             focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                              borderSide: BorderSide(color: Color(0xFF1A2B47).withOpacity(0.3), width: 0.5),
+                              borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+                              borderSide: BorderSide(color: const Color(0xFF1A2B47).withOpacity(0.3), width: 0.5),
                             ),
-                            errorBorder: OutlineInputBorder(
+                            errorBorder: const OutlineInputBorder(
                               borderRadius: BorderRadius.all(Radius.circular(10.0)),
                               borderSide: BorderSide(color: Color(0xFFD80027), width: 0.5),
                             ),
@@ -439,34 +433,34 @@ class _BookingFormPageState extends State<BookingFormPage> {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
+                        const Text(
                           "Адресная строка 2",
                           style: TextStyle(
                               color: Color(0xFFACB5BE),
                               fontSize: 12,
                               fontWeight: FontWeight.w500),
                         ),
-                        SizedBox(height: 5,),
+                        const SizedBox(height: 5,),
                         TextField(
                           controller: controllerAddress2,
                           decoration: InputDecoration(
-                            contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                            contentPadding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                             hintText: 'Адресная строка 2',
-                            hintStyle: TextStyle(
+                            hintStyle: const TextStyle(
                                 color: Color(0xFFACB5BE),
                                 fontSize: 14,
                                 fontWeight: FontWeight.w400),
                             filled: true,
                             fillColor: Colors.white,
                             enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                              borderSide: BorderSide(color: Color(0xFF1A2B47).withOpacity(0.3), width: 0.5),
+                              borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+                              borderSide: BorderSide(color: const Color(0xFF1A2B47).withOpacity(0.3), width: 0.5),
                             ),
                             focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                              borderSide: BorderSide(color: Color(0xFF1A2B47).withOpacity(0.3), width: 0.5),
+                              borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+                              borderSide: BorderSide(color: const Color(0xFF1A2B47).withOpacity(0.3), width: 0.5),
                             ),
-                            errorBorder: OutlineInputBorder(
+                            errorBorder: const OutlineInputBorder(
                               borderRadius: BorderRadius.all(Radius.circular(10.0)),
                               borderSide: BorderSide(color: Color(0xFFD80027), width: 0.5),
                             ),
@@ -478,35 +472,35 @@ class _BookingFormPageState extends State<BookingFormPage> {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
+                        const Text(
                           "Специальные требования",
                           style: TextStyle(
                               color: Color(0xFFACB5BE),
                               fontSize: 12,
                               fontWeight: FontWeight.w500),
                         ),
-                        SizedBox(height: 5,),
+                        const SizedBox(height: 5,),
                         TextField(
                           controller: controllerDescription,
                           maxLines: 5,
                           decoration: InputDecoration(
-                            contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                            contentPadding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                             hintText: 'Напишите ваши требования',
-                            hintStyle: TextStyle(
+                            hintStyle: const TextStyle(
                                 color: Color(0xFFACB5BE),
                                 fontSize: 14,
                                 fontWeight: FontWeight.w400),
                             filled: true,
                             fillColor: Colors.white,
                             enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                              borderSide: BorderSide(color: Color(0xFF1A2B47).withOpacity(0.3), width: 0.5),
+                              borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+                              borderSide: BorderSide(color: const Color(0xFF1A2B47).withOpacity(0.3), width: 0.5),
                             ),
                             focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                              borderSide: BorderSide(color: Color(0xFF1A2B47).withOpacity(0.3), width: 0.5),
+                              borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+                              borderSide: BorderSide(color: const Color(0xFF1A2B47).withOpacity(0.3), width: 0.5),
                             ),
-                            errorBorder: OutlineInputBorder(
+                            errorBorder: const OutlineInputBorder(
                               borderRadius: BorderRadius.all(Radius.circular(10.0)),
                               borderSide: BorderSide(color: Color(0xFFD80027), width: 0.5),
                             ),
@@ -522,17 +516,17 @@ class _BookingFormPageState extends State<BookingFormPage> {
                 child: GestureDetector(
                   onTap: (){
                     setState(() {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => PaymentMethodPage()));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const PaymentMethodPage()));
                     });
                   },
                   child: Container(
                     width: MediaQuery.of(context).size.width/2,
-                    padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+                    padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
                     decoration: BoxDecoration(
-                        color: Color(0xFF005BFE),
+                        color: const Color(0xFF005BFE),
                         borderRadius: BorderRadius.circular(15)
                     ),
-                    child: Center(
+                    child: const Center(
                       child: Text(
                         "Сохранить",
                         textAlign: TextAlign.center,

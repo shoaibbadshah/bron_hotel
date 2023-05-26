@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gradient_borders/box_borders/gradient_box_border.dart';
 
@@ -13,10 +12,12 @@ class _PaymentMethodPageState extends State<PaymentMethodPage> {
   bool selectedRadio = false;
   int selectedPayment = 0;
   int selectCard = 0;
+
   List imagesCard = [
     "assets/images/visa.png",
     "assets/icons/master-card.png",
   ];
+
   List<PaymentOption> paymentList = [
     PaymentOption(
         "Оплатить полностью",
@@ -29,6 +30,7 @@ class _PaymentMethodPageState extends State<PaymentMethodPage> {
         1320
     ),
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,13 +43,13 @@ class _PaymentMethodPageState extends State<PaymentMethodPage> {
               Navigator.pop(context);
             });
           },
-          icon: Icon(Icons.arrow_back_ios, color: Colors.white,),
+          icon: const Icon(Icons.arrow_back_ios, color: Colors.white,),
         ),
-        backgroundColor: Color(0xFF1A2B47),
+        backgroundColor: const Color(0xFF1A2B47),
         centerTitle: true,
         title: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
+          children: const [
             Text(
               "Способ оплаты",
               style: TextStyle(
@@ -73,8 +75,8 @@ class _PaymentMethodPageState extends State<PaymentMethodPage> {
           Container(
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height / 3.6,
-            padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-            decoration: BoxDecoration(
+            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+            decoration: const BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage("assets/images/images-tours 2.png"),
                     fit: BoxFit.fill
@@ -87,7 +89,7 @@ class _PaymentMethodPageState extends State<PaymentMethodPage> {
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Expanded(
+                    const Expanded(
                       child: Text(
                         "Beach Spa Resort",
                         style: TextStyle(
@@ -99,7 +101,7 @@ class _PaymentMethodPageState extends State<PaymentMethodPage> {
                     ),
                     Expanded(
                       child: Row(
-                        children: [
+                        children: const [
                           Text(
                             "4,97",
                             style: TextStyle(
@@ -115,7 +117,7 @@ class _PaymentMethodPageState extends State<PaymentMethodPage> {
                   ],
                 ),
                 Row(
-                  children: [
+                  children: const [
                     Icon(Icons.location_on, color: Color(0xFFACB5BE),),
                     Text(
                       "La Soukra, Tunis",
@@ -132,7 +134,7 @@ class _PaymentMethodPageState extends State<PaymentMethodPage> {
           ),
           const SizedBox(height: 15,),
           const Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            padding:  EdgeInsets.symmetric(horizontal: 20.0),
             child:  Text(
               "Бронирование",
               style: TextStyle(
@@ -149,11 +151,11 @@ class _PaymentMethodPageState extends State<PaymentMethodPage> {
                   padding: const EdgeInsets.only(bottom: 10.0),
                   child: Container(
                     width: MediaQuery.of(context).size.width,
-                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                     decoration: BoxDecoration(
                         border: Border.symmetric(
                             horizontal: BorderSide(
-                                color: selectedPayment == index ? Color(0xFF5F90F3) : Color(0xFF5E6D77)
+                                color: selectedPayment == index ? const Color(0xFF5F90F3) : const Color(0xFF5E6D77)
                             )
                         )
                     ),
@@ -167,7 +169,7 @@ class _PaymentMethodPageState extends State<PaymentMethodPage> {
                               child: Text(
                                 paymentList[index].name,
                                 style: TextStyle(
-                                    color: selectedPayment == index ? Color(0xFF005BFE) : Color(0xFF1A2B47).withOpacity(0.85),
+                                    color: selectedPayment == index ? const Color(0xFF005BFE) : const Color(0xFF1A2B47).withOpacity(0.85),
                                     fontWeight: FontWeight.w700,
                                     fontSize: 16
                                 ),
@@ -180,12 +182,12 @@ class _PaymentMethodPageState extends State<PaymentMethodPage> {
                                   Text(
                                     "${paymentList[index].price}\$",
                                     style: TextStyle(
-                                        color: selectedPayment == index ? Color(0xFF005BFE) : Color(0xFF1A2B47).withOpacity(0.85),
+                                        color: selectedPayment == index ? const Color(0xFF005BFE) : const Color(0xFF1A2B47).withOpacity(0.85),
                                         fontWeight: FontWeight.w700,
                                         fontSize: 16
                                     ),
                                   ),
-                                  SizedBox(width: 10,),
+                                  const SizedBox(width: 10,),
                                   InkWell(
                                     onTap: () {
                                       setState(() {
@@ -198,13 +200,13 @@ class _PaymentMethodPageState extends State<PaymentMethodPage> {
                                       padding: const EdgeInsets.all(2),
                                       decoration: BoxDecoration(
                                           shape: BoxShape.circle,
-                                          color:  selectedPayment == index? Color(0xFF005BFE) : Colors.transparent,
-                                          border: selectedPayment == index ? null : Border.all(color: Color(0xFF5E6D77), width: 2),
+                                          color:  selectedPayment == index? const Color(0xFF005BFE) : Colors.transparent,
+                                          border: selectedPayment == index ? null : Border.all(color: const Color(0xFF5E6D77), width: 2),
                                           boxShadow: [
                                             BoxShadow(
                                                 blurRadius: 10,
                                                 spreadRadius: 0,
-                                                offset: Offset(5,8),
+                                                offset: const Offset(5,8),
                                                 color: Colors.black.withOpacity(0.1)
                                             )
                                           ]
@@ -226,7 +228,7 @@ class _PaymentMethodPageState extends State<PaymentMethodPage> {
                           padding: const EdgeInsets.only(right: 50.0),
                           child: Text(
                             paymentList[index].description,
-                            style: TextStyle(
+                            style: const TextStyle(
                                 color:  Color(0xFF5E6D77) ,
                                 fontWeight: FontWeight.w500,
                                 fontSize: 14
@@ -242,11 +244,11 @@ class _PaymentMethodPageState extends State<PaymentMethodPage> {
           ),
           const SizedBox(height: 15,),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                const Text(
                   "Оплатить с помощью",
                   style: TextStyle(
                       color: Color(0xFF1A2B47),
@@ -267,16 +269,16 @@ class _PaymentMethodPageState extends State<PaymentMethodPage> {
                           child: Container(
                             width: MediaQuery.of(context).size.width / 2.5,
                             height: 65,
-                            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                             decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(10),
-                                border: selectCard == index ? Border.all(color: Color(0xFF005BFE)) : null,
+                                border: selectCard == index ? Border.all(color: const Color(0xFF005BFE)) : null,
                                 boxShadow: [
                                   BoxShadow(
                                       blurRadius: 25,
                                       spreadRadius: 0,
-                                      offset: Offset(0,7),
+                                      offset: const Offset(0,7),
                                       color: Colors.black.withOpacity(0.1)
                                   ),
                                 ]
@@ -290,19 +292,19 @@ class _PaymentMethodPageState extends State<PaymentMethodPage> {
                 ),
                 const SizedBox(height: 20,),
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(10),
                       border: GradientBoxBorder(
-                        gradient: LinearGradient(colors: [Colors.white.withOpacity(0.1), Color(0xFF5F90F3).withOpacity(0.35),]),
+                        gradient: LinearGradient(colors: [Colors.white.withOpacity(0.1), const Color(0xFF5F90F3).withOpacity(0.35),]),
                         width: 1,
                       ),
                       boxShadow: [
                         BoxShadow(
                             blurRadius: 25,
                             spreadRadius: 0,
-                            offset: Offset(0,7),
+                            offset: const Offset(0,7),
                             color: Colors.black.withOpacity(0.1)
                         ),
                       ]
@@ -311,11 +313,11 @@ class _PaymentMethodPageState extends State<PaymentMethodPage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Image.asset("assets/images/mir.png"),
-                      SizedBox(width: 15,),
+                      const SizedBox(width: 15,),
                       Text(
                         "1256 7889 3344 6651",
                         style: TextStyle(
-                            color: Color(0xFF1A2B47).withOpacity(0.85),
+                            color: const Color(0xFF1A2B47).withOpacity(0.85),
                             fontWeight: FontWeight.w600,
                             fontSize: 14
                         ),
@@ -327,12 +329,12 @@ class _PaymentMethodPageState extends State<PaymentMethodPage> {
                 Row(
                   children: [
                     Container(
-                      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+                      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(10),
                         border: GradientBoxBorder(
-                          gradient: LinearGradient(colors: [Colors.white.withOpacity(0.1), Color(0xFF5F90F3).withOpacity(0.35),]),
+                          gradient: LinearGradient(colors: [Colors.white.withOpacity(0.1), const Color(0xFF5F90F3).withOpacity(0.35),]),
                           width: 1,
                         ),
                         boxShadow: [
@@ -340,7 +342,7 @@ class _PaymentMethodPageState extends State<PaymentMethodPage> {
                               blurRadius: 24,
                               spreadRadius: -1,
                               color: Colors.black.withOpacity(0.2),
-                              offset: Offset(0,4)
+                              offset: const Offset(0,4)
                           )
                         ],
 
@@ -349,8 +351,8 @@ class _PaymentMethodPageState extends State<PaymentMethodPage> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Image.asset("assets/icons/addcard.png"),
-                          SizedBox(width: 20,),
-                          Text(
+                          const SizedBox(width: 20,),
+                          const Text(
                             "Добавить карту",
                             style: TextStyle(
                                 color: Color(0xFF005BFE),
@@ -378,7 +380,7 @@ class _PaymentMethodPageState extends State<PaymentMethodPage> {
                       Text(
                         "70\$",
                         style: TextStyle(
-                            color: Color(0xFF1A2B47).withOpacity(0.85),
+                            color: const Color(0xFF1A2B47).withOpacity(0.85),
                             fontWeight: FontWeight.w700,
                             fontSize: 16
                         ),
@@ -387,7 +389,7 @@ class _PaymentMethodPageState extends State<PaymentMethodPage> {
                         "23 июл - 30 июл",
                         style: TextStyle(
                             decoration: TextDecoration.underline,
-                            color: Color(0xFF1A2B47).withOpacity(0.85),
+                            color: const Color(0xFF1A2B47).withOpacity(0.85),
                             fontWeight: FontWeight.w400,
                             fontSize: 12
                         ),
@@ -402,12 +404,12 @@ class _PaymentMethodPageState extends State<PaymentMethodPage> {
                     });
                   },
                   child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+                    padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
                     decoration: BoxDecoration(
-                        color: Color(0xFF005BFE),
+                        color: const Color(0xFF005BFE),
                         borderRadius: BorderRadius.circular(15)
                     ),
-                    child: Center(
+                    child: const Center(
                       child: Text(
                         "Забронировать",
                         textAlign: TextAlign.center,

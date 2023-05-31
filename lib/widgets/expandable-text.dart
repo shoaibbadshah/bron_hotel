@@ -26,7 +26,7 @@ class ExpandableTextState extends State<ExpandableText> {
     const colorClickableText =  Color(0xFF005BFE);
     const widgetColor = Colors.black;
     TextSpan link = TextSpan(
-        text: _readMore ? "\n\nRead more..." : " \n\nlearn less",
+        text: _readMore ? "\n\nLearn more..." : " \n\nLearn less",
         style: const TextStyle(
             color: colorClickableText,
             fontSize: 14,

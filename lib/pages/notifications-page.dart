@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../widgets/expandable-text.dart';
@@ -11,7 +10,8 @@ class NotificationsPage extends StatefulWidget {
 }
 
 class _NotificationsPageState extends State<NotificationsPage> {
-  bool readMore = false;
+  bool isExpand = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,119 +20,84 @@ class _NotificationsPageState extends State<NotificationsPage> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
-        title: const Text("Уведомления", style: TextStyle(color: Color(0xFF1A2B47), fontSize: 20, fontWeight: FontWeight.w600),),
+        title: const Text(
+          "Уведомления",
+          style: TextStyle(
+              color: Color(0xFF1A2B47),
+              fontSize: 20,
+              fontWeight: FontWeight.w600),
+        ),
         leading: IconButton(
-          onPressed: (){
+          onPressed: () {
             setState(() {
               Navigator.pop(context);
             });
           },
-          icon: const Icon(Icons.arrow_back_ios, color: Color(0xFF1A2B47),),
+          icon: const Icon(
+            Icons.arrow_back_ios,
+            color: Color(0xFF1A2B47),
+          ),
         ),
       ),
       body: ListView(
         padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
-        children: [
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Column(
-                children: [
-                  const SizedBox(height: 15,),
-                  Container(
-                    height: 40,
-                    width: 40,
-                    decoration: const BoxDecoration(
-                        color: Color(0xFFD9D9D9),
-                        shape: BoxShape.circle
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 35,),
-              Expanded(
-                child: Column(
-                  children: const [
-                     Padding(
-                      padding: EdgeInsets.all(16.0),
-                      child: ExpandableText(
-                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque scelerisque efficitur posuere. Curabitur tincidunt placerat diam ac efficitur. Cras rutrum egestas nisl vitae pulvinar. Donec id mollis diam, id hendrerit neque. Donec accumsan efficitur libero, vitae feugiat odio fringilla ac. Aliquam a turpis bibendum, varius erat dictum, feugiat libero. Nam et dignissim nibh. Morbi elementum varius elit, at dignissim ex accumsan a Nam et dignissim nibh. Morbi elementum varius elit, at dignissim ex accumsan a',
-                        trimLines: 3,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-          const Divider(),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Column(
-                children: [
-                  const SizedBox(height: 15,),
-                  Container(
-                    height: 40,
-                    width: 40,
-                    decoration: const BoxDecoration(
-                        color: Color(0xFFD9D9D9),
-                        shape: BoxShape.circle
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 35,),
-              Expanded(
-                child: Column(
-                  children: const [
-                     Padding(
-                      padding: EdgeInsets.all(16.0),
-                      child: ExpandableText(
-                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque scelerisque efficitur posuere. Curabitur tincidunt placerat diam ac efficitur. Cras rutrum egestas nisl vitae pulvinar. Donec id mollis diam, id hendrerit neque. Donec accumsan efficitur libero, vitae feugiat odio fringilla ac. Aliquam a turpis bibendum, varius erat dictum, feugiat libero. Nam et dignissim nibh. Morbi elementum varius elit, at dignissim ex accumsan a Nam et dignissim nibh. Morbi elementum varius elit, at dignissim ex accumsan a',
-                        trimLines: 3,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-          const Divider()
+        children: const [
+          NotificationItem(),
+          Divider(),
+          NotificationItem(),
+          Divider()
         ],
       ),
     );
   }
 
-  Widget buildTextReadMore(String text, bool read) {
-    final lines = read ? null : 3;
-    return Column(
+}
+
+class NotificationItem extends StatefulWidget {
+  const NotificationItem({Key? key}) : super(key: key);
+
+  @override
+  _NotificationItemState createState() => _NotificationItemState();
+}
+
+class _NotificationItemState extends State<NotificationItem> {
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          text,
-          maxLines: lines,
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 14,
-            fontWeight: FontWeight.w400,
-            overflow: read ? TextOverflow.visible: TextOverflow.ellipsis,
+        Column(
+          children: const [
+            SizedBox(height: 15),
+            CircleAvatar(
+              backgroundColor: Color(0xFFD9D9D9),
+              radius: 20,
+            ),
+          ],
+        ),
+        const SizedBox(height: 35),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: const [
+              Padding(
+                padding:  EdgeInsets.all(16.0),
+                child: ExpandableText(
+                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. '
+                  'Pellentesque scelerisque efficitur posuere. Curabitur '
+                  'tincidunt placerat diam ac efficitur. Cras rutrum egestas '
+                  'nisl vitae pulvinar. Donec id mollis diam, id hendrerit '
+                  'neque. Donec accumsan efficitur libero, vitae feugiat odio fringilla ac. '
+                  'Aliquam a turpis bibendum, varius erat dictum, feugiat libero. '
+                  'Nam et dignissim nibh. Morbi elementum varius elit, at dignissim '
+                  'ex accumsan a Nam et dignissim nibh. Morbi elementum varius elit, '
+                  'at dignissim ex accumsan a',
+                  trimLines: 3,
+                ),
+              ),
+            ],
           ),
         ),
-        TextButton(
-            onPressed: (){
-              setState(() {
-                read = !read;
-              });
-            },
-            child: Text(
-              read? 'Learn more...' : 'Learn less...',
-              style: const TextStyle(
-                color: Color(0xFF005BFE),
-                fontSize: 14,
-                fontWeight: FontWeight.w400,
-              ),
-            )
-        )
       ],
     );
   }

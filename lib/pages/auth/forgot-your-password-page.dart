@@ -44,7 +44,7 @@ class ForgotYourPasswordPage extends StatelessWidget {
                       backgroundColor: const Color(0xFF1A2B47),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(40))),
-                  onPressed: null,
+                  onPressed: (){},
                   child: const Text(
                     "Go to change password",
                     style: TextStyle(

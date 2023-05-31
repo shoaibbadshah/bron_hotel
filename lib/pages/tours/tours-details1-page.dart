@@ -974,7 +974,6 @@ class _ToursDetails1PageState extends State<ToursDetails1Page> {
             Row(
               children: [
                 Expanded(
-                  flex: 2,
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -1008,6 +1007,7 @@ class _ToursDetails1PageState extends State<ToursDetails1Page> {
                 Expanded(
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       const Icon(Icons.access_time_outlined, color: Color(0xFF005BFE),),
                       const SizedBox(width: 10,),

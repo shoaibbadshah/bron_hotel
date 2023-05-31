@@ -16,7 +16,6 @@ class _BlogDragUploadState extends State<BlogDragUpload> {
         children: [
           Container(
             width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height / 2.25,
             padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 20),
             decoration: const BoxDecoration(
                 image: DecorationImage(
@@ -163,21 +162,18 @@ class _BlogDragUploadState extends State<BlogDragUpload> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Container(
-                              width: MediaQuery.of(context).size.width / 4,
                             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                             decoration: BoxDecoration(
                               color: Colors.white,
                                 borderRadius: BorderRadius.circular(10),
                                 border: Border.all(color: const Color(0xFF1A2B47))
                             ),
-                            child: const Center(
-                              child: Text(
-                                "Cover photo",
-                                style: TextStyle(
-                                  color: Color(0xFF1A2B47),
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w500,
-                                ),
+                            child: Text(
+                              "Cover photo",
+                              style: TextStyle(
+                                color: Color(0xFF1A2B47),
+                                fontSize: 12,
+                                fontWeight: FontWeight.w500,
                               ),
                             )
                           ),

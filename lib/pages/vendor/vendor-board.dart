@@ -54,40 +54,39 @@ class _VendorBoardState extends State<VendorBoard> {
                 ],
               ),
             ),
-            const Text(
-              "Save and exit",
-              style: TextStyle(
-                decoration: TextDecoration.underline,
-                color: Colors.white,
-                fontSize: 12,
-                fontWeight: FontWeight.w400,
-              ),
-            ),
-            Image.asset("assets/icons/question-vendor.png")
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                const Text(
+                  "Save and exit",
+                  style: TextStyle(
+                    decoration: TextDecoration.underline,
+                    color: Colors.white,
+                    fontSize: 12,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+                SizedBox(width: 10,),
+                Image.asset("assets/icons/question-vendor.png"),
+              ],
+            )
           ],
         ),
       ),
-      body: ListView(
-        children: [
-          SizedBox(
-            height: MediaQuery.of(context).size.height,
-            child: PageView(
-              physics: const NeverScrollableScrollPhysics(),
-                scrollDirection: Axis.horizontal,
-                controller: pageController,
-                 children: const [
-                    VendorBoardYouHost(),
-                    VendorBoardYouPlace(),
-                    VendorBoardQuests(),
-                    VendorBoardLocation(),
-                    VendorBoardLocationSpot(),
-                    VendorBoardBedrooms(),
-                    VendorBoardOffer(),
-                 ],
-                ),
+      body: PageView(
+       padEnds: false,
+        physics: const NeverScrollableScrollPhysics(),
+          controller: pageController,
+           children: const [
+              VendorBoardYouHost(),
+              VendorBoardYouPlace(),
+              VendorBoardQuests(),
+              VendorBoardLocation(),
+              VendorBoardLocationSpot(),
+              VendorBoardBedrooms(),
+              VendorBoardOffer(),
+           ],
           ),
-        ],
-      ),
       bottomNavigationBar: Container(
         height: 80,
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),

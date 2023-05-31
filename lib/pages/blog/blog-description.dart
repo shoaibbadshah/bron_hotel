@@ -16,7 +16,6 @@ class _BlogDescriptionState extends State<BlogDescription> {
         children: [
           Container(
             width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height / 2.25,
             padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 20),
             decoration: const BoxDecoration(
                 image: DecorationImage(

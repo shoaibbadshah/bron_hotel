@@ -52,8 +52,8 @@ class _AboutUsMissionState extends State<AboutUsMission> {
                       },
                       icon: Image.asset("assets/icons/reference.png")
                   ),
-                  const IconButton(
-                      onPressed: null,
+                   IconButton(
+                      onPressed: (){},
                       icon: Icon(Icons.notifications_none, color: Color(0xFF1A2B47),)
                   ),
                 ],
@@ -119,7 +119,6 @@ class _AboutUsMissionState extends State<AboutUsMission> {
                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
                 child: Container(
                   width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height / 4.5,
                   padding: const EdgeInsets.symmetric(vertical: 20),
                   decoration: BoxDecoration(
                     color: Colors.white,
@@ -174,7 +173,6 @@ class _AboutUsMissionState extends State<AboutUsMission> {
                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
                 child: Container(
                   width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height / 4.5,
                   padding: const EdgeInsets.symmetric(vertical: 20),
                   decoration: BoxDecoration(
                       color: Colors.white,
@@ -229,7 +227,6 @@ class _AboutUsMissionState extends State<AboutUsMission> {
                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
                 child: Container(
                   width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height / 4.5,
                   padding: const EdgeInsets.symmetric(vertical: 20),
                   decoration: BoxDecoration(
                       color: Colors.white,

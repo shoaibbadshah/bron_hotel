@@ -50,7 +50,7 @@ class _FlightSelectionPageState extends State<FlightSelectionPage> {
         ),
         actions: [
           IconButton(
-              onPressed: null,
+              onPressed: (){},
               icon: Image.asset("assets/icons/share-appbar.png")
           )
         ],

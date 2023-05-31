@@ -308,7 +308,7 @@ class _ToursScreenState extends State<ToursScreen> {
           ),
           const SizedBox(height: 10,),
           SizedBox(
-            height: MediaQuery.of(context).size.height / 2.4,
+            height: 340,
             child: PageView.builder(
                 controller: PageController(viewportFraction: 0.7, initialPage: 2),
                 itemCount: 5,
@@ -400,9 +400,7 @@ class _ToursScreenState extends State<ToursScreen> {
                     ),
                   );
                 }),
-
           ),
-
         ],
       );
   }
@@ -423,7 +421,7 @@ class _ToursScreenState extends State<ToursScreen> {
           ),
           const SizedBox(height: 10,),
           SizedBox(
-            height: MediaQuery.of(context).size.height / 2.4,
+            height: 340,
             child: PageView.builder(
                 controller: PageController(viewportFraction: 0.7, initialPage: 2),
                 itemCount: 5,
@@ -537,7 +535,7 @@ class _ToursScreenState extends State<ToursScreen> {
           ),
           const SizedBox(height: 10,),
           SizedBox(
-            height: MediaQuery.of(context).size.height / 2.4,
+            height: 340,
             child: PageView.builder(
                 controller: PageController(viewportFraction: 0.7, initialPage: 2),
                 itemCount: 5,
@@ -651,7 +649,7 @@ class _ToursScreenState extends State<ToursScreen> {
           ),
           const SizedBox(height: 10,),
           SizedBox(
-            height: MediaQuery.of(context).size.height / 2.4,
+            height: 340,
             child: PageView.builder(
                 controller: PageController(viewportFraction: 0.9, initialPage: 2),
                 itemCount: 5,

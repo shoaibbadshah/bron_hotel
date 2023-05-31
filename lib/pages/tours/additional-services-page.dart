@@ -68,7 +68,7 @@ class _AdditionalServicesPageState extends State<AdditionalServicesPage> {
         ),
         actions: [
           IconButton(
-              onPressed: null,
+              onPressed: (){},
               icon: Image.asset("assets/icons/share-appbar.png")
           )
         ],

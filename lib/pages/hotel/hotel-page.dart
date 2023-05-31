@@ -18,9 +18,9 @@ class _HotelPageState extends State<HotelPage> {
   int currentValue = 0;
   final ScrollController _controller = ScrollController();
 
-  TextEditingController controllerLocation =TextEditingController();
+  TextEditingController controllerLocation = TextEditingController();
   TextEditingController controllerZ = TextEditingController();
-  TextEditingController controllerP =TextEditingController();
+  TextEditingController controllerP = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class _HotelPageState extends State<HotelPage> {
             decoration: const InputDecoration(
               hintText: 'куда',
               prefixIcon:
-              Icon(Icons.location_on_outlined, color: Color(0xFF1A2B48)),
+                  Icon(Icons.location_on_outlined, color: Color(0xFF1A2B48)),
               hintStyle: TextStyle(
                   color: Color(0xFFC4C4C4),
                   fontSize: 16,
@@ -59,7 +59,7 @@ class _HotelPageState extends State<HotelPage> {
           child: Row(
             children: [
               Expanded(
-                child:  TextField(
+                child: TextField(
                   controller: controllerZ,
                   autocorrect: true,
                   decoration: const InputDecoration(
@@ -83,7 +83,7 @@ class _HotelPageState extends State<HotelPage> {
               ),
               const SizedBox(width: 10),
               Expanded(
-                child:  TextField(
+                child: TextField(
                   controller: controllerP,
                   autocorrect: true,
                   decoration: const InputDecoration(
@@ -121,15 +121,15 @@ class _HotelPageState extends State<HotelPage> {
               children: [
                 Row(
                   children: const [
-                     Text(
+                    Text(
                       'Взрослых',
                       style: TextStyle(
                           color: Color(0xFF5E6D77),
                           fontSize: 14,
                           fontWeight: FontWeight.w500),
                     ),
-                     SizedBox(width: 10),
-                     Text(
+                    SizedBox(width: 10),
+                    Text(
                       '1',
                       style: TextStyle(
                           color: Color(0xFF1A2B47),
@@ -143,15 +143,15 @@ class _HotelPageState extends State<HotelPage> {
                 ),
                 Row(
                   children: const [
-                     Text(
+                    Text(
                       'Детей',
                       style: TextStyle(
                           color: Color(0xFF5E6D77),
                           fontSize: 14,
                           fontWeight: FontWeight.w500),
                     ),
-                     SizedBox(width: 10),
-                     Text(
+                    SizedBox(width: 10),
+                    Text(
                       '0',
                       style: TextStyle(
                           color: Color(0xFF1A2B47),
@@ -165,15 +165,15 @@ class _HotelPageState extends State<HotelPage> {
                 ),
                 Row(
                   children: const [
-                     Text(
+                    Text(
                       'Номеров',
                       style: TextStyle(
                           color: Color(0xFF5E6D77),
                           fontSize: 14,
                           fontWeight: FontWeight.w500),
                     ),
-                     SizedBox(width: 10),
-                     Text(
+                    SizedBox(width: 10),
+                    Text(
                       '1',
                       style: TextStyle(
                           color: Color(0xFF1A2B47),
@@ -196,7 +196,7 @@ class _HotelPageState extends State<HotelPage> {
             contentPadding: EdgeInsets.zero,
             onChanged: (newValue) {},
             controlAffinity:
-            ListTileControlAffinity.leading, //  <-- leading Checkbox
+                ListTileControlAffinity.leading, //  <-- leading Checkbox
           ),
         ),
         const SizedBox(height: 20),
@@ -210,7 +210,10 @@ class _HotelPageState extends State<HotelPage> {
                       borderRadius: BorderRadius.circular(30))),
               onPressed: () {
                 setState(() {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const HousingOptions()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const HousingOptions()));
                 });
               },
               child: const Text(
@@ -225,41 +228,39 @@ class _HotelPageState extends State<HotelPage> {
         const SizedBox(height: 20),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: SizedBox(
-            height: MediaQuery.of(context).size.height / 8.6,
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemBuilder: (context, index) {
-                return Padding(
-                  padding: index == 0
-                      ? const EdgeInsets.only(left: 20, right: 50)
-                      : const EdgeInsets.only(right: 50),
-                  child: Column(
-                    children: [
-                      Image.asset('assets/images/tropical.png'),
-                      const SizedBox(
-                        height: 5,
-                      ),
-                      const Text(
-                        "Tropical",
-                        style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 18,
-                            color: Color(0xFF1A2B47)),
-                      ),
-                      const SizedBox(
-                        height: 5,
-                      ),
-                      Container(
-                        height: 2,
-                        width: 50,
-                        color: const Color(0xFF1A2B47),
-                      )
-                    ],
-                  ),
-                );
-              },
-              itemCount: 10,
+          child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: List.generate(
+                  5,
+                  (index) => Padding(
+                        padding: index == 0
+                            ? const EdgeInsets.only(left: 20, right: 50)
+                            : const EdgeInsets.only(right: 50),
+                        child: Column(
+                          children: [
+                            Image.asset('assets/images/tropical.png'),
+                            const SizedBox(
+                              height: 5,
+                            ),
+                            const Text(
+                              "Tropical",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 18,
+                                  color: Color(0xFF1A2B47)),
+                            ),
+                            const SizedBox(
+                              height: 5,
+                            ),
+                            Container(
+                              height: 2,
+                              width: 50,
+                              color: const Color(0xFF1A2B47),
+                            )
+                          ],
+                        ),
+                      )),
             ),
           ),
         ),
@@ -367,7 +368,7 @@ class _HotelPageState extends State<HotelPage> {
                     Center(
                       child: Column(
                         children: const [
-                           Text(
+                          Text(
                             "If you have not decided",
                             style: TextStyle(
                               color: Colors.black,
@@ -375,10 +376,10 @@ class _HotelPageState extends State<HotelPage> {
                               fontWeight: FontWeight.w700,
                             ),
                           ),
-                           SizedBox(
+                          SizedBox(
                             height: 10,
                           ),
-                           Text(
+                          Text(
                             "where to rest",
                             style: TextStyle(
                               color: Color(0xFF005BFE),
@@ -386,10 +387,10 @@ class _HotelPageState extends State<HotelPage> {
                               fontWeight: FontWeight.w600,
                             ),
                           ),
-                           SizedBox(
+                          SizedBox(
                             height: 10,
                           ),
-                           Text(
+                          Text(
                             "we will help you",
                             style: TextStyle(
                               color: Color(0xFF1A2B47),
@@ -458,7 +459,7 @@ class _HotelPageState extends State<HotelPage> {
                 child: Row(
                   children: List.generate(
                       5,
-                          (index) => _buildListTopMain("assets/images/ozer.png",
+                      (index) => _buildListTopMain("assets/images/ozer.png",
                           "Bora Bora, French Polynesia", "375 hotels")),
                 ),
               ),
@@ -498,7 +499,7 @@ class _HotelPageState extends State<HotelPage> {
                 child: Row(
                   children: List.generate(
                       5,
-                          (index) => _buildListTopMain(
+                      (index) => _buildListTopMain(
                           "assets/images/ozer.png",
                           "Amsterdam Open Boat Canal Cruise - Live Guide from Anne Frank House",
                           "from \$21 per adult")),
@@ -612,8 +613,9 @@ class _HotelPageState extends State<HotelPage> {
                 ),
               ),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
+                  Container(),
                   const Text(
                     'Paris',
                     style: TextStyle(
@@ -622,50 +624,53 @@ class _HotelPageState extends State<HotelPage> {
                         fontWeight: FontWeight.w400,
                         fontFamily: "Rancho"),
                   ),
-                  const SizedBox(height: 40,),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(30),
-                    child: BackdropFilter(
-                      filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
-                      child: Container(
-                        padding:
-                        const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-                        decoration: BoxDecoration(
-                            color: Colors.white.withOpacity(0.2),
-                            borderRadius: BorderRadius.circular(30)),
-                        child: Row(
-                          children: const [
-                             Expanded(
-                              child: Text(
-                                "• 7 spaces ",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 8,
-                                    fontWeight: FontWeight.w400),
-                              ),
+                  Column(
+                    children: [
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(30),
+                        child: BackdropFilter(
+                          filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
+                          child: Container(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 5, vertical: 10),
+                            decoration: BoxDecoration(
+                                color: Colors.white.withOpacity(0.2),
+                                borderRadius: BorderRadius.circular(30)),
+                            child: Row(
+                              children: const [
+                                Expanded(
+                                  child: Text(
+                                    "• 7 spaces",
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 8,
+                                        fontWeight: FontWeight.w400),
+                                  ),
+                                ),
+                                Expanded(
+                                  child: Text(
+                                    "• 7 Hotels",
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 8,
+                                        fontWeight: FontWeight.w400),
+                                  ),
+                                ),
+                                Expanded(
+                                  child: Text(
+                                    "• 7 Tourss",
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 8,
+                                        fontWeight: FontWeight.w400),
+                                  ),
+                                ),
+                              ],
                             ),
-                             Expanded(
-                              child: Text(
-                                "• 7 Hotels ",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 8,
-                                    fontWeight: FontWeight.w400),
-                              ),
-                            ),
-                             Expanded(
-                              child: Text(
-                                "• 7 Tourss ",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 8,
-                                    fontWeight: FontWeight.w400),
-                              ),
-                            ),
-                          ],
+                          ),
                         ),
                       ),
-                    ),
+                    ],
                   )
                 ],
               ),
@@ -682,8 +687,8 @@ class _HotelPageState extends State<HotelPage> {
         const SizedBox(height: 8),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: const  [
-             Text(
+          children: const [
+            Text(
               'Top Destinations',
               style: TextStyle(
                   color: Color(0xFf1A2B47),
@@ -772,10 +777,11 @@ class _HotelPageState extends State<HotelPage> {
                   suffixIcon: Container(
                     width: MediaQuery.of(context).size.width / 3,
                     margin: const EdgeInsets.all(5),
-                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 20, vertical: 20),
                     decoration: BoxDecoration(
-                        color:
-                        UtilColor.getColorFromHex("1A2B47").withOpacity(0.9),
+                        color: UtilColor.getColorFromHex("1A2B47")
+                            .withOpacity(0.9),
                         borderRadius: BorderRadius.circular(30)),
                     child: const Center(
                       child: Text(

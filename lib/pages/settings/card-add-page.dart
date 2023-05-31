@@ -62,7 +62,6 @@ class _CardAddPageState extends State<CardAddPage> {
                 children: [
                   Container(
                     width: MediaQuery.of(context).size.width,
-                    height: MediaQuery.of(context).size.height / 4.2,
                     padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                     decoration: BoxDecoration(
                       color: Colors.white,

@@ -27,8 +27,8 @@ class _BlogSinglePageState extends State<BlogSinglePage> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Image.asset("assets/icons/blog-icon.png"),
-                const IconButton(
-                    onPressed: null,
+                 IconButton(
+                    onPressed: (){},
                     icon: Icon(Icons.notifications_none, color: Color(0xFF1A2B47), size: 31,)
                 )
               ],

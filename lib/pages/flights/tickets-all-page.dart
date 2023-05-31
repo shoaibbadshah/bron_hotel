@@ -49,17 +49,17 @@ class _TicketsAllPageState extends State<TicketsAllPage> {
             ),
           ),
           actions: [
-            const IconButton(
-                onPressed: null,
-                icon:  Icon(Icons.notifications_none)
+             IconButton(
+                onPressed: (){},
+                icon:  Icon(Icons.notifications_none, color: Colors.white,)
             ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 20),
               child: VerticalDivider(thickness: 1, color: const Color(0xFFACB5BE).withOpacity(0.25),),
             ),
-            const IconButton(
-                onPressed: null,
-                icon:  Icon(Icons.ios_share)
+             IconButton(
+                onPressed: (){},
+                icon:  const Icon(Icons.ios_share, color: Colors.white,)
             ),
 
           ],
@@ -506,7 +506,7 @@ class _TicketsAllPageState extends State<TicketsAllPage> {
                     backgroundColor: const Color(0xFF005BFE),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15))),
-                onPressed: null,
+                onPressed: (){},
                 child: const Text(
                   "Купить билет",
                   style: TextStyle(

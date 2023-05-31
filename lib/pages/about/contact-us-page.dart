@@ -225,7 +225,7 @@ class _ContactUsPageState extends State<ContactUsPage> {
                               backgroundColor: const Color(0xFF005BFE),
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(100))),
-                          onPressed: null,
+                          onPressed: (){},
                           child: const Text(
                             "Send",
                             style: TextStyle(

@@ -60,7 +60,7 @@ class _HousingOptionsState extends State<HousingOptions> {
           ),
           actions: [
             IconButton(
-                onPressed: null,
+                onPressed: (){},
                 icon: Image.asset("assets/icons/filters.png")
             )
           ],

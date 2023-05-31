@@ -68,8 +68,8 @@ class _SupportPageState extends State<SupportPage> {
                     },
                       icon: Image.asset("assets/icons/reference.png")
                   ),
-                  const IconButton(
-                      onPressed: null,
+                   IconButton(
+                      onPressed: (){},
                       icon: Icon(Icons.notifications_none, color: Color(0xFF1A2B47),)
                   ),
                 ],

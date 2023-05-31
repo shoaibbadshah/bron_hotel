@@ -58,7 +58,7 @@ class _ToursDetailsPageState extends State<ToursDetailsPage> {
         ),
         actions: [
           IconButton(
-              onPressed: null,
+              onPressed: (){},
               icon: Image.asset("assets/icons/filters.png")
           )
         ],
@@ -625,7 +625,6 @@ class _ToursDetailsPageState extends State<ToursDetailsPage> {
                 Row(
                   children: [
                     Expanded(
-                      flex: 2,
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -659,6 +658,7 @@ class _ToursDetailsPageState extends State<ToursDetailsPage> {
                     Expanded(
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           const Icon(Icons.access_time_outlined, color: Color(0xFF005BFE),),
                           const SizedBox(width: 10,),

@@ -12,7 +12,7 @@ class _VendorBoardYouPlaceState extends State<VendorBoardYouPlace> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return ListView(
       children: [
         Container(
           width: MediaQuery.of(context).size.width,
@@ -85,6 +85,7 @@ class _VendorBoardYouPlaceState extends State<VendorBoardYouPlace> {
               ),
           ),
         ),
+        const SizedBox(height: 20,),
       ],
     );
   }

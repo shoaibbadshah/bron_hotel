@@ -74,7 +74,8 @@ class _VendorStartPageState extends State<VendorStartPage> {
                 ),
               ),
             ],
-          )
+          ),
+          const SizedBox(height: 40,),
         ],
       ),
       bottomNavigationBar: Container(
@@ -88,22 +89,19 @@ class _VendorStartPageState extends State<VendorStartPage> {
           children: [
             Container(
               width: MediaQuery.of(context).size.width / 3,
-              height: 35,
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(17.5),
                 border: Border.all(color: const Color(0xFF1A2B47))
               ),
-              child: const Center(
-                child: Text(
-                  "Exit",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      color: Color(0xFF1A2B47),
-                      fontSize: 14,
-                      fontWeight: FontWeight.w400
-                  ),
+              child: Text(
+                "Exit",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    color: Color(0xFF1A2B47),
+                    fontSize: 14,
+                    fontWeight: FontWeight.w400
                 ),
               ),
             ),

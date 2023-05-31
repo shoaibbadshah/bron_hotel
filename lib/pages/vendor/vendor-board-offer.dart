@@ -12,7 +12,6 @@ class _VendorBoardOfferState extends State<VendorBoardOffer> {
   @override
   Widget build(BuildContext context) {
     return  Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
           width: MediaQuery.of(context).size.width,
@@ -47,13 +46,13 @@ class _VendorBoardOfferState extends State<VendorBoardOffer> {
           ),
         ),
         Expanded(
-          flex: 3,
+          flex: 2,
           child: GridView.builder(
             controller: controller,
             scrollDirection: Axis.vertical,
             primary: false,
             padding: const EdgeInsets.all(20),
-            physics: const NeverScrollableScrollPhysics(),
+            // physics: const NeverScrollableScrollPhysics(),
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               childAspectRatio: 0.8 / 0.6,
               crossAxisCount: 2,
@@ -85,7 +84,6 @@ class _VendorBoardOfferState extends State<VendorBoardOffer> {
                 ),
           ),
         )
-
       ],
     );
   }

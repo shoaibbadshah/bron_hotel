@@ -78,7 +78,7 @@ class _TouristDataPageState extends State<TouristDataPage> {
         ),
         actions: [
           IconButton(
-              onPressed: null,
+              onPressed: (){},
               icon: Image.asset("assets/icons/share-appbar.png")
           )
         ],

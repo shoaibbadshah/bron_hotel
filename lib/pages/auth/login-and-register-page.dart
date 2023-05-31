@@ -465,17 +465,17 @@ class _LoginAndRegisterPageState extends State<LoginAndRegisterPage> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 IconButton(
-                                    onPressed: null,
+                                    onPressed: (){},
                                     icon: Image.asset("assets/icons/wk.png")
                                 ),
                                 const SizedBox(width: 10,),
                                 IconButton(
-                                    onPressed: null,
+                                    onPressed: (){},
                                     icon: Image.asset("assets/icons/google-icon.png")
                                 ),
                                 const SizedBox(width: 10,),
                                 IconButton(
-                                    onPressed: null,
+                                    onPressed: (){},
                                     icon: Image.asset("assets/icons/facebook-icon.png")
                                 ),
                               ],
@@ -634,7 +634,7 @@ class _LoginAndRegisterPageState extends State<LoginAndRegisterPage> {
                                             backgroundColor: const Color(0xFF005BFE),
                                             shape: RoundedRectangleBorder(
                                                 borderRadius: BorderRadius.circular(100))),
-                                        onPressed: null,
+                                        onPressed: (){},
                                         child: const Text(
                                           "Войти",
                                           style: TextStyle(
@@ -651,17 +651,17 @@ class _LoginAndRegisterPageState extends State<LoginAndRegisterPage> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 IconButton(
-                                    onPressed: null,
+                                    onPressed: (){},
                                     icon: Image.asset("assets/icons/wk.png")
                                 ),
                                 const SizedBox(width: 10,),
                                 IconButton(
-                                    onPressed: null,
+                                    onPressed: (){},
                                     icon: Image.asset("assets/icons/google-icon.png")
                                 ),
                                 const SizedBox(width: 10,),
                                 IconButton(
-                                    onPressed: null,
+                                    onPressed: (){},
                                     icon: Image.asset("assets/icons/facebook-icon.png")
                                 ),
                               ],

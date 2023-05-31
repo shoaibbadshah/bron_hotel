@@ -120,7 +120,7 @@ class _Error404PageState extends State<Error404Page> {
                             backgroundColor: Colors.white,
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(15))),
-                        onPressed: null,
+                        onPressed: (){},
                         child:  Text(
                           "Report Problem",
                           style: TextStyle(

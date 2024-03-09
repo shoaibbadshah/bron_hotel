@@ -1,6 +1,6 @@
 import 'package:bron_hotel/pages/tours/tours-detail.dart';
 import 'package:bron_hotel/pages/tours/tours-details-page.dart';
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 
 import '../flights/tickets-filter-page.dart';

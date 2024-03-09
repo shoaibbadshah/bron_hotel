@@ -6,7 +6,7 @@ import 'package:bron_hotel/pages/settings/currency-page.dart';
 import 'package:bron_hotel/pages/settings/history-of-booking-page.dart';
 import 'package:bron_hotel/pages/settings/profile-page.dart';
 import 'package:bron_hotel/pages/settings/vendor-setting-page.dart';
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 
 import 'language-page.dart';

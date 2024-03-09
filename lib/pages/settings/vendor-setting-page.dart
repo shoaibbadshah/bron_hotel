@@ -2,7 +2,7 @@ import 'package:bron_hotel/pages/about/support-page.dart';
 import 'package:bron_hotel/pages/blog/blog-page.dart';
 import 'package:bron_hotel/pages/vendor/vendor-start-page.dart';
 import 'package:expandable/expandable.dart';
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 
 class VendorSettingPage extends StatefulWidget {

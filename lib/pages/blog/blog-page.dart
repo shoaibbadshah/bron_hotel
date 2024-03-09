@@ -1,5 +1,5 @@
 import 'package:bron_hotel/widgets/follow-screen.dart';
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 
 import 'blog-page-mobile.dart';

@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:bron_hotel/pages/hotel/dialog-hotels.dart';
 import 'package:bron_hotel/pages/hotel/housing-options.dart';
 import 'package:dots_indicator/dots_indicator.dart';
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 
 import '../../utils/color.dart';

@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 
 class BlogDescription extends StatefulWidget {
@@ -18,8 +18,8 @@ class _BlogDescriptionState extends State<BlogDescription> {
           Container(
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height / 2.25,
-            padding: EdgeInsets.symmetric(horizontal: 20,vertical: 20),
-            decoration: BoxDecoration(
+            padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 20),
+            decoration: const BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage("assets/images/blog-img1.png"),
                     fit: BoxFit.cover

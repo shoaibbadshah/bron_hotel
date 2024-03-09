@@ -1,13 +1,11 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class ExpandableText extends StatefulWidget {
-  const ExpandableText(this.text, {
+  const ExpandableText(this.text, {super.key,
 
     this.trimLines = 2,
-  })  : assert(text != null),
-        super();
+  });
 
   final String text;
   final int trimLines;
@@ -24,12 +22,11 @@ class ExpandableTextState extends State<ExpandableText> {
 
   @override
   Widget build(BuildContext context) {
-    final DefaultTextStyle defaultTextStyle = DefaultTextStyle.of(context);
-    final colorClickableText = Color(0xFF005BFE);
-    final widgetColor = Colors.black;
+    const colorClickableText =Color(0xFF005BFE);
+    const widgetColor = Colors.black;
     TextSpan link = TextSpan(
         text: _readMore ? "\n\nRead more..." : " \n\nlearn less",
-        style: TextStyle(
+        style: const TextStyle(
             color: colorClickableText,
             fontSize: 14,
             fontWeight: FontWeight.w400
@@ -64,13 +61,13 @@ class ExpandableTextState extends State<ExpandableText> {
           textSize.height,
         ));
         endIndex = textPainter.getOffsetBefore(pos.offset);
-        var textSpan;
+        TextSpan textSpan;
         if (textPainter.didExceedMaxLines) {
           textSpan = TextSpan(
             text: _readMore
                 ? widget.text.substring(0, endIndex)
                 : widget.text,
-            style: TextStyle(
+            style: const TextStyle(
                 color: widgetColor,
                 fontSize: 14,
                 fontWeight: FontWeight.w400

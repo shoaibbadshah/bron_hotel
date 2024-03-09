@@ -1,5 +1,5 @@
 import 'package:bron_hotel/widgets/similar-hotels-widget.dart';
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 
 import 'flights-selection-page.dart';

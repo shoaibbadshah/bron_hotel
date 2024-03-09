@@ -5,7 +5,7 @@ import 'package:bron_hotel/pages/about/privacy-policy-page.dart';
 import 'package:bron_hotel/pages/about/terms-conditions-page.dart';
 import 'package:bron_hotel/pages/about/work-with-as-page.dart';
 import 'package:expandable/expandable.dart';
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 
 class SupportPage extends StatefulWidget {

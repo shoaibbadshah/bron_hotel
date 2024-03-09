@@ -1,7 +1,7 @@
 import 'package:bron_hotel/pages/about/contact-us-page.dart';
 import 'package:bron_hotel/pages/blog/blog-start-page.dart';
 import 'package:bron_hotel/pages/settings/wallet-page.dart';
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 
 class CustomerPage extends StatefulWidget {

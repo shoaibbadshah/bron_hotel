@@ -6,7 +6,7 @@ import 'package:bron_hotel/pages/vendor/vendor-board-offer.dart';
 import 'package:bron_hotel/pages/vendor/vendor-board-quests.dart';
 import 'package:bron_hotel/pages/vendor/vendor-board-you-host.dart';
 import 'package:bron_hotel/pages/vendor/vendor-board-you-plase.dart';
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 
 class VendorBoard extends StatefulWidget {

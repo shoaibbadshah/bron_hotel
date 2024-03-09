@@ -1,5 +1,5 @@
 import 'package:bron_hotel/pages/vendor/confirm-address.dart';
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 
 class VendorBoardLocation extends StatefulWidget {

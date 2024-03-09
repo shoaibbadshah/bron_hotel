@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:bron_hotel/pages/about/work-with-as-details-page.dart';
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 
 import '../../utils/color.dart';

@@ -1,6 +1,6 @@
 import 'package:bron_hotel/pages/tours/tours-details-page.dart';
 import 'package:bron_hotel/pages/tours/tours-details1-page.dart';
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 
 class ToursDetail extends StatefulWidget {
